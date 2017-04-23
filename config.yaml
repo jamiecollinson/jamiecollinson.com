@@ -1,0 +1,8 @@
+baseURL: https://jamiecollinson.com
+theme: tufte
+disablePathToLower: true
+languageCode: en-us
+title: Jamie Collinson
+googleAnalytics: UA-3143424-7
+permalinks: 
+  post: /blog/:filename

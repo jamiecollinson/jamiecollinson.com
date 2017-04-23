@@ -1,0 +1,21 @@
+{{ define "main" }}
+<h1>>_ <span class="cursor">|</span></h1>
+<p class="subtitle">I'm Jamie. I build things with open web technologies.</p>
+
+<section>
+  {{ .Content }}
+</section>
+
+<section>
+    <h2>Latest posts</h2>
+    <ul>
+        {{ range .Data.Pages }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</section>
+{{ end }}

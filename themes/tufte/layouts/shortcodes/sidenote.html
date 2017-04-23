@@ -1,0 +1,9 @@
+{{ if $.Page.Scratch.Get "sidenote-number"}}{{ $.Page.Scratch.Add "sidenote-number" 1}}{{ else }}{{ $.Page.Scratch.Set "sidenote-number" 1}}{{ end }}<label for='sidenote-{{ $.Page.Scratch.Get "sidenote-number" }}' class="margin-toggle sidenote-number"></label>
+<input type="checkbox" class="margin-toggle" id='sidenote-{{ $.Page.Scratch.Get "sidenote-number" }}'>
+<span class="sidenote">
+    {{ if isset .Params 0 }}
+      {{ .Get 0 }}
+    {{ else }}
+      {{ .Inner }}
+    {{ end }}
+</span>
