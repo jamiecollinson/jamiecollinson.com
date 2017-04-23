@@ -4,5 +4,6 @@ disablePathToLower: true
 languageCode: en-us
 title: Jamie Collinson
 googleAnalytics: UA-3143424-7
-permalinks: 
+permalinks:
   post: /blog/:filename
+publishDir: docs

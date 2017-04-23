@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jamie Collinson</title>
+    <link>https://jamiecollinson.com/</link>
+    <description>Recent content on Jamie Collinson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jamiecollinson.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>12 Week Plan</title>
+      <link>https://jamiecollinson.com/blog/year-of-hustle-12-week-plan/</link>
+      <pubDate>Tue, 10 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jamiecollinson.com/blog/year-of-hustle-12-week-plan/</guid>
+      <description>This is part of my continuing series on following Amy Hoy&amp;rsquo;s Year of Hustle methodology for creating your first product. You can follow along by email or see all my posts on the subject.
+Last time I talked about overall goals. This time I&amp;rsquo;d like to put down a more extensive plan. More detailed for the next few weeks, with less detail as the cone of uncertainty widens. Note for anyone familiar with Amy&amp;rsquo;s methodology I&amp;rsquo;ve cheated and added week 0, and the remaining weeks plans are straight out of Year of Hustle.</description>
+    </item>
+    
+    <item>
+      <title>My year of hustle</title>
+      <link>https://jamiecollinson.com/blog/my-year-of-hustle/</link>
+      <pubDate>Mon, 09 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jamiecollinson.com/blog/my-year-of-hustle/</guid>
+      <description>A year ago I started receiving Amy Hoy&amp;rsquo;s Year of Hustle emails. She gives an actionable plan for starting your side business over 12 weeks. Breaking down the steps, roadblocks and mindset changes needed to get it done. I&amp;rsquo;m a big admirer of her work, I&amp;rsquo;m sure it helped many people, but I didn&amp;rsquo;t follow her advice. I guess I hadn&amp;rsquo;t hit my fuck this moment. A lot of her work focuses on mindset, and I wasn&amp;rsquo;t ready.</description>
+    </item>
+    
+    <item>
+      <title>A guide to disassembling the Ricoh GR for sensor cleaning</title>
+      <link>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</link>
+      <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</guid>
+      <description>The Ricoh GR is an excellent camera. A camera which has managed to displace all my former dalliances due to it&amp;rsquo;s small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
+On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious when you need to go through every.</description>
+    </item>
+    
+    <item>
+      <title>Google Photos vs Flickr on retina screens</title>
+      <link>https://jamiecollinson.com/blog/google-photos-vs-flickr-retina/</link>
+      <pubDate>Sun, 29 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jamiecollinson.com/blog/google-photos-vs-flickr-retina/</guid>
+      <description>Update: As of Autumn 2016 this is fixed - way to go Google photos people!
+Like many I was excited at the launch of the new Google Photos. The user interface is excellent, they offer unlimited storage - albeit with some compression - and I&amp;rsquo;m generally a big fan of Google products and well integrated into the ecosystem.
+I was curious to see if I could notice the effects of the &amp;ldquo;high quality&amp;rdquo; (aka &amp;ldquo;free storage&amp;rdquo;) compression option so uploaded a few new pics to test.</description>
+    </item>
+    
+    <item>
+      <title>A mathematician, a physicist and an engineer...</title>
+      <link>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</link>
+      <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</guid>
+      <description>A mathematician, a physicist and an engineer are all staying in the same hotel for a conference.
+The engineer wakes up in the middle of the night to find the end of his bed is on fire. He grabs the fire extinguisher, points it at the fire and sprays it until the fire is safely extinguished. He goes back to sleep content that he&amp;rsquo;s solved the problem.
+The physicist wakes up in the middle of the night to find the end of his bed is on fire.</description>
+    </item>
+    
+  </channel>
+</rss>
