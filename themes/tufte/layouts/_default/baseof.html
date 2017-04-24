@@ -17,6 +17,8 @@
 
             {{ block "main" . }}{{ end }}
 
+            {{ partial "footer.html" . }}
+
         </article>
 
         {{ template "_internal/google_analytics_async.html" . }}
