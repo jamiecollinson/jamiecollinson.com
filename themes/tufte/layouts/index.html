@@ -3,17 +3,17 @@
 <p class="subtitle">I'm Jamie. I build things with open web technologies.</p>
 
 <section>
-  {{ .Content }}
+    {{ .Content }} {{ partial "social.html" }}
 </section>
 
 <section>
     <h2>Latest posts</h2>
-        {{ range .Data.Pages }}
-        <p>
-            <a href="{{ .Permalink }}">
+    {{ range .Data.Pages }}
+    <p>
+        <a href="{{ .Permalink }}">
                 {{ .Title }}
             </a>
-        </p>
-        {{ end }}
+    </p>
+    {{ end }}
 </section>
 {{ end }}

@@ -1,4 +1,5 @@
 <section>
     <hr>
     <p><strong><a href="/">Jamie Collinson</a></strong> lives and works in Cambridge, (<em>sometimes</em>) building useful things.</p>
+    {{ if not $.IsHome }} {{ partial "social.html" }} {{ end }}
 </section>

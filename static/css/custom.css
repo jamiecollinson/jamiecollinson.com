@@ -1,88 +1,10 @@
-.fill-height {
-    height: 100vh;
-    overflow: hidden;
-}
-
-.container {
-    max-width: 840px;
-}
-
-.next {
-    position: relative;
-    bottom: 50px;
-}
-
-.back {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    z-index: 9999;
-}
-
-@media (max-width: 1024px) {
-    .back {
-        color: rgba(0,0,0,.87) !important;
-    }
-}
-
-.post {
-    padding-top: 5vh;
-}
-.post img {
-    max-width: 100%;
-    border-radius: 2px;
-}
-
+/* Cursor blink */
 @keyframes blinker { to { opacity: 0; } }
 .cursor {
     animation: blinker 0.6s cubic-bezier(.5, 0, 1, 1) infinite alternate;
 }
 
-.home .phone > .inner {
-    padding: 5px;
-    height: 40vh;
-    width: 30vh;
-}
-
-.phone > .inner, .phone:before, .phone:after {
-		display: block;
-		border: solid 2px rgba(255, 255, 255, 0.5);
-}
-
-.phone > .inner {
-		position: relative;
-}
-
-.phone > .inner:before, .phone > .inner:after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		margin-left: -1em;
-		width: 2em;
-		height: 0.25em;
-		border-radius: 0.5em;
-		background: rgba(255, 255, 255, 0.5);
-}
-
-.phone > .inner:before {
-		top: -1.375em;
-}
-
-.phone > .inner:after {
-		bottom: -1.375em;
-}
-
-.phone:before, .phone:after {
-		content: '';
-		height: 2.5em;
-}
-
-.phone:before {
-		border-radius: 1em 1em 0 0;
-		border-bottom: 0;
-}
-
-.phone:after {
-		border-radius: 0 0 1em 1em;
-		border-top: 0;
+.social-icons a {
+    background: none;
+    color: #333;
 }

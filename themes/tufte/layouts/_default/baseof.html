@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	      <title>{{ if .IsPage }}{{ .Title }} &#8211; {{ end }}{{ .Site.Title }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="/css/tufte-css/tufte.css">
-        <link rel="stylesheet" href="/css/custom.css">
+    <title>{{ if .IsPage }}{{ .Title }} &#8211; {{ end }}{{ .Site.Title }}</title>
 
-    </head>
+    <link rel="stylesheet" href="/css/tufte-css/tufte.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <script src="https://use.fontawesome.com/0f8027ad69.js"></script>
+</head>
 
-    <body>
+<body>
 
-        <article>
+    <article>
 
-            {{ block "main" . }}{{ end }}
+        {{ block "main" . }}{{ end }} {{ partial "footer.html" . }}
 
-            {{ partial "footer.html" . }}
+    </article>
 
-        </article>
+    {{ template "_internal/google_analytics_async.html" . }}
 
-        {{ template "_internal/google_analytics_async.html" . }}
-
-    </body>
+</body>
 
 </html>

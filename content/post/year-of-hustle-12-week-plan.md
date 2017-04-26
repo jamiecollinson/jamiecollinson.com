@@ -6,7 +6,7 @@ title: 12 Week Plan
 
 *This is part of my continuing series on following Amy Hoy's Year of Hustle methodology for creating your first product. You can [follow along by email](http://eepurl.com/cwP9tz) or see [all my posts on the subject](/).*
 
-[Last time](/blog/my-year-of-hustle) I talked about overall goals. This time I'd like to put down a more extensive plan. More detailed for the next few weeks, with less detail as the cone of uncertainty widens. Note for anyone familiar with Amy's methodology I've cheated and added week 0, and the remaining weeks plans are straight out of Year of Hustle. If you're looking to get a project started I highly recommnend taking a look.
+[Last time](/blog/my-year-of-hustle) I talked about overall goals. This time I'd like to put down a more extensive plan. More detailed for the next few weeks{{< sidenote "For anyone familiar with Amy's methodology I've cheated and added week 0, and the remaining weeks plans are straight out of Year of Hustle. If you're looking to get a project started I highly recommnend taking a look." />}}, with less detail as the cone of uncertainty widens.
 
 # Week 0
 
