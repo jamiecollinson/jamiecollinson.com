@@ -118,7 +118,8 @@ user	0m1.518s
 sys	0m0.060s
 ```
 
-Thus armed I was hoping for a similar order-of-magnitude speed from golang, i.e. an approximately 10x speed up over python. 
+Thus armed I was hoping for a similar order-of-magnitude speed from golang, i.e. an approximately 10x increase in speed over python. I'm not so familiar with nim's performance characteristics, but a quick bit of searching{{% sidenote %}}[this comparison](https://github.com/kostya/benchmarks) was incredibly helpful{{% /sidenote %}} showed I should expect nim to be perhaps 2x faster than golang.
+
 
 ```
 package main
@@ -132,7 +133,25 @@ import (
 )
 
 func main() {
-	file, err := os.Open("googlebooks-eng-all-1gram-20120701-0.tsv")
+	if len(os.Args) < 4 {
+		fmt.Printf("usage: %s filename keyfield valuefield\n", os.Args[0])
+		return
+	}
+
+	fileName := os.Args[1]
+
+	keyField, err := strconv.Atoi(os.Args[2])
+	if err != nil {
+		fmt.Println("keyfield must be an integer")
+		return
+	}
+
+	valueField, err := strconv.Atoi(os.Args[3])
+	if err != nil {
+		fmt.Println("valuefield must be an integer")
+	}
+
+	file, err := os.Open(fileName)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -154,8 +173,8 @@ func main() {
 			fmt.Println(err)
 			return
 		}
-		key := record[1]
-		valueAsString := record[2]
+		key := record[keyField]
+		valueAsString := record[valueField]
 		if value, err := strconv.Atoi(valueAsString); err == nil {
 			sumByKey[key] += value
 			if sumByKey[key] > sumByKey[largestKey] {
@@ -165,10 +184,14 @@ func main() {
 	}
 	fmt.Println(largestKey, sumByKey[largestKey])
 }
+
 ```
 
 ``` bash
-$ time ./csvParser
+$ go version
+go version go1.8 darwin/amd64
+$ go build csvParser.go
+$ time ./csvParser googlebooks-eng-all-1gram-20120701-0.tsv 1 2
 2006 22569013
 
 real	0m7.651s
@@ -176,4 +199,73 @@ user	0m7.614s
 sys	0m0.108s
 ```
 
-Only 2.4x python?
+Only 2.4x python and 5x slower than nim? Not exactly what I'd been hoping for while congratulating myself that I'd be able to write faster terminal tools.
+
+```
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"io"
+	"os"
+	"strconv"
+	"strings"
+)
+
+func main() {
+	if len(os.Args) < 4 {
+		fmt.Printf("usage: %s filename keyfield valuefield\n", os.Args[0])
+		return
+	}
+
+	fileName := os.Args[1]
+
+	keyField, err := strconv.Atoi(os.Args[2])
+	if err != nil {
+		fmt.Println("keyfield must be an integer")
+		return
+	}
+
+	valueField, err := strconv.Atoi(os.Args[3])
+	if err != nil {
+		fmt.Println("valuefield must be an integer")
+	}
+
+	file, err := os.Open(fileName)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+
+	reader := bufio.NewReader(file)
+
+	sumByKey := map[string]int{}
+	var largestKey string
+
+	for {
+		line, _, err := reader.ReadLine()
+		if err == io.EOF {
+			break
+		} else if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		fields := strings.Split(string(line), "\t")
+		key := fields[keyField]
+		valueAsString := fields[valueField]
+		if value, err := strconv.Atoi(valueAsString); err == nil {
+			sumByKey[key] += value
+			if sumByKey[key] > sumByKey[largestKey] {
+				largestKey = key
+			}
+		}
+
+	}
+	fmt.Println(largestKey, sumByKey[largestKey])
+}
+```
+
+As ever performance is comparitive, and depends on your exact use. I expected this to be an easy and convincing victory for golang over python, but it took some tweaking to get a solid win. I didn't really know what to expect on nim vs go{{< sidenote >}}I had mentally categorised them both as "near C speed", but without much nuance in comparison.{{< /sidenote >}} but was left impressed with nim's performance and - speaking as a pythonista - elegance.
