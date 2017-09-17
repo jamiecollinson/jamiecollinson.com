@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Jamie Collinson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 May 2017 20:15:50 +0100</lastBuildDate>
     
 	<atom:link href="https://jamiecollinson.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Faster Command Line Tools in Golang?</title>
+      <link>https://jamiecollinson.com/blog/faster-command-line-tools-in-golang/</link>
+      <pubDate>Wed, 31 May 2017 20:15:50 +0100</pubDate>
+      
+      <guid>https://jamiecollinson.com/blog/faster-command-line-tools-in-golang/</guid>
+      <description>Having read the post faster command line tools in nim by Euan Torano Itself a inspired by faster command line tools in D by Jon Degenhardt  , I wanted to see how Go would compare. I am by no means a golang expert, but have used it in production on a couple of reasonable sized projects, and have recently been enjoying it as a language for creating small terminal applications.</description>
+    </item>
     
     <item>
       <title>12 Week Plan</title>

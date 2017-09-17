@@ -1,13 +1,14 @@
+
 +++
 date = "2017-05-31T20:15:50+01:00"
 title = "Faster Command Line Tools in Golang?"
 +++
 
-Having read the post [faster command line tools in nim](https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html) by Euan Torano{{% sidenote %}}Itself a inspired by [faster command line tools in D](http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/) by Jon Degenhardt{{% /sidenote %}}, I was interested to see how Go would compare. I am by no means a golang expert, but have used it in production on a couple of reasonable sized projects, and have recently been enjoying it as a language for creating small terminal applications.
+Having read the post [faster command line tools in nim](https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html) by Euan Torano{{% sidenote %}}Itself a inspired by [faster command line tools in D](http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/) by Jon Degenhardt{{% /sidenote %}}, I wanted to see how Go would compare. I am by no means a golang expert, but have used it in production on a couple of reasonable sized projects, and have recently been enjoying it as a language for creating small terminal applications.
 
-Lest I be accused of burying the lede, replicating the functionality in go was very pleasant but I'd hoped for better performance.
+Lest I appear to bury the lede, replicating the functionality in go was pleasant but I'd hoped for better performance.
 
-The task being considered is to take a csv file, a column number to sum by and another to sum, and to return the label and total of the largest value. The following is the original description, with a [40Mb ngram file from Google Books](https://storage.googleapis.com/books/ngrams/books/googlebooks-eng-all-1gram-20120701-0.gz) serving as a test.
+The task is to take a csv file, a column number to sum by and another to sum, and to return the label and total of the largest value. The following is the original description, with a [40Mb ngram file from Google Books](https://storage.googleapis.com/books/ngrams/books/googlebooks-eng-all-1gram-20120701-0.gz) serving as a test.
 
 > It’s a common programming task: Take a data file with fields separated by a delimiter (comma, tab, etc), and run a mathematical calculation involving several of the fields. Often these programs are one-time use scripts, other times they have longer shelf life. Speed is of course appreciated when the program is used more than a few times on large files.
 
@@ -268,4 +269,15 @@ func main() {
 }
 ```
 
-As ever performance is comparitive, and depends on your exact use. I expected this to be an easy and convincing victory for golang over python, but it took some tweaking to get a solid win. I didn't really know what to expect on nim vs go{{< sidenote >}}I had mentally categorised them both as "near C speed", but without much nuance in comparison.{{< /sidenote >}} but was left impressed with nim's performance and - speaking as a pythonista - elegance.
+``` bash
+$ time ./csvParser2 googlebooks-eng-all-1gram-20120701-0.tsv 1 2
+2006 22569013
+
+real	0m4.133s
+user	0m4.102s
+sys	0m0.109s
+```
+
+4.4x faster than python and 2.6x slower than nim I can live with.
+
+As ever performance is comparative, and depends on your exact use. I expected this to be an easy and convincing victory for golang over python, but it took some tweaking to get a solid win. I didn't really know what to expect on nim vs go{{< sidenote >}}I had mentally categorised them both as "near C speed", but without much nuance in comparison.{{< /sidenote >}} but left impressed with nim's performance and - speaking as a pythonista - elegance.

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Faster Command Line Tools in Golang? &#8211; Jamie Collinson</title>
+
+    <link rel="stylesheet" href="/css/tufte-css/tufte.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <script src="https://use.fontawesome.com/0f8027ad69.js"></script>
+    <link rel="stylesheet" href="/css/dracula.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+
+    <article>
+
+        
+  <h1>Faster Command Line Tools in Golang?</h1>
+
+  <section>
+    <p>Having read the post <a href="https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html">faster command line tools in nim</a> by Euan Torano<label for='sidenote-3' class="margin-toggle sidenote-number"></label>
+<input type="checkbox" class="margin-toggle" id='sidenote-3'>
+<span class="sidenote">
+    
+      Itself a inspired by <a href="http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/">faster command line tools in D</a> by Jon Degenhardt
+    
+</span>
+, I wanted to see how Go would compare. I am by no means a golang expert, but have used it in production on a couple of reasonable sized projects, and have recently been enjoying it as a language for creating small terminal applications.</p>
+
+<p>Lest I appear to bury the lede, replicating the functionality in go was pleasant but I&rsquo;d hoped for better performance.</p>
+
+<p>The task is to take a csv file, a column number to sum by and another to sum, and to return the label and total of the largest value. The following is the original description, with a <a href="https://storage.googleapis.com/books/ngrams/books/googlebooks-eng-all-1gram-20120701-0.gz">40Mb ngram file from Google Books</a> serving as a test.</p>
+
+<blockquote>
+<p>It’s a common programming task: Take a data file with fields separated by a delimiter (comma, tab, etc), and run a mathematical calculation involving several of the fields. Often these programs are one-time use scripts, other times they have longer shelf life. Speed is of course appreciated when the program is used more than a few times on large files.</p>
+
+<p>The specific exercise we’ll explore starts with files having keys in one field, integer values in another. The task is to sum the values for each key and print the key with the largest sum.</p>
+
+<p>With the first field as key, second field as value, the key with the max sum is B, with a total of 13.</p>
+
+<p>Fields are delimited by a TAB, and there may be any number of fields on a line. The file name and field numbers of the key and value are passed as command line arguments.</p>
+</blockquote>
+
+<p>Let&rsquo;s start by looking at the original python script:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python
+
+import argparse
+import fileinput
+import collections
+
+def main():
+    parser = argparse.ArgumentParser(description='Sum a column.')
+    parser.add_argument('file', type=open)
+    parser.add_argument('key_field_index', type=int)
+    parser.add_argument('value_field_index', type=int)
+
+    args = parser.parse_args()
+    delim = '\t'
+
+    max_field_index = max(args.key_field_index, args.value_field_index)
+    sum_by_key = collections.Counter()
+
+    for line in args.file:
+        fields = line.rstrip('\n').split(delim)
+        if max_field_index &lt; len(fields):
+            sum_by_key[fields[args.key_field_index]] += int(fields[args.value_field_index])
+
+    max_entry = sum_by_key.most_common(1)
+    if len(max_entry) == 0:
+        print 'No entries'
+    else:
+        print 'max_key:', max_entry[0][0], 'sum:', max_entry[0][1]
+
+if __name__ == '__main__':
+    main()
+
+</code></pre>
+
+<p>On my 2016 Macbook (Core M7) performance is okay, but doesn&rsquo;t quite have that snappy &ldquo;compiled language&rdquo; feel:</p>
+
+<pre><code class="language-bash">$ time python2 csvParsePython.py googlebooks-eng-all-1gram-20120701-0.tsv 1 2
+max_key: 2006 sum: 22569013
+
+real	0m18.239s
+user	0m17.898s
+sys	0m0.172s
+</code></pre>
+
+<p>Euan&rsquo;s nim code is appreciably faster. He finds this script 12% faster than LLVM optimized D, and 1250% faster than python:</p>
+
+<pre><code>import os, strutils, streams, tables, parsecsv
+
+const
+  Delim = '\t'
+
+proc main() =
+  if paramCount() &lt; 3:
+    quit(&quot;synopsis: &quot; &amp; getAppFilename() &amp; &quot; filename keyfield valuefield&quot;)
+
+  let
+    filename = paramStr(1)
+    keyFieldIndex = parseInt(paramStr(2))
+    valueFieldIndex = parseInt(paramStr(3))
+    maxFieldIndex = max(keyFieldIndex, valueFieldIndex)
+
+  var
+    sumByKey = newCountTable[string]()
+    file = newFileStream(filename, fmRead)
+  if file == nil:
+    quit(&quot;cannot open the file&quot; &amp; filename)
+
+  defer: file.close()
+
+  var csv: CsvParser
+  open(csv, file, filename, separator=Delim)
+
+  while csv.readRow():
+    if len(csv.row) &gt; maxFieldIndex - 1:
+      sumByKey.inc(csv.row[keyFieldIndex], parseInt(csv.row[valueFieldIndex]))
+
+  if sumByKey.len() == 0:
+    echo &quot;No entries&quot;
+  else:
+    let largest = sumByKey.largest()
+    echo &quot;max_key: &quot;, largest[0], &quot; sum: &quot;, largest[1]
+
+main()
+</code></pre>
+
+<p>I find a similar (1150%) speed improvement in nim over python:</p>
+
+<pre><code class="language-bash">$ time ./csvParseNim googlebooks-eng-all-1gram-20120701-0.tsv 1 2
+max_key: 2006 sum: 22569013
+
+real	0m1.586s
+user	0m1.518s
+sys	0m0.060s
+</code></pre>
+
+<p>Thus armed I was hoping for a similar order-of-magnitude speed from golang, i.e. an approximately 10x increase in speed over python. I&rsquo;m not so familiar with nim&rsquo;s performance characteristics, but a quick bit of searching<label for='sidenote-1' class="margin-toggle sidenote-number"></label>
+<input type="checkbox" class="margin-toggle" id='sidenote-1'>
+<span class="sidenote">
+    
+      <a href="https://github.com/kostya/benchmarks">this comparison</a> was incredibly helpful
+    
+</span>
+ showed I should expect nim to be perhaps 2x faster than golang.</p>
+
+<pre><code>package main
+
+import (
+	&quot;encoding/csv&quot;
+	&quot;fmt&quot;
+	&quot;io&quot;
+	&quot;os&quot;
+	&quot;strconv&quot;
+)
+
+func main() {
+	if len(os.Args) &lt; 4 {
+		fmt.Printf(&quot;usage: %s filename keyfield valuefield\n&quot;, os.Args[0])
+		return
+	}
+
+	fileName := os.Args[1]
+
+	keyField, err := strconv.Atoi(os.Args[2])
+	if err != nil {
+		fmt.Println(&quot;keyfield must be an integer&quot;)
+		return
+	}
+
+	valueField, err := strconv.Atoi(os.Args[3])
+	if err != nil {
+		fmt.Println(&quot;valuefield must be an integer&quot;)
+	}
+
+	file, err := os.Open(fileName)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+
+	reader := csv.NewReader(file)
+	reader.Comma = '\t'
+	reader.LazyQuotes = true
+
+	sumByKey := map[string]int{}
+	var largestKey string
+
+	for {
+		record, err := reader.Read()
+		if err == io.EOF {
+			break
+		} else if err != nil {
+			fmt.Println(err)
+			return
+		}
+		key := record[keyField]
+		valueAsString := record[valueField]
+		if value, err := strconv.Atoi(valueAsString); err == nil {
+			sumByKey[key] += value
+			if sumByKey[key] &gt; sumByKey[largestKey] {
+				largestKey = key
+			}
+		}
+	}
+	fmt.Println(largestKey, sumByKey[largestKey])
+}
+
+</code></pre>
+
+<pre><code class="language-bash">$ go version
+go version go1.8 darwin/amd64
+$ go build csvParser.go
+$ time ./csvParser googlebooks-eng-all-1gram-20120701-0.tsv 1 2
+2006 22569013
+
+real	0m7.651s
+user	0m7.614s
+sys	0m0.108s
+</code></pre>
+
+<p>Only 2.4x python and 5x slower than nim? Not exactly what I&rsquo;d been hoping for while congratulating myself that I&rsquo;d be able to write faster terminal tools.</p>
+
+<pre><code>package main
+
+import (
+	&quot;bufio&quot;
+	&quot;fmt&quot;
+	&quot;io&quot;
+	&quot;os&quot;
+	&quot;strconv&quot;
+	&quot;strings&quot;
+)
+
+func main() {
+	if len(os.Args) &lt; 4 {
+		fmt.Printf(&quot;usage: %s filename keyfield valuefield\n&quot;, os.Args[0])
+		return
+	}
+
+	fileName := os.Args[1]
+
+	keyField, err := strconv.Atoi(os.Args[2])
+	if err != nil {
+		fmt.Println(&quot;keyfield must be an integer&quot;)
+		return
+	}
+
+	valueField, err := strconv.Atoi(os.Args[3])
+	if err != nil {
+		fmt.Println(&quot;valuefield must be an integer&quot;)
+	}
+
+	file, err := os.Open(fileName)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+
+	reader := bufio.NewReader(file)
+
+	sumByKey := map[string]int{}
+	var largestKey string
+
+	for {
+		line, _, err := reader.ReadLine()
+		if err == io.EOF {
+			break
+		} else if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		fields := strings.Split(string(line), &quot;\t&quot;)
+		key := fields[keyField]
+		valueAsString := fields[valueField]
+		if value, err := strconv.Atoi(valueAsString); err == nil {
+			sumByKey[key] += value
+			if sumByKey[key] &gt; sumByKey[largestKey] {
+				largestKey = key
+			}
+		}
+
+	}
+	fmt.Println(largestKey, sumByKey[largestKey])
+}
+</code></pre>
+
+<pre><code class="language-bash">$ time ./csvParser2 googlebooks-eng-all-1gram-20120701-0.tsv 1 2
+2006 22569013
+
+real	0m4.133s
+user	0m4.102s
+sys	0m0.109s
+</code></pre>
+
+<p>4.4x faster than python and 2.6x slower than nim I can live with.</p>
+
+<p>As ever performance is comparative, and depends on your exact use. I expected this to be an easy and convincing victory for golang over python, but it took some tweaking to get a solid win. I didn&rsquo;t really know what to expect on nim vs go<label for='sidenote-2' class="margin-toggle sidenote-number"></label>
+<input type="checkbox" class="margin-toggle" id='sidenote-2'>
+<span class="sidenote">
+    
+      I had mentally categorised them both as "near C speed", but without much nuance in comparison.
+    
+</span>
+ but left impressed with nim&rsquo;s performance and - speaking as a pythonista - elegance.</p>
+
+  </section>
+ <section>
+    <hr>
+    <p><strong><a href="/">Jamie Collinson</a></strong> lives and works in Cambridge, (<em>sometimes</em>) building useful things.</p>
+     <p class="social-icons">
+    <a href="mailto:jamiecollinson@gmail.com">
+        <i class="fa fa-envelope-o fa-lg"></i>
+    </a>
+    <a href="https://github.com/jamiecollinson/">
+        <i class="fa fa-github fa-lg"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/jamiecollinson/">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+    </a>
+    <a href="https://twitter.com/jamiecollinson">
+        <i class="fa fa-twitter-square fa-lg"></i>
+    </a>
+</p> 
+</section>
+
+    </article>
+
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-3143424-7', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+
+</html>

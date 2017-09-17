@@ -8,3 +8,13 @@
     background: none;
     color: #333;
 }
+
+pre {
+    width: 90%;
+}
+
+@media (max-width: 760px) {
+    pre {
+	width: 100%;
+    }
+}
