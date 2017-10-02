@@ -4,7 +4,7 @@ date = "2017-05-31T20:15:50+01:00"
 title = "Faster Command Line Tools in Golang?"
 +++
 
-Having read the post [faster command line tools in nim](https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html) by Euan Torano{{% sidenote %}}Itself a inspired by [faster command line tools in D](http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/) by Jon Degenhardt{{% /sidenote %}}, I wanted to see how Go would compare. I am by no means a golang expert, but have used it in production on a couple of reasonable sized projects, and have recently been enjoying it as a language for creating small terminal applications.
+Having read the post [faster command line tools in nim](https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html) by Euan Torano{{% sidenote %}}Itself a inspired by [faster command line tools in D](http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/) by Jon Degenhardt{{% /sidenote %}}, I wanted to see how Go would compare. I am no golang expert, but have used it in production on a couple of reasonably sized projects, and have recently been enjoying it as a language for creating small terminal applications.
 
 Lest I appear to bury the lede, replicating the functionality in go was pleasant but I'd hoped for better performance.
 

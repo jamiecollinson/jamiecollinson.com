@@ -1,0 +1,28 @@
+---
+published: true
+title: Blogging with org mode
+---
+
+Can there be anything more satisfying than blogging in emacs, the world's greatest text editor?
+
+** This is a heading
+
+There are many things to like about a heading such as this. For a start it's beautifully presented. Also it is older than I am.
+
+#+BEGIN_SRC js 
+  var test = "whatever";
+#+END_SRC
+
+#+BEGIN_SRC python
+  def my_function(y):
+      """This is a python function"""
+      return [x for x in y if y % 2 == 0]
+#+END_SRC
+
+Now I wonder if I'd like to go to the pub, it has been a tiring afternoon afterall.
+
+And again I'd like to go to the pub, such is the pain of modern life.
+
+** This is a subheading
+
+Headings need subheadings too.

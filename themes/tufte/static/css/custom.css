@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,500,500i');
+
+html {
+    font-size: 15px;
+    line-height: 1.8rem;
+}
+
+body {
+    margin:40px auto;
+    max-width:650px;
+    color:#444;
+    padding:0 40px;
+    background-color: #fdf6e3;
+    color: #657b83;
+    font-family: 'Cormorant Garamond';
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 3.2rem;
+    line-height: 1;
+    margin-top: 4rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 2.1rem;
+}
+
+p {
+    font-size: 1.4rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+a:link {
+    text-shadow: none;
+}
+
+/* Cursor blink */
+@keyframes blinker { to { opacity: 0; } }
+.blink {
+    animation: blinker 0.6s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+}
+
+.social-icons a {
+    background: none;
+    color: #657b83;
+    text-decoration: none;
+}
