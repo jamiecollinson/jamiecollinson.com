@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://jamiecollinson.com/blog/faster-command-line-tools-in-golang/</loc>
+    <lastmod>2017-05-31T20:15:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/blog/year-of-hustle-12-week-plan/</loc>
+    <lastmod>2017-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/blog/my-year-of-hustle/</loc>
+    <lastmod>2017-01-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</loc>
+    <lastmod>2016-05-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/blog/google-photos-vs-flickr-retina/</loc>
+    <lastmod>2016-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</loc>
+    <lastmod>2016-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/</loc>
+    <lastmod>2017-05-31T20:15:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/blog/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/post/</loc>
+    <lastmod>2017-05-31T20:15:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

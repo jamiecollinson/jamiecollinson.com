@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{ if .IsPage }}{{ .Title }} &#8211; {{ end }}{{ .Site.Title }}</title>
+
+	<link rel="stylesheet" href="/css/styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	{{ partial "header.html" }}
+</head>
+
+<body>
+    
+    <div class="container">
+	
+	{{ block "top" . }}{{ end }}
+
+	<article class="js-toc-target">
+
+            {{ block "main" . }}{{ end }}
+
+	</article>
+
+	{{ block "footer" . }}{{ end }}
+
+    </div>
+
+    {{ template "_internal/google_analytics_async.html" . }}
+
+</body>
+
+<script>
+ var tocDomRect = document.querySelector('.js-toc').getBoundingClientRect();
+ tocbot.init({
+     // Where to render the table of contents.
+     tocSelector: '.js-toc',
+     // Where to grab the headings to build the table of contents.
+     contentSelector: '.js-toc-target',
+     // Which headings to grab inside of the contentSelector element.
+     headingSelector: 'h1, h2, h3',
+     positionFixedSelector: '.js-toc',
+     fixedSidebarOffset: tocDomRect.top - 50,
+ });
+</script>
+
+<script>
+ var post = document.querySelector('body'),
+     markers = post.querySelectorAll('.footnote-ref'),
+     footnotes = post.querySelectorAll('.footnotes ol li');
+
+ footnotes.forEach(function(footnote, i) {
+     var marker = markers[i];
+     marker.insertAdjacentHTML(
+	 'afterend',
+	 '<aside class="post-sidenote" role="complementary">'
+         + footnote.innerHTML
+         + '</aside>'
+     );
+ });
+</script>
+
+</html>

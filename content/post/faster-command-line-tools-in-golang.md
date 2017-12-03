@@ -4,7 +4,7 @@ date = "2017-05-31T20:15:50+01:00"
 title = "Faster Command Line Tools in Golang?"
 +++
 
-Having read the post [faster command line tools in nim](https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html) by Euan Torano{{% sidenote %}}Itself a inspired by [faster command line tools in D](http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/) by Jon Degenhardt{{% /sidenote %}}, I wanted to see how Go would compare. I am no golang expert, but have used it in production on a couple of reasonably sized projects, and have recently been enjoying it as a language for creating small terminal applications.
+Having read the post [faster command line tools in nim](https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html) by Euan Torano[^1], I wanted to see how Go would compare. I am no golang expert, but have used it in production on a couple of reasonably sized projects, and have recently been enjoying it as a language for creating small terminal applications.
 
 Lest I appear to bury the lede, replicating the functionality in go was pleasant but I'd hoped for better performance.
 
@@ -119,7 +119,7 @@ user	0m1.518s
 sys	0m0.060s
 ```
 
-Thus armed I was hoping for a similar order-of-magnitude speed from golang, i.e. an approximately 10x increase in speed over python. I'm not so familiar with nim's performance characteristics, but a quick bit of searching{{% sidenote %}}[this comparison](https://github.com/kostya/benchmarks) was incredibly helpful{{% /sidenote %}} showed I should expect nim to be perhaps 2x faster than golang.
+Thus armed I was hoping for a similar order-of-magnitude speed from golang, i.e. an approximately 10x increase in speed over python. I'm not so familiar with nim's performance characteristics, but a quick bit of searching[^2] showed I should expect nim to be perhaps 2x faster than golang.
 
 
 ```
@@ -280,4 +280,10 @@ sys	0m0.109s
 
 4.4x faster than python and 2.6x slower than nim I can live with.
 
-As ever performance is comparative, and depends on your exact use. I expected this to be an easy and convincing victory for golang over python, but it took some tweaking to get a solid win. I didn't really know what to expect on nim vs go{{< sidenote >}}I had mentally categorised them both as "near C speed", but without much nuance in comparison.{{< /sidenote >}} but left impressed with nim's performance and - speaking as a pythonista - elegance.
+As ever performance is comparative, and depends on your exact use. I expected this to be an easy and convincing victory for golang over python, but it took some tweaking to get a solid win. I didn't really know what to expect on nim vs go[^3] but left impressed with nim's performance and - speaking as a pythonista - elegance.
+
+[^1]: Itself a inspired by [faster command line tools in D](http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/) by Jon Degenhardt
+
+[^2]: [this comparison](https://github.com/kostya/benchmarks) was incredibly helpful
+
+[^3]: I had mentally categorised them both as "near C speed", but without much nuance in comparison.

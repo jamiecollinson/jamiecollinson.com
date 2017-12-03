@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,500,500i');
+@import url('https://fonts.googleapis.com/css?family=Cardo:400,400i,700');
 
 html {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8rem;
 }
 
@@ -12,21 +12,22 @@ body {
     padding:0 40px;
     background-color: #fdf6e3;
     color: #657b83;
-    font-family: 'Cormorant Garamond';
-    font-weight: 500;
+    font-family: 'Cardo';
+    font-weight: normal;
 }
 
 h1 {
     font-size: 3.2rem;
     line-height: 1;
     margin-top: 4rem;
+    font-weight: 100;
 }
 
 h2 {
     font-size: 2.2rem;
-    font-weight: 400;
-    font-style: italic;
     margin-top: 2.1rem;
+    font-weight: normal;
+    font-style: italic;
 }
 
 p {
@@ -39,6 +40,11 @@ img {
 
 a:link {
     text-shadow: none;
+}
+
+pre {
+    border: 1px solid #657b83;
+    border-radius: 5px;
 }
 
 /* Cursor blink */

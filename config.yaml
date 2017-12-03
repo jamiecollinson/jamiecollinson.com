@@ -1,5 +1,5 @@
 baseURL: https://jamiecollinson.com
-theme: tufte
+theme: jc
 disablePathToLower: true
 languageCode: en-us
 title: Jamie Collinson
@@ -7,3 +7,7 @@ googleAnalytics: UA-3143424-7
 permalinks:
   post: /blog/:filename
 publishDir: docs
+pygmentsCodeFences: true
+pygmentsCodefencesGuessSyntax: true
+pygmentsStyle: friendly
+FootnoteReturnLinkContents: "<sup>↩</sup>"

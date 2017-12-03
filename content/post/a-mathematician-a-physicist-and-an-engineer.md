@@ -1,6 +1,5 @@
 ---
 date: 2016-05-28T00:00:00Z
-published: true
 title: A mathematician, a physicist and an engineer...
 ---
 

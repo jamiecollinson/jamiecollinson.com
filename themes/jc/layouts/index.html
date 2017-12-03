@@ -1,0 +1,20 @@
+{{ define "main" }}
+<span id="homepage-logo">>_ <span class="blink">|</span></span>
+<h1>I'm Jamie. I build things with open source software.</h1>
+
+<section>
+    {{ .Content }}
+    {{ partial "social.html" }}
+</section>
+
+<section>
+    <h2>Latest posts</h2>
+    {{ range .Data.Pages }}
+	<p>
+            <a href="{{ .Permalink }}">
+		{{ .Title }}
+            </a>
+	</p>
+    {{ end }}
+</section>
+{{ end }}

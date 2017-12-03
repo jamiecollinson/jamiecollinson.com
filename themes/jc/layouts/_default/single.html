@@ -1,0 +1,17 @@
+{{ define "top" }}
+  {{ partial "nav.html" }}
+{{ end }}
+
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+<nav class="toc js-toc"></nav>
+
+<section class="post">
+    {{ .Content }}
+</section>
+{{ end }}
+
+{{ define "footer" }}
+    {{ partial "footer.html" }}
+{{ end }}
