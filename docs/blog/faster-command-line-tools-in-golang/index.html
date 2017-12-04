@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Faster Command Line Tools in Golang? &#8211; Jamie Collinson</title>
+
+	<link rel="stylesheet" href="/css/styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	
+</head>
+
+<body>
+    
+    <div class="container">
+	
+	
+  <nav class="navbar-top">
+  <a id="nav-logo" href="/">>_ <span class="blink">|</span></a>
+</nav>
+
+
+
+	<article class="js-toc-target">
+
+            
+<h1>Faster Command Line Tools in Golang?</h1>
+
+<nav class="toc js-toc"></nav>
+
+<section class="post">
+    <p>Having read the post <a href="https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html">faster command line tools in nim</a> by Euan Torano<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>, I wanted to see how Go would compare. I am no golang expert, but have used it in production on a couple of reasonably sized projects, and have recently been enjoying it as a language for creating small terminal applications.</p>
+
+<p>Replicating the functionality in go was pleasant but I&rsquo;d hoped for better performance.</p>
+
+<p>The task is to take a csv file, a column number to sum by and another to sum, and to return the label and total of the largest value. The following is the original description, with a <a href="https://storage.googleapis.com/books/ngrams/books/googlebooks-eng-all-1gram-20120701-0.gz">40Mb ngram file from Google Books</a> serving as a test.</p>
+
+<blockquote>
+<p>It’s a common programming task: Take a data file with fields separated by a delimiter (comma, tab, etc), and run a mathematical calculation involving several of the fields. Often these programs are one-time use scripts, other times they have longer shelf life. Speed is of course appreciated when the program is used more than a few times on large files.</p>
+
+<p>The specific exercise we’ll explore starts with files having keys in one field, integer values in another. The task is to sum the values for each key and print the key with the largest sum.</p>
+
+<p>With the first field as key, second field as value, the key with the max sum is B, with a total of 13.</p>
+
+<p>Fields are delimited by a TAB, and there may be any number of fields on a line. The file name and field numbers of the key and value are passed as command line arguments.</p>
+</blockquote>
+
+<p>Let&rsquo;s start by looking at the original python script:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic">#!/usr/bin/env python</span>
+
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">argparse</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">fileinput</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">collections</span>
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">main</span>():
+    parser <span style="color:#666">=</span> argparse<span style="color:#666">.</span>ArgumentParser(description<span style="color:#666">=</span><span style="color:#4070a0"></span><span style="color:#4070a0">&#39;Sum a column.&#39;</span>)
+    parser<span style="color:#666">.</span>add_argument(<span style="color:#4070a0"></span><span style="color:#4070a0">&#39;file&#39;</span>, <span style="color:#007020">type</span><span style="color:#666">=</span><span style="color:#007020">open</span>)
+    parser<span style="color:#666">.</span>add_argument(<span style="color:#4070a0"></span><span style="color:#4070a0">&#39;key_field_index&#39;</span>, <span style="color:#007020">type</span><span style="color:#666">=</span><span style="color:#007020">int</span>)
+    parser<span style="color:#666">.</span>add_argument(<span style="color:#4070a0"></span><span style="color:#4070a0">&#39;value_field_index&#39;</span>, <span style="color:#007020">type</span><span style="color:#666">=</span><span style="color:#007020">int</span>)
+
+    args <span style="color:#666">=</span> parser<span style="color:#666">.</span>parse_args()
+    delim <span style="color:#666">=</span> <span style="color:#4070a0"></span><span style="color:#4070a0">&#39;</span><span style="color:#4070a0;font-weight:bold">\t</span><span style="color:#4070a0">&#39;</span>
+
+    max_field_index <span style="color:#666">=</span> <span style="color:#007020">max</span>(args<span style="color:#666">.</span>key_field_index, args<span style="color:#666">.</span>value_field_index)
+    sum_by_key <span style="color:#666">=</span> collections<span style="color:#666">.</span>Counter()
+
+    <span style="color:#007020;font-weight:bold">for</span> line <span style="color:#007020;font-weight:bold">in</span> args<span style="color:#666">.</span><span style="color:#007020">file</span>:
+        fields <span style="color:#666">=</span> line<span style="color:#666">.</span>rstrip(<span style="color:#4070a0"></span><span style="color:#4070a0">&#39;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span>)<span style="color:#666">.</span>split(delim)
+        <span style="color:#007020;font-weight:bold">if</span> max_field_index <span style="color:#666">&lt;</span> <span style="color:#007020">len</span>(fields):
+            sum_by_key[fields[args<span style="color:#666">.</span>key_field_index]] <span style="color:#666">+=</span> <span style="color:#007020">int</span>(fields[args<span style="color:#666">.</span>value_field_index])
+
+    max_entry <span style="color:#666">=</span> sum_by_key<span style="color:#666">.</span>most_common(<span style="color:#40a070">1</span>)
+    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020">len</span>(max_entry) <span style="color:#666">==</span> <span style="color:#40a070">0</span>:
+        <span style="color:#007020;font-weight:bold">print</span> <span style="color:#4070a0"></span><span style="color:#4070a0">&#39;No entries&#39;</span>
+    <span style="color:#007020;font-weight:bold">else</span>:
+        <span style="color:#007020;font-weight:bold">print</span> <span style="color:#4070a0"></span><span style="color:#4070a0">&#39;max_key:&#39;</span>, max_entry[<span style="color:#40a070">0</span>][<span style="color:#40a070">0</span>], <span style="color:#4070a0"></span><span style="color:#4070a0">&#39;sum:&#39;</span>, max_entry[<span style="color:#40a070">0</span>][<span style="color:#40a070">1</span>]
+
+<span style="color:#007020;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#4070a0"></span><span style="color:#4070a0">&#39;__main__&#39;</span>:
+    main()</code></pre></div>
+<p>On my 2016 Macbook (Core M7) performance is okay, but doesn&rsquo;t quite have that snappy &ldquo;compiled language&rdquo; feel:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#007020">time</span> python2 csvParsePython.py googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
+max_key: <span style="color:#40a070">2006</span> sum: <span style="color:#40a070">22569013</span>
+
+real	0m18.239s
+user	0m17.898s
+sys	0m0.172s</code></pre></div>
+<p>Euan&rsquo;s nim code is appreciably faster. He finds this script 12% faster than LLVM optimized D, and 1250% faster than python:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">import os, strutils, streams, tables, parsecsv
+
+const
+  Delim = &#39;\t&#39;
+
+proc main() =
+  if paramCount() &lt; 3:
+    quit(&#34;synopsis: &#34; &amp; getAppFilename() &amp; &#34; filename keyfield valuefield&#34;)
+
+  let
+    filename = paramStr(1)
+    keyFieldIndex = parseInt(paramStr(2))
+    valueFieldIndex = parseInt(paramStr(3))
+    maxFieldIndex = max(keyFieldIndex, valueFieldIndex)
+
+  var
+    sumByKey = newCountTable[string]()
+    file = newFileStream(filename, fmRead)
+  if file == nil:
+    quit(&#34;cannot open the file&#34; &amp; filename)
+
+  defer: file.close()
+
+  var csv: CsvParser
+  open(csv, file, filename, separator=Delim)
+
+  while csv.readRow():
+    if len(csv.row) &gt; maxFieldIndex - 1:
+      sumByKey.inc(csv.row[keyFieldIndex], parseInt(csv.row[valueFieldIndex]))
+
+  if sumByKey.len() == 0:
+    echo &#34;No entries&#34;
+  else:
+    let largest = sumByKey.largest()
+    echo &#34;max_key: &#34;, largest[0], &#34; sum: &#34;, largest[1]
+
+main()</pre></div>
+<p>I find a similar (1150%) speed improvement in nim over python:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#007020">time</span> ./csvParseNim googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
+max_key: <span style="color:#40a070">2006</span> sum: <span style="color:#40a070">22569013</span>
+
+real	0m1.586s
+user	0m1.518s
+sys	0m0.060s</code></pre></div>
+<p>Thus armed I was hoping for a similar order-of-magnitude speed from golang, i.e. an approximately 10x increase in speed over python. I&rsquo;m not so familiar with nim&rsquo;s performance characteristics, but a quick bit of searching<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup> showed I should expect nim to be perhaps 2x faster than golang.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#007020;font-weight:bold">package</span> main
+
+<span style="color:#007020;font-weight:bold">import</span> (
+	<span style="color:#4070a0">&#34;encoding/csv&#34;</span>
+	<span style="color:#4070a0">&#34;fmt&#34;</span>
+	<span style="color:#4070a0">&#34;io&#34;</span>
+	<span style="color:#4070a0">&#34;os&#34;</span>
+	<span style="color:#4070a0">&#34;strconv&#34;</span>
+)
+
+<span style="color:#007020;font-weight:bold">func</span> main() {
+	<span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020">len</span>(os.Args) &lt; <span style="color:#40a070">4</span> {
+		fmt.Printf(<span style="color:#4070a0">&#34;usage: %s filename keyfield valuefield\n&#34;</span>, os.Args[<span style="color:#40a070">0</span>])
+		<span style="color:#007020;font-weight:bold">return</span>
+	}
+
+	fileName <span style="color:#666">:=</span> os.Args[<span style="color:#40a070">1</span>]
+
+	keyField, err <span style="color:#666">:=</span> strconv.Atoi(os.Args[<span style="color:#40a070">2</span>])
+	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
+		fmt.Println(<span style="color:#4070a0">&#34;keyfield must be an integer&#34;</span>)
+		<span style="color:#007020;font-weight:bold">return</span>
+	}
+
+	valueField, err <span style="color:#666">:=</span> strconv.Atoi(os.Args[<span style="color:#40a070">3</span>])
+	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
+		fmt.Println(<span style="color:#4070a0">&#34;valuefield must be an integer&#34;</span>)
+	}
+
+	file, err <span style="color:#666">:=</span> os.Open(fileName)
+	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
+		fmt.Println(err)
+		<span style="color:#007020;font-weight:bold">return</span>
+	}
+	<span style="color:#007020;font-weight:bold">defer</span> file.Close()
+
+	reader <span style="color:#666">:=</span> csv.NewReader(file)
+	reader.Comma = <span style="color:#4070a0">&#39;\t&#39;</span>
+	reader.LazyQuotes = <span style="color:#007020;font-weight:bold">true</span>
+
+	sumByKey <span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">map</span>[<span style="color:#902000">string</span>]<span style="color:#902000">int</span>{}
+	<span style="color:#007020;font-weight:bold">var</span> largestKey <span style="color:#902000">string</span>
+
+	<span style="color:#007020;font-weight:bold">for</span> {
+		record, err <span style="color:#666">:=</span> reader.Read()
+		<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">==</span> io.EOF {
+			<span style="color:#007020;font-weight:bold">break</span>
+		} <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
+			fmt.Println(err)
+			<span style="color:#007020;font-weight:bold">return</span>
+		}
+		key <span style="color:#666">:=</span> record[keyField]
+		valueAsString <span style="color:#666">:=</span> record[valueField]
+		<span style="color:#007020;font-weight:bold">if</span> value, err <span style="color:#666">:=</span> strconv.Atoi(valueAsString); err <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">nil</span> {
+			sumByKey[key] <span style="color:#666">+=</span> value
+			<span style="color:#007020;font-weight:bold">if</span> sumByKey[key] &gt; sumByKey[largestKey] {
+				largestKey = key
+			}
+		}
+	}
+	fmt.Println(largestKey, sumByKey[largestKey])
+}</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go version
+go version go1.8 darwin/amd64
+$ go build csvParser.go
+$ <span style="color:#007020">time</span> ./csvParser googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
+<span style="color:#40a070">2006</span> <span style="color:#40a070">22569013</span>
+
+real	0m7.651s
+user	0m7.614s
+sys	0m0.108s</code></pre></div>
+<p>Only 2.4x python and 5x slower than nim? Not exactly what I&rsquo;d been hoping for while congratulating myself that I&rsquo;d be able to write faster terminal tools.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#007020;font-weight:bold">package</span> main
+
+<span style="color:#007020;font-weight:bold">import</span> (
+	<span style="color:#4070a0">&#34;bufio&#34;</span>
+	<span style="color:#4070a0">&#34;fmt&#34;</span>
+	<span style="color:#4070a0">&#34;io&#34;</span>
+	<span style="color:#4070a0">&#34;os&#34;</span>
+	<span style="color:#4070a0">&#34;strconv&#34;</span>
+	<span style="color:#4070a0">&#34;strings&#34;</span>
+)
+
+<span style="color:#007020;font-weight:bold">func</span> main() {
+	<span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020">len</span>(os.Args) &lt; <span style="color:#40a070">4</span> {
+		fmt.Printf(<span style="color:#4070a0">&#34;usage: %s filename keyfield valuefield\n&#34;</span>, os.Args[<span style="color:#40a070">0</span>])
+		<span style="color:#007020;font-weight:bold">return</span>
+	}
+
+	fileName <span style="color:#666">:=</span> os.Args[<span style="color:#40a070">1</span>]
+
+	keyField, err <span style="color:#666">:=</span> strconv.Atoi(os.Args[<span style="color:#40a070">2</span>])
+	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
+		fmt.Println(<span style="color:#4070a0">&#34;keyfield must be an integer&#34;</span>)
+		<span style="color:#007020;font-weight:bold">return</span>
+	}
+
+	valueField, err <span style="color:#666">:=</span> strconv.Atoi(os.Args[<span style="color:#40a070">3</span>])
+	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
+		fmt.Println(<span style="color:#4070a0">&#34;valuefield must be an integer&#34;</span>)
+	}
+
+	file, err <span style="color:#666">:=</span> os.Open(fileName)
+	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
+		fmt.Println(err)
+		<span style="color:#007020;font-weight:bold">return</span>
+	}
+	<span style="color:#007020;font-weight:bold">defer</span> file.Close()
+
+	reader <span style="color:#666">:=</span> bufio.NewReader(file)
+
+	sumByKey <span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">map</span>[<span style="color:#902000">string</span>]<span style="color:#902000">int</span>{}
+	<span style="color:#007020;font-weight:bold">var</span> largestKey <span style="color:#902000">string</span>
+
+	<span style="color:#007020;font-weight:bold">for</span> {
+		line, _, err <span style="color:#666">:=</span> reader.ReadLine()
+		<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">==</span> io.EOF {
+			<span style="color:#007020;font-weight:bold">break</span>
+		} <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
+			fmt.Println(err)
+			<span style="color:#007020;font-weight:bold">return</span>
+		}
+
+		fields <span style="color:#666">:=</span> strings.Split(<span style="color:#007020">string</span>(line), <span style="color:#4070a0">&#34;\t&#34;</span>)
+		key <span style="color:#666">:=</span> fields[keyField]
+		valueAsString <span style="color:#666">:=</span> fields[valueField]
+		<span style="color:#007020;font-weight:bold">if</span> value, err <span style="color:#666">:=</span> strconv.Atoi(valueAsString); err <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">nil</span> {
+			sumByKey[key] <span style="color:#666">+=</span> value
+			<span style="color:#007020;font-weight:bold">if</span> sumByKey[key] &gt; sumByKey[largestKey] {
+				largestKey = key
+			}
+		}
+
+	}
+	fmt.Println(largestKey, sumByKey[largestKey])
+}</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#007020">time</span> ./csvParser2 googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
+<span style="color:#40a070">2006</span> <span style="color:#40a070">22569013</span>
+
+real	0m4.133s
+user	0m4.102s
+sys	0m0.109s</code></pre></div>
+<p>4.4x faster than python and 2.6x slower than nim I can live with.</p>
+
+<p>As ever performance is comparative, and depends on your exact use. I expected this to be an easy and convincing victory for golang over python, but it took some tweaking to get a solid win. I didn&rsquo;t really know what to expect on nim vs go<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup> but left impressed with nim&rsquo;s performance and - speaking as a pythonista - elegance.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Itself a inspired by <a href="http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/">faster command line tools in D</a> by Jon Degenhardt
+ <a class="footnote-return" href="#fnref:1"><sup>↩</sup></a></li>
+<li id="fn:2"><a href="https://github.com/kostya/benchmarks">this comparison</a> was incredibly helpful
+ <a class="footnote-return" href="#fnref:2"><sup>↩</sup></a></li>
+<li id="fn:3">I had mentally categorised them both as &ldquo;near C speed&rdquo;, but without much nuance in comparison.
+ <a class="footnote-return" href="#fnref:3"><sup>↩</sup></a></li>
+</ol>
+</div>
+
+</section>
+
+
+	</article>
+
+	
+    <hr>
+<p class="social">
+    <a href="mailto:jamiecollinson@gmail.com">
+        <i class="ion-email"></i>
+    </a>
+    <a href="https://github.com/jamiecollinson/">
+        <i class="ion-social-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/jamiecollinson/">
+        <i class="ion-social-linkedin"></i>
+    </a>
+    <a href="https://twitter.com/jamiecollinson">
+        <i class="ion-social-twitter"></i>
+    </a>
+</p>
+
+
+
+
+    </div>
+
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-3143424-7', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+
+<script>
+ var tocDomRect = document.querySelector('.js-toc').getBoundingClientRect();
+ tocbot.init({
+     
+     tocSelector: '.js-toc',
+     
+     contentSelector: '.js-toc-target',
+     
+     headingSelector: 'h1, h2, h3',
+     positionFixedSelector: '.js-toc',
+     fixedSidebarOffset: tocDomRect.top - 50,
+ });
+</script>
+
+<script>
+ var post = document.querySelector('body'),
+     markers = post.querySelectorAll('.footnote-ref'),
+     footnotes = post.querySelectorAll('.footnotes ol li');
+
+ footnotes.forEach(function(footnote, i) {
+     var marker = markers[i];
+     marker.insertAdjacentHTML(
+	 'afterend',
+	 '<aside class="post-sidenote" role="complementary">'
+         + footnote.innerHTML
+         + '</aside>'
+     );
+ });
+</script>
+
+</html>
