@@ -18,12 +18,11 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
 article {
-    max-width: 650px;
     margin: 15vh auto 70vh auto;
     line-height: 1.6;
 }
@@ -155,8 +154,8 @@ a[rel=footnote], a.footnote-return {
 .post-sidenote {
     float: right;
     clear: right;
-    margin-right: -55%;
-    width: 50%;
+    margin-right: -40%;
+    width: 33%;
     margin-top: 0;
     margin-bottom: 1rem;;
     vertical-align: baseline;
@@ -193,9 +192,7 @@ sub {
     transition: color 1s;
 }
 
-@media (min-width: 576px) {
-    
-}
+@media (min-width: 576px) {}
 
 @media (min-width: 768px) {
     /* Hide footnotes and markers */
@@ -210,23 +207,30 @@ sub {
 	content: "◊";
 	color: #444
     }
+    /* Adjust width for 3:1 display */
+    .container {
+	width: 90%;
+	max-width: 900px;
+    }
     article {
-	max-width: none;
-	width: 60%;
-	margin-left: 5%;
-    }    
+	width: 75%;
+	margin-left: 0;
+    }
 }
 
-@media (min-width: 992px) {
-    
-}
+@media (min-width: 992px) {}
 
 @media (min-width: 1200px) {
+    /* Display TOC */
     .toc {
 	display: inline;
     }
+    /* Adjust width for 1:2:1 display */
+    .container {
+	max-width: 650px;
+    }
     article {
-	margin-left: 20%;
+	width: 100%;
     }
     .post-sidenote {
 	width: 30%;

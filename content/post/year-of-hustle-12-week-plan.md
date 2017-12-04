@@ -1,7 +1,7 @@
 ---
-date: 2017-01-10T00:00:00Z
-published: true
 title: 12 Week Plan
+date: 2017-01-10T00:00:00Z
+draft: true
 ---
 
 This is part of my continuing series on following Amy Hoy's Year of Hustle methodology for creating your first product. You can [follow along by email](http://eepurl.com/cwP9tz) or see [all my posts on the subject](/).

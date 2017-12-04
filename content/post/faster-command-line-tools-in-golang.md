@@ -6,7 +6,7 @@ title = "Faster Command Line Tools in Golang?"
 
 Having read the post [faster command line tools in nim](https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html) by Euan Torano[^1], I wanted to see how Go would compare. I am no golang expert, but have used it in production on a couple of reasonably sized projects, and have recently been enjoying it as a language for creating small terminal applications.
 
-Lest I appear to bury the lede, replicating the functionality in go was pleasant but I'd hoped for better performance.
+Replicating the functionality in go was pleasant but I'd hoped for better performance.
 
 The task is to take a csv file, a column number to sum by and another to sum, and to return the label and total of the largest value. The following is the original description, with a [40Mb ngram file from Google Books](https://storage.googleapis.com/books/ngrams/books/googlebooks-eng-all-1gram-20120701-0.gz) serving as a test.
 

@@ -1,7 +1,7 @@
 ---
-date: 2017-01-09T00:00:00Z
-published: true
 title: My year of hustle
+date: 2017-01-09T00:00:00Z
+draft: true
 ---
 
 A year ago I started receiving Amy Hoy's [Year of Hustle](http://yearofhustle.com/) emails. She gives an actionable plan for starting your side business over 12 weeks. Breaking down the steps, roadblocks and mindset changes needed to get it done. I'm a big admirer of her work, I'm sure it helped many people, but I didn't follow her advice. I guess I hadn't hit my [fuck this moment](https://unicornfree.com/2014/your-fuck-this-moment-changes-everything). A lot of her work focuses on mindset, and I wasn't ready.

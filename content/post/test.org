@@ -1,5 +1,6 @@
 #+title: Blogging with org - test page
 #+date: Sun Nov 12 13:28:25 2017
+#+draft: true
 
 Can there be anything more satisfying than blogging in emacs, the world's greatest text editor?
 
