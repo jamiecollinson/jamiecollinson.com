@@ -11,3 +11,4 @@ pygmentsCodeFences: true
 pygmentsCodefencesGuessSyntax: true
 pygmentsStyle: friendly
 FootnoteReturnLinkContents: "<sup>↩</sup>"
+enableRobotsTXT: true
