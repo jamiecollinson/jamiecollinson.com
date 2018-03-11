@@ -15,18 +15,18 @@
 </head>
 
 <body>
-    
-    <div class="container">
-	
+
+    <div class="container {{ if .Params.toc }}has-toc{{ end }}">
+
 	{{ block "top" . }}{{ end }}
 
-	<article class="js-toc-target">
+      <article class="js-toc-target">
 
-            {{ block "main" . }}{{ end }}
+        {{ block "main" . }}{{ end }}
 
-	</article>
+      </article>
 
-	{{ block "footer" . }}{{ end }}
+      {{ block "footer" . }}{{ end }}
 
     </div>
 
@@ -34,19 +34,25 @@
 
 </body>
 
+{{ if .Params.toc }}
 <script>
- var tocDomRect = document.querySelector('.js-toc').getBoundingClientRect();
- tocbot.init({
-     // Where to render the table of contents.
-     tocSelector: '.js-toc',
-     // Where to grab the headings to build the table of contents.
-     contentSelector: '.js-toc-target',
-     // Which headings to grab inside of the contentSelector element.
-     headingSelector: 'h1, h2, h3',
-     positionFixedSelector: '.js-toc',
-     fixedSidebarOffset: tocDomRect.top - 50,
- });
+ var initTOC = function() {
+     var tocDomRect = document.querySelector('.js-toc').getBoundingClientRect();
+     tocbot.init({
+	 // Where to render the table of contents.
+	 tocSelector: '.js-toc',
+	 // Where to grab the headings to build the table of contents.
+	 contentSelector: '.js-toc-target',
+	 // Which headings to grab inside of the contentSelector element.
+	 headingSelector: 'h1, h2, h3',
+	 positionFixedSelector: '.js-toc',
+	 fixedSidebarOffset: tocDomRect.top - 50,
+     });
+ };
+ initTOC();
+ window.onresize = initTOC;
 </script>
+{{ end }}
 
 <script>
  var post = document.querySelector('body'),

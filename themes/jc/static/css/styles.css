@@ -1,15 +1,64 @@
-/* Define the "system" font family */
 @font-face {
-  font-family: system;
-  font-style: normal;
-  font-weight: 300;
-  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+    font-family: 'concourse';
+    src: url('/css/fonts/concourse_t3_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'concourse';
+    src: url('/css/fonts/concourse_t3_bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'concourse';
+    src: url('/css/fonts/concourse_t3_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'concourse';
+    src: url('/css/fonts/concourse_t3_bold_italic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: triplicate;
+    src: url('/css/fonts/triplicate_t4_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: triplicate;
+    src: url('/css/fonts/triplicate_t4_bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: triplicate;
+    src: url('/css/fonts/triplicate_t4_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: triplicate;
+    src: url('/css/fonts/triplicate_t4_bold_italic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
 }
 
 html {
-    font-family: "system";
-    font-size: 18px;
-    letter-spacing: -0.05rem;
+    /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; */
+    font-family: concourse;
+    font-weight: 300;
+    font-size: 20px;
     color: #333;
 }
 
@@ -23,18 +72,15 @@ body {
 }
 
 article {
-    margin: 15vh auto 70vh auto;
     line-height: 1.6;
 }
 
 h1, h2, h3 {
-    color: #222;
-    line-height: 1.2;
+    font-weight: 300;
 }
 
 h1 {
     font-size: 3rem;
-    letter-spacing: -0.3rem;
     line-height: 1;
     margin-bottom: 1.5rem;
 }
@@ -43,13 +89,22 @@ h2 {
     margin-top: 2.1rem;
     margin-bottom: 0;
     font-size: 2rem;
-    letter-spacing: -0.2rem;
     line-height: 1;
 }
 
 a {
     color: #0070c9;
     text-decoration-skip: ink;
+}
+
+a[href^="http://"]:after, a[href^="https://"]:after {
+    content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
+    margin: 0 0 0 2px;
+}
+
+a[href*="//jamiecollinson.com/"]:after, a[href*="//localhost:1313/"]:after {
+    content: '';
+    margin: 0;
 }
 
 p {}
@@ -61,63 +116,58 @@ ul li {
 em {
     color: #555;
     font-style: normal;
-    font-weight: 600;
     font-size: 0.9rem;
-    letter-spacing: -0.075rem;
 }
 
 p img {
     max-width: 100%;
-}
-
-.post > p:first-of-type {
-    font-size: 1.3rem;
-    line-height: 1.3
+    box-shadow: 0px 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    border-radius: 3px;
 }
 
 article {}
 
-#homepage-logo {
-    font-size: 3rem;
+code {
+    font-family: monospace;
 }
 
-#homepage-logo + h1 {
-    margin-top: 0;
-}
-
-#nav-logo {
-    color: #333;
-    text-decoration: none;
-}
-
-/* Cursor blink */
-@keyframes blinker { to { opacity: 0; } }
-.blink {
-    animation: blinker 0.6s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+p code {
+    background-color: #eee;
+    padding: 0 0.25rem;
 }
 
 blockquote {
-    border-left: 3px solid #ccc;
-    padding-left: 15px;
-    font-family: monospace;
-    line-height: 1.2;
-    margin-left: -15px;
-    color: #555;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.3;
+    border-left: 3px solid #ddd;
+    padding-left: 3rem;
+    margin: 2rem 0 2rem -1.5rem;
 }
 
 pre {
     overflow-x: auto;
-    padding: 20px;
-    font-size: 0.9rem;
+    padding: 1rem;
+    font-size: 0.7rem;
+    background-color: #fafafa !important;
+    border-left: 3px solid #ddd;
+    margin-left: -1.5rem;
+    padding-left: 3rem;
+    line-height: 1.3;
 }
 
 .toc {
     position: absolute;
     margin-left: -250px;
-    width: 200px;
-    color: #666;
+    width: 180px;
+    color: #777;
     line-height: 1.1;
     display: none;
+    font-size: 0.8rem;
+}
+
+.toc-list.is-collapsible {
+    transition: none;
 }
 
 .toc a {
@@ -133,7 +183,7 @@ pre {
 }
 
 .toc-link.is-active-link {
-    color: #111;
+    color: #333;
     font-weight: inherit;
 }
 
@@ -148,7 +198,6 @@ pre {
 /* footnotes / sidenotes */
 a[rel=footnote], a.footnote-return {
     text-decoration: none;
-    font-family: monospace;
 }
 
 .post-sidenote {
@@ -160,9 +209,8 @@ a[rel=footnote], a.footnote-return {
     margin-bottom: 1rem;;
     vertical-align: baseline;
     position: relative;
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.3;
+    font-size: 0.8rem;
+    line-height: 1.2;
     display: none;
 }
 
@@ -192,7 +240,33 @@ sub {
     transition: color 1s;
 }
 
+.social a:after {
+    content: '';
+    margin: 0;
+}
+
+.footnotes {
+    border-top: 3px solid #eee;
+}
+
+.footnotes hr {
+    display: none;
+}
+
 @media (min-width: 576px) {}
+
+@media (max-width: 768px) {
+    p img {
+	max-width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	border-radius: 0;
+	box-shadow: none;
+    }
+}
 
 @media (min-width: 768px) {
     /* Hide footnotes and markers */
@@ -203,9 +277,12 @@ sub {
     .post-sidenote {
 	display: inline;
     }
+    .post-sidenote:before {
+	content: "◊";
+	margin: 0 0.2rem 0 -0.8rem;
+    }
     .footnote-ref:after {
 	content: "◊";
-	color: #444
     }
     /* Adjust width for 3:1 display */
     .container {
@@ -216,23 +293,29 @@ sub {
 	width: 75%;
 	margin-left: 0;
     }
+    pre {
+	width: 130%;
+    }
+    p img {
+	max-width: 135%;
+    }
 }
 
 @media (min-width: 992px) {}
 
 @media (min-width: 1200px) {
-    /* Display TOC */
-    .toc {
+    /* Display TOC if body has .has-toc */
+    .has-toc .toc {
 	display: inline;
     }
     /* Adjust width for 1:2:1 display */
-    .container {
-	max-width: 650px;
+    .has-toc.container {
+	max-width: 700px;
     }
-    article {
+    .has-toc article {
 	width: 100%;
     }
-    .post-sidenote {
+    .has-toc .post-sidenote {
 	width: 30%;
 	margin-right: -35%;
     }

@@ -1,12 +1,12 @@
 ---
 date: 2016-05-30T00:00:00Z
-published: true
 title: A guide to disassembling the Ricoh GR for sensor cleaning
+toc: true
 ---
 
-The Ricoh GR is an excellent camera. A camera which has managed to displace all my former dalliances due to it's small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
+The Ricoh GR is an excellent camera, which has managed to displace all my former dalliances due to it's small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
 
-On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious when you need to go through every. Single. Frame.
+On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious[^1].
 
 I'd heard that cleaning the sensor wasn't too difficult, but the [best guide I found online](http://www.pentaxforums.com/forums/161-ricoh-gr/261769-disassembling-gr-sensor-cleaning.html) was missing some details. I thought I'd put together a full guide with pictures.
 
@@ -70,7 +70,7 @@ Remove the four screws and lift the hotshoe.
 ![Remove hotshoe](/img/IMG_20160131_124823.jpg)
 
 Take a breather. You've removed all the necessary case screws and should have all nine safely stowed away.
- 
+
 ![Screws](/img/IMG_20160131_124855.jpg)
 
 ## Detaching the back panel
@@ -134,3 +134,5 @@ Follow the above steps in reverse order to reassemble the camera. You can do a p
 Dust spots seem a fairly common problem mentioned in online threads, so hopefully this guide will help someone. If not it will at least be an aide memoire when I need to repeat the process.
 
 So far I've avoided purchasing the Ricoh GR II as the new features (wifi + some new filters) don't seem worth the upgrade, and from what I hear dust is still a problem. I really hope that the future Ricoh GR III both exists and improves the dust sealing. If Ricoh continues their two year release cycle we'll find out in 2017.
+
+[^1]: Particularly when you return from holiday with several hundred images and need to review every frame.
