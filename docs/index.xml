@@ -6,20 +6,20 @@
     <description>Recent content on Jamie Collinson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Dec 2017 19:51:14 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Mar 2018 14:33:18 +0000</lastBuildDate>
     
 	<atom:link href="https://jamiecollinson.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My Emacs Config</title>
+      <title>Emacs Config</title>
       <link>https://jamiecollinson.com/blog/my-emacs-config/</link>
-      <pubDate>Mon, 04 Dec 2017 19:51:14 +0000</pubDate>
+      <pubDate>Sun, 11 Mar 2018 14:33:18 +0000</pubDate>
       
       <guid>https://jamiecollinson.com/blog/my-emacs-config/</guid>
-      <description>Setup Configure package sources Add repositories we&#39;ll load packages from. I prefer to live on the bleeding edge so have only enabled melpa. Setting package-enable-at-startup to nil prevents a second package load and slightly improves startup time.
-(add-to-list &amp;#39;package-archives &amp;#39;(&amp;#34;melpa&amp;#34; . &amp;#34;http://melpa.org/packages/&amp;#34;)) (setq package-enable-at-startup nil) Bootstrap use-package If use-package is not installed, install it.
-(unless (package-installed-p &amp;#39;use-package) (package-refresh-contents) (package-install &amp;#39;use-package)) Set custom settings to load in own file This stops emacs adding customised settings to init.</description>
+      <description>This is my emacs configuration. After many years with vim then a year with spacemacs &amp; prelude, I came to the realisation that I needed to construct my own to really get it1.
+After a few aborted attempts to split the config into separate files, I settled on the literate-programming-with-single-file approach via Sacha Chua.
+Documenting this is mostly for my benefit, but I hope others might find it useful constucting their own.</description>
     </item>
     
     <item>
@@ -39,8 +39,9 @@ The task is to take a csv file, a column number to sum by and another to sum, an
       <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</guid>
-      <description>The Ricoh GR is an excellent camera. A camera which has managed to displace all my former dalliances due to it&amp;rsquo;s small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
-On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious when you need to go through every.</description>
+      <description>The Ricoh GR is an excellent camera, which has managed to displace all my former dalliances due to it&amp;rsquo;s small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
+On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious1.
+I&amp;rsquo;d heard that cleaning the sensor wasn&amp;rsquo;t too difficult, but the best guide I found online was missing some details.</description>
     </item>
     
     <item>
@@ -49,9 +50,9 @@ On a recent trip I found lots of annoying dust spots. This is easy to fix, but t
       <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</guid>
-      <description>A mathematician, a physicist and an engineer are staying at a hotel1 for a conference.
-The engineer wakes up in the middle of the night to find the end of his bed is on fire. He grabs the fire extinguisher, points it at the fire and sprays it until the fire is safely extinguished. He goes back to sleep content that he&amp;rsquo;s solved the problem.
-The physicist wakes up in the middle of the night to find the end of his bed is on fire.</description>
+      <description>A mathematician, a physicist and an engineer are away from home at conference1.
+The engineer wakes up in the night to find his bed is on fire. He grabs the fire extinguisher, points it at the fire and sprays until the fire is safely extinguished. He goes back to sleep content he has solved the problem.
+The physicist wakes up in the middle of the night to find his bed is also on fire.</description>
     </item>
     
   </channel>

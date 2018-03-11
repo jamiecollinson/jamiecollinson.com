@@ -15,19 +15,18 @@
 </head>
 
 <body>
-    
-    <div class="container">
-	
+
+    <div class="container has-toc">
+
 	
   <nav class="navbar-top">
-  <a id="nav-logo" href="/">>_ <span class="blink">|</span></a>
 </nav>
 
 
 
-	<article class="js-toc-target">
+      <article class="js-toc-target">
 
-            
+        
 <h1>A guide to disassembling the Ricoh GR for sensor cleaning</h1>
 
 <nav class="toc js-toc"></nav>
@@ -35,9 +34,9 @@
 <section class="post">
     
 
-<p>The Ricoh GR is an excellent camera. A camera which has managed to displace all my former dalliances due to it&rsquo;s small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.</p>
+<p>The Ricoh GR is an excellent camera, which has managed to displace all my former dalliances due to it&rsquo;s small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.</p>
 
-<p>On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious when you need to go through every. Single. Frame.</p>
+<p>On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>.</p>
 
 <p>I&rsquo;d heard that cleaning the sensor wasn&rsquo;t too difficult, but the <a href="http://www.pentaxforums.com/forums/161-ricoh-gr/261769-disassembling-gr-sensor-cleaning.html">best guide I found online</a> was missing some details. I thought I&rsquo;d put together a full guide with pictures.</p>
 
@@ -170,15 +169,24 @@
 <p>Dust spots seem a fairly common problem mentioned in online threads, so hopefully this guide will help someone. If not it will at least be an aide memoire when I need to repeat the process.</p>
 
 <p>So far I&rsquo;ve avoided purchasing the Ricoh GR II as the new features (wifi + some new filters) don&rsquo;t seem worth the upgrade, and from what I hear dust is still a problem. I really hope that the future Ricoh GR III both exists and improves the dust sealing. If Ricoh continues their two year release cycle we&rsquo;ll find out in 2017.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Particularly when you return from holiday with several hundred images and need to review every frame.
+ <a class="footnote-return" href="#fnref:1"><sup>↩</sup></a></li>
+</ol>
+</div>
 
 </section>
 
 
-	</article>
+      </article>
 
-	
-    <hr>
-<p class="social">
+      
+    <div class="footer">
+  <p class="social">
     <a href="mailto:jamiecollinson@gmail.com">
         <i class="ion-email"></i>
     </a>
@@ -193,6 +201,7 @@
     </a>
 </p>
 
+</div>
 
 
 
@@ -209,19 +218,25 @@ ga('send', 'pageview');
 
 </body>
 
+
 <script>
- var tocDomRect = document.querySelector('.js-toc').getBoundingClientRect();
- tocbot.init({
-     
-     tocSelector: '.js-toc',
-     
-     contentSelector: '.js-toc-target',
-     
-     headingSelector: 'h1, h2, h3',
-     positionFixedSelector: '.js-toc',
-     fixedSidebarOffset: tocDomRect.top - 50,
- });
+ var initTOC = function() {
+     var tocDomRect = document.querySelector('.js-toc').getBoundingClientRect();
+     tocbot.init({
+	 
+	 tocSelector: '.js-toc',
+	 
+	 contentSelector: '.js-toc-target',
+	 
+	 headingSelector: 'h1, h2, h3',
+	 positionFixedSelector: '.js-toc',
+	 fixedSidebarOffset: tocDomRect.top - 50,
+     });
+ };
+ initTOC();
+ window.onresize = initTOC;
 </script>
+
 
 <script>
  var post = document.querySelector('body'),
