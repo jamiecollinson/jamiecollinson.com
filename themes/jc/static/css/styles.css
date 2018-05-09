@@ -98,8 +98,11 @@ a {
 }
 
 a[href^="http://"]:after, a[href^="https://"]:after {
-    content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
-    margin: 0 0 0 2px;
+    content: '\f08e';
+    font-family: "FontAwesome";
+    font-size: 0.6rem;
+    display: inline-block;
+    margin: 0 0.2rem 0 0.2rem;
 }
 
 a[href*="//jamiecollinson.com/"]:after, a[href*="//localhost:1313/"]:after {
