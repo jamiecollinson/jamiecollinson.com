@@ -273,7 +273,7 @@ sub {
 
 @media (min-width: 768px) {
     /* Hide footnotes and markers */
-    a[rel=footnote], .footnotes {
+    .footnote-ref a, .footnotes {
 	display: none;
     }
     /* Show sidenotes */
