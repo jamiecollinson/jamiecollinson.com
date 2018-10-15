@@ -12,3 +12,5 @@ pygmentsCodefencesGuessSyntax: true
 pygmentsStyle: friendly
 FootnoteReturnLinkContents: "<sup>↩</sup>"
 enableRobotsTXT: true
+ignoreFiles:
+  - '.*flycheck_.*'
