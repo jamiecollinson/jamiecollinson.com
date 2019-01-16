@@ -143,33 +143,33 @@ sys	0m0.060s</code></pre></div>
 	<span style="color:#4070a0">&#34;strconv&#34;</span>
 )
 
-<span style="color:#007020;font-weight:bold">func</span> main() {
+<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
 	<span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020">len</span>(os.Args) &lt; <span style="color:#40a070">4</span> {
-		fmt.Printf(<span style="color:#4070a0">&#34;usage: %s filename keyfield valuefield\n&#34;</span>, os.Args[<span style="color:#40a070">0</span>])
+		fmt.<span style="color:#06287e">Printf</span>(<span style="color:#4070a0">&#34;usage: %s filename keyfield valuefield\n&#34;</span>, os.Args[<span style="color:#40a070">0</span>])
 		<span style="color:#007020;font-weight:bold">return</span>
 	}
 
 	fileName <span style="color:#666">:=</span> os.Args[<span style="color:#40a070">1</span>]
 
-	keyField, err <span style="color:#666">:=</span> strconv.Atoi(os.Args[<span style="color:#40a070">2</span>])
+	keyField, err <span style="color:#666">:=</span> strconv.<span style="color:#06287e">Atoi</span>(os.Args[<span style="color:#40a070">2</span>])
 	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
-		fmt.Println(<span style="color:#4070a0">&#34;keyfield must be an integer&#34;</span>)
+		fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;keyfield must be an integer&#34;</span>)
 		<span style="color:#007020;font-weight:bold">return</span>
 	}
 
-	valueField, err <span style="color:#666">:=</span> strconv.Atoi(os.Args[<span style="color:#40a070">3</span>])
+	valueField, err <span style="color:#666">:=</span> strconv.<span style="color:#06287e">Atoi</span>(os.Args[<span style="color:#40a070">3</span>])
 	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
-		fmt.Println(<span style="color:#4070a0">&#34;valuefield must be an integer&#34;</span>)
+		fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;valuefield must be an integer&#34;</span>)
 	}
 
-	file, err <span style="color:#666">:=</span> os.Open(fileName)
+	file, err <span style="color:#666">:=</span> os.<span style="color:#06287e">Open</span>(fileName)
 	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
-		fmt.Println(err)
+		fmt.<span style="color:#06287e">Println</span>(err)
 		<span style="color:#007020;font-weight:bold">return</span>
 	}
-	<span style="color:#007020;font-weight:bold">defer</span> file.Close()
+	<span style="color:#007020;font-weight:bold">defer</span> file.<span style="color:#06287e">Close</span>()
 
-	reader <span style="color:#666">:=</span> csv.NewReader(file)
+	reader <span style="color:#666">:=</span> csv.<span style="color:#06287e">NewReader</span>(file)
 	reader.Comma = <span style="color:#4070a0">&#39;\t&#39;</span>
 	reader.LazyQuotes = <span style="color:#007020;font-weight:bold">true</span>
 
@@ -177,23 +177,23 @@ sys	0m0.060s</code></pre></div>
 	<span style="color:#007020;font-weight:bold">var</span> largestKey <span style="color:#902000">string</span>
 
 	<span style="color:#007020;font-weight:bold">for</span> {
-		record, err <span style="color:#666">:=</span> reader.Read()
+		record, err <span style="color:#666">:=</span> reader.<span style="color:#06287e">Read</span>()
 		<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">==</span> io.EOF {
 			<span style="color:#007020;font-weight:bold">break</span>
 		} <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
-			fmt.Println(err)
+			fmt.<span style="color:#06287e">Println</span>(err)
 			<span style="color:#007020;font-weight:bold">return</span>
 		}
 		key <span style="color:#666">:=</span> record[keyField]
 		valueAsString <span style="color:#666">:=</span> record[valueField]
-		<span style="color:#007020;font-weight:bold">if</span> value, err <span style="color:#666">:=</span> strconv.Atoi(valueAsString); err <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">nil</span> {
+		<span style="color:#007020;font-weight:bold">if</span> value, err <span style="color:#666">:=</span> strconv.<span style="color:#06287e">Atoi</span>(valueAsString); err <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">nil</span> {
 			sumByKey[key] <span style="color:#666">+=</span> value
 			<span style="color:#007020;font-weight:bold">if</span> sumByKey[key] &gt; sumByKey[largestKey] {
 				largestKey = key
 			}
 		}
 	}
-	fmt.Println(largestKey, sumByKey[largestKey])
+	fmt.<span style="color:#06287e">Println</span>(largestKey, sumByKey[largestKey])
 }</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go version
 go version go1.8 darwin/amd64
 $ go build csvParser.go
@@ -215,50 +215,50 @@ sys	0m0.108s</code></pre></div>
 	<span style="color:#4070a0">&#34;strings&#34;</span>
 )
 
-<span style="color:#007020;font-weight:bold">func</span> main() {
+<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
 	<span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020">len</span>(os.Args) &lt; <span style="color:#40a070">4</span> {
-		fmt.Printf(<span style="color:#4070a0">&#34;usage: %s filename keyfield valuefield\n&#34;</span>, os.Args[<span style="color:#40a070">0</span>])
+		fmt.<span style="color:#06287e">Printf</span>(<span style="color:#4070a0">&#34;usage: %s filename keyfield valuefield\n&#34;</span>, os.Args[<span style="color:#40a070">0</span>])
 		<span style="color:#007020;font-weight:bold">return</span>
 	}
 
 	fileName <span style="color:#666">:=</span> os.Args[<span style="color:#40a070">1</span>]
 
-	keyField, err <span style="color:#666">:=</span> strconv.Atoi(os.Args[<span style="color:#40a070">2</span>])
+	keyField, err <span style="color:#666">:=</span> strconv.<span style="color:#06287e">Atoi</span>(os.Args[<span style="color:#40a070">2</span>])
 	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
-		fmt.Println(<span style="color:#4070a0">&#34;keyfield must be an integer&#34;</span>)
+		fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;keyfield must be an integer&#34;</span>)
 		<span style="color:#007020;font-weight:bold">return</span>
 	}
 
-	valueField, err <span style="color:#666">:=</span> strconv.Atoi(os.Args[<span style="color:#40a070">3</span>])
+	valueField, err <span style="color:#666">:=</span> strconv.<span style="color:#06287e">Atoi</span>(os.Args[<span style="color:#40a070">3</span>])
 	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
-		fmt.Println(<span style="color:#4070a0">&#34;valuefield must be an integer&#34;</span>)
+		fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;valuefield must be an integer&#34;</span>)
 	}
 
-	file, err <span style="color:#666">:=</span> os.Open(fileName)
+	file, err <span style="color:#666">:=</span> os.<span style="color:#06287e">Open</span>(fileName)
 	<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
-		fmt.Println(err)
+		fmt.<span style="color:#06287e">Println</span>(err)
 		<span style="color:#007020;font-weight:bold">return</span>
 	}
-	<span style="color:#007020;font-weight:bold">defer</span> file.Close()
+	<span style="color:#007020;font-weight:bold">defer</span> file.<span style="color:#06287e">Close</span>()
 
-	reader <span style="color:#666">:=</span> bufio.NewReader(file)
+	reader <span style="color:#666">:=</span> bufio.<span style="color:#06287e">NewReader</span>(file)
 
 	sumByKey <span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">map</span>[<span style="color:#902000">string</span>]<span style="color:#902000">int</span>{}
 	<span style="color:#007020;font-weight:bold">var</span> largestKey <span style="color:#902000">string</span>
 
 	<span style="color:#007020;font-weight:bold">for</span> {
-		line, _, err <span style="color:#666">:=</span> reader.ReadLine()
+		line, _, err <span style="color:#666">:=</span> reader.<span style="color:#06287e">ReadLine</span>()
 		<span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">==</span> io.EOF {
 			<span style="color:#007020;font-weight:bold">break</span>
 		} <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">nil</span> {
-			fmt.Println(err)
+			fmt.<span style="color:#06287e">Println</span>(err)
 			<span style="color:#007020;font-weight:bold">return</span>
 		}
 
-		fields <span style="color:#666">:=</span> strings.Split(<span style="color:#007020">string</span>(line), <span style="color:#4070a0">&#34;\t&#34;</span>)
+		fields <span style="color:#666">:=</span> strings.<span style="color:#06287e">Split</span>(<span style="color:#007020">string</span>(line), <span style="color:#4070a0">&#34;\t&#34;</span>)
 		key <span style="color:#666">:=</span> fields[keyField]
 		valueAsString <span style="color:#666">:=</span> fields[valueField]
-		<span style="color:#007020;font-weight:bold">if</span> value, err <span style="color:#666">:=</span> strconv.Atoi(valueAsString); err <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">nil</span> {
+		<span style="color:#007020;font-weight:bold">if</span> value, err <span style="color:#666">:=</span> strconv.<span style="color:#06287e">Atoi</span>(valueAsString); err <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">nil</span> {
 			sumByKey[key] <span style="color:#666">+=</span> value
 			<span style="color:#007020;font-weight:bold">if</span> sumByKey[key] &gt; sumByKey[largestKey] {
 				largestKey = key
@@ -266,7 +266,7 @@ sys	0m0.108s</code></pre></div>
 		}
 
 	}
-	fmt.Println(largestKey, sumByKey[largestKey])
+	fmt.<span style="color:#06287e">Println</span>(largestKey, sumByKey[largestKey])
 }</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#007020">time</span> ./csvParser2 googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
 <span style="color:#40a070">2006</span> <span style="color:#40a070">22569013</span>
 
