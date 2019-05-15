@@ -1,5 +1,5 @@
 ---
-title: Category Theory for Programmers
+title: Notes on Category Theory for Programmers
 date: 2019-05-14
 ---
 
