@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Category Theory for Programmers &#8211; Jamie Collinson</title>
+
+	<link rel="stylesheet" href="/css/styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	
+</head>
+
+<body>
+
+    <div class="container ">
+
+	
+  <nav class="navbar-top">
+</nav>
+
+
+
+      <article class="js-toc-target">
+
+        
+<h1>Category Theory for Programmers</h1>
+
+<nav class="toc js-toc"></nav>
+
+<section class="post">
+    
+
+<h2 id="1-category-the-essence-of-composition">1 Category: The Essence of Composition</h2>
+
+<ul>
+<li>Categories consist of <em>objects</em> and <em>arrows</em> that go between them</li>
+<li>The essence of a category is <em>composition</em>, i.e. that <code>A -&gt; B</code> and <code>B -&gt; C</code> implies <code>A -&gt; C</code></li>
+</ul>
+
+<h3 id="1-1-arrows-as-functions">1.1 Arrows as Functions</h3>
+
+<ul>
+<li>Arrows are <em>morphisms</em> which are equivalent to functions</li>
+<li>Objects are equivalent to types.</li>
+<li>If we have <code>f :: A -&gt; B</code> and <code>g :: B -&gt; C</code> then <code>(g . f) :: A -&gt; C</code></li>
+</ul>
+
+<h3 id="1-2-properties-of-composition">1.2 Properties of Composition</h3>
+
+<p>Composition in any category must satisfy two properties:</p>
+
+<ul>
+<li>Composition is <em>associative</em>, which means the order of brackets doesn&rsquo;t matter. This means for functions <code>f</code> <code>g</code> and <code>h</code>, <code>h . (g . f) = (h . g) . f = h . g. f</code></li>
+<li>Every object has an <em>identity</em> mapping back to itself. If we have <code>f :: A -&gt; B</code> then <code>f . identityA = f</code> and <code>identityB . f = f</code>. Note the identity is per object.</li>
+</ul>
+
+<h3 id="1-3-composition-is-the-essence-of-programming">1.3 Composition is the Essence of Programming</h3>
+
+<p>Why does this matter for programming? Because decomposing problems, creating solutions to simpler problems and then composing them is the essence of programming. Categories provide a mathematical basis for thinking about this.</p>
+
+<h3 id="1-4-challenges">1.4 Challenges</h3>
+
+<p>Q: Implement, as best as you can, the identity function in your favorite language (or the second favorite, if your favorite language happens to be Haskell).</p>
+
+<p>A:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#007020;font-weight:bold">const</span> identity <span style="color:#666">=</span> x =&gt; x
+</code></pre></div>
+<p>Q: Implement the composition function in your favorite language.It takes two functions as arguments and returns a function that is their composition.</p>
+
+<p>A:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#007020;font-weight:bold">const</span> comp <span style="color:#666">=</span> (f, g) =&gt; x =&gt; g(f(x))
+</code></pre></div>
+<p>Q: Write a program that tries to test that your composition function respects identity.</p>
+
+<p>A:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#007020;font-weight:bold">const</span> <span style="color:#007020;font-weight:bold">double</span> <span style="color:#666">=</span> x =&gt; x <span style="color:#666">+</span> x
+console.assert(comp(<span style="color:#007020;font-weight:bold">double</span>, identity)(<span style="color:#40a070">10</span>) <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">double</span>(<span style="color:#40a070">10</span>))
+</code></pre></div>
+<p>Q: Is the world-wide web a category in any sense? Are links morphisms?</p>
+
+<p>A: Yes. If we view links between pages as a function from &ldquo;visiting page A&rdquo; to &ldquo;visiting page B&rdquo; then links are composable (a crawler could follow a chain of links equivalently to a single link), and pages are a category under links.</p>
+
+<p>Q: Is Facebook a category, with people as objects and friendships as morphisms?</p>
+
+<p>A: No, as friendship isn&rsquo;t composable (I may be friends with you, but some of your friends are completely unknown to me and thus not my friends), and there&rsquo;s also no identity function as people can&rsquo;t friend themselves. We&rsquo;d need an identity and an axiom such as &ldquo;the friend of my friend is my friend&rdquo; for this to be a category.</p>
+
+<p>Q: When is a directed graph a category?</p>
+
+<p>A: A directed graph is a category provided we allow nodes to be adjacent to themselves, otherwise we do not have an identity function.</p>
+
+</section>
+
+
+      </article>
+
+      
+    <div class="footer">
+  <p class="social">
+    <a href="mailto:jamiecollinson@gmail.com">
+        <i class="ion-email"></i>
+    </a>
+    <a href="https://github.com/jamiecollinson/">
+        <i class="ion-social-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/jamiecollinson/">
+        <i class="ion-social-linkedin"></i>
+    </a>
+    <a href="https://twitter.com/jamiecollinson">
+        <i class="ion-social-twitter"></i>
+    </a>
+</p>
+
+</div>
+
+
+
+    </div>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-3143424-7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+
+
+
+<script>
+ var post = document.querySelector('body'),
+     markers = post.querySelectorAll('.footnote-ref'),
+     footnotes = post.querySelectorAll('.footnotes ol li');
+
+ footnotes.forEach(function(footnote, i) {
+     var marker = markers[i];
+     marker.insertAdjacentHTML(
+	 'afterend',
+	 '<aside class="post-sidenote" role="complementary">'
+         + footnote.innerHTML
+         + '</aside>'
+     );
+ });
+</script>
+
+</html>
