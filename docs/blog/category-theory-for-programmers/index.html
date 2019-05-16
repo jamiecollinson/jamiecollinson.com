@@ -92,6 +92,53 @@ console.assert(comp(<span style="color:#007020;font-weight:bold">double</span>, 
 
 <p>A: A directed graph is a category provided we allow nodes to be adjacent to themselves, otherwise we do not have an identity function.</p>
 
+<h2 id="2-types-and-functions">2 Types and Functions</h2>
+
+<h3 id="2-1-who-needs-types">2.1 Who needs Types?</h3>
+
+<p>Thought experiment: millions of monkeys typing random keys, producing programs, compiling and running them.</p>
+
+<blockquote>
+<p>With machine language, any combination of bytes produced by monkeys would be accepted and run. But with higher level languages, we do appreciate the fact that a compiler is able to detect lexical and grammatical errors&hellip; Type checking provides yet another barrier against nonsensical programs.</p>
+
+<p>The usual goal in the typing monkeys thought experiment is the pro- duction of the complete works of Shakespeare. Having a spell checker and a grammar checker in the loop would drastically increase the odds. The analog of a type checker would go even further by making sure that, once Romeo is declared a human being, he doesn’t sprout leaves or trap photons in his powerful gravitational field.</p>
+</blockquote>
+
+<h3 id="2-2-types-are-about-composability">2.2 Types are about composability</h3>
+
+<ul>
+<li>Arrows can only be composed when targets and sources match, i.e. for programs to be composable the input / output types must match.</li>
+<li>Strong static typing can eliminate semantically valid programs, but this is rare and escape hatches exist (e.g. <code>unsafeCoerce</code> in Haskell).</li>
+<li>Type inference removes some friction from strong static typing, though designing types up front can be a valuable design technique.</li>
+<li>Strong static typing does not replace testing (e.g. it does not guarantee program logic is correct), and testing does not replace strong typing. Tests are probabilistic not deterministic and can&rsquo;t typically cover all cases.</li>
+</ul>
+
+<blockquote>
+<p>Testing is a poor substitute for proof</p>
+</blockquote>
+
+<h3 id="2-3-what-are-types">2.3 What are Types?</h3>
+
+<h3 id="2-4-why-do-we-need-a-mathematical-model">2.4 Why do we need a mathematical model?</h3>
+
+<h3 id="2-5-pure-and-dirty-functions">2.5 Pure and dirty functions</h3>
+
+<h3 id="2-6-examples-of-types">2.6 Examples of Types</h3>
+
+<h3 id="2-7-challenges">2.7 Challenges</h3>
+
+<p>Q: Define a higher-order function (or a function object) memoize in your favorite language.</p>
+
+<p>A:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#007020;font-weight:bold">var</span> memoize <span style="color:#666">=</span> f =&gt; {
+	<span style="color:#007020;font-weight:bold">const</span> cache <span style="color:#666">=</span> {}
+	<span style="color:#007020;font-weight:bold">return</span> (...args) =&gt; {
+		<span style="color:#007020;font-weight:bold">if</span> (cache[args]) <span style="color:#007020;font-weight:bold">return</span> cache[args]
+		cache[args] <span style="color:#666">=</span> f(...args)
+		<span style="color:#007020;font-weight:bold">return</span> cache[args]
+	}
+}
+</code></pre></div>
 </section>
 
 
