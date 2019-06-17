@@ -3,6 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jamiecollinson.com/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/post/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jamiecollinson.com/blog/solving-knights-and-knaves-with-z3/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jamiecollinson.com/blog/category-theory-for-programmers/</loc>
     <lastmod>2019-05-14T00:00:00+00:00</lastmod>
   </url>
@@ -28,18 +45,7 @@
   </url>
   
   <url>
-    <loc>https://jamiecollinson.com/</loc>
-    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jamiecollinson.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jamiecollinson.com/post/</loc>
-    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
