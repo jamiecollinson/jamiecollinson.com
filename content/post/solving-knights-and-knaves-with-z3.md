@@ -1,14 +1,13 @@
 ---
 title: "Solving Knights and Knaves with Z3"
 date: 2019-06-17
-draft: true
 ---
 
 There's a type of logic puzzle called [Knights and Knaves](https://en.wikipedia.org/wiki/Knights_and_Knaves), in which we have a set of people who will either always tell the truth - a Knight - or always lie - a Knave.
 
 Suppose we have two people, A and B, with A claiming "We are both Knaves". What can we deduce? A must be a Knave, since if he were a Knight he could not claim to be a Knave. Since Knaves always lie A and B cannot both be Knaves, and so B must be a Knight.
 
-Can this be solved by a computer? If we can express this as an SMT problem we can use well established computational tools. Z3 is an efficient open source SMT Solver from Microsoft Research - let's try it out.
+Can this type of problem be solved by a computer? We can clearly imagine a brute force solution, but if we can express this in a certain form we can use well established computational tools. I recently read [Hillel Wayne's post about solving the problem with Alloy](https://www.hillelwayne.com/post/knights-knaves/) (a SAT based modeller / solver) and thought it would be fun to show the same in Z3, an open source SMT Solver from Microsoft Research.
 
 Installing the python interface to Z3 will also set up Z3 on your system (there's no separate installation needed):
 
@@ -176,9 +175,40 @@ s.add((G == True) == (F == False))
 > [G = True, F = False, E = False]
 ```
 
-Problem 4: You travel along a road that comes to a fork producing a path to the right and a path to the left. You know that one path leads to Death and the other path leads to Freedom, but you have no idea which is which. You can only choose one path to follow.
+Problem 4: You travel along a road that comes to a fork producing a path to the right and a path to the left. You know that one path leads to Death and the other path leads to Freedom, but you have no idea which is which. You can only choose one path to follow. Fortunately, at the fork in the road are two native islanders, named Horace and Ingrid. You know that one of Horace and Ingrid is a Knight and the other is a Knave, but you don’t know which is which. You are allowed to ask only one question. You can ask either Horace or Ingrid (but not both), and the person you ask will answer you.
 
-Fortunately, at the fork in the road are two native islanders, named Horace and Ingrid. You know that one of Horace and Ingrid is a Knight and the other is a Knave, but you don’t know which is which. You are allowed to ask only one question. You can ask either Horace or Ingrid (but not both), and the person you ask will answer you.
+This is the classic example, but needs more thought than the previous examples. We're not looking for single solution, but a question which will be answered consistently in all possible scenarios. Let's try the classic solution - "ask Horace if Ingrid would say left is the path to freedom":
+
+``` python
+H, I = Bools("H I")
+Q = Bool("answers truthfully")
+
+# one Knight, one Knave
+s.add(Or(And(H == True, I == False), And(H == False, I == True)))
+
+# we ask one about what the other would say about the left path, Q represents whether that answer is truthful
+s.add((H == True) == ((I == True) == Q))
+```
+
+```
+[H = False, I = True, answers truthfully = False]
+[answers truthfully = False, I = False, H = True]
+```
+
+We can see that in all scenarios we get a lie, so can ask about either path and invert the answer to find the truth. Note that there is a simpler method - if we ask Horace if he would say left is the path to freedom, then he will tell the truth (and we can drop the condition about one Knight and one Knave):
+
+``` python
+H = Bool("H")
+Q = Bool("answers truthfully")
+
+# Ask H what he would say
+s.add(H == (H == Q))
+```
+
+```
+[H = False, answers truthfully = True]
+[answers truthfully = True, H = True]
+```
 
 Cool huh, but what can you do with this besides solving toy problems? Any problem which can be expressed as a series of logical constraints can use SMT tools. Some interesting real world examples:
 
