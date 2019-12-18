@@ -95,7 +95,9 @@ Lift the back panel from the screen side so that you can get at the cable.
 
 ![Separate back panel](/img/IMG_20160131_125107.jpg)
 
-Use the tweezers to disconnect the white cable. (It may be possible to continue without doing this, but I was concerned about yanking the cable.)
+Use the tweezers to disconnect the white cable.
+
+When you do this be careful of the contacts on the cable - a reader emailed me that he had damaged the contacts and had to alter the cable to make some buttons work after reassembly. He recommends leaving the cable in place to avoid this risk, which I haven't tried but sounds like it would work fine but perhaps be more fiddly.
 
 ![Detach white cable](/img/IMG_20160131_125201.jpg)
 
