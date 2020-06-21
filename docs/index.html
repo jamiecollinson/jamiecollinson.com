@@ -2,7 +2,7 @@
 <html>
 
     <head>
-	<meta name="generator" content="Hugo 0.55.5" />
+	<meta name="generator" content="Hugo 0.72.0" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,8 +11,10 @@
 	<link rel="stylesheet" href="/css/styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
-	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	
+
+        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -27,32 +29,30 @@
 <h1>I'm Jamie. I build things with open source software.</h1>
 
 <section>
-    <p>Working programmer. Lapsed mathematician. Amateur pokerbot trainer. Enthusiast horologist<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>. Tai Chi Chuan practitioner. Street photographer.</p>
-
+    <p>Working programmer. Lapsed mathematician. Amateur pokerbot trainer. Enthusiast horologist<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Tai Chi Chuan practitioner. Street photographer.</p>
 <p>Managing Director at <a href="http://www.cambridgesoftware.co.uk">Cambridge Software</a>. Currently studying deep learning, dabbling with Haskell and having fun with <a href="/blog/my-emacs-config/">my emacs config</a>.</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">Following an embarassing conversation, I must remind the reader that horology != astrology.
- <a class="footnote-return" href="#fnref:1"><sup>↩</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>Following an embarassing conversation, I must remind the reader that horology != astrology. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
     <p class="social">
-    <a href="mailto:jamiecollinson@gmail.com">
-        <i class="ion-email"></i>
-    </a>
-    <a href="https://github.com/jamiecollinson/">
-        <i class="ion-social-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/jamiecollinson/">
-        <i class="ion-social-linkedin"></i>
-    </a>
-    <a href="https://twitter.com/jamiecollinson">
-        <i class="ion-social-twitter"></i>
-    </a>
+  <a href="mailto:jamiecollinson@gmail.com">
+    <ion-icon name="mail"></ion-icon>
+  </a>
+  <a href="https://github.com/jamiecollinson/">
+    <ion-icon name="logo-github"></ion-icon>
+  </a>
+  <a href="https://www.linkedin.com/in/jamiecollinson/">
+    <ion-icon name="logo-linkedin"></ion-icon>
+  </a>
+  <a href="https://twitter.com/jamiecollinson">
+    <ion-icon name="logo-twitter"></ion-icon>
+  </a>
 </p>
 
 </section>
@@ -106,17 +106,6 @@
     </div>
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-3143424-7', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 
 </body>
 
@@ -124,7 +113,7 @@ if (!doNotTrack) {
 
 <script>
  var post = document.querySelector('body'),
-     markers = post.querySelectorAll('.footnote-ref'),
+     markers = post.querySelectorAll('sup'),
      footnotes = post.querySelectorAll('.footnotes ol li');
 
  footnotes.forEach(function(footnote, i) {

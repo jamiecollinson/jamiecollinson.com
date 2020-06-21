@@ -10,8 +10,10 @@
 	<link rel="stylesheet" href="/css/styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
-	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	
+
+        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -32,103 +34,67 @@
 <nav class="toc js-toc"></nav>
 
 <section class="post">
-    
-
-<h2 id="1-category-the-essence-of-composition">1 Category: The Essence of Composition</h2>
-
+    <h2 id="1-category-the-essence-of-composition">1 Category: The Essence of Composition</h2>
 <ul>
 <li>Categories consist of <em>objects</em> and <em>arrows</em> that go between them</li>
 <li>The essence of a category is <em>composition</em>, i.e. that <code>A -&gt; B</code> and <code>B -&gt; C</code> implies <code>A -&gt; C</code></li>
 </ul>
-
-<h3 id="1-1-arrows-as-functions">1.1 Arrows as Functions</h3>
-
+<h3 id="11-arrows-as-functions">1.1 Arrows as Functions</h3>
 <ul>
 <li>Arrows are <em>morphisms</em> which are equivalent to functions</li>
 <li>Objects are equivalent to types.</li>
 <li>If we have <code>f :: A -&gt; B</code> and <code>g :: B -&gt; C</code> then <code>(g . f) :: A -&gt; C</code></li>
 </ul>
-
-<h3 id="1-2-properties-of-composition">1.2 Properties of Composition</h3>
-
+<h3 id="12-properties-of-composition">1.2 Properties of Composition</h3>
 <p>Composition in any category must satisfy two properties:</p>
-
 <ul>
 <li>Composition is <em>associative</em>, which means the order of brackets doesn&rsquo;t matter. This means for functions <code>f</code> <code>g</code> and <code>h</code>, <code>h . (g . f) = (h . g) . f = h . g. f</code></li>
 <li>Every object has an <em>identity</em> mapping back to itself. If we have <code>f :: A -&gt; B</code> then <code>f . identityA = f</code> and <code>identityB . f = f</code>. Note the identity is per object.</li>
 </ul>
-
-<h3 id="1-3-composition-is-the-essence-of-programming">1.3 Composition is the Essence of Programming</h3>
-
+<h3 id="13-composition-is-the-essence-of-programming">1.3 Composition is the Essence of Programming</h3>
 <p>Why does this matter for programming? Because decomposing problems, creating solutions to simpler problems and then composing them is the essence of programming. Categories provide a mathematical basis for thinking about this.</p>
-
-<h3 id="1-4-challenges">1.4 Challenges</h3>
-
+<h3 id="14-challenges">1.4 Challenges</h3>
 <p>Q: Implement, as best as you can, the identity function in your favorite language (or the second favorite, if your favorite language happens to be Haskell).</p>
-
 <p>A:</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#007020;font-weight:bold">const</span> identity <span style="color:#666">=</span> x =&gt; x
-</code></pre></div>
-<p>Q: Implement the composition function in your favorite language.It takes two functions as arguments and returns a function that is their composition.</p>
-
+</code></pre></div><p>Q: Implement the composition function in your favorite language.It takes two functions as arguments and returns a function that is their composition.</p>
 <p>A:</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#007020;font-weight:bold">const</span> comp <span style="color:#666">=</span> (f, g) =&gt; x =&gt; g(f(x))
-</code></pre></div>
-<p>Q: Write a program that tries to test that your composition function respects identity.</p>
-
+</code></pre></div><p>Q: Write a program that tries to test that your composition function respects identity.</p>
 <p>A:</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#007020;font-weight:bold">const</span> <span style="color:#007020;font-weight:bold">double</span> <span style="color:#666">=</span> x =&gt; x <span style="color:#666">+</span> x
 console.assert(comp(<span style="color:#007020;font-weight:bold">double</span>, identity)(<span style="color:#40a070">10</span>) <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">double</span>(<span style="color:#40a070">10</span>))
-</code></pre></div>
-<p>Q: Is the world-wide web a category in any sense? Are links morphisms?</p>
-
+</code></pre></div><p>Q: Is the world-wide web a category in any sense? Are links morphisms?</p>
 <p>A: Yes. If we view links between pages as a function from &ldquo;visiting page A&rdquo; to &ldquo;visiting page B&rdquo; then links are composable (a crawler could follow a chain of links equivalently to a single link), and pages are a category under links.</p>
-
 <p>Q: Is Facebook a category, with people as objects and friendships as morphisms?</p>
-
 <p>A: No, as friendship isn&rsquo;t composable (I may be friends with you, but some of your friends are completely unknown to me and thus not my friends), and there&rsquo;s also no identity function as people can&rsquo;t friend themselves. We&rsquo;d need an identity and an axiom such as &ldquo;the friend of my friend is my friend&rdquo; for this to be a category.</p>
-
 <p>Q: When is a directed graph a category?</p>
-
 <p>A: A directed graph is a category provided we allow nodes to be adjacent to themselves, otherwise we do not have an identity function.</p>
-
 <h2 id="2-types-and-functions">2 Types and Functions</h2>
-
-<h3 id="2-1-who-needs-types">2.1 Who needs Types?</h3>
-
+<h3 id="21-who-needs-types">2.1 Who needs Types?</h3>
 <p>Thought experiment: millions of monkeys typing random keys, producing programs, compiling and running them.</p>
-
 <blockquote>
 <p>With machine language, any combination of bytes produced by monkeys would be accepted and run. But with higher level languages, we do appreciate the fact that a compiler is able to detect lexical and grammatical errors&hellip; Type checking provides yet another barrier against nonsensical programs.</p>
-
+</blockquote>
+<blockquote>
 <p>The usual goal in the typing monkeys thought experiment is the pro- duction of the complete works of Shakespeare. Having a spell checker and a grammar checker in the loop would drastically increase the odds. The analog of a type checker would go even further by making sure that, once Romeo is declared a human being, he doesn’t sprout leaves or trap photons in his powerful gravitational field.</p>
 </blockquote>
-
-<h3 id="2-2-types-are-about-composability">2.2 Types are about composability</h3>
-
+<h3 id="22-types-are-about-composability">2.2 Types are about composability</h3>
 <ul>
 <li>Arrows can only be composed when targets and sources match, i.e. for programs to be composable the input / output types must match.</li>
 <li>Strong static typing can eliminate semantically valid programs, but this is rare and escape hatches exist (e.g. <code>unsafeCoerce</code> in Haskell).</li>
 <li>Type inference removes some friction from strong static typing, though designing types up front can be a valuable design technique.</li>
 <li>Strong static typing does not replace testing (e.g. it does not guarantee program logic is correct), and testing does not replace strong typing. Tests are probabilistic not deterministic and can&rsquo;t typically cover all cases.</li>
 </ul>
-
 <blockquote>
 <p>Testing is a poor substitute for proof</p>
 </blockquote>
-
-<h3 id="2-3-what-are-types">2.3 What are Types?</h3>
-
-<h3 id="2-4-why-do-we-need-a-mathematical-model">2.4 Why do we need a mathematical model?</h3>
-
-<h3 id="2-5-pure-and-dirty-functions">2.5 Pure and dirty functions</h3>
-
-<h3 id="2-6-examples-of-types">2.6 Examples of Types</h3>
-
-<h3 id="2-7-challenges">2.7 Challenges</h3>
-
+<h3 id="23-what-are-types">2.3 What are Types?</h3>
+<h3 id="24-why-do-we-need-a-mathematical-model">2.4 Why do we need a mathematical model?</h3>
+<h3 id="25-pure-and-dirty-functions">2.5 Pure and dirty functions</h3>
+<h3 id="26-examples-of-types">2.6 Examples of Types</h3>
+<h3 id="27-challenges">2.7 Challenges</h3>
 <p>Q: Define a higher-order function (or a function object) memoize in your favorite language.</p>
-
 <p>A:</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#007020;font-weight:bold">var</span> memoize <span style="color:#666">=</span> f =&gt; {
 	<span style="color:#007020;font-weight:bold">const</span> cache <span style="color:#666">=</span> {}
@@ -147,18 +113,18 @@ console.assert(comp(<span style="color:#007020;font-weight:bold">double</span>, 
       
     <div class="footer">
   <p class="social">
-    <a href="mailto:jamiecollinson@gmail.com">
-        <i class="ion-email"></i>
-    </a>
-    <a href="https://github.com/jamiecollinson/">
-        <i class="ion-social-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/jamiecollinson/">
-        <i class="ion-social-linkedin"></i>
-    </a>
-    <a href="https://twitter.com/jamiecollinson">
-        <i class="ion-social-twitter"></i>
-    </a>
+  <a href="mailto:jamiecollinson@gmail.com">
+    <ion-icon name="mail"></ion-icon>
+  </a>
+  <a href="https://github.com/jamiecollinson/">
+    <ion-icon name="logo-github"></ion-icon>
+  </a>
+  <a href="https://www.linkedin.com/in/jamiecollinson/">
+    <ion-icon name="logo-linkedin"></ion-icon>
+  </a>
+  <a href="https://twitter.com/jamiecollinson">
+    <ion-icon name="logo-twitter"></ion-icon>
+  </a>
 </p>
 
 </div>
@@ -168,17 +134,6 @@ console.assert(comp(<span style="color:#007020;font-weight:bold">double</span>, 
     </div>
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-3143424-7', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 
 </body>
 
@@ -186,7 +141,7 @@ if (!doNotTrack) {
 
 <script>
  var post = document.querySelector('body'),
-     markers = post.querySelectorAll('.footnote-ref'),
+     markers = post.querySelectorAll('sup'),
      footnotes = post.querySelectorAll('.footnotes ol li');
 
  footnotes.forEach(function(footnote, i) {

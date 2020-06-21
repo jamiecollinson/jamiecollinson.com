@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jamie Collinson</title>
@@ -36,9 +36,7 @@ Suppose we have two people, A and B, with A claiming &amp;ldquo;We are both Knav
       <pubDate>Sun, 11 Mar 2018 14:33:18 +0000</pubDate>
       
       <guid>https://jamiecollinson.com/blog/my-emacs-config/</guid>
-      <description>This is my emacs configuration. After many years with vim then a year with spacemacs &amp; prelude, I came to the realisation that I needed to construct my own to really get it1.
-After a few aborted attempts to split the config into separate files, I settled on the literate-programming-with-single-file approach via Sacha Chua.
-Documenting this is mostly for my benefit, but I hope others might find it useful constucting their own.</description>
+      <description>This is my emacs configuration. After many years with vim then a year with spacemacs &amp;amp; prelude, I came to the realisation that I needed to construct my own to really get it1.  After a few aborted attempts to split the config into separate files, I settled on the single file literate approach via Sacha Chua.  Documenting this is mostly for my benefit, but I hope others might find it useful constucting their own.</description>
     </item>
     
     <item>

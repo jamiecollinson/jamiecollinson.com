@@ -10,8 +10,10 @@
 	<link rel="stylesheet" href="/css/styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
-	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	
+
+        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -32,68 +34,175 @@
 <nav class="toc js-toc"></nav>
 
 <section class="post">
-    <p>This is my emacs configuration. After many years with vim then a year with spacemacs & prelude, I came to the realisation that I needed to construct my own to really get it<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>.</p>
-
-<p>After a few aborted attempts to split the config into separate files, I settled on the literate-programming-with-single-file approach via <a href="http://pages.sachachua.com/.emacs.d/Sacha.html" title="Sacha Chua">Sacha Chua</a>.</p>
-
-<p>Documenting this is mostly for my benefit, but I hope others might find it useful constucting their own. The live version is <a href="https://github.com/jamiecollinson/dotfiles/blob/master/config.org/" title="on GitHub">on GitHub</a>, with this version updated periodically.</p>
-
+    
+<p>
+This is my emacs configuration. After many years with vim then a year with spacemacs &amp; prelude, I came to the realisation that I needed to construct my own to really get it<sup class="footnote-reference"><a id="footnote-reference-1" href="#footnote-1">1</a></sup>.
+</p>
+<p>
+After a few aborted attempts to split the config into separate files, I settled on the single file literate approach via <a href="http://pages.sachachua.com/.emacs.d/Sacha.html">Sacha Chua</a>.
+</p>
+<p>
+Documenting this is mostly for my benefit, but I hope others might find it useful constucting their own. The live version is <a href="https://github.com/jamiecollinson/dotfiles/blob/master/config.org/">on GitHub</a>, with this version updated periodically.
+</p>
 <blockquote>
 <p>
 Not that we needed all that for the trip, but once you get locked into a serious drug collection, the tendency is to push it as far as you can.
-</p>
-<p>
 Hunter S. Thompson, Fear and Loathing in Las Vegas
 </p>
 </blockquote>
+<h2 id="headline-1">
+Setup
+</h2>
+<h3 id="headline-2">
+Configure package sources
+</h3>
+<p>
+Add repositories from which we&#39;ll load packages. I prefer to live on the bleeding edge so have only enabled melpa. Setting <code class="verbatim">package-enable-at-startup</code> to <code class="verbatim">nil</code> prevents a second package load and slightly improves startup time.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">package-enable-at-startup</span> <span style="color:#60add5">nil</span>)
+  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">package-archives</span> <span style="color:#666">&#39;</span>((<span style="color:#4070a0">&#34;gnu&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;http://mirrors.163.com/elpa/gnu/&#34;</span>)
+                           (<span style="color:#4070a0">&#34;melpa&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;https://melpa.org/packages/&#34;</span>)
+                           (<span style="color:#4070a0">&#34;org&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;http://orgmode.org/elpa/&#34;</span>)))</code></pre></div>
+</div>
+<h3 id="headline-3">
+Bootstrap use-package
+</h3>
+<p>
+If <code class="verbatim">use-package</code> is not installed, install it.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">unless</span> (<span style="color:#bb60d5">package-installed-p</span> <span style="color:#517918">&#39;use-package</span>)
+    (<span style="color:#bb60d5">package-refresh-contents</span>)
+    (<span style="color:#bb60d5">package-install</span> <span style="color:#517918">&#39;use-package</span>)
+    (<span style="color:#007020">eval-when-compile</span> (<span style="color:#007020">require</span> <span style="color:#517918">&#39;use-package</span>)))</code></pre></div>
+</div>
+<p>
+By default all packages should be installed from package manager as that&#39;s the usual path. This is equivalent to setting <code class="verbatim">:ensure t</code> on each call to <code class="verbatim">use-package</code>. To disable set <code class="verbatim">:ensure nil</code> (this is done automatically for any packages using <code class="verbatim">:load-path</code> so shouldn&#39;t generally be needed).
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">use-package-always-ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
+</div>
+<h3 id="headline-4">
+Benchmark startup
+</h3>
+<p>
+<code class="verbatim">benchmark-init</code> records startup time by package so we can debug. It only records things after it&#39;s initialised, so put as early in config as possible.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">benchmark-init</span>
+    <span style="color:#007020">:config</span>
+    <span style="color:#60a0b0;font-style:italic">;; To disable collection of benchmark data after init is done.</span>
+    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;after-init-hook</span> <span style="color:#517918">&#39;benchmark-init/deactivate</span>))
 
-<h1 id="setup">Setup</h1>
+  (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;after-init-hook</span>
+            (<span style="color:#007020">lambda</span> () (<span style="color:#06287e">message</span> <span style="color:#4070a0">&#34;loaded in %s&#34;</span> (<span style="color:#bb60d5">emacs-init-time</span>))))</code></pre></div>
+</div>
+<h3 id="headline-5">
+Increase garbage collector threshold
+</h3>
+<p>
+The default garbage collection threshold is 800kB, increasing this to 10MB for startup increases speed (from 11.0s -&gt; 9.7s when I tested).
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">gc-cons-threshold</span> <span style="color:#40a070">10000000</span>)
 
-<h2 id="make-it-easy-to-edit-this-file">Make it easy to edit this file!</h2>
+  <span style="color:#60a0b0;font-style:italic">;; Restore after startup</span>
+  (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;after-init-hook</span>
+            (<span style="color:#007020">lambda</span> ()
+              (<span style="color:#007020">setq</span> <span style="color:#bb60d5">gc-cons-threshold</span> <span style="color:#40a070">1000000</span>)
+              (<span style="color:#06287e">message</span> <span style="color:#4070a0">&#34;gc-cons-threshold restored to %S&#34;</span>
+                       <span style="color:#bb60d5">gc-cons-threshold</span>)))</code></pre></div>
+</div>
+<h3 id="headline-6">
+Make it easy to edit this file
+</h3>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">defun</span> <span style="color:#bb60d5">find-config</span> ()
     <span style="color:#4070a0">&#34;Edit config.org&#34;</span>
     (<span style="color:#007020">interactive</span>)
     (<span style="color:#bb60d5">find-file</span> <span style="color:#4070a0">&#34;~/dotfiles/config.org&#34;</span>))
 
   (<span style="color:#bb60d5">global-set-key</span> (<span style="color:#bb60d5">kbd</span> <span style="color:#4070a0">&#34;C-c I&#34;</span>) <span style="color:#517918">&#39;find-config</span>)</code></pre></div>
-<h2 id="configure-package-sources">Configure package sources</h2>
-
-<p>Add repositories from which we'll load packages. I prefer to live on the bleeding edge so have only enabled melpa. Setting <code>package-enable-at-startup</code> to <code>nil</code> prevents a second package load and slightly improves startup time.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;package-archives</span> <span style="color:#666">&#39;</span>(<span style="color:#4070a0">&#34;melpa&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;http://melpa.org/packages/&#34;</span>))
-  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">package-enable-at-startup</span> <span style="color:#60add5">nil</span>)</code></pre></div>
-<h2 id="bootstrap-use-package">Bootstrap use-package</h2>
-
-<p>If <code>use-package</code> is not installed, install it.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">unless</span> (<span style="color:#bb60d5">package-installed-p</span> <span style="color:#517918">&#39;use-package</span>)
-    (<span style="color:#bb60d5">package-refresh-contents</span>)
-    (<span style="color:#bb60d5">package-install</span> <span style="color:#517918">&#39;use-package</span>))</code></pre></div>
-<h2 id="set-custom-settings-to-load-in-own-file">Set custom settings to load in own file</h2>
-
-<p>This stops emacs adding customised settings to <code>init.el</code>. I try to avoid using customize anyway, preferring programmatic control of variables. Creating it as a temporary file effectively disables it (i.e. any changes are session local).</p>
+</div>
+<h3 id="headline-7">
+Set custom settings to load in own file
+</h3>
+<p>
+This stops emacs adding customised settings to <code class="verbatim">init.el</code>. I try to avoid using customize anyway, preferring programmatic control of variables. Creating it as a temporary file effectively disables it (i.e. any changes are session local).
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">custom-file</span> (<span style="color:#bb60d5">make-temp-file</span> <span style="color:#4070a0">&#34;emacs-custom&#34;</span>))</code></pre></div>
-<h2 id="add-custom-packages-to-load-path">Add custom packages to load path</h2>
-
-<p>By default Emacs only includes files directly under <code>user-emacs-directory</code> (usually <code>~/.emacs.d/</code>), so we need to add any folders containing custom packages.</p>
-
-<p>I put my scripts under <code>~/dotfiles/lisp/</code> and symlink it with <code>ln -s ~/dotfiles/lisp ~/.emacs.d/lisp</code>.</p>
+</div>
+<h3 id="headline-8">
+Add custom packages to load path
+</h3>
+<p>
+By default Emacs only includes files directly under <code class="verbatim">user-emacs-directory</code> (usually <code class="verbatim">~/.emacs.d/</code>), so we need to add any folders containing custom packages.
+</p>
+<p>
+I put my scripts under <code class="verbatim">~/dotfiles/lisp/</code> and symlink it with <code class="verbatim">ln -s ~/dotfiles/lisp ~/.emacs.d/lisp</code>.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;load-path</span> <span style="color:#4070a0">&#34;~/.emacs.d/lisp/&#34;</span>)</code></pre></div>
-<h1 id="preferences">Preferences</h1>
-
-<p>Don't display the help screen on startup.</p>
+</div>
+<h3 id="headline-9">
+Record key frequency
+</h3>
+<p>
+This is useful to find out what I use a lot. I plan to then change bindings to improve ergonomics on commonly used functions.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">keyfreq</span>
+    <span style="color:#007020">:config</span>
+    (<span style="color:#bb60d5">keyfreq-mode</span> <span style="color:#40a070">1</span>)
+    (<span style="color:#bb60d5">keyfreq-autosave-mode</span> <span style="color:#40a070">1</span>))</code></pre></div>
+</div>
+<h2 id="headline-10">
+Preferences
+</h2>
+<p>
+Don&#39;t display the help screen on startup.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">inhibit-startup-screen</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>On  I use ⌘ as <code>meta</code> and prefer ⌥ to do nothing so I can still insert special characters like easily.</p>
+</div>
+<p>
+On  I use ⌘ as <code class="verbatim">meta</code> and prefer ⌥ to do nothing so I can still insert special characters easily.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">mac-command-modifier</span> <span style="color:#517918">&#39;meta</span>
         <span style="color:#bb60d5">mac-option-modifier</span> <span style="color:#517918">&#39;none</span>)</code></pre></div>
-<p>I prefer lines to wrap.</p>
+</div>
+<p>
+I prefer lines to wrap.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">global-visual-line-mode</span> <span style="color:#40a070">1</span>)</code></pre></div>
-<p>Let's turn off unwanted window decoration.</p>
+</div>
+<p>
+Let&#39;s turn off unwanted window decoration.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">tool-bar-mode</span> <span style="color:#40a070">-1</span>)
   (<span style="color:#bb60d5">scroll-bar-mode</span> <span style="color:#40a070">-1</span>)</code></pre></div>
-<p>I don't want the error bell.</p>
+</div>
+<p>
+I don&#39;t want the error bell.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">ring-bell-function</span> <span style="color:#517918">&#39;ignore</span>)</code></pre></div>
-<p>Make the <code>yes or no</code> prompts shorter.</p>
+</div>
+<p>
+Make the <code class="verbatim">yes or no</code> prompts shorter.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">defalias</span> <span style="color:#517918">&#39;yes-or-no-p</span> <span style="color:#517918">&#39;y-or-n-p</span>)</code></pre></div>
-<p>A common frustration with new Emacs users is the <code>filename#</code> files created. This centralises the backup files created as you edit.</p>
+</div>
+<p>
+A common frustration with new Emacs users is the <code class="verbatim">filename#</code> files created. This centralises the backup files created as you edit.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">backup-directory-alist</span> <span style="color:#666">&#39;</span>((<span style="color:#4070a0">&#34;.&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;~/.emacs.d/backup&#34;</span>))
     <span style="color:#bb60d5">backup-by-copying</span> <span style="color:#60add5">t</span>    <span style="color:#60a0b0;font-style:italic">; Don&#39;t delink hardlinks</span>
     <span style="color:#bb60d5">version-control</span> <span style="color:#60add5">t</span>      <span style="color:#60a0b0;font-style:italic">; Use version numbers on backups</span>
@@ -101,259 +210,361 @@ Hunter S. Thompson, Fear and Loathing in Las Vegas
     <span style="color:#bb60d5">kept-new-versions</span> <span style="color:#40a070">20</span>   <span style="color:#60a0b0;font-style:italic">; how many of the newest versions to keep</span>
     <span style="color:#bb60d5">kept-old-versions</span> <span style="color:#40a070">5</span>    <span style="color:#60a0b0;font-style:italic">; and how many of the old</span>
     )</code></pre></div>
-<h1 id="interface">Interface</h1>
-
-<h2 id="basics">Basics</h2>
-
-<p><code>crux</code> has useful functions extracted from Emacs Prelude. Set <code>C-a</code> to move to the first non-whitespace character on a line, and then to toggle between that and the beginning of the line.</p>
+</div>
+<p>
+I usually don&#39;t want tabs, if I do I can set this buffer-local to <code class="verbatim">t</code>. If I just want one tab then use <code class="verbatim">C-q</code> (<code class="verbatim">quoted-insert</code>) to insert as a literal.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq-default</span> <span style="color:#bb60d5">indent-tabs-mode</span> <span style="color:#60add5">nil</span>)</code></pre></div>
+</div>
+<h2 id="headline-11">
+Interface
+</h2>
+<h3 id="headline-12">
+Basics
+</h3>
+<p>
+<code class="verbatim">crux</code> has useful functions extracted from Emacs Prelude. Set <code class="verbatim">C-a</code> to move to the first non-whitespace character on a line, and then to toggle between that and the beginning of the line.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">crux</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:bind</span> ((<span style="color:#4070a0">&#34;C-a&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">crux-move-beginning-of-line</span>)))</code></pre></div>
-<p>I <strong>never</strong> want whitespace at the end of lines. Remove it on save.</p>
+</div>
+<p>
+I <strong>never</strong> want whitespace at the end of lines. Remove it on save.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;before-save-hook</span> <span style="color:#517918">&#39;delete-trailing-whitespace</span>)</code></pre></div>
-<h2 id="key-chords">Key chords</h2>
-
-<p>Key chords let us bind functions to sequential key presses like <code>jj</code>. It makes evil mode being turned off much more palatable.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">use-package-chords</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
+</div>
+<h3 id="headline-13">
+Evil mode
+</h3>
+<p>
+Evil-mode emulates Vim in Emacs.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">evil</span>
     <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">key-chord-mode</span> <span style="color:#40a070">1</span>))</code></pre></div>
-<p>We bind individual mode chords via <code>use-package</code> but some globals are useful like <code>JJ</code> to jump to the previous buffer.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">defun</span> <span style="color:#bb60d5">jc/switch-to-previous-buffer</span> ()
-    <span style="color:#4070a0">&#34;Switch to previously open buffer.
-</span><span style="color:#4070a0">  Repeated invocations toggle between the two most recently open buffers.&#34;</span>
-    (<span style="color:#007020">interactive</span>)
-    (<span style="color:#bb60d5">switch-to-buffer</span> (<span style="color:#06287e">other-buffer</span> (<span style="color:#06287e">current-buffer</span>) <span style="color:#40a070">1</span>)))
+    <span style="color:#60a0b0;font-style:italic">;; (evil-mode 1)</span>
+    (<span style="color:#bb60d5">evil-set-initial-state</span> <span style="color:#517918">&#39;NeoTree</span> <span style="color:#517918">&#39;emacs</span>))</code></pre></div>
+</div>
+<p>
+Todo: evil leader etc?
+</p>
+<h3 id="headline-14">
+God mode
+</h3>
+<p>
+God-mode is a sort-of alternative to Vim - it&#39;s a modal interface to emacs existing commands, so in essence when enabled you don&#39;t need to chord Ctrl / Meta. As an example <code class="verbatim">C-x C-s</code> (save) becomes <code class="verbatim">xs</code>.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">god-mode</span>
+    <span style="color:#007020">:disabled</span>
+    <span style="color:#007020">:bind</span> ((<span style="color:#4070a0">&#34;&lt;escape&gt;&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">god-local-mode</span>)
+           (<span style="color:#4070a0">&#34;C-x C-1&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">delete-other-windows</span>)
+           (<span style="color:#4070a0">&#34;C-x C-2&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">split-window-below</span>)
+           (<span style="color:#4070a0">&#34;C-x C-3&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">split-window-right</span>)
+           (<span style="color:#4070a0">&#34;C-x C-0&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">delete-window</span>)))
 
-  (<span style="color:#bb60d5">key-chord-define-global</span> <span style="color:#4070a0">&#34;JJ&#34;</span> <span style="color:#517918">&#39;jc/switch-to-previous-buffer</span>)</code></pre></div>
-<h2 id="command-completion">Command completion</h2>
+  (<span style="color:#007020">defun</span> <span style="color:#bb60d5">my-update-cursor</span> ()
+    (<span style="color:#007020">setq</span> <span style="color:#bb60d5">cursor-type</span> (<span style="color:#007020">if</span> (<span style="color:#007020">or</span> <span style="color:#bb60d5">god-local-mode</span> <span style="color:#bb60d5">buffer-read-only</span>)
+                            <span style="color:#517918">&#39;box</span>
+                          <span style="color:#517918">&#39;bar</span>)))
 
-<p><code>smart M-x</code> suggests <code>M-x</code> commands based on recency and frequency. I don't tend to use it directly but <code>counsel</code> uses it to order suggestions.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">smex</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p><code>ivy</code> is a generic completion framework which uses the minibuffer. Turning on <code>ivy-mode</code> enables replacement of lots of built in <code>ido</code> functionality.</p>
+  (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;god-mode-enabled-hook</span> <span style="color:#517918">&#39;my-update-cursor</span>)
+  (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;god-mode-disabled-hook</span> <span style="color:#517918">&#39;my-update-cursor</span>)</code></pre></div>
+</div>
+<p>
+Todo: update <code class="verbatim">window-divider</code> on god-mode status?
+</p>
+<h3 id="headline-15">
+Goto last change
+</h3>
+<p>
+Sometimes it&#39;s useful to step to the last changes in a buffer.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">goto-last-change</span>
+    <span style="color:#007020">:bind</span> ((<span style="color:#4070a0">&#34;C-;&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">goto-last-change</span>)))</code></pre></div>
+</div>
+<h3 id="headline-16">
+Command completion
+</h3>
+<p>
+<code class="verbatim">ivy</code> is a generic completion framework which uses the minibuffer. Turning on <code class="verbatim">ivy-mode</code> enables replacement of lots of built in <code class="verbatim">ido</code> functionality.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">ivy</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-      <span style="color:#007020">:diminish</span> <span style="color:#bb60d5">ivy-mode</span>
       <span style="color:#007020">:config</span>
       (<span style="color:#bb60d5">ivy-mode</span> <span style="color:#60add5">t</span>))</code></pre></div>
-<p>By default <code>ivy</code> starts filters with <code>^</code>. I don't normally want that and can easily type it manually when I do.</p>
+</div>
+<p>
+By default <code class="verbatim">ivy</code> starts filters with <code class="verbatim">^</code>. I don&#39;t normally want that and can easily type it manually when I do.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">ivy-initial-inputs-alist</span> <span style="color:#60add5">nil</span>)</code></pre></div>
-<p><code>counsel</code> is a collection of <code>ivy</code> enhanced versions of common Emacs commands. I haven't bound much as <code>ivy-mode</code> takes care of most things.</p>
+</div>
+<p>
+<code class="verbatim">counsel</code> is a collection of <code class="verbatim">ivy</code> enhanced versions of common Emacs commands. I haven&#39;t bound much as <code class="verbatim">ivy-mode</code> takes care of most things.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">counsel</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:bind</span> ((<span style="color:#4070a0">&#34;M-x&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">counsel-M-x</span>))
-    <span style="color:#007020">:chords</span> ((<span style="color:#4070a0">&#34;yy&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">counsel-yank-pop</span>)))</code></pre></div>
-<p><code>swiper</code> is an <code>ivy</code> enhanced version of isearch.</p>
+    <span style="color:#007020">:bind</span> ((<span style="color:#4070a0">&#34;M-x&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">counsel-M-x</span>)))</code></pre></div>
+</div>
+<p>
+<code class="verbatim">prescient</code> sorts and filters candidate lists for avy/counsel.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">prescient</span>)
+  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">ivy-prescient</span>
+    <span style="color:#007020">:config</span>
+    (<span style="color:#bb60d5">ivy-prescient-mode</span> <span style="color:#60add5">t</span>))</code></pre></div>
+</div>
+<p>
+<code class="verbatim">swiper</code> is an <code class="verbatim">ivy</code> enhanced version of isearch.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">swiper</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:bind</span> ((<span style="color:#4070a0">&#34;M-s&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">swiper</span>)))</code></pre></div>
-<p><code>hydra</code> presents menus for <code>ivy</code> commands.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">ivy-hydra</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h2 id="suggest-next-key">Suggest next key</h2>
-
-<p>Suggest next keys to me based on currently entered key combination.</p>
+    <span style="color:#007020">:bind</span> ((<span style="color:#4070a0">&#34;M-s&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">counsel-grep-or-swiper</span>)))</code></pre></div>
+</div>
+<p>
+<code class="verbatim">hydra</code> presents menus for <code class="verbatim">ivy</code> commands.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">ivy-hydra</span>)</code></pre></div>
+</div>
+<p>
+<code class="verbatim">major-mode-hydra</code> binds a single key to open a context sensitive hydra based on current major mode. Hydras can be defined in <code class="verbatim">use-package</code> definitions via the <code class="verbatim">:mode-hydra</code> integration.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">major-mode-hydra</span>
+    <span style="color:#007020">:bind</span>
+    (<span style="color:#4070a0">&#34;C-M-SPC&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">major-mode-hydra</span>)
+    <span style="color:#007020">:config</span>
+    (<span style="color:#bb60d5">major-mode-hydra-define</span> <span style="color:#bb60d5">org-mode</span>
+      ()
+      (<span style="color:#4070a0">&#34;Tools&#34;</span>
+       ((<span style="color:#4070a0">&#34;l&#34;</span> <span style="color:#bb60d5">org-lint</span> <span style="color:#4070a0">&#34;lint&#34;</span>)))))</code></pre></div>
+</div>
+<h3 id="headline-17">
+Suggest next key
+</h3>
+<p>
+Suggest next keys to me based on currently entered key combination.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">which-key</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:diminish</span> <span style="color:#bb60d5">which-key-mode</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;after-init-hook</span> <span style="color:#517918">&#39;which-key-mode</span>))</code></pre></div>
-<h2 id="better-undo">Better undo</h2>
-
-<p><code>undo-tree</code> visualises undo history as a tree for easy navigation.</p>
+</div>
+<h3 id="headline-18">
+Better undo
+</h3>
+<p>
+<code class="verbatim">undo-tree</code> visualises undo history as a tree for easy navigation.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">undo-tree</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:chords</span> ((<span style="color:#4070a0">&#34;uu&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">undo-tree-visualize</span>))
-    <span style="color:#007020">:diminish</span> <span style="color:#bb60d5">undo-tree-mode:</span>
+    <span style="color:#007020">:defer</span> <span style="color:#40a070">5</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#bb60d5">global-undo-tree-mode</span> <span style="color:#40a070">1</span>))</code></pre></div>
-<h2 id="navigation">Navigation</h2>
-
-<p>One of the most important features of an advanced editor is quick text navigation. <code>avy</code> let's us jump to any character or line quickly.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">avy</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:chords</span> ((<span style="color:#4070a0">&#34;jj&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">avy-goto-char-2</span>)
-             (<span style="color:#4070a0">&#34;jl&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">avy-goto-line</span>)))</code></pre></div>
-<p><code>ace-window</code> lets us navigate between windows in the same way as <code>avy</code>. Once activated it has useful sub-modes like <code>x</code> to switch into window deletion mode.</p>
+</div>
+<h3 id="headline-19">
+Navigation
+</h3>
+<p>
+One of the most important features of an advanced editor is quick text navigation. <code class="verbatim">avy</code> lets us jump to any character or line quickly.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">avy</span>)</code></pre></div>
+</div>
+<p>
+<code class="verbatim">ace-window</code> lets us navigate between windows in the same way as <code class="verbatim">avy</code>. Once activated it has useful sub-modes like <code class="verbatim">x</code> to switch into window deletion mode.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"> (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">ace-window</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:chords</span> (<span style="color:#4070a0">&#34;jk&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">ace-window</span>)
     <span style="color:#007020">:config</span>
     (<span style="color:#007020">setq</span> <span style="color:#bb60d5">aw-keys</span> <span style="color:#666">&#39;</span>(<span style="color:#4070a0">?a</span> <span style="color:#4070a0">?s</span> <span style="color:#4070a0">?d</span> <span style="color:#4070a0">?f</span> <span style="color:#4070a0">?g</span> <span style="color:#4070a0">?h</span> <span style="color:#4070a0">?j</span> <span style="color:#4070a0">?k</span> <span style="color:#4070a0">?l</span>)))</code></pre></div>
-<h2 id="easier-selection">Easier selection</h2>
-
-<p><code>expand-region</code> expands the region around the cursor semantically depending on mode. Hard to describe but a killer feature.</p>
+</div>
+<h3 id="headline-20">
+Easier selection
+</h3>
+<p>
+<code class="verbatim">expand-region</code> expands the region around the cursor semantically depending on mode. Hard to describe but a killer feature.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">expand-region</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:bind</span> (<span style="color:#4070a0">&#34;C-=&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">er/expand-region</span>))</code></pre></div>
-<h2 id="file-tree"><span class="todo TODO">TODO</span> File tree</h2>
-
-<p>I don't use this a whole lot, preferring to navigate via searches such as <code>counsel-find-file</code>, but it's occasionally useful to have a file tree.</p>
-
-<p>I should consider https://github.com/Alexander-Miller/treemacs.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">neotree</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">global-set-key</span> (<span style="color:#bb60d5">kbd</span> <span style="color:#4070a0">&#34;C-c t&#34;</span>) <span style="color:#517918">&#39;neotree-toggle</span>))</code></pre></div>
-<p>When I open the tree try to jump to current file.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">neo-smart-open</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Use a simple theme for the file tree.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">neo-theme</span> <span style="color:#517918">&#39;arrow</span>)</code></pre></div>
-<h1 id="appearance">Appearance</h1>
-
-<p>I like the dracula theme - dark with neon highlights.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">dracula-theme</span>
-    <span style="color:#007020">:disabled</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">load-theme</span> <span style="color:#517918">&#39;dracula</span> <span style="color:#60add5">t</span>))</code></pre></div>
-<p>I'm trying out <code>apropospriate</code>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">apropospriate-theme</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>I'm now using my own translation of Panda Theme (now on <a href="https://melpa.org/#/panda-theme" title="melpa">melpa</a>!).</p>
+</div>
+<h3 id="headline-21">
+Fullscreen
+</h3>
+<p>
+This function toggles the <code class="verbatim">frame-parameter</code> <code class="verbatim">fullscreen</code> so that I can maximise Emacs from within rather than relying on the external MacOS controls.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">defun</span> <span style="color:#bb60d5">mac-toggle-max-window</span> ()
+    (<span style="color:#007020">interactive</span>)
+    (<span style="color:#bb60d5">set-frame-parameter</span>
+     <span style="color:#60add5">nil</span>
+     <span style="color:#517918">&#39;fullscreen</span>
+     (<span style="color:#007020">if</span> (<span style="color:#06287e">frame-parameter</span> <span style="color:#60add5">nil</span> <span style="color:#517918">&#39;fullscreen</span>)
+         <span style="color:#60add5">nil</span>
+       <span style="color:#517918">&#39;fullboth</span>)))</code></pre></div>
+</div>
+<h2 id="headline-22">
+Appearance
+</h2>
+<p>
+I&#39;m now using my own translation of Panda Theme (now on <a href="https://melpa.org/#/panda-theme">melpa</a>!).
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">panda-theme</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
+    <span style="color:#007020">:disabled</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#bb60d5">load-theme</span> <span style="color:#517918">&#39;panda</span> <span style="color:#60add5">t</span>))</code></pre></div>
-<p>Set a nice font.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">set-frame-font</span> <span style="color:#4070a0">&#34;Operator Mono 12&#34;</span> <span style="color:#60add5">nil</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Set a preferred unicode font.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#06287e">set-fontset-font</span> <span style="color:#60add5">t</span> <span style="color:#517918">&#39;unicode</span> <span style="color:#4070a0">&#34;STIXGeneral&#34;</span> <span style="color:#60add5">nil</span> <span style="color:#517918">&#39;prepend</span>)</code></pre></div>
-<p>Display pretty symbols for things like lambda.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">prettify-symbols-unprettify-at-point</span> <span style="color:#517918">&#39;right-edge</span>)
-  (<span style="color:#bb60d5">global-prettify-symbols-mode</span> <span style="color:#40a070">0</span>)
-
-  (<span style="color:#bb60d5">add-hook</span>
-   <span style="color:#517918">&#39;python-mode-hook</span>
-   (<span style="color:#007020">lambda</span> ()
-     (<span style="color:#06287e">mapc</span> (<span style="color:#007020">lambda</span> (<span style="color:#bb60d5">pair</span>) (<span style="color:#007020">push</span> <span style="color:#bb60d5">pair</span> <span style="color:#bb60d5">prettify-symbols-alist</span>))
-           <span style="color:#666">&#39;</span>((<span style="color:#4070a0">&#34;def&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;𝒇&#34;</span>)
-             (<span style="color:#4070a0">&#34;class&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;𝑪&#34;</span>)
-             (<span style="color:#4070a0">&#34;and&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;∧&#34;</span>)
-             (<span style="color:#4070a0">&#34;or&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;∨&#34;</span>)
-             (<span style="color:#4070a0">&#34;not&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;￢&#34;</span>)
-             (<span style="color:#4070a0">&#34;in&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;∈&#34;</span>)
-             (<span style="color:#4070a0">&#34;not in&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;∉&#34;</span>)
-             (<span style="color:#4070a0">&#34;return&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;⟼&#34;</span>)
-             (<span style="color:#4070a0">&#34;yield&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;⟻&#34;</span>)
-             (<span style="color:#4070a0">&#34;for&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;∀&#34;</span>)
-             (<span style="color:#4070a0">&#34;!=&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;≠&#34;</span>)
-             (<span style="color:#4070a0">&#34;==&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;＝&#34;</span>)
-             (<span style="color:#4070a0">&#34;&gt;=&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;≥&#34;</span>)
-             (<span style="color:#4070a0">&#34;&lt;=&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;≤&#34;</span>)
-             (<span style="color:#4070a0">&#34;[]&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;⃞&#34;</span>)
-             (<span style="color:#4070a0">&#34;=&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;≝&#34;</span>)))))</code></pre></div>
-<p>Powerline is a port from vim, and improves the modeline. Without specifying <code>powerline-default-separator</code> the separators don't show correctly for me.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">powerline</span>
-    <span style="color:#007020">:disabled</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
+</div>
+<p>
+I also like Solarized.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">solarized-theme</span>
     <span style="color:#007020">:config</span>
-    (<span style="color:#007020">setq</span> <span style="color:#bb60d5">powerline-default-separator</span> <span style="color:#517918">&#39;utf-8</span>))</code></pre></div>
-<p><code>feebleline</code> is a minimalist mode line replacement.</p>
+    (<span style="color:#bb60d5">load-theme</span> <span style="color:#517918">&#39;solarized-light</span> <span style="color:#60add5">t</span>))</code></pre></div>
+</div>
+<p>
+Set a nice font.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">set-frame-font</span> <span style="color:#4070a0">&#34;Operator Mono 12&#34;</span> <span style="color:#60add5">nil</span> <span style="color:#60add5">t</span>)
+  <span style="color:#60a0b0;font-style:italic">;; (set-frame-font &#34;Inconsolata 13&#34; nil t)</span>
+  <span style="color:#60a0b0;font-style:italic">;; (set-frame-font &#34;SF Mono 12&#34; nil t)</span></code></pre></div>
+</div>
+<p>
+<code class="verbatim">feebleline</code> is a minimalist mode line replacement.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">feebleline</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Add emoji support. This is useful when working with html.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">emojify</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Sometimes it helps to focus on the thing currently under the cursor. This turns off syntax highlighting for everything but the current thing. It's useful sometimes but a bit buggy in certain modes. I wonder if I could improve the config / find a better alternative?</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">focus</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Sometimes I like to use a nyan cat to indicate progress through the buffer.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">nyan-mode</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Highlight the current line.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">global-hl-line-mode</span> <span style="color:#40a070">1</span>)</code></pre></div>
-<h1 id="coding">Coding</h1>
-
-<h2 id="programming-specific-interface-improvements">Programming specific interface improvements</h2>
-
-<p>When programming I like my editor to try to help me with keeping parentheses balanced.</p>
+    <span style="color:#007020">:config</span>
+    (<span style="color:#bb60d5">feebleline-mode</span> <span style="color:#517918">&#39;t</span>))</code></pre></div>
+</div>
+<p>
+Add emoji support. This is useful when working with html.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">emojify</span>)</code></pre></div>
+</div>
+<p>
+Improve look and feel of titlebar on Macos. Set <code class="verbatim">ns-appearance</code> to <code class="verbatim">dark</code> for white title text and <code class="verbatim">nil</code> for black title text.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;default-frame-alist</span> <span style="color:#666">&#39;</span>(<span style="color:#bb60d5">ns-transparent-titlebar</span> <span style="color:#666">.</span> <span style="color:#60add5">t</span>))
+  (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;default-frame-alist</span> <span style="color:#666">&#39;</span>(<span style="color:#bb60d5">ns-appearance</span> <span style="color:#666">.</span> <span style="color:#bb60d5">dark</span>))</code></pre></div>
+</div>
+<h2 id="headline-23">
+Coding
+</h2>
+<h3 id="headline-24">
+Programming specific interface improvements
+</h3>
+<p>
+When programming I like my editor to try to help me with keeping parentheses balanced.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">smartparens</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:diminish</span> <span style="color:#bb60d5">smartparens-mode</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;prog-mode-hook</span> <span style="color:#517918">&#39;smartparens-mode</span>))</code></pre></div>
-<p>Highlight parens etc. for improved readability.</p>
+</div>
+<p>
+Highlight parens etc. for improved readability.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">rainbow-delimiters</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;prog-mode-hook</span> <span style="color:#517918">&#39;rainbow-delimiters-mode</span>))</code></pre></div>
-<p>Highlight strings which represent colours. I only want this in programming modes, and I don't want colour names to be highlighted (<code>x-colors</code>).</p>
+</div>
+<p>
+Highlight strings which represent colours. I only want this in programming modes, and I don&#39;t want colour names to be highlighted (<code class="verbatim">x-colors</code>).
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">rainbow-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#007020">setq</span> <span style="color:#bb60d5">rainbow-x-colors</span> <span style="color:#60add5">nil</span>)
     (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;prog-mode-hook</span> <span style="color:#517918">&#39;rainbow-mode</span>))</code></pre></div>
-<p>Keep things indented correctly for me.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">aggressive-indent</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Expand parentheses for me.</p>
+</div>
+<p>
+Expand parentheses for me.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;prog-mode-hook</span> <span style="color:#517918">&#39;electric-pair-mode</span>)</code></pre></div>
-<p>Smart dash guesses _ vs - depending on context.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">smart-dash</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;python-mode-hook</span> <span style="color:#517918">&#39;smart-dash-mode</span>))</code></pre></div>
-<h2 id="project-management">Project management</h2>
-
-<p>Projectile handles folders which are in version control.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">projectile</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">projectile-mode</span>))</code></pre></div>
-<p>Tell projectile to integrate with <code>ivy</code> for completion.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">projectile-completion-system</span> <span style="color:#517918">&#39;ivy</span>)</code></pre></div>
-<p>Add some extra completion options via integration with <code>counsel</code>. In particular this enables <code>C-c p SPC</code> for smart buffer / file search, and <code>C-c p s s</code> for search via <code>ag</code>.</p>
-
-<p>There is no function for projectile-grep, but we could use <code>counsel-git-grep</code> which is similar. Should I bind that to <code>C-c p s g</code>?</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">counsel-projectile</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;after-init-hook</span> <span style="color:#517918">&#39;counsel-projectile-mode</span>))</code></pre></div>
-<h2 id="fuzzy-search">Fuzzy search</h2>
-
-<p><code>fzf</code> is a fuzzy file finder which is very quick.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">fzf</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h2 id="environment-management">Environment management</h2>
-
-<p>By default Emacs doesn't read from the same environment variables set in your terminal. This package fixes that.</p>
+</div>
+<h3 id="headline-25">
+Fuzzy search
+</h3>
+<p>
+<code class="verbatim">fzf</code> is a fuzzy file finder which is very quick.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">fzf</span>)</code></pre></div>
+</div>
+<p>
+<code class="verbatim">deadgrep</code> uses <code class="verbatim">rg</code> to search for strings, <code class="verbatim">project.el</code> means it will automatically use the project root if (e.g.) it&#39;s a git repository, which is my usual use case.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">deadgrep</span>)</code></pre></div>
+</div>
+<h3 id="headline-26">
+Environment management
+</h3>
+<p>
+By default Emacs doesn&#39;t read from the same environment variables set in your terminal. This package fixes that.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">exec-path-from-shell</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#bb60d5">exec-path-from-shell-initialize</span>))</code></pre></div>
-<h2 id="jump-to-source">Jump to source</h2>
-
-<p>Individual language packages often support IDE features like jump to source, but <code>dumb-jump</code> attempts to support many languages by simple searching. It's quite effective even with dynamic libraries like JS and Python.</p>
+</div>
+<h3 id="headline-27">
+Jump to source
+</h3>
+<p>
+Individual language packages often support IDE features like jump to source, but <code class="verbatim">dumb-jump</code> attempts to support many languages by simple searching. It&#39;s quite effective even with dynamic libraries like JS and Python.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">dumb-jump</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:diminish</span> <span style="color:#bb60d5">dumb-jump-mode</span>
     <span style="color:#007020">:bind</span> ((<span style="color:#4070a0">&#34;C-M-g&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">dumb-jump-go</span>)
            (<span style="color:#4070a0">&#34;C-M-p&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">dumb-jump-back</span>)
            (<span style="color:#4070a0">&#34;C-M-q&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">dumb-jump-quick-look</span>)))</code></pre></div>
-<h2 id="git">Git</h2>
-
-<p>Magit is an awesome interface to git. Summon it with `C-x g`.</p>
+</div>
+<h3 id="headline-28">
+Git
+</h3>
+<p>
+Magit is an awesome interface to git. Summon it with `C-x g`.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">magit</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:bind</span> (<span style="color:#4070a0">&#34;C-x g&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">magit-status</span>))</code></pre></div>
-<p>Display line changes in gutter based on git history. Enable it everywhere.</p>
+</div>
+<p>
+Display line changes in gutter based on git history. Enable it everywhere.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">git-gutter</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">global-git-gutter-mode</span> <span style="color:#517918">&#39;t</span>)
-    <span style="color:#007020">:diminish</span> <span style="color:#bb60d5">git-gutter-mode</span>)</code></pre></div>
-<p>TimeMachine lets us step through the history of a file as recorded in git.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">git-timemachine</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h2 id="syntax-checking">Syntax checking</h2>
-
-<p><code>Flycheck</code> is a general syntax highlighting framework which other packages hook into. It's an improvment on the built in <code>flymake</code>.</p>
-
-<p>Setup is pretty simple - we just enable globally and turn on a custom eslint function, and also add a custom checker for proselint.</p>
+    (<span style="color:#bb60d5">global-git-gutter-mode</span> <span style="color:#517918">&#39;t</span>))</code></pre></div>
+</div>
+<h3 id="headline-29">
+Syntax checking
+</h3>
+<p>
+<code class="verbatim">Flycheck</code> is a general syntax highlighting framework which other packages hook into. It&#39;s an improvment on the built in <code class="verbatim">flymake</code>.
+</p>
+<p>
+Setup is pretty simple - we just enable globally and turn on a custom eslint function, and also add a custom checker for proselint.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">flycheck</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;after-init-hook</span> <span style="color:#517918">&#39;global-flycheck-mode</span>)
     (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;flycheck-mode-hook</span> <span style="color:#517918">&#39;jc/use-eslint-from-node-modules</span>)
@@ -393,9 +604,14 @@ Hunter S. Thompson, Fear and Loathing in Las Vegas
       <span style="color:#007020">:overlay-category</span> <span style="color:#517918">&#39;flycheck-info-overlay</span>
       <span style="color:#007020">:fringe-bitmap</span> <span style="color:#517918">&#39;flycheck-fringe-bitmap-ball</span>
       <span style="color:#007020">:fringe-face</span> <span style="color:#517918">&#39;flycheck-fringe-info</span>))</code></pre></div>
-<p>Proselint is a syntax checker for English language. This defines a custom checker which will run in texty modes.</p>
-
-<p>Proselint is an external program, install it with <code>pip install proselint</code> for this to work.</p>
+</div>
+<p>
+Proselint is a syntax checker for English language. This defines a custom checker which will run in texty modes.
+</p>
+<p>
+Proselint is an external program, install it with <code class="verbatim">pip install proselint</code> for this to work.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#bb60d5">flycheck-define-checker</span> <span style="color:#bb60d5">proselint</span>
     <span style="color:#4070a0">&#34;A linter for prose.&#34;</span>
     <span style="color:#007020">:command</span> (<span style="color:#4070a0">&#34;proselint&#34;</span> <span style="color:#bb60d5">source-inplace</span>)
@@ -406,67 +622,78 @@ Hunter S. Thompson, Fear and Loathing in Las Vegas
                        (<span style="color:#bb60d5">zero-or-more</span> <span style="color:#4070a0">&#34;\n&#34;</span> (<span style="color:#bb60d5">any</span> <span style="color:#4070a0">&#34; &#34;</span>) (<span style="color:#bb60d5">one-or-more</span> <span style="color:#bb60d5">not-newline</span>)))
               <span style="color:#bb60d5">line-end</span>))
     <span style="color:#007020">:modes</span> (<span style="color:#bb60d5">text-mode</span> <span style="color:#bb60d5">markdown-mode</span> <span style="color:#bb60d5">gfm-mode</span> <span style="color:#bb60d5">org-mode</span>))</code></pre></div>
-<h2 id="autocomplete">Autocomplete</h2>
-
-<p>Company mode provides good autocomplete options. Perhaps I should add company-quickhelp for documentation (https://github.com/expez/company-quickhelp)?</p>
-
-<p>It would also be good to improve integration with yasnippet as I don't feel I'm making the best use there.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">company</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:diminish</span>
+</div>
+<h3 id="headline-30">
+Autocomplete
+</h3>
+<p>
+<code class="verbatim">Eglot</code> is a client to Language Server Protocol servers.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">eglot</span>
+    <span style="color:#007020">:commands</span> <span style="color:#bb60d5">eglot</span>
     <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;after-init-hook</span> <span style="color:#517918">&#39;global-company-mode</span>)
-
-    (<span style="color:#007020">setq</span> <span style="color:#bb60d5">company-idle-delay</span> <span style="color:#60add5">t</span>)
-
-    (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">company-go</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-      <span style="color:#007020">:config</span>
-      (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;company-backends</span> <span style="color:#517918">&#39;company-go</span>))
-
-    (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">company-anaconda</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-      <span style="color:#007020">:config</span>
-      (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;company-backends</span> <span style="color:#517918">&#39;company-anaconda</span>)))</code></pre></div>
-<p>I don't want suggestions from open files / buffers to be automatically lowercased as these are often camelcase function names.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">company-dabbrev-downcase</span> <span style="color:#60add5">nil</span>)</code></pre></div>
-<h2 id="snippets">Snippets</h2>
-
-<p>Unlike autocomplete which suggests words / symbols, snippets are pre-prepared templates which you fill in.</p>
-
-<p>I'm using a community library (<code>[[https://github.com/AndreaCrotti/yasnippet-snippets]]</code>) with <strong>lots</strong> of ready made options, and have my own directory of custom snippets I've added. Not sure if I should unify these by forking <code>yasnippet-snippets</code>.</p>
-
-<p>Type the shortcut and press <code>TAB</code> to complete, or <code>M-/</code> to autosuggest a snippet.</p>
+    (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;eglot-server-programs</span> <span style="color:#666">&#39;</span>(<span style="color:#bb60d5">elm-mode</span> <span style="color:#666">.</span> (<span style="color:#4070a0">&#34;elm-language-server&#34;</span> <span style="color:#4070a0">&#34;--stdio&#34;</span>))))</code></pre></div>
+</div>
+<h3 id="headline-31">
+Snippets
+</h3>
+<p>
+Unlike autocomplete which suggests words / symbols, snippets are pre-prepared templates which you fill in.
+</p>
+<p>
+Type the shortcut and press <code class="verbatim">TAB</code> to complete, or <code class="verbatim">M-/</code> to autosuggest a snippet.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">yasnippet</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-      <span style="color:#007020">:diminish</span> <span style="color:#bb60d5">yas-minor-mode</span>
       <span style="color:#007020">:config</span>
-      (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;yas-snippet-dirs</span> <span style="color:#4070a0">&#34;~/.emacs.d/yasnippet-snippets&#34;</span>)
       (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;yas-snippet-dirs</span> <span style="color:#4070a0">&#34;~/.emacs.d/snippets&#34;</span>)
-      (<span style="color:#bb60d5">yas-global-mode</span>)
-      (<span style="color:#bb60d5">global-set-key</span> (<span style="color:#bb60d5">kbd</span> <span style="color:#4070a0">&#34;M-/&#34;</span>) <span style="color:#517918">&#39;company-yasnippet</span>))</code></pre></div>
-<h2 id="javascript">Javascript</h2>
-
-<p>In JS indent to 2 spaces.</p>
+      (<span style="color:#bb60d5">yas-global-mode</span> <span style="color:#40a070">1</span>))</code></pre></div>
+</div>
+<p>
+Install some premade snippets (in addition to personal ones stored above)
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">yasnippet-snippets</span>)</code></pre></div>
+</div>
+<h3 id="headline-32">
+Javascript
+</h3>
+<p>
+In JS indent to 2 spaces.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq-default</span> <span style="color:#bb60d5">js-indent-level</span> <span style="color:#40a070">2</span>)</code></pre></div>
-<p>JS2 mode improves on the built in JS mode.</p>
+</div>
+<p>
+JS2 mode improves on the built in JS mode.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">js2-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:mode</span> <span style="color:#4070a0">&#34;\\.js\\&#39;&#34;</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#007020">setq-default</span> <span style="color:#bb60d5">js2-ignored-warnings</span> <span style="color:#666">&#39;</span>(<span style="color:#4070a0">&#34;msg.extra.trailing.comma&#34;</span>)))</code></pre></div>
-<p><code>js2-refactor</code> supports some useful refactoring options and builds on top of <code>js2-mode</code>.</p>
+</div>
+<p>
+<code class="verbatim">js2-refactor</code> supports some useful refactoring options and builds on top of <code class="verbatim">js2-mode</code>.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">js2-refactor</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#bb60d5">js2r-add-keybindings-with-prefix</span> <span style="color:#4070a0">&#34;C-c C-m&#34;</span>)
     (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;js2-mode-hook</span> <span style="color:#517918">&#39;js2-refactor-mode</span>))</code></pre></div>
-<p>RJSX mode makes JSX work well.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">rjsx-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Prettier-js autoformats JS code - much like `gofmt` - and we hook it into JS2 and RJSX modes.</p>
+</div>
+<p>
+RJSX mode makes JSX work well.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">rjsx-mode</span>)</code></pre></div>
+</div>
+<p>
+Prettier-js autoformats JS code - much like `gofmt` - and we hook it into JS2 and RJSX modes.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">prettier-js</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
     (<span style="color:#007020">setq</span> <span style="color:#bb60d5">prettier-js-args</span> <span style="color:#666">&#39;</span>(
                           <span style="color:#4070a0">&#34;--trailing-comma&#34;</span> <span style="color:#4070a0">&#34;es5&#34;</span>
@@ -475,9 +702,12 @@ Hunter S. Thompson, Fear and Loathing in Las Vegas
                           ))
     (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;js2-mode-hook</span> <span style="color:#517918">&#39;prettier-js-mode</span>)
     (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;rjsx-mode-hook</span> <span style="color:#517918">&#39;prettier-js-mode</span>))</code></pre></div>
-<p><code>js-doc</code> makes it easy to add jsdoc comments via <code>Ctrl+c i</code>.</p>
+</div>
+<p>
+<code class="verbatim">js-doc</code> makes it easy to add jsdoc comments via <code class="verbatim">Ctrl+c i</code>.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">js-doc</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:bind</span> (<span style="color:#007020">:map</span> <span style="color:#bb60d5">js2-mode-map</span>
            (<span style="color:#4070a0">&#34;C-c i&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">js-doc-insert-function-doc</span>)
            (<span style="color:#4070a0">&#34;@&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">js-doc-insert-tag</span>))
@@ -486,7 +716,11 @@ Hunter S. Thompson, Fear and Loathing in Las Vegas
          <span style="color:#bb60d5">js-doc-author</span> (<span style="color:#06287e">format</span> <span style="color:#4070a0">&#34;Jamie Collinson &lt;%s&gt;&#34;</span> <span style="color:#bb60d5">js-doc-mail-address</span>)
          <span style="color:#bb60d5">js-doc-url</span> <span style="color:#4070a0">&#34;jamiecollinson.com&#34;</span>
          <span style="color:#bb60d5">js-doc-license</span> <span style="color:#4070a0">&#34;MIT License&#34;</span>))</code></pre></div>
-<p>Sometimes it's useful to use the local eslint provided by a project's node_modules directory. We call this function from a flycheck hook to enable it automatically.</p>
+</div>
+<p>
+Sometimes it&#39;s useful to use the local eslint provided by a project&#39;s node_modules directory. We call this function from a flycheck hook to enable it automatically.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">defun</span> <span style="color:#bb60d5">jc/use-eslint-from-node-modules</span> ()
     <span style="color:#4070a0">&#34;Set local eslint if available.&#34;</span>
     (<span style="color:#007020">let*</span> ((<span style="color:#bb60d5">root</span> (<span style="color:#bb60d5">locate-dominating-file</span>
@@ -497,171 +731,154 @@ Hunter S. Thompson, Fear and Loathing in Las Vegas
                                           <span style="color:#bb60d5">root</span>))))
       (<span style="color:#007020">when</span> (<span style="color:#007020">and</span> <span style="color:#bb60d5">eslint</span> (<span style="color:#06287e">file-executable-p</span> <span style="color:#bb60d5">eslint</span>))
         (<span style="color:#007020">setq-local</span> <span style="color:#bb60d5">flycheck-javascript-eslint-executable</span> <span style="color:#bb60d5">eslint</span>))))</code></pre></div>
-<h2 id="web-mode">Web mode</h2>
-
-<p>Web mode handles html/css/js.</p>
+</div>
+<p>
+We often want to use local packages instead of global ones.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">add-node-modules-path</span>)</code></pre></div>
+</div>
+<h3 id="headline-33">
+Web mode
+</h3>
+<p>
+Web mode handles html/css/js.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">web-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:mode</span> (<span style="color:#4070a0">&#34;\\.html\\&#39;&#34;</span>)
     <span style="color:#007020">:config</span>
     (<span style="color:#007020">setq</span> <span style="color:#bb60d5">web-mode-markup-indent-offset</span> <span style="color:#40a070">2</span>)
     (<span style="color:#007020">setq</span> <span style="color:#bb60d5">web-mode-engines-alist</span>
           <span style="color:#666">&#39;</span>((<span style="color:#4070a0">&#34;django&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;focus/.*\\.html\\&#39;&#34;</span>)
             (<span style="color:#4070a0">&#34;ctemplate&#34;</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;realtimecrm/.*\\.html\\&#39;&#34;</span>))))</code></pre></div>
-<h2 id="web-beautify">Web Beautify</h2>
-
-<p>Web beautify prettifies html / css / js using js-beautify - install with <code>npm install -g js-beautify</code>.</p>
+</div>
+<h3 id="headline-34">
+Web Beautify
+</h3>
+<p>
+Web beautify prettifies html / css / js using js-beautify - install with <code class="verbatim">npm install -g js-beautify</code>.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">web-beautify</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:bind</span> (<span style="color:#007020">:map</span> <span style="color:#bb60d5">web-mode-map</span>
            (<span style="color:#4070a0">&#34;C-c b&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">web-beautify-html</span>)
            <span style="color:#007020">:map</span> <span style="color:#bb60d5">js2-mode-map</span>
            (<span style="color:#4070a0">&#34;C-c b&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">web-beautify-js</span>)))</code></pre></div>
-<h2 id="markdown">Markdown</h2>
-
-<p>Markdown support isn't built into Emacs, add it with <code>markdown-mode</code>.</p>
+</div>
+<h3 id="headline-35">
+Markdown
+</h3>
+<p>
+Markdown support isn&#39;t built into Emacs, add it with <code class="verbatim">markdown-mode</code>.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">markdown-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:commands</span> (<span style="color:#bb60d5">markdown-mode</span> <span style="color:#bb60d5">gfm-mode</span>)
     <span style="color:#007020">:mode</span> ((<span style="color:#4070a0">&#34;README\\.md\\&#39;&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">gfm-mode</span>)
            (<span style="color:#4070a0">&#34;\\.md\\&#39;&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">markdown-mode</span>)
            (<span style="color:#4070a0">&#34;\\.markdown\\&#39;&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">markdown-mode</span>))
     <span style="color:#007020">:init</span> (<span style="color:#007020">setq</span> <span style="color:#bb60d5">markdown-command</span> <span style="color:#4070a0">&#34;multimarkdown&#34;</span>))</code></pre></div>
-<h2 id="golang">Golang</h2>
-
-<p>Go-mode provides basic language support, we call <code>gofmt</code> on each save to keep code tidy, use eldoc to display documentation and add guru / doctor for IDE functionality.</p>
+</div>
+<h3 id="headline-36">
+Golang
+</h3>
+<p>
+Go-mode provides basic language support, we call <code class="verbatim">gofmt</code> on each save to keep code tidy.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">go-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;before-save-hook</span> <span style="color:#517918">&#39;gofmt-before-save</span>)
-
-    (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">go-eldoc</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-      <span style="color:#007020">:config</span>
-      (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;go-mode-hook</span> <span style="color:#517918">&#39;go-eldoc-setup</span>))
-
-    (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">godoctor</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)
-
-    (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">go-guru</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>))</code></pre></div>
-<p>Go guru needs a scope to look at, this function sets it to the current package.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">defun</span> <span style="color:#bb60d5">jc/go-guru-set-current-package-as-main</span> ()
-    <span style="color:#4070a0">&#34;GoGuru requires the scope to be set to a go package which
-</span><span style="color:#4070a0">     contains a main, this function will make the current package the
-</span><span style="color:#4070a0">     active go guru scope, assuming it contains a main&#34;</span>
-    (<span style="color:#007020">interactive</span>)
-    (<span style="color:#007020">let*</span> ((<span style="color:#bb60d5">filename</span> (<span style="color:#06287e">buffer-file-name</span>))
-           (<span style="color:#bb60d5">gopath-src-path</span> (<span style="color:#06287e">concat</span> (<span style="color:#06287e">file-name-as-directory</span> (<span style="color:#bb60d5">go-guess-gopath</span>)) <span style="color:#4070a0">&#34;src&#34;</span>))
-           (<span style="color:#bb60d5">relative-package-path</span> (<span style="color:#06287e">directory-file-name</span> (<span style="color:#06287e">file-name-directory</span> (<span style="color:#bb60d5">file-relative-name</span> <span style="color:#bb60d5">filename</span> <span style="color:#bb60d5">gopath-src-path</span>)))))
-      (<span style="color:#007020">setq</span> <span style="color:#bb60d5">go-guru-scope</span> <span style="color:#bb60d5">relative-package-path</span>)))</code></pre></div>
-<h2 id="haskell">Haskell</h2>
-
-<p>Install haskell mode.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">haskell-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Code formatting is easier with <code>hindent</code>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">hindent</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Completion is via <code>ghc-mod</code> / <code>company</code>. Install the former separately with <code>cabal install ghc-mod</code>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">ghc</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
+    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;before-save-hook</span> <span style="color:#517918">&#39;gofmt-before-save</span>))</code></pre></div>
+</div>
+<h3 id="headline-37">
+Haskell
+</h3>
+<p>
+Install haskell mode.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">haskell-mode</span>)</code></pre></div>
+</div>
+<p>
+Code formatting is easier with <code class="verbatim">hindent</code>.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">hindent</span>)</code></pre></div>
+</div>
+<h3 id="headline-38">
+Python
+</h3>
+<p>
+Pyvenv handles virtual environment support.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">pyvenv</span>)</code></pre></div>
+</div>
+<p>
+Black is an opinionated pyton formatter. Install with <code class="verbatim">pip install black</code> so the command line tool is available.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">blacken</span>
     <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;haskell-mode-hook</span> (<span style="color:#007020">lambda</span> () (<span style="color:#bb60d5">ghc-init</span>))))
-
-  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">company-ghc</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;company-backends</span> <span style="color:#517918">&#39;company-ghc</span>))</code></pre></div>
-<h2 id="python">Python</h2>
-
-<p>Emacs handles python quite well, but we can improve things with anaconda mode.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">anaconda-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;python-mode-hook</span> <span style="color:#517918">&#39;anaconda-mode</span>)
-    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;python-mode-hook</span> <span style="color:#517918">&#39;anaconda-eldoc-mode</span>))</code></pre></div>
-<p>Sometimes I use kivy.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">kivy-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:mode</span> (<span style="color:#4070a0">&#34;\\.kv\\&#39;&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">kivy-mode</span>))</code></pre></div>
-<h2 id="elixir">Elixir</h2>
-
-<p>Elixir highlighting is not built into emacs at present. Elixir-mode gives all the usual niceties, and alchemist improves interaction with tools like <code>iex</code>, <code>mix</code> and <code>elixir-format</code>.</p>
+    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;python-mode-hook</span> <span style="color:#517918">&#39;blacken-mode</span>))</code></pre></div>
+</div>
+<h3 id="headline-39">
+Elixir
+</h3>
+<p>
+Elixir highlighting is not built into emacs at present. Elixir-mode gives all the usual niceties, and alchemist improves interaction with tools like <code class="verbatim">iex</code>, <code class="verbatim">mix</code> and <code class="verbatim">elixir-format</code>.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">elixir-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
-
-    (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">alchemist</span>
-      <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>))</code></pre></div>
-<h2 id="cucumber">Cucumber</h2>
-
-<p>Cucumber (gherkin) is a syntax for specifying behaviour driven development tests.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">feature-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h2 id="rebol-red">Rebol / Red</h2>
-
-<p>Red is an updated open source implementation of Rebol.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">rebol</span>)</code></pre></div>
-<h2 id="idris">Idris</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">idris-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h2 id="coq">Coq</h2>
-
-<p>Proof general must be installed separately via:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git clone https://github.com/ProofGeneral/PG ~/.emacs.d/lisp/PG
-  make -C ~/.emacs.d/lisp/PG</code></pre></div>
-<p>Open .v files with Proof General's Coq mode</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">require</span> <span style="color:#517918">&#39;proof-site</span> <span style="color:#4070a0">&#34;~/.emacs.d/lisp/PG/generic/proof-site&#34;</span>)</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">company-coq</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;coq-mode-hook</span> <span style="color:#517918">&#39;company-coq-mode</span>))</code></pre></div>
-<h2 id="elm">Elm</h2>
-
-<p>Elm is a delightful language for reliable webapps. It compiles to JS. First install elm with <code>npm install -g elm elm-oracle elm-format</code>.</p>
+    (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">alchemist</span>))</code></pre></div>
+</div>
+<h3 id="headline-40">
+Coq
+</h3>
+<p>
+Open .v files with Proof General&#39;s Coq mode
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">proof-general</span>)</code></pre></div>
+</div>
+<h3 id="headline-41">
+Elm
+</h3>
+<p>
+Elm is a delightful language for reliable webapps. It compiles to JS. First install elm with <code class="verbatim">npm install -g elm elm-format</code>.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">elm-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:config</span>
-    (<span style="color:#007020">setq</span> <span style="color:#bb60d5">elm-format-on-save</span> <span style="color:#60add5">t</span>)
-    (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;company-backends</span> <span style="color:#517918">&#39;company-elm</span>))</code></pre></div>
-<h2 id="c">C</h2>
-
-<p>Emacs has a great built in C/C++ mode, but we can improve on it with <code>irony-mode</code> for code completion via <code>libclang</code>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">irony</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:hook</span> (<span style="color:#bb60d5">c-mode</span> <span style="color:#666">.</span> <span style="color:#bb60d5">irony-mode</span>))</code></pre></div>
-<p>Add company mode support.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">company-irony</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;company-backends</span> <span style="color:#517918">&#39;company-irony</span>))</code></pre></div>
-<p>Add flycheck support.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">flycheck-irony</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:hook</span> (<span style="color:#bb60d5">flycheck-mode</span> <span style="color:#666">.</span> <span style="color:#bb60d5">flycheck-irony-setup</span>))</code></pre></div>
-<h2 id="c-1">C#</h2>
-
-<p>Dotnet core runs on linux / macos. Let's get syntax highlighting.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">csharp-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<p>Omnisharp gives completion / refactoring support, and hooks into company-mode.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">omnisharp</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:hook</span> ((<span style="color:#bb60d5">csharp-mode</span> <span style="color:#666">.</span> <span style="color:#bb60d5">omnisharp-mode</span>)
-           <span style="color:#60a0b0;font-style:italic">;; TODO: &#39;before-save runs globally - make this buffer local?</span>
-           (<span style="color:#bb60d5">before-save</span> <span style="color:#666">.</span> <span style="color:#bb60d5">omnisharp-code-format-entire-file</span>))
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;company-backends</span> <span style="color:#517918">&#39;company-omnisharp</span>))</code></pre></div>
-<h2 id="f">F#</h2>
-
-<p>Since we have dotnet core why not?</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">fsharp-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h1 id="org">Org</h1>
-
-<h2 id="general-settings">General settings.</h2>
-
-<p>I should comment on these more...</p>
+    (<span style="color:#007020">setq</span> <span style="color:#bb60d5">elm-format-on-save</span> <span style="color:#60add5">t</span>))</code></pre></div>
+</div>
+<h3 id="headline-42">
+C#
+</h3>
+<p>
+Dotnet core runs on linux / macos. Let&#39;s get syntax highlighting.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">csharp-mode</span>)</code></pre></div>
+</div>
+<h3 id="headline-43">
+Rust
+</h3>
+<p>
+Rust is a zero-cost abstraction systems language.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">rust-mode</span>)</code></pre></div>
+</div>
+<h2 id="headline-44">
+Org
+</h2>
+<p>
+I should comment on these more…
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">setq</span> <span style="color:#bb60d5">org-startup-indented</span> <span style="color:#517918">&#39;f</span>)
   (<span style="color:#007020">setq</span> <span style="color:#bb60d5">org-directory</span> <span style="color:#4070a0">&#34;~/org&#34;</span>)
   (<span style="color:#007020">setq</span> <span style="color:#bb60d5">org-special-ctrl-a/e</span> <span style="color:#517918">&#39;t</span>)
@@ -671,99 +888,62 @@ Hunter S. Thompson, Fear and Loathing in Las Vegas
   (<span style="color:#007020">setq</span> <span style="color:#bb60d5">org-src-fontify-natively</span> <span style="color:#517918">&#39;t</span>)
   (<span style="color:#007020">setq</span> <span style="color:#bb60d5">org-src-tab-acts-natively</span> <span style="color:#60add5">t</span>)
   (<span style="color:#007020">setq</span> <span style="color:#bb60d5">org-src-window-setup</span> <span style="color:#517918">&#39;current-window</span>)</code></pre></div>
-<h2 id="appearance-1">Appearance</h2>
-
-<p>Improve the display of bullet points.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">org-bullets</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#007020">setq</span> <span style="color:#bb60d5">org-bullets-bullet-list</span> <span style="color:#666">&#39;</span>(<span style="color:#4070a0">&#34;∙&#34;</span>))
-    (<span style="color:#bb60d5">add-hook</span> <span style="color:#517918">&#39;org-mode-hook</span> <span style="color:#517918">&#39;org-bullets-mode</span>))</code></pre></div>
-<p>Customize appearance.</p>
+</div>
+<p>
+Customize appearance.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">let*</span>
-      ((<span style="color:#bb60d5">variable-tuple</span> (<span style="color:#007020">cond</span>
-                        ((<span style="color:#06287e">x-list-fonts</span> <span style="color:#4070a0">&#34;Source Sans Pro&#34;</span>) <span style="color:#666">&#39;</span>(<span style="color:#007020">:font</span> <span style="color:#4070a0">&#34;Source Sans Pro&#34;</span>))
-                        ((<span style="color:#06287e">x-list-fonts</span> <span style="color:#4070a0">&#34;Lucida Grande&#34;</span>)   <span style="color:#666">&#39;</span>(<span style="color:#007020">:font</span> <span style="color:#4070a0">&#34;Lucida Grande&#34;</span>))
-                        ((<span style="color:#06287e">x-list-fonts</span> <span style="color:#4070a0">&#34;Verdana&#34;</span>)         <span style="color:#666">&#39;</span>(<span style="color:#007020">:font</span> <span style="color:#4070a0">&#34;Verdana&#34;</span>))
-                        ((<span style="color:#06287e">x-family-fonts</span> <span style="color:#4070a0">&#34;Sans Serif&#34;</span>)    <span style="color:#666">&#39;</span>(<span style="color:#007020">:family</span> <span style="color:#4070a0">&#34;Sans Serif&#34;</span>))
-                        (<span style="color:#60add5">nil</span> (<span style="color:#007020">warn</span> <span style="color:#4070a0">&#34;Cannot find a Sans Serif Font.  Install Source Sans Pro.&#34;</span>))))
-       (<span style="color:#bb60d5">base-font-color</span>     (<span style="color:#bb60d5">face-foreground</span> <span style="color:#517918">&#39;default</span> <span style="color:#60add5">nil</span> <span style="color:#517918">&#39;default</span>))
-       (<span style="color:#bb60d5">headline</span>           <span style="color:#666">`</span>(<span style="color:#007020">:inherit</span> <span style="color:#bb60d5">default</span> <span style="color:#007020">:weight</span> <span style="color:#bb60d5">normal</span> <span style="color:#007020">:foreground</span> <span style="color:#666">,</span><span style="color:#bb60d5">base-font-color</span>)))
+      ((<span style="color:#bb60d5">base-font-color</span>     (<span style="color:#bb60d5">face-foreground</span> <span style="color:#517918">&#39;default</span> <span style="color:#60add5">nil</span> <span style="color:#517918">&#39;default</span>))
+       (<span style="color:#bb60d5">headline</span>           <span style="color:#666">`</span>(<span style="color:#007020">:foreground</span> <span style="color:#666">,</span><span style="color:#bb60d5">base-font-color</span>)))
 
     (<span style="color:#bb60d5">custom-theme-set-faces</span> <span style="color:#517918">&#39;user</span>
-                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-8</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#666">,@</span><span style="color:#bb60d5">variable-tuple</span>))))
-                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-7</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#666">,@</span><span style="color:#bb60d5">variable-tuple</span>))))
-                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-6</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#666">,@</span><span style="color:#bb60d5">variable-tuple</span>))))
-                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-5</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#666">,@</span><span style="color:#bb60d5">variable-tuple</span>))))
-                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-4</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#666">,@</span><span style="color:#bb60d5">variable-tuple</span>))))
-                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-3</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#666">,@</span><span style="color:#bb60d5">variable-tuple</span> <span style="color:#007020">:height</span> <span style="color:#40a070">1.33</span>))))
-                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-2</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#666">,@</span><span style="color:#bb60d5">variable-tuple</span> <span style="color:#007020">:height</span> <span style="color:#40a070">1.33</span>))))
-                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-1</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#666">,@</span><span style="color:#bb60d5">variable-tuple</span> <span style="color:#007020">:height</span> <span style="color:#40a070">1.33</span>))))
-                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-document-title</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#666">,@</span><span style="color:#bb60d5">variable-tuple</span> <span style="color:#007020">:height</span> <span style="color:#40a070">1.33</span> <span style="color:#007020">:underline</span> <span style="color:#60add5">nil</span>))))))</code></pre></div>
-<h2 id="export">Export</h2>
-
-<p>Add bootstrap styled export.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">ox-twbs</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h1 id="extras">Extras</h1>
-
-<h2 id="writing">Writing</h2>
-
-<p><code>writegood-mode</code> highlights bad word choices and has functions for calculating readability.</p>
+                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-8</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span>))))
+                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-7</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span>))))
+                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-6</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span>))))
+                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-5</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span>))))
+                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-4</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span>))))
+                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-3</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#007020">:height</span> <span style="color:#40a070">1.3</span>))))
+                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-2</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#007020">:height</span> <span style="color:#40a070">1.3</span>))))
+                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-level-1</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#007020">:height</span> <span style="color:#40a070">1.3</span> ))))
+                            <span style="color:#666">`</span>(<span style="color:#bb60d5">org-document-title</span> ((<span style="color:#60add5">t</span> (<span style="color:#666">,@</span><span style="color:#bb60d5">headline</span> <span style="color:#007020">:height</span> <span style="color:#40a070">1</span>))))))</code></pre></div>
+</div>
+<h2 id="headline-45">
+Extras
+</h2>
+<h3 id="headline-46">
+Writing
+</h3>
+<p>
+<code class="verbatim">writegood-mode</code> highlights bad word choices and has functions for calculating readability.
+</p>
+<div class="src src-emacs-lisp">
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">writegood-mode</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
     <span style="color:#007020">:bind</span> (<span style="color:#4070a0">&#34;C-c g&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">writegood-mode</span>)
     <span style="color:#007020">:config</span>
     (<span style="color:#bb60d5">add-to-list</span> <span style="color:#517918">&#39;writegood-weasel-words</span> <span style="color:#4070a0">&#34;actionable&#34;</span>))</code></pre></div>
-<h2 id="stack-overflow">Stack Overflow</h2>
-
-<p>SX is a full stack overflow client within Emacs.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">sx</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:config</span>
-    (<span style="color:#bb60d5">bind-keys</span> <span style="color:#007020">:prefix</span> <span style="color:#4070a0">&#34;C-c s&#34;</span>
-               <span style="color:#007020">:prefix-map</span> <span style="color:#bb60d5">my-sx-map</span>
-               <span style="color:#007020">:prefix-docstring</span> <span style="color:#4070a0">&#34;Global keymap for SX.&#34;</span>
-               (<span style="color:#4070a0">&#34;q&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">sx-tab-all-questions</span>)
-               (<span style="color:#4070a0">&#34;i&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">sx-inbox</span>)
-               (<span style="color:#4070a0">&#34;o&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">sx-open-link</span>)
-               (<span style="color:#4070a0">&#34;u&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">sx-tab-unanswered-my-tags</span>)
-               (<span style="color:#4070a0">&#34;a&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">sx-ask</span>)
-               (<span style="color:#4070a0">&#34;s&#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">sx-search</span>)))</code></pre></div>
-<h2 id="web-browsing">Web browsing</h2>
-
-<p><code>w3m</code> is a terminal based browser. Emacs now has <code>eww</code> built in, but I prefer <code>w3m</code>. Install it separately, e.g. with <code>brew install w3m</code>.</p>
-
-<p>There's an emacs package to interface with it.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">w3m</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h2 id="email">Email</h2>
-
-<p><code>notmuch</code> is a fast mail client. Install it externally, e.g. with <code>brew install notmuch</code> and then use it within emacs.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">notmuch</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h2 id="rest-client">Rest client</h2>
-
-<p>Sometimes I need to explore REST services. Why not Emacs?</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">restclient</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div>
-<h2 id="slack">Slack</h2>
-
-<p>I use slack for work.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">slack</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>
-    <span style="color:#007020">:commands</span> (<span style="color:#bb60d5">slack-start</span>))</code></pre></div>
-<h2 id="google">Google</h2>
-
-<p>It's always useful to look things up.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">google-this</span>
-    <span style="color:#007020">:ensure</span> <span style="color:#60add5">t</span>)</code></pre></div><div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:1">I hesitate to say this is the emacs way, it's just what I felt necessary. <a class="footnote-return" href="#fnref:1"><sup>↩</sup></a></li>
-</ol>
+</div>
+<h3 id="headline-47">
+Email
+</h3>
+<p>
+<code class="verbatim">notmuch</code> is a fast mail client. Install it externally, e.g. with <code class="verbatim">brew install notmuch</code> and then use it within emacs.
+</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#007020">use-package</span> <span style="color:#bb60d5">notmuch</span>)</code></pre></div>
+</div>
+<div class="footnotes">
+<hr class="footnotes-separatator">
+<div class="footnote-definitions">
+<div class="footnote-definition">
+<sup id="footnote-1"><a href="#footnote-reference-1">1</a></sup>
+<div class="footnote-body">
+<p>
+I hesitate to say this is the emacs way, it&#39;s just what I felt necessary.
+</p>
+</div>
+</div>
+</div>
 </div>
 
 </section>
@@ -774,18 +954,18 @@ Hunter S. Thompson, Fear and Loathing in Las Vegas
       
     <div class="footer">
   <p class="social">
-    <a href="mailto:jamiecollinson@gmail.com">
-        <i class="ion-email"></i>
-    </a>
-    <a href="https://github.com/jamiecollinson/">
-        <i class="ion-social-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/jamiecollinson/">
-        <i class="ion-social-linkedin"></i>
-    </a>
-    <a href="https://twitter.com/jamiecollinson">
-        <i class="ion-social-twitter"></i>
-    </a>
+  <a href="mailto:jamiecollinson@gmail.com">
+    <ion-icon name="mail"></ion-icon>
+  </a>
+  <a href="https://github.com/jamiecollinson/">
+    <ion-icon name="logo-github"></ion-icon>
+  </a>
+  <a href="https://www.linkedin.com/in/jamiecollinson/">
+    <ion-icon name="logo-linkedin"></ion-icon>
+  </a>
+  <a href="https://twitter.com/jamiecollinson">
+    <ion-icon name="logo-twitter"></ion-icon>
+  </a>
 </p>
 
 </div>
@@ -795,17 +975,6 @@ Hunter S. Thompson, Fear and Loathing in Las Vegas
     </div>
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-3143424-7', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 
 </body>
 
@@ -831,7 +1000,7 @@ if (!doNotTrack) {
 
 <script>
  var post = document.querySelector('body'),
-     markers = post.querySelectorAll('.footnote-ref'),
+     markers = post.querySelectorAll('sup'),
      footnotes = post.querySelectorAll('.footnotes ol li');
 
  footnotes.forEach(function(footnote, i) {

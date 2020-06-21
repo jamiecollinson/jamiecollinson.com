@@ -10,8 +10,10 @@
 	<link rel="stylesheet" href="/css/styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
-	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	
+
+        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -32,22 +34,18 @@
 <nav class="toc js-toc"></nav>
 
 <section class="post">
-    <p>A mathematician, a physicist and an engineer are away from home at a conference<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>.</p>
-
+    <p>A mathematician, a physicist and an engineer are away from home at a conference<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <p>The engineer wakes up in the night to find his bed is on fire. He grabs the fire extinguisher, points it at the fire and sprays until the fire is safely extinguished. He goes back to sleep content he has solved the problem.</p>
-
 <p>The physicist wakes up in the middle of the night to find his bed is also on fire. He spots the fire extinguisher, takes his notepad and pencil, and after a quick calculation puts the fire out with one well timed burst. He returns to sleep pleased with his elegant solution.</p>
-
 <p>The mathematician wakes up in the middle of the night to find his bed too is on fire. He takes one look at the fire, another at the fire extinguisher, and goes back to sleep happy in the knowledge there is a solution.</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">A mathematician will find this joke funnier if it is hosted at Hilbert&rsquo;s Hotel.
- <a class="footnote-return" href="#fnref:1"><sup>↩</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>A mathematician will find this joke funnier if it is hosted at Hilbert&rsquo;s Hotel. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
 </section>
 
@@ -57,18 +55,18 @@
       
     <div class="footer">
   <p class="social">
-    <a href="mailto:jamiecollinson@gmail.com">
-        <i class="ion-email"></i>
-    </a>
-    <a href="https://github.com/jamiecollinson/">
-        <i class="ion-social-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/jamiecollinson/">
-        <i class="ion-social-linkedin"></i>
-    </a>
-    <a href="https://twitter.com/jamiecollinson">
-        <i class="ion-social-twitter"></i>
-    </a>
+  <a href="mailto:jamiecollinson@gmail.com">
+    <ion-icon name="mail"></ion-icon>
+  </a>
+  <a href="https://github.com/jamiecollinson/">
+    <ion-icon name="logo-github"></ion-icon>
+  </a>
+  <a href="https://www.linkedin.com/in/jamiecollinson/">
+    <ion-icon name="logo-linkedin"></ion-icon>
+  </a>
+  <a href="https://twitter.com/jamiecollinson">
+    <ion-icon name="logo-twitter"></ion-icon>
+  </a>
 </p>
 
 </div>
@@ -78,17 +76,6 @@
     </div>
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-3143424-7', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 
 </body>
 
@@ -96,7 +83,7 @@ if (!doNotTrack) {
 
 <script>
  var post = document.querySelector('body'),
-     markers = post.querySelectorAll('.footnote-ref'),
+     markers = post.querySelectorAll('sup'),
      footnotes = post.querySelectorAll('.footnotes ol li');
 
  footnotes.forEach(function(footnote, i) {

@@ -10,8 +10,10 @@
 	<link rel="stylesheet" href="/css/styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
-	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	
+
+        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -32,22 +34,21 @@
 <nav class="toc js-toc"></nav>
 
 <section class="post">
-    <p>Having read the post <a href="https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html">faster command line tools in nim</a> by Euan Torano<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>, I wanted to see how Go would compare. I am no golang expert, but have used it in production on a couple of reasonably sized projects, and have recently been enjoying it as a language for creating small terminal applications.</p>
-
+    <p>Having read the post <a href="https://nim-lang.org/blog/2017/05/25/faster-command-line-tools-in-nim.html">faster command line tools in nim</a> by Euan Torano<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, I wanted to see how Go would compare. I am no golang expert, but have used it in production on a couple of reasonably sized projects, and have recently been enjoying it as a language for creating small terminal applications.</p>
 <p>Replicating the functionality in go was pleasant but I&rsquo;d hoped for better performance.</p>
-
 <p>The task is to take a csv file, a column number to sum by and another to sum, and to return the label and total of the largest value. The following is the original description, with a <a href="https://storage.googleapis.com/books/ngrams/books/googlebooks-eng-all-1gram-20120701-0.gz">40Mb ngram file from Google Books</a> serving as a test.</p>
-
 <blockquote>
 <p>It’s a common programming task: Take a data file with fields separated by a delimiter (comma, tab, etc), and run a mathematical calculation involving several of the fields. Often these programs are one-time use scripts, other times they have longer shelf life. Speed is of course appreciated when the program is used more than a few times on large files.</p>
-
+</blockquote>
+<blockquote>
 <p>The specific exercise we’ll explore starts with files having keys in one field, integer values in another. The task is to sum the values for each key and print the key with the largest sum.</p>
-
+</blockquote>
+<blockquote>
 <p>With the first field as key, second field as value, the key with the max sum is B, with a total of 13.</p>
-
+</blockquote>
+<blockquote>
 <p>Fields are delimited by a TAB, and there may be any number of fields on a line. The file name and field numbers of the key and value are passed as command line arguments.</p>
 </blockquote>
-
 <p>Let&rsquo;s start by looking at the original python script:</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic">#!/usr/bin/env python</span>
 
@@ -67,7 +68,7 @@
     max_field_index <span style="color:#666">=</span> <span style="color:#007020">max</span>(args<span style="color:#666">.</span>key_field_index, args<span style="color:#666">.</span>value_field_index)
     sum_by_key <span style="color:#666">=</span> collections<span style="color:#666">.</span>Counter()
 
-    <span style="color:#007020;font-weight:bold">for</span> line <span style="color:#007020;font-weight:bold">in</span> args<span style="color:#666">.</span><span style="color:#007020">file</span>:
+    <span style="color:#007020;font-weight:bold">for</span> line <span style="color:#007020;font-weight:bold">in</span> args<span style="color:#666">.</span>file:
         fields <span style="color:#666">=</span> line<span style="color:#666">.</span>rstrip(<span style="color:#4070a0">&#39;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span>)<span style="color:#666">.</span>split(delim)
         <span style="color:#007020;font-weight:bold">if</span> max_field_index <span style="color:#666">&lt;</span> <span style="color:#007020">len</span>(fields):
             sum_by_key[fields[args<span style="color:#666">.</span>key_field_index]] <span style="color:#666">+=</span> <span style="color:#007020">int</span>(fields[args<span style="color:#666">.</span>value_field_index])
@@ -79,16 +80,17 @@
         <span style="color:#007020;font-weight:bold">print</span> <span style="color:#4070a0">&#39;max_key:&#39;</span>, max_entry[<span style="color:#40a070">0</span>][<span style="color:#40a070">0</span>], <span style="color:#4070a0">&#39;sum:&#39;</span>, max_entry[<span style="color:#40a070">0</span>][<span style="color:#40a070">1</span>]
 
 <span style="color:#007020;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#4070a0">&#39;__main__&#39;</span>:
-    main()</code></pre></div>
-<p>On my 2016 Macbook (Core M7) performance is okay, but doesn&rsquo;t quite have that snappy &ldquo;compiled language&rdquo; feel:</p>
+    main()
+
+</code></pre></div><p>On my 2016 Macbook (Core M7) performance is okay, but doesn&rsquo;t quite have that snappy &ldquo;compiled language&rdquo; feel:</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#007020">time</span> python2 csvParsePython.py googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
 max_key: <span style="color:#40a070">2006</span> sum: <span style="color:#40a070">22569013</span>
 
 real	0m18.239s
 user	0m17.898s
-sys	0m0.172s</code></pre></div>
-<p>Euan&rsquo;s nim code is appreciably faster. He finds this script 12% faster than LLVM optimized D, and 1250% faster than python:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">import os, strutils, streams, tables, parsecsv
+sys	0m0.172s
+</code></pre></div><p>Euan&rsquo;s nim code is appreciably faster. He finds this script 12% faster than LLVM optimized D, and 1250% faster than python:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">import os, strutils, streams, tables, parsecsv
 
 const
   Delim = &#39;\t&#39;
@@ -124,16 +126,16 @@ proc main() =
     let largest = sumByKey.largest()
     echo &#34;max_key: &#34;, largest[0], &#34; sum: &#34;, largest[1]
 
-main()</pre></div>
-<p>I find a similar (1150%) speed improvement in nim over python:</p>
+main()
+</code></pre></div><p>I find a similar (1150%) speed improvement in nim over python:</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#007020">time</span> ./csvParseNim googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
 max_key: <span style="color:#40a070">2006</span> sum: <span style="color:#40a070">22569013</span>
 
 real	0m1.586s
 user	0m1.518s
-sys	0m0.060s</code></pre></div>
-<p>Thus armed I was hoping for a similar order-of-magnitude speed from golang, i.e. an approximately 10x increase in speed over python. I&rsquo;m not so familiar with nim&rsquo;s performance characteristics, but a quick bit of searching<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup> showed I should expect nim to be perhaps 2x faster than golang.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#007020;font-weight:bold">package</span> main
+sys	0m0.060s
+</code></pre></div><p>Thus armed I was hoping for a similar order-of-magnitude speed from golang, i.e. an approximately 10x increase in speed over python. I&rsquo;m not so familiar with nim&rsquo;s performance characteristics, but a quick bit of searching<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> showed I should expect nim to be perhaps 2x faster than golang.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> (
 	<span style="color:#4070a0">&#34;encoding/csv&#34;</span>
@@ -194,7 +196,9 @@ sys	0m0.060s</code></pre></div>
 		}
 	}
 	fmt.<span style="color:#06287e">Println</span>(largestKey, sumByKey[largestKey])
-}</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go version
+}
+
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go version
 go version go1.8 darwin/amd64
 $ go build csvParser.go
 $ <span style="color:#007020">time</span> ./csvParser googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
@@ -202,9 +206,9 @@ $ <span style="color:#007020">time</span> ./csvParser googlebooks-eng-all-1gram-
 
 real	0m7.651s
 user	0m7.614s
-sys	0m0.108s</code></pre></div>
-<p>Only 2.4x python and 5x slower than nim? Not exactly what I&rsquo;d been hoping for while congratulating myself that I&rsquo;d be able to write faster terminal tools.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#007020;font-weight:bold">package</span> main
+sys	0m0.108s
+</code></pre></div><p>Only 2.4x python and 5x slower than nim? Not exactly what I&rsquo;d been hoping for while congratulating myself that I&rsquo;d be able to write faster terminal tools.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> (
 	<span style="color:#4070a0">&#34;bufio&#34;</span>
@@ -267,28 +271,29 @@ sys	0m0.108s</code></pre></div>
 
 	}
 	fmt.<span style="color:#06287e">Println</span>(largestKey, sumByKey[largestKey])
-}</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#007020">time</span> ./csvParser2 googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#007020">time</span> ./csvParser2 googlebooks-eng-all-1gram-20120701-0.tsv <span style="color:#40a070">1</span> <span style="color:#40a070">2</span>
 <span style="color:#40a070">2006</span> <span style="color:#40a070">22569013</span>
 
 real	0m4.133s
 user	0m4.102s
-sys	0m0.109s</code></pre></div>
-<p>4.4x faster than python and 2.6x slower than nim I can live with.</p>
-
-<p>As ever performance is comparative, and depends on your exact use. I expected this to be an easy and convincing victory for golang over python, but it took some tweaking to get a solid win. I didn&rsquo;t really know what to expect on nim vs go<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup> but left impressed with nim&rsquo;s performance and - speaking as a pythonista - elegance.</p>
-<div class="footnotes">
-
-<hr />
-
+sys	0m0.109s
+</code></pre></div><p>4.4x faster than python and 2.6x slower than nim I can live with.</p>
+<p>As ever performance is comparative, and depends on your exact use. I expected this to be an easy and convincing victory for golang over python, but it took some tweaking to get a solid win. I didn&rsquo;t really know what to expect on nim vs go<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> but left impressed with nim&rsquo;s performance and - speaking as a pythonista - elegance.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">Itself a inspired by <a href="http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/">faster command line tools in D</a> by Jon Degenhardt
- <a class="footnote-return" href="#fnref:1"><sup>↩</sup></a></li>
-<li id="fn:2"><a href="https://github.com/kostya/benchmarks">this comparison</a> was incredibly helpful
- <a class="footnote-return" href="#fnref:2"><sup>↩</sup></a></li>
-<li id="fn:3">I had mentally categorised them both as &ldquo;near C speed&rdquo;, but without much nuance in comparison.
- <a class="footnote-return" href="#fnref:3"><sup>↩</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>Itself a inspired by <a href="http://dlang.org/blog/2017/05/24/faster-command-line-tools-in-d/">faster command line tools in D</a> by Jon Degenhardt <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://github.com/kostya/benchmarks">this comparison</a> was incredibly helpful <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>I had mentally categorised them both as &ldquo;near C speed&rdquo;, but without much nuance in comparison. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
 </section>
 
@@ -298,18 +303,18 @@ sys	0m0.109s</code></pre></div>
       
     <div class="footer">
   <p class="social">
-    <a href="mailto:jamiecollinson@gmail.com">
-        <i class="ion-email"></i>
-    </a>
-    <a href="https://github.com/jamiecollinson/">
-        <i class="ion-social-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/jamiecollinson/">
-        <i class="ion-social-linkedin"></i>
-    </a>
-    <a href="https://twitter.com/jamiecollinson">
-        <i class="ion-social-twitter"></i>
-    </a>
+  <a href="mailto:jamiecollinson@gmail.com">
+    <ion-icon name="mail"></ion-icon>
+  </a>
+  <a href="https://github.com/jamiecollinson/">
+    <ion-icon name="logo-github"></ion-icon>
+  </a>
+  <a href="https://www.linkedin.com/in/jamiecollinson/">
+    <ion-icon name="logo-linkedin"></ion-icon>
+  </a>
+  <a href="https://twitter.com/jamiecollinson">
+    <ion-icon name="logo-twitter"></ion-icon>
+  </a>
 </p>
 
 </div>
@@ -319,17 +324,6 @@ sys	0m0.109s</code></pre></div>
     </div>
 
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-3143424-7', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 
 </body>
 
@@ -337,7 +331,7 @@ if (!doNotTrack) {
 
 <script>
  var post = document.querySelector('body'),
-     markers = post.querySelectorAll('.footnote-ref'),
+     markers = post.querySelectorAll('sup'),
      footnotes = post.querySelectorAll('.footnotes ol li');
 
  footnotes.forEach(function(footnote, i) {
