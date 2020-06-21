@@ -55,10 +55,8 @@
 }
 
 html {
-    /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; */
-    font-family: concourse;
-    font-weight: 300;
-    font-size: 20px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; */
+    font-size: 18px;
     color: #333;
 }
 
@@ -75,7 +73,7 @@ article {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
     font-weight: 300;
 }
 
@@ -98,11 +96,8 @@ a {
 }
 
 a[href^="http://"]:after, a[href^="https://"]:after {
-    content: '\f08e';
-    font-family: "FontAwesome";
-    font-size: 0.6rem;
-    display: inline-block;
-    margin: 0 0.2rem 0 0.2rem;
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+    margin: 0 3px 0 5px;
 }
 
 a[href*="//jamiecollinson.com/"]:after, a[href*="//localhost:1313/"]:after {
@@ -151,7 +146,6 @@ blockquote {
 pre {
     overflow-x: auto;
     padding: 1rem;
-    font-size: 0.7rem;
     background-color: #fafafa !important;
     border-left: 3px solid #ddd;
     margin-left: -1.5rem;
@@ -199,7 +193,7 @@ pre {
 }
 
 /* footnotes / sidenotes */
-a[rel=footnote], a.footnote-return {
+a[rel=footnote], a.footnote-backref {
     text-decoration: none;
 }
 
@@ -217,7 +211,11 @@ a[rel=footnote], a.footnote-return {
     display: none;
 }
 
-.post-sidenote .footnote-return {
+.post-sidenote p {
+    display: inline;
+}
+
+.post-sidenote .footnote-backref {
     display: none;
 }
 
@@ -273,7 +271,10 @@ sub {
 
 @media (min-width: 768px) {
     /* Hide footnotes and markers */
-    .footnote-ref a, .footnotes {
+    sup:after {
+	content: "⬦";
+    }
+    a.footnote-ref, .footnotes {
 	display: none;
     }
     /* Show sidenotes */
@@ -281,11 +282,8 @@ sub {
 	display: inline;
     }
     .post-sidenote:before {
-	content: "◊";
-	margin: 0 0.2rem 0 -0.8rem;
-    }
-    .footnote-ref:after {
-	content: "◊";
+	content: "⬦";
+	margin: 0 0.2rem 0 -1.2rem;
     }
     /* Adjust width for 3:1 display */
     .container {

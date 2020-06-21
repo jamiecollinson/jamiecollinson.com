@@ -10,8 +10,10 @@
 	<link rel="stylesheet" href="/css/styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
-	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	{{ partial "header.html" }}
+
+        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -56,7 +58,7 @@
 
 <script>
  var post = document.querySelector('body'),
-     markers = post.querySelectorAll('.footnote-ref'),
+     markers = post.querySelectorAll('sup'),
      footnotes = post.querySelectorAll('.footnotes ol li');
 
  footnotes.forEach(function(footnote, i) {
