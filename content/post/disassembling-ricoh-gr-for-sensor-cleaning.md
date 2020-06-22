@@ -4,6 +4,8 @@ title: A guide to disassembling the Ricoh GR for sensor cleaning
 toc: true
 ---
 
+_Updated: 2020-06-22 to add GR2 specific details sent by a kind reader_
+
 The Ricoh GR is an excellent camera, which has managed to displace all my former dalliances due to it's small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
 
 On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious[^1].
@@ -97,7 +99,7 @@ Lift the back panel from the screen side so that you can get at the cable.
 
 Use the tweezers to disconnect the white cable.
 
-When you do this be careful of the contacts on the cable - a reader emailed me that he had damaged the contacts and had to alter the cable to make some buttons work after reassembly. He recommends leaving the cable in place to avoid this risk, which I haven't tried but sounds like it would work fine but perhaps be more fiddly.
+When you do this be careful of the contacts on the cable - a reader emailed me that he had damaged the contacts and had to alter the cable to make some buttons work after reassembly. He recommends leaving the cable in place to avoid this risk, which I haven't tried but sounds like it would work fine but perhaps be more fiddly. Another reader emailed that they had left the white cable connected to the back panel during the rest of the operation and this worked fine.
 
 ![Detach white cable](/img/IMG_20160131_125201.jpg)
 
@@ -107,11 +109,13 @@ You now have the back panel detached!
 
 ## Removing the screen
 
-We now need to get behind the screen. Remove the two screws holding it in place, but don't lift yet, as the red and black wires which are clipped into the screen surround need unclipping first.
+We now need to get behind the screen. Remove the two screws holding it in place, but don't lift yet, as the red (a reader informs me yellow on GR2) and black wires which are clipped into the screen surround need unclipping first.
 
 ![Remove screen screws](/img/IMG_20160131_125747.jpg)
 
 Use the tweezers to unclip the red and black wires from the six clips around the screen. In my case I gently bent the clips back first to avoid pinching the wires. According to the thread linked above these wires are for the video mode microphones. I don't use video at all, but would still prefer my camera to be fully functional!
+
+The same reader who told me the GR2 has a yellow instead of a red cable also found that on the GR2 the wires are very difficult to unclip, so suggests removing the LCD from the tray first to provide easier access to the cables.
 
 ![Unclip wires](/img/IMG_20160131_130538.jpg)
 

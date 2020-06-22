@@ -8,8 +8,7 @@
 	<title>{{ if .IsPage }}{{ .Title }} &#8211; {{ end }}{{ .Site.Title }}</title>
 
 	<link rel="stylesheet" href="/css/styles.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
+
 	{{ partial "header.html" }}
 
         <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
@@ -37,6 +36,8 @@
 </body>
 
 {{ if .Params.toc }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
 <script>
  var initTOC = function() {
      var tocDomRect = document.querySelector('.js-toc').getBoundingClientRect();
