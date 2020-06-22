@@ -1,76 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Jamie Collinson</title>
-    <link>https://jamiecollinson.com/post/</link>
-    <description>Recent content in Posts on Jamie Collinson</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jun 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://jamiecollinson.com/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Solving Knights and Knaves with Z3</title>
-      <link>https://jamiecollinson.com/blog/solving-knights-and-knaves-with-z3/</link>
-      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jamiecollinson.com/blog/solving-knights-and-knaves-with-z3/</guid>
-      <description>There&amp;rsquo;s a type of logic puzzle called Knights and Knaves, in which we have a set of people who will either always tell the truth - a Knight - or always lie - a Knave.
-Suppose we have two people, A and B, with A claiming &amp;ldquo;We are both Knaves&amp;rdquo;. What can we deduce? A must be a Knave, since if he were a Knight he could not claim to be a Knave.</description>
-    </item>
-    
-    <item>
-      <title>Notes on Category Theory for Programmers</title>
-      <link>https://jamiecollinson.com/blog/category-theory-for-programmers/</link>
-      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jamiecollinson.com/blog/category-theory-for-programmers/</guid>
-      <description>1 Category: The Essence of Composition  Categories consist of objects and arrows that go between them The essence of a category is composition, i.e. that A -&amp;gt; B and B -&amp;gt; C implies A -&amp;gt; C  1.1 Arrows as Functions  Arrows are morphisms which are equivalent to functions Objects are equivalent to types. If we have f :: A -&amp;gt; B and g :: B -&amp;gt; C then (g .</description>
-    </item>
-    
-    <item>
-      <title>Emacs Config</title>
-      <link>https://jamiecollinson.com/blog/my-emacs-config/</link>
-      <pubDate>Sun, 11 Mar 2018 14:33:18 +0000</pubDate>
-      
-      <guid>https://jamiecollinson.com/blog/my-emacs-config/</guid>
-      <description>This is my emacs configuration. After many years with vim then a year with spacemacs &amp;amp; prelude, I came to the realisation that I needed to construct my own to really get it1.  After a few aborted attempts to split the config into separate files, I settled on the single file literate approach via Sacha Chua.  Documenting this is mostly for my benefit, but I hope others might find it useful constucting their own.</description>
-    </item>
-    
-    <item>
-      <title>Faster Command Line Tools in Golang?</title>
-      <link>https://jamiecollinson.com/blog/faster-command-line-tools-in-golang/</link>
-      <pubDate>Wed, 31 May 2017 20:15:50 +0100</pubDate>
-      
-      <guid>https://jamiecollinson.com/blog/faster-command-line-tools-in-golang/</guid>
-      <description>Having read the post faster command line tools in nim by Euan Torano1, I wanted to see how Go would compare. I am no golang expert, but have used it in production on a couple of reasonably sized projects, and have recently been enjoying it as a language for creating small terminal applications.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jamie Collinson</title><link>https://jamiecollinson.com/post/</link><description>Recent content in Posts on Jamie Collinson</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 17 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jamiecollinson.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Solving Knights and Knaves with Z3</title><link>https://jamiecollinson.com/blog/solving-knights-and-knaves-with-z3/</link><pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate><guid>https://jamiecollinson.com/blog/solving-knights-and-knaves-with-z3/</guid><description>There&amp;rsquo;s a type of logic puzzle called Knights and Knaves, in which we have a set of people who will either always tell the truth - a Knight - or always lie - a Knave.
+Suppose we have two people, A and B, with A claiming &amp;ldquo;We are both Knaves&amp;rdquo;. What can we deduce? A must be a Knave, since if he were a Knight he could not claim to be a Knave.</description></item><item><title>Notes on Category Theory for Programmers</title><link>https://jamiecollinson.com/blog/category-theory-for-programmers/</link><pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate><guid>https://jamiecollinson.com/blog/category-theory-for-programmers/</guid><description>1 Category: The Essence of Composition Categories consist of objects and arrows that go between them The essence of a category is composition, i.e. that A -&amp;gt; B and B -&amp;gt; C implies A -&amp;gt; C 1.1 Arrows as Functions Arrows are morphisms which are equivalent to functions Objects are equivalent to types. If we have f :: A -&amp;gt; B and g :: B -&amp;gt; C then (g .</description></item><item><title>Emacs Config</title><link>https://jamiecollinson.com/blog/my-emacs-config/</link><pubDate>Sun, 11 Mar 2018 14:33:18 +0000</pubDate><guid>https://jamiecollinson.com/blog/my-emacs-config/</guid><description>This is my emacs configuration. After many years with vim then a year with spacemacs &amp;amp; prelude, I came to the realisation that I needed to construct my own to really get it1. After a few aborted attempts to split the config into separate files, I settled on the single file literate approach via Sacha Chua. Documenting this is mostly for my benefit, but I hope others might find it useful constucting their own.</description></item><item><title>Faster Command Line Tools in Golang?</title><link>https://jamiecollinson.com/blog/faster-command-line-tools-in-golang/</link><pubDate>Wed, 31 May 2017 20:15:50 +0100</pubDate><guid>https://jamiecollinson.com/blog/faster-command-line-tools-in-golang/</guid><description>Having read the post faster command line tools in nim by Euan Torano1, I wanted to see how Go would compare. I am no golang expert, but have used it in production on a couple of reasonably sized projects, and have recently been enjoying it as a language for creating small terminal applications.
 Replicating the functionality in go was pleasant but I&amp;rsquo;d hoped for better performance.
-The task is to take a csv file, a column number to sum by and another to sum, and to return the label and total of the largest value.</description>
-    </item>
-    
-    <item>
-      <title>A guide to disassembling the Ricoh GR for sensor cleaning</title>
-      <link>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</link>
-      <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</guid>
-      <description>The Ricoh GR is an excellent camera, which has managed to displace all my former dalliances due to it&amp;rsquo;s small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
-On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious1.
-I&amp;rsquo;d heard that cleaning the sensor wasn&amp;rsquo;t too difficult, but the best guide I found online was missing some details.</description>
-    </item>
-    
-    <item>
-      <title>A mathematician, a physicist and an engineer...</title>
-      <link>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</link>
-      <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</guid>
-      <description>A mathematician, a physicist and an engineer are away from home at a conference1.
+The task is to take a csv file, a column number to sum by and another to sum, and to return the label and total of the largest value.</description></item><item><title>A guide to disassembling the Ricoh GR for sensor cleaning</title><link>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</link><pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate><guid>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</guid><description>Updated: 2020-06-22 to add GR2 specific details sent by a kind reader
+The Ricoh GR is an excellent camera, which has managed to displace all my former dalliances due to it&amp;rsquo;s small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
+On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious1.</description></item><item><title>A mathematician, a physicist and an engineer...</title><link>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</link><pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate><guid>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</guid><description>A mathematician, a physicist and an engineer are away from home at a conference1.
 The engineer wakes up in the night to find his bed is on fire. He grabs the fire extinguisher, points it at the fire and sprays until the fire is safely extinguished. He goes back to sleep content he has solved the problem.
-The physicist wakes up in the middle of the night to find his bed is also on fire.</description>
-    </item>
-    
-  </channel>
-</rss>
+The physicist wakes up in the middle of the night to find his bed is also on fire.</description></item></channel></rss>

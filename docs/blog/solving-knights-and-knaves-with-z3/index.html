@@ -1,221 +1,95 @@
-<!DOCTYPE html>
-<html>
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Solving Knights and Knaves with Z3 &#8211; Jamie Collinson</title><link rel=stylesheet href=/css/styles.css><script type=module src=https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js></script><script nomodule src=https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js></script></head><body><div class=container><nav class=navbar-top></nav><article class=js-toc-target><h1>Solving Knights and Knaves with Z3</h1><nav class="toc js-toc"></nav><section class=post><p>There&rsquo;s a type of logic puzzle called <a href=https://en.wikipedia.org/wiki/Knights_and_Knaves>Knights and Knaves</a>, in which we have a set of people who will either always tell the truth - a Knight - or always lie - a Knave.</p><p>Suppose we have two people, A and B, with A claiming &ldquo;We are both Knaves&rdquo;. What can we deduce? A must be a Knave, since if he were a Knight he could not claim to be a Knave. Since Knaves always lie A and B cannot both be Knaves, and so B must be a Knight.</p><p>Can this type of problem be solved by a computer? We can clearly imagine a brute force solution, but if we can express this in a certain form we can use well established computational tools. I recently read <a href=https://www.hillelwayne.com/post/knights-knaves/>Hillel Wayne&rsquo;s post about solving the problem with Alloy</a> (a SAT based modeller / solver) and thought it would be fun to show the same in Z3, an open source SMT Solver from Microsoft Research.</p><p>Installing the python interface to Z3 will also set up Z3 on your system (there&rsquo;s no separate installation needed):</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install z3-solver
+</code></pre></div><p>Once installed we can try to express the example above. We could get fancier with how we express things, but let&rsquo;s start with a variable for each person, which if <code>True</code> marks them as a Knight, and if <code>False</code> as a Knave.</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#007020;font-weight:700>from</span> <span style=color:#0e84b5;font-weight:700>z3</span> <span style=color:#007020;font-weight:700>import</span> <span style=color:#666>*</span>
 
-    <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<span style=color:#60a0b0;font-style:italic># True = Knight, False = Knave</span>
+A, B <span style=color:#666>=</span> Bools(<span style=color:#4070a0>&#34;A B&#34;</span>)
+s <span style=color:#666>=</span> Solver()
 
-	<title>Solving Knights and Knaves with Z3 &#8211; Jamie Collinson</title>
+<span style=color:#60a0b0;font-style:italic># &#34;Both of us are Knaves&#34;</span>
+s<span style=color:#666>.</span>add((A <span style=color:#666>==</span> True) <span style=color:#666>==</span> And(A <span style=color:#666>==</span> False, B <span style=color:#666>==</span> False))
 
-	<link rel="stylesheet" href="/css/styles.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
-	
+<span style=color:#007020;font-weight:700>if</span> s<span style=color:#666>.</span>check() <span style=color:#666>!=</span> sat:
+    <span style=color:#007020;font-weight:700>print</span>(<span style=color:#4070a0>&#34;No solution&#34;</span>)
+<span style=color:#007020;font-weight:700>else</span>:
+    <span style=color:#007020;font-weight:700>print</span>(s<span style=color:#666>.</span>model())
+</code></pre></div><p>Perhaps the key condition needs a little explanation. Remember <em>we&rsquo;re</em> not saying that both A and B are Knaves, only that <em>A says that A and B are Knaves</em>. We express this in Z3 by saying <code>A and B are both False, if and only if A is True</code>.</p><p>The rest is mostly straightforward, with the detail that before we can ask Z3 for the solution we must ask it to check the constraints - that&rsquo;s the <code>s.check()</code> part.</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&gt; [A = False, B = True]
+</code></pre></div><p>Our program confirms that A is a Knave and B a Knight as we expected.</p><p>Let&rsquo;s try a slightly more complex example - A claims &ldquo;Both of us are Knights or both of us are Knaves&rdquo;:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#60a0b0;font-style:italic># &#34;Both of us are Knights or both of us are Knaves&#34;</span>
+s<span style=color:#666>.</span>add((A <span style=color:#666>==</span> True) <span style=color:#666>==</span> Or(And(A <span style=color:#666>==</span> False, B <span style=color:#666>==</span> False), And(A <span style=color:#666>==</span> True, B <span style=color:#666>==</span> True)))
+</code></pre></div><p>We find:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&gt; [A = False, B = True]
+</code></pre></div><p>The more complex conditions might make us wonder if there are any other solutions. By design Z3 is only concerned with finding <em>a</em> solution rather than <em>all</em> solutions, but once we&rsquo;ve found a solution we can look for another by re-running the checker with the additional condition that the solution must be different from the one just found. Wrapping that in a quick function is relatively straightforward<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#007020;font-weight:700>from</span> <span style=color:#0e84b5;font-weight:700>z3</span> <span style=color:#007020;font-weight:700>import</span> <span style=color:#666>*</span>
 
-        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-</head>
+<span style=color:#007020;font-weight:700>def</span> <span style=color:#06287e>print_solutions</span>(s):
+    <span style=color:#007020;font-weight:700>if</span> s<span style=color:#666>.</span>check() <span style=color:#666>!=</span> sat:
+        <span style=color:#007020;font-weight:700>print</span>(<span style=color:#4070a0>&#34;No solution&#34;</span>)
+    <span style=color:#007020;font-weight:700>else</span>:
+        <span style=color:#007020;font-weight:700>while</span> s<span style=color:#666>.</span>check() <span style=color:#666>==</span> sat:
+            model <span style=color:#666>=</span> s<span style=color:#666>.</span>model()
+            <span style=color:#007020;font-weight:700>print</span>(model)
+            <span style=color:#60a0b0;font-style:italic># Exclude current solution</span>
+            s<span style=color:#666>.</span>add(Or([d() <span style=color:#666>!=</span> model[d] <span style=color:#007020;font-weight:700>for</span> d <span style=color:#007020;font-weight:700>in</span> model]))
 
-<body>
+<span style=color:#60a0b0;font-style:italic># True = Knight, False = Knave</span>
+A, B <span style=color:#666>=</span> Bools(<span style=color:#4070a0>&#34;A B&#34;</span>)
+s <span style=color:#666>=</span> Solver()
 
-    <div class="container ">
-
-	
-  <nav class="navbar-top">
-</nav>
-
-
-
-      <article class="js-toc-target">
-
-        
-<h1>Solving Knights and Knaves with Z3</h1>
-
-<nav class="toc js-toc"></nav>
-
-<section class="post">
-    <p>There&rsquo;s a type of logic puzzle called <a href="https://en.wikipedia.org/wiki/Knights_and_Knaves">Knights and Knaves</a>, in which we have a set of people who will either always tell the truth - a Knight - or always lie - a Knave.</p>
-<p>Suppose we have two people, A and B, with A claiming &ldquo;We are both Knaves&rdquo;. What can we deduce? A must be a Knave, since if he were a Knight he could not claim to be a Knave. Since Knaves always lie A and B cannot both be Knaves, and so B must be a Knight.</p>
-<p>Can this type of problem be solved by a computer? We can clearly imagine a brute force solution, but if we can express this in a certain form we can use well established computational tools. I recently read <a href="https://www.hillelwayne.com/post/knights-knaves/">Hillel Wayne&rsquo;s post about solving the problem with Alloy</a> (a SAT based modeller / solver) and thought it would be fun to show the same in Z3, an open source SMT Solver from Microsoft Research.</p>
-<p>Installing the python interface to Z3 will also set up Z3 on your system (there&rsquo;s no separate installation needed):</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">pip install z3-solver
-</code></pre></div><p>Once installed we can try to express the example above. We could get fancier with how we express things, but let&rsquo;s start with a variable for each person, which if <code>True</code> marks them as a Knight, and if <code>False</code> as a Knave.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">z3</span> <span style="color:#007020;font-weight:bold">import</span> <span style="color:#666">*</span>
-
-<span style="color:#60a0b0;font-style:italic"># True = Knight, False = Knave</span>
-A, B <span style="color:#666">=</span> Bools(<span style="color:#4070a0">&#34;A B&#34;</span>)
-s <span style="color:#666">=</span> Solver()
-
-<span style="color:#60a0b0;font-style:italic"># &#34;Both of us are Knaves&#34;</span>
-s<span style="color:#666">.</span>add((A <span style="color:#666">==</span> True) <span style="color:#666">==</span> And(A <span style="color:#666">==</span> False, B <span style="color:#666">==</span> False))
-
-<span style="color:#007020;font-weight:bold">if</span> s<span style="color:#666">.</span>check() <span style="color:#666">!=</span> sat:
-    <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;No solution&#34;</span>)
-<span style="color:#007020;font-weight:bold">else</span>:
-    <span style="color:#007020;font-weight:bold">print</span>(s<span style="color:#666">.</span>model())
-</code></pre></div><p>Perhaps the key condition needs a little explanation. Remember <em>we&rsquo;re</em> not saying that both A and B are Knaves, only that <em>A says that A and B are Knaves</em>. We express this in Z3 by saying <code>A and B are both False, if and only if A is True</code>.</p>
-<p>The rest is mostly straightforward, with the detail that before we can ask Z3 for the solution we must ask it to check the constraints - that&rsquo;s the <code>s.check()</code> part.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; [A = False, B = True]
-</code></pre></div><p>Our program confirms that A is a Knave and B a Knight as we expected.</p>
-<p>Let&rsquo;s try a slightly more complex example - A claims &ldquo;Both of us are Knights or both of us are Knaves&rdquo;:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic"># &#34;Both of us are Knights or both of us are Knaves&#34;</span>
-s<span style="color:#666">.</span>add((A <span style="color:#666">==</span> True) <span style="color:#666">==</span> Or(And(A <span style="color:#666">==</span> False, B <span style="color:#666">==</span> False), And(A <span style="color:#666">==</span> True, B <span style="color:#666">==</span> True)))
-</code></pre></div><p>We find:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; [A = False, B = True]
-</code></pre></div><p>The more complex conditions might make us wonder if there are any other solutions. By design Z3 is only concerned with finding <em>a</em> solution rather than <em>all</em> solutions, but once we&rsquo;ve found a solution we can look for another by re-running the checker with the additional condition that the solution must be different from the one just found. Wrapping that in a quick function is relatively straightforward<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">z3</span> <span style="color:#007020;font-weight:bold">import</span> <span style="color:#666">*</span>
-
-<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">print_solutions</span>(s):
-    <span style="color:#007020;font-weight:bold">if</span> s<span style="color:#666">.</span>check() <span style="color:#666">!=</span> sat:
-        <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;No solution&#34;</span>)
-    <span style="color:#007020;font-weight:bold">else</span>:
-        <span style="color:#007020;font-weight:bold">while</span> s<span style="color:#666">.</span>check() <span style="color:#666">==</span> sat:
-            model <span style="color:#666">=</span> s<span style="color:#666">.</span>model()
-            <span style="color:#007020;font-weight:bold">print</span>(model)
-            <span style="color:#60a0b0;font-style:italic"># Exclude current solution</span>
-            s<span style="color:#666">.</span>add(Or([d() <span style="color:#666">!=</span> model[d] <span style="color:#007020;font-weight:bold">for</span> d <span style="color:#007020;font-weight:bold">in</span> model]))
-
-<span style="color:#60a0b0;font-style:italic"># True = Knight, False = Knave</span>
-A, B <span style="color:#666">=</span> Bools(<span style="color:#4070a0">&#34;A B&#34;</span>)
-s <span style="color:#666">=</span> Solver()
-
-<span style="color:#60a0b0;font-style:italic"># &#34;Both of us are Knights or both of us are Knaves&#34;</span>
-s<span style="color:#666">.</span>add((A <span style="color:#666">==</span> True) <span style="color:#666">==</span> Or(And(A <span style="color:#666">==</span> False, B <span style="color:#666">==</span> False), And(A <span style="color:#666">==</span> True, B <span style="color:#666">==</span> True)))
+<span style=color:#60a0b0;font-style:italic># &#34;Both of us are Knights or both of us are Knaves&#34;</span>
+s<span style=color:#666>.</span>add((A <span style=color:#666>==</span> True) <span style=color:#666>==</span> Or(And(A <span style=color:#666>==</span> False, B <span style=color:#666>==</span> False), And(A <span style=color:#666>==</span> True, B <span style=color:#666>==</span> True)))
 
 print_solutions(s)
-</code></pre></div><p>We find two solutions, which makes sense - either A is lying in which case he&rsquo;s a Knave and B must be a Knight, or he&rsquo;s telling the truth in which case they must both be Knights.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; [A = False, B = True]
+</code></pre></div><p>We find two solutions, which makes sense - either A is lying in which case he&rsquo;s a Knave and B must be a Knight, or he&rsquo;s telling the truth in which case they must both be Knights.</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&gt; [A = False, B = True]
 &gt; [A = True, B = True]
-</code></pre></div><p>Let&rsquo;s try another, A claims to be a Knave, then claims B is a Knave<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic"># &#34;I am a Knave, B is a Knave&#34;</span>
-s<span style="color:#666">.</span>add((A <span style="color:#666">==</span> True) <span style="color:#666">==</span> (A <span style="color:#666">==</span> False))
-s<span style="color:#666">.</span>add((A <span style="color:#666">==</span> True) <span style="color:#666">==</span> (B <span style="color:#666">==</span> False))
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; No solution
-</code></pre></div><p>This has no solution as the first case contradicts itself - neither Knight or Knave can claim to be a Knave. We can verify this by trying the claim alone:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic"># &#34;I am a Knave&#34;</span>
-s<span style="color:#666">.</span>add((A <span style="color:#666">==</span> True) <span style="color:#666">==</span> (A <span style="color:#666">==</span> False))
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; No solution
-</code></pre></div><p>Let&rsquo;s try something different - A says &ldquo;If you asked me, I would say I was a Knave&rdquo;. This is more subtle than the last examples. We can only trust that he would say what he claims if he&rsquo;s a Knight:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic"># “If you asked me, I would say I was a knave”</span>
-s<span style="color:#666">.</span>add((A <span style="color:#666">==</span> True) <span style="color:#666">==</span> ((A <span style="color:#666">==</span> True) <span style="color:#666">==</span> (A <span style="color:#666">==</span> False)))
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; [A = False]
-</code></pre></div><p>This makes sense, as we&rsquo;ve already established the latter part has no solution, so the former must be false.</p>
-<h2 id="some-more-examples">Some more examples</h2>
-<p>Problem 1: There are two native islanders, named Alice and Bob, standing next to each other. You do not know what type either of them is. Alice says “At least one of us is a Knave.”</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s<span style="color:#666">.</span>add((A <span style="color:#666">==</span> True) <span style="color:#666">==</span> Or(A <span style="color:#666">==</span> False, B <span style="color:#666">==</span> False))
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; [A = True, B = False]
-</code></pre></div><p>Problem 2: Again, there are two native islanders standing next to each other. You do not know what type either of them are. Claire says, &ldquo;We are both Knights&rdquo;. After this Desmond says &ldquo;Either Claire is a Knight or I am a Knight, but we are not both Knights.&rdquo;</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">C, D <span style="color:#666">=</span> Bools(<span style="color:#4070a0">&#34;C D&#34;</span>)
+</code></pre></div><p>Let&rsquo;s try another, A claims to be a Knave, then claims B is a Knave<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#60a0b0;font-style:italic># &#34;I am a Knave, B is a Knave&#34;</span>
+s<span style=color:#666>.</span>add((A <span style=color:#666>==</span> True) <span style=color:#666>==</span> (A <span style=color:#666>==</span> False))
+s<span style=color:#666>.</span>add((A <span style=color:#666>==</span> True) <span style=color:#666>==</span> (B <span style=color:#666>==</span> False))
+</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&gt; No solution
+</code></pre></div><p>This has no solution as the first case contradicts itself - neither Knight or Knave can claim to be a Knave. We can verify this by trying the claim alone:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#60a0b0;font-style:italic># &#34;I am a Knave&#34;</span>
+s<span style=color:#666>.</span>add((A <span style=color:#666>==</span> True) <span style=color:#666>==</span> (A <span style=color:#666>==</span> False))
+</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&gt; No solution
+</code></pre></div><p>Let&rsquo;s try something different - A says &ldquo;If you asked me, I would say I was a Knave&rdquo;. This is more subtle than the last examples. We can only trust that he would say what he claims if he&rsquo;s a Knight:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#60a0b0;font-style:italic># “If you asked me, I would say I was a knave”</span>
+s<span style=color:#666>.</span>add((A <span style=color:#666>==</span> True) <span style=color:#666>==</span> ((A <span style=color:#666>==</span> True) <span style=color:#666>==</span> (A <span style=color:#666>==</span> False)))
+</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&gt; [A = False]
+</code></pre></div><p>This makes sense, as we&rsquo;ve already established the latter part has no solution, so the former must be false.</p><h2 id=some-more-examples>Some more examples</h2><p>Problem 1: There are two native islanders, named Alice and Bob, standing next to each other. You do not know what type either of them is. Alice says “At least one of us is a Knave.”</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>s<span style=color:#666>.</span>add((A <span style=color:#666>==</span> True) <span style=color:#666>==</span> Or(A <span style=color:#666>==</span> False, B <span style=color:#666>==</span> False))
+</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&gt; [A = True, B = False]
+</code></pre></div><p>Problem 2: Again, there are two native islanders standing next to each other. You do not know what type either of them are. Claire says, &ldquo;We are both Knights&rdquo;. After this Desmond says &ldquo;Either Claire is a Knight or I am a Knight, but we are not both Knights.&rdquo;</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>C, D <span style=color:#666>=</span> Bools(<span style=color:#4070a0>&#34;C D&#34;</span>)
 
-s<span style="color:#666">.</span>add((C <span style="color:#666">==</span> True) <span style="color:#666">==</span> And(C <span style="color:#666">==</span> True, D <span style="color:#666">==</span> True))
-s<span style="color:#666">.</span>add((D <span style="color:#666">==</span> True) <span style="color:#666">==</span> And(Or(C <span style="color:#666">==</span> True, D <span style="color:#666">==</span> True), Not(And(C <span style="color:#666">==</span> True, D <span style="color:#666">==</span> True))))
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; [C = False, D = True]
+s<span style=color:#666>.</span>add((C <span style=color:#666>==</span> True) <span style=color:#666>==</span> And(C <span style=color:#666>==</span> True, D <span style=color:#666>==</span> True))
+s<span style=color:#666>.</span>add((D <span style=color:#666>==</span> True) <span style=color:#666>==</span> And(Or(C <span style=color:#666>==</span> True, D <span style=color:#666>==</span> True), Not(And(C <span style=color:#666>==</span> True, D <span style=color:#666>==</span> True))))
+</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&gt; [C = False, D = True]
 &gt; [D = False, C = False]
-</code></pre></div><p>Problem 3: There are three native islanders, named Elena, Fernando, and Gary, standing together. You ask Elena, “How many knights are among you?”, and Elena answered but you couldn’t quite hear what she said. You then ask Fernando, “What did Elena say?”, and Fernando replies, “Elena said there is one knight among us.” At this point, Gary says “Don’t believe Fernando; he is lying.”</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">E, F, G <span style="color:#666">=</span> Bools(<span style="color:#4070a0">&#34;E F G&#34;</span>)
+</code></pre></div><p>Problem 3: There are three native islanders, named Elena, Fernando, and Gary, standing together. You ask Elena, “How many knights are among you?”, and Elena answered but you couldn’t quite hear what she said. You then ask Fernando, “What did Elena say?”, and Fernando replies, “Elena said there is one knight among us.” At this point, Gary says “Don’t believe Fernando; he is lying.”</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>E, F, G <span style=color:#666>=</span> Bools(<span style=color:#4070a0>&#34;E F G&#34;</span>)
 
-s<span style="color:#666">.</span>add(
-    (F <span style="color:#666">==</span> True)
-    <span style="color:#666">==</span> (
-        (E <span style="color:#666">==</span> True)
-        <span style="color:#666">==</span> Or(
-            And(E <span style="color:#666">==</span> True, F <span style="color:#666">==</span> False, G <span style="color:#666">==</span> False),
-            And(E <span style="color:#666">==</span> False, F <span style="color:#666">==</span> True, G <span style="color:#666">==</span> False),
-            And(E <span style="color:#666">==</span> False, F <span style="color:#666">==</span> False, G <span style="color:#666">==</span> True),
+s<span style=color:#666>.</span>add(
+    (F <span style=color:#666>==</span> True)
+    <span style=color:#666>==</span> (
+        (E <span style=color:#666>==</span> True)
+        <span style=color:#666>==</span> Or(
+            And(E <span style=color:#666>==</span> True, F <span style=color:#666>==</span> False, G <span style=color:#666>==</span> False),
+            And(E <span style=color:#666>==</span> False, F <span style=color:#666>==</span> True, G <span style=color:#666>==</span> False),
+            And(E <span style=color:#666>==</span> False, F <span style=color:#666>==</span> False, G <span style=color:#666>==</span> True),
         )
     )
 )
 
-s<span style="color:#666">.</span>add((G <span style="color:#666">==</span> True) <span style="color:#666">==</span> (F <span style="color:#666">==</span> False))
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; [F = False, E = True, G = True]
+s<span style=color:#666>.</span>add((G <span style=color:#666>==</span> True) <span style=color:#666>==</span> (F <span style=color:#666>==</span> False))
+</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>&gt; [F = False, E = True, G = True]
 &gt; [G = True, F = False, E = False]
-</code></pre></div><p>Problem 4: You travel along a road that comes to a fork producing a path to the right and a path to the left. You know that one path leads to Death and the other path leads to Freedom, but you have no idea which is which. You can only choose one path to follow. Fortunately, at the fork in the road are two native islanders, named Horace and Ingrid. You know that one of Horace and Ingrid is a Knight and the other is a Knave, but you don’t know which is which. You are allowed to ask only one question. You can ask either Horace or Ingrid (but not both), and the person you ask will answer you.</p>
-<p>This is the classic example, but needs more thought than the previous examples. We&rsquo;re not looking for single solution, but a question which will be answered consistently in all possible scenarios. Let&rsquo;s try the classic solution - &ldquo;ask Horace if Ingrid would say left is the path to freedom&rdquo;:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">H, I <span style="color:#666">=</span> Bools(<span style="color:#4070a0">&#34;H I&#34;</span>)
-Q <span style="color:#666">=</span> Bool(<span style="color:#4070a0">&#34;answers truthfully&#34;</span>)
+</code></pre></div><p>Problem 4: You travel along a road that comes to a fork producing a path to the right and a path to the left. You know that one path leads to Death and the other path leads to Freedom, but you have no idea which is which. You can only choose one path to follow. Fortunately, at the fork in the road are two native islanders, named Horace and Ingrid. You know that one of Horace and Ingrid is a Knight and the other is a Knave, but you don’t know which is which. You are allowed to ask only one question. You can ask either Horace or Ingrid (but not both), and the person you ask will answer you.</p><p>This is the classic example, but needs more thought than the previous examples. We&rsquo;re not looking for single solution, but a question which will be answered consistently in all possible scenarios. Let&rsquo;s try the classic solution - &ldquo;ask Horace if Ingrid would say left is the path to freedom&rdquo;:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>H, I <span style=color:#666>=</span> Bools(<span style=color:#4070a0>&#34;H I&#34;</span>)
+Q <span style=color:#666>=</span> Bool(<span style=color:#4070a0>&#34;answers truthfully&#34;</span>)
 
-<span style="color:#60a0b0;font-style:italic"># one Knight, one Knave</span>
-s<span style="color:#666">.</span>add(Or(And(H <span style="color:#666">==</span> True, I <span style="color:#666">==</span> False), And(H <span style="color:#666">==</span> False, I <span style="color:#666">==</span> True)))
+<span style=color:#60a0b0;font-style:italic># one Knight, one Knave</span>
+s<span style=color:#666>.</span>add(Or(And(H <span style=color:#666>==</span> True, I <span style=color:#666>==</span> False), And(H <span style=color:#666>==</span> False, I <span style=color:#666>==</span> True)))
 
-<span style="color:#60a0b0;font-style:italic"># we ask one about what the other would say about the left path, Q represents whether that answer is truthful</span>
-s<span style="color:#666">.</span>add((H <span style="color:#666">==</span> True) <span style="color:#666">==</span> ((I <span style="color:#666">==</span> True) <span style="color:#666">==</span> Q))
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[H = False, I = True, answers truthfully = False]
+<span style=color:#60a0b0;font-style:italic># we ask one about what the other would say about the left path, Q represents whether that answer is truthful</span>
+s<span style=color:#666>.</span>add((H <span style=color:#666>==</span> True) <span style=color:#666>==</span> ((I <span style=color:#666>==</span> True) <span style=color:#666>==</span> Q))
+</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[H = False, I = True, answers truthfully = False]
 [answers truthfully = False, I = False, H = True]
-</code></pre></div><p>We can see that in all scenarios we get a lie, so can ask about either path and invert the answer to find the truth. Note that there is a simpler method - if we ask Horace if he would say left is the path to freedom, then he will tell the truth (and we can drop the condition about one Knight and one Knave):</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">H <span style="color:#666">=</span> Bool(<span style="color:#4070a0">&#34;H&#34;</span>)
-Q <span style="color:#666">=</span> Bool(<span style="color:#4070a0">&#34;answers truthfully&#34;</span>)
+</code></pre></div><p>We can see that in all scenarios we get a lie, so can ask about either path and invert the answer to find the truth. Note that there is a simpler method - if we ask Horace if he would say left is the path to freedom, then he will tell the truth (and we can drop the condition about one Knight and one Knave):</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>H <span style=color:#666>=</span> Bool(<span style=color:#4070a0>&#34;H&#34;</span>)
+Q <span style=color:#666>=</span> Bool(<span style=color:#4070a0>&#34;answers truthfully&#34;</span>)
 
-<span style="color:#60a0b0;font-style:italic"># Ask H what he would say</span>
-s<span style="color:#666">.</span>add(H <span style="color:#666">==</span> (H <span style="color:#666">==</span> Q))
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[H = False, answers truthfully = True]
+<span style=color:#60a0b0;font-style:italic># Ask H what he would say</span>
+s<span style=color:#666>.</span>add(H <span style=color:#666>==</span> (H <span style=color:#666>==</span> Q))
+</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[H = False, answers truthfully = True]
 [answers truthfully = True, H = True]
-</code></pre></div><p>Cool huh, but what can you do with this besides solving toy problems? Any problem which can be expressed as a series of logical constraints can use SMT tools. Some interesting real world examples:</p>
-<ul>
-<li>Verification of program correctness - all preconditions, postconditions and program logic are modeled, then the solver checks the model is satisfiable.</li>
-<li>Allocation of virtual machines with varying requirements to bare-metal servers with varying resources.</li>
-<li>Automated program writing (!) from defined requirements.</li>
-<li>Automated circuit design from components / required outputs.</li>
-</ul>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>N.B. this likely isn&rsquo;t efficient at all - don&rsquo;t use in production! <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>Note this is different to the first case - there A was claiming that both he and B were Knaves, which is a less general claim. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
-</section>
-
-
-      </article>
-
-      
-    <div class="footer">
-  <p class="social">
-  <a href="mailto:jamiecollinson@gmail.com">
-    <ion-icon name="mail"></ion-icon>
-  </a>
-  <a href="https://github.com/jamiecollinson/">
-    <ion-icon name="logo-github"></ion-icon>
-  </a>
-  <a href="https://www.linkedin.com/in/jamiecollinson/">
-    <ion-icon name="logo-linkedin"></ion-icon>
-  </a>
-  <a href="https://twitter.com/jamiecollinson">
-    <ion-icon name="logo-twitter"></ion-icon>
-  </a>
-</p>
-
-</div>
-
-
-
-    </div>
-
-    
-
-</body>
-
-
-
-<script>
- var post = document.querySelector('body'),
-     markers = post.querySelectorAll('sup'),
-     footnotes = post.querySelectorAll('.footnotes ol li');
-
- footnotes.forEach(function(footnote, i) {
-     var marker = markers[i];
-     marker.insertAdjacentHTML(
-	 'afterend',
-	 '<aside class="post-sidenote" role="complementary">'
-         + footnote.innerHTML
-         + '</aside>'
-     );
- });
-</script>
-
-</html>
+</code></pre></div><p>Cool huh, but what can you do with this besides solving toy problems? Any problem which can be expressed as a series of logical constraints can use SMT tools. Some interesting real world examples:</p><ul><li>Verification of program correctness - all preconditions, postconditions and program logic are modeled, then the solver checks the model is satisfiable.</li><li>Allocation of virtual machines with varying requirements to bare-metal servers with varying resources.</li><li>Automated program writing (!) from defined requirements.</li><li>Automated circuit design from components / required outputs.</li></ul><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>N.B. this likely isn&rsquo;t efficient at all - don&rsquo;t use in production! <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2 role=doc-endnote><p>Note this is different to the first case - there A was claiming that both he and B were Knaves, which is a less general claim. <a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></section></article><div class=footer><p class=social><a href=mailto:jamiecollinson@gmail.com><ion-icon name=mail></ion-icon></a><a href=https://github.com/jamiecollinson/><ion-icon name=logo-github></ion-icon></a><a href=https://www.linkedin.com/in/jamiecollinson/><ion-icon name=logo-linkedin></ion-icon></a><a href=https://twitter.com/jamiecollinson><ion-icon name=logo-twitter></ion-icon></a></p></div></div></body><script>var post=document.querySelector('body'),markers=post.querySelectorAll('sup'),footnotes=post.querySelectorAll('.footnotes ol li');footnotes.forEach(function(footnote,i){var marker=markers[i];marker.insertAdjacentHTML('afterend','<aside class="post-sidenote" role="complementary">'
++footnote.innerHTML
++'</aside>');});</script></html>
