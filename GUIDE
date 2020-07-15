@@ -1,0 +1,5 @@
+hugo server
+hugo --minify
+
+git status
+git diff
