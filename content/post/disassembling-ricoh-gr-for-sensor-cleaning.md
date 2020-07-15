@@ -4,9 +4,9 @@ title: A guide to disassembling the Ricoh GR for sensor cleaning
 toc: true
 ---
 
-_Updated: 2020-06-22 to add GR2 specific details sent by a kind reader_
+_Updated: 2020-06-22 to add GR2 details sent by a kind reader_
 
-The Ricoh GR is an excellent camera, which has managed to displace all my former dalliances due to it's small size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
+The Ricoh GR is an excellent camera, which has managed to displace all my former dalliances due to it's size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.
 
 On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious[^1].
 
@@ -113,9 +113,9 @@ We now need to get behind the screen. Remove the two screws holding it in place,
 
 ![Remove screen screws](/img/IMG_20160131_125747.jpg)
 
-Use the tweezers to unclip the red and black wires from the six clips around the screen. In my case I gently bent the clips back first to avoid pinching the wires. According to the thread linked above these wires are for the video mode microphones. I don't use video at all, but would still prefer my camera to be fully functional!
+Use the tweezers to unclip the red and black wires from the six clips around the screen. In my case I gently bent the clips back first to avoid pinching the wires. According to the thread linked above these wires are for the video mode microphones. I don't use video at all, but would still prefer my camera to be intact if possible.
 
-The same reader who told me the GR2 has a yellow instead of a red cable also found that on the GR2 the wires are very difficult to unclip, so suggests removing the LCD from the tray first to provide easier access to the cables.
+The same reader who told me the GR2 has a yellow instead of a red cable also found that on the GR2 the wires are difficult to unclip, so suggests removing the LCD from the tray first to provide easier access to the cables.
 
 ![Unclip wires](/img/IMG_20160131_130538.jpg)
 
@@ -137,8 +137,8 @@ Follow the above steps in reverse order to reassemble the camera. You can do a p
 
 ## Conclusion
 
-Dust spots seem a fairly common problem mentioned in online threads, so hopefully this guide will help someone. If not it will at least be an aide memoire when I need to repeat the process.
+Dust spots seem a common problem mentioned in online threads, so I hope this guide will help someone. If not it will at least be an aide memoire when I need to repeat the process.
 
-So far I've avoided purchasing the Ricoh GR II as the new features (wifi + some new filters) don't seem worth the upgrade, and from what I hear dust is still a problem. I really hope that the future Ricoh GR III both exists and improves the dust sealing. If Ricoh continues their two year release cycle we'll find out in 2017.
+So far I've avoided purchasing the Ricoh GR II as the new features (wifi + some new filters) don't seem worth the upgrade, and from what I hear dust is still a problem. I hope that the future Ricoh GR III both exists and improves the dust sealing. If Ricoh continues their two year release cycle we'll find out in 2017.
 
 [^1]: Particularly when you return from holiday with several hundred images and need to review every frame.
