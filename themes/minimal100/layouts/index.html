@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="intro">
+  <h1 class="intro__title">I'm Jamie. I build things with open source software.</h1>
+  <div class="intro__body">
+    {{ .Content }}
+    {{ partial "social.html" . }}
+  </div>
+</section>
+{{ $posts := where .Site.RegularPages "Type" "post" }}
+{{ if gt (len $posts) 0 }}
+<section class="posts">
+  <h2 class="section-title">Latest posts</h2>
+  <ul class="post-list">
+    {{ range first 10 (sort $posts "Date" "desc") }}
+    <li class="post-list__item">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ with .Date }}
+      <span class="post-list__date">{{ .Format "2 Jan 2006" }}</span>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+{{ end }}

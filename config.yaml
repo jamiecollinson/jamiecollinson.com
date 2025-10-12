@@ -1,5 +1,5 @@
 baseURL: https://jamiecollinson.com
-theme: jc
+theme: minimal100
 disablePathToLower: true
 languageCode: en-us
 title: Jamie Collinson

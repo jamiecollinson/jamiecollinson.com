@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="list">
+  <header class="list__header">
+    <h1 class="list__title">{{ .Title }}</h1>
+    {{ with .Content }}
+    <div class="list__description">{{ . }}</div>
+    {{ end }}
+  </header>
+  <ul class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li class="post-list__item">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ with .Date }}
+      <span class="post-list__date">{{ .Format "2 Jan 2006" }}</span>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
