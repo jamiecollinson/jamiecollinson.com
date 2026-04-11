@@ -4,11 +4,14 @@ disablePathToLower: true
 languageCode: en-us
 title: Jamie Collinson
 permalinks:
-  post: /blog/:filename
+  post: /blog/:contentbasename
 publishDir: docs
-pygmentsCodeFences: true
-pygmentsCodefencesGuessSyntax: true
-pygmentsStyle: friendly
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    noClasses: false
+    style: friendly
 FootnoteReturnLinkContents: "<sup>↩</sup>"
 enableRobotsTXT: true
 ignoreFiles:

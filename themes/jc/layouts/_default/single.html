@@ -1,7 +1,3 @@
-{{ define "top" }}
-  {{ partial "nav.html" }}
-{{ end }}
-
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 
@@ -10,8 +6,4 @@
 <section class="post">
     {{ .Content }}
 </section>
-{{ end }}
-
-{{ define "footer" }}
-    {{ partial "footer.html" }}
 {{ end }}

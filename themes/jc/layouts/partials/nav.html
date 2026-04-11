@@ -1,2 +1,19 @@
-<nav class="navbar-top">
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="site-nav__inner">
+    <a class="site-nav__brand" href="/">{{ .Site.Title }}</a>
+    <div class="site-nav__right">
+      <ul class="site-nav__links">
+        <li><a href="/about/">About</a></li>
+      </ul>
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+        title="Toggle dark mode">
+        <span class="icon theme-toggle__icon" style="width: 20px;"></span>
+      </button>
+    </div>
+  </div>
 </nav>

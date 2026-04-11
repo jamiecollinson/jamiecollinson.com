@@ -1,19 +1,42 @@
 {{ define "main" }}
-<h1>I'm Jamie. I build things with open source software.</h1>
-
-<section>
-    {{ .Content }}
-    {{ partial "social.html" }}
+<section class="now-page" aria-labelledby="now-title">
+    <h1 id="now-title">What I'm doing now</h1>
+    {{/* Re-add a last-updated line here if/when "now" becomes a dedicated page. */}}
+    <div class="now-page__content">
+        {{ .Content }}
+    </div>
 </section>
 
-<section>
-    <h2>Latest posts</h2>
-    {{ range .Site.RegularPages }}
-	<p>
-            <a href="{{ .Permalink }}">
-		{{ .Title }}
-            </a>
-	</p>
+{{ $historicCutoff := now.AddDate -5 0 0 }}
+{{ $visiblePosts := first 8 (where .Site.RegularPages "Section" "post") }}
+{{ $recentPosts := where $visiblePosts "Date" "ge" $historicCutoff }}
+{{ $olderPosts := where $visiblePosts "Date" "lt" $historicCutoff }}
+
+{{ if gt (len $recentPosts) 0 }}
+<section class="now-page" aria-labelledby="writing-title">
+    <h2 id="writing-title">Writing</h2>
+    <ul class="now-posts">
+    {{ range $recentPosts }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <span class="now-posts__year">{{ .Date.Format "2006" }}</span>
+      </li>
     {{ end }}
+    </ul>
 </section>
+{{ end }}
+
+{{ if gt (len $olderPosts) 0 }}
+<section class="now-page" aria-labelledby="earlier-writing-title">
+    <h2 id="earlier-writing-title">Earlier writing</h2>
+    <p class="now-page__meta">Some earlier notes and experiments.</p>
+    <ul class="now-posts">
+    {{ range $olderPosts }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+    </ul>
+</section>
+{{ end }}
 {{ end }}

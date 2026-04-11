@@ -1,15 +1,250 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Notes on Category Theory for Programmers &#8211; Jamie Collinson</title><link rel=stylesheet href=/css/styles.css><script type=module src=https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js></script><script nomodule src=https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js></script></head><body><div class=container><nav class=navbar-top></nav><article class=js-toc-target><h1>Notes on Category Theory for Programmers</h1><nav class="toc js-toc"></nav><section class=post><h2 id=1-category-the-essence-of-composition>1 Category: The Essence of Composition</h2><ul><li>Categories consist of <em>objects</em> and <em>arrows</em> that go between them</li><li>The essence of a category is <em>composition</em>, i.e. that <code>A -> B</code> and <code>B -> C</code> implies <code>A -> C</code></li></ul><h3 id=11-arrows-as-functions>1.1 Arrows as Functions</h3><ul><li>Arrows are <em>morphisms</em> which are equivalent to functions</li><li>Objects are equivalent to types.</li><li>If we have <code>f :: A -> B</code> and <code>g :: B -> C</code> then <code>(g . f) :: A -> C</code></li></ul><h3 id=12-properties-of-composition>1.2 Properties of Composition</h3><p>Composition in any category must satisfy two properties:</p><ul><li>Composition is <em>associative</em>, which means the order of brackets doesn&rsquo;t matter. This means for functions <code>f</code> <code>g</code> and <code>h</code>, <code>h . (g . f) = (h . g) . f = h . g. f</code></li><li>Every object has an <em>identity</em> mapping back to itself. If we have <code>f :: A -> B</code> then <code>f . identityA = f</code> and <code>identityB . f = f</code>. Note the identity is per object.</li></ul><h3 id=13-composition-is-the-essence-of-programming>1.3 Composition is the Essence of Programming</h3><p>Why does this matter for programming? Because decomposing problems, creating solutions to simpler problems and then composing them is the essence of programming. Categories provide a mathematical basis for thinking about this.</p><h3 id=14-challenges>1.4 Challenges</h3><p>Q: Implement, as best as you can, the identity function in your favorite language (or the second favorite, if your favorite language happens to be Haskell).</p><p>A:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#007020;font-weight:700>const</span> identity <span style=color:#666>=</span> x =&gt; x
-</code></pre></div><p>Q: Implement the composition function in your favorite language.It takes two functions as arguments and returns a function that is their composition.</p><p>A:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#007020;font-weight:700>const</span> comp <span style=color:#666>=</span> (f, g) =&gt; x =&gt; g(f(x))
-</code></pre></div><p>Q: Write a program that tries to test that your composition function respects identity.</p><p>A:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#007020;font-weight:700>const</span> <span style=color:#007020;font-weight:700>double</span> <span style=color:#666>=</span> x =&gt; x <span style=color:#666>+</span> x
-console.assert(comp(<span style=color:#007020;font-weight:700>double</span>, identity)(<span style=color:#40a070>10</span>) <span style=color:#666>===</span> <span style=color:#007020;font-weight:700>double</span>(<span style=color:#40a070>10</span>))
-</code></pre></div><p>Q: Is the world-wide web a category in any sense? Are links morphisms?</p><p>A: Yes. If we view links between pages as a function from &ldquo;visiting page A&rdquo; to &ldquo;visiting page B&rdquo; then links are composable (a crawler could follow a chain of links equivalently to a single link), and pages are a category under links.</p><p>Q: Is Facebook a category, with people as objects and friendships as morphisms?</p><p>A: No, as friendship isn&rsquo;t composable (I may be friends with you, but some of your friends are completely unknown to me and thus not my friends), and there&rsquo;s also no identity function as people can&rsquo;t friend themselves. We&rsquo;d need an identity and an axiom such as &ldquo;the friend of my friend is my friend&rdquo; for this to be a category.</p><p>Q: When is a directed graph a category?</p><p>A: A directed graph is a category provided we allow nodes to be adjacent to themselves, otherwise we do not have an identity function.</p><h2 id=2-types-and-functions>2 Types and Functions</h2><h3 id=21-who-needs-types>2.1 Who needs Types?</h3><p>Thought experiment: millions of monkeys typing random keys, producing programs, compiling and running them.</p><blockquote><p>With machine language, any combination of bytes produced by monkeys would be accepted and run. But with higher level languages, we do appreciate the fact that a compiler is able to detect lexical and grammatical errors&mldr; Type checking provides yet another barrier against nonsensical programs.</p></blockquote><blockquote><p>The usual goal in the typing monkeys thought experiment is the pro- duction of the complete works of Shakespeare. Having a spell checker and a grammar checker in the loop would drastically increase the odds. The analog of a type checker would go even further by making sure that, once Romeo is declared a human being, he doesn’t sprout leaves or trap photons in his powerful gravitational field.</p></blockquote><h3 id=22-types-are-about-composability>2.2 Types are about composability</h3><ul><li>Arrows can only be composed when targets and sources match, i.e. for programs to be composable the input / output types must match.</li><li>Strong static typing can eliminate semantically valid programs, but this is rare and escape hatches exist (e.g. <code>unsafeCoerce</code> in Haskell).</li><li>Type inference removes some friction from strong static typing, though designing types up front can be a valuable design technique.</li><li>Strong static typing does not replace testing (e.g. it does not guarantee program logic is correct), and testing does not replace strong typing. Tests are probabilistic not deterministic and can&rsquo;t typically cover all cases.</li></ul><blockquote><p>Testing is a poor substitute for proof</p></blockquote><h3 id=23-what-are-types>2.3 What are Types?</h3><h3 id=24-why-do-we-need-a-mathematical-model>2.4 Why do we need a mathematical model?</h3><h3 id=25-pure-and-dirty-functions>2.5 Pure and dirty functions</h3><h3 id=26-examples-of-types>2.6 Examples of Types</h3><h3 id=27-challenges>2.7 Challenges</h3><p>Q: Define a higher-order function (or a function object) memoize in your favorite language.</p><p>A:</p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#007020;font-weight:700>var</span> memoize <span style=color:#666>=</span> f =&gt; {
-	<span style=color:#007020;font-weight:700>const</span> cache <span style=color:#666>=</span> {}
-	<span style=color:#007020;font-weight:700>return</span> (...args) =&gt; {
-		<span style=color:#007020;font-weight:700>if</span> (cache[args]) <span style=color:#007020;font-weight:700>return</span> cache[args]
-		cache[args] <span style=color:#666>=</span> f(...args)
-		<span style=color:#007020;font-weight:700>return</span> cache[args]
-	}
-}
-</code></pre></div></section></article><div class=footer><p class=social><a href=mailto:jamiecollinson@gmail.com><ion-icon name=mail></ion-icon></a><a href=https://github.com/jamiecollinson/><ion-icon name=logo-github></ion-icon></a><a href=https://www.linkedin.com/in/jamiecollinson/><ion-icon name=logo-linkedin></ion-icon></a><a href=https://twitter.com/jamiecollinson><ion-icon name=logo-twitter></ion-icon></a></p></div></div></body><script>var post=document.querySelector('body'),markers=post.querySelectorAll('sup'),footnotes=post.querySelectorAll('.footnotes ol li');footnotes.forEach(function(footnote,i){var marker=markers[i];marker.insertAdjacentHTML('afterend','<aside class="post-sidenote" role="complementary">'
-+footnote.innerHTML
-+'</aside>');});</script></html>
+<!DOCTYPE html>
+<html>
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Notes on Category Theory for Programmers &#8211; Jamie Collinson</title>
+
+        <script>
+         (function() {
+             var key = "theme";
+             var theme = "light";
+             try {
+                 var stored = localStorage.getItem(key);
+                 if (stored === "light" || stored === "dark") {
+                     theme = stored;
+                 } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                     theme = "dark";
+                 }
+             } catch (_err) {}
+             document.documentElement.setAttribute("data-theme", theme);
+         })();
+        </script>
+
+	<link rel="stylesheet" href="/css/styles.css">
+
+	<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+    <body>
+
+    <div class="container ">
+
+        <nav class="site-nav" aria-label="Main navigation">
+  <div class="site-nav__inner">
+    <a class="site-nav__brand" href="/">Jamie Collinson</a>
+    <div class="site-nav__right">
+      <ul class="site-nav__links">
+        <li><a href="/about/">About</a></li>
+      </ul>
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+        title="Toggle dark mode">
+        <span class="icon theme-toggle__icon" style="width: 20px;"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+        
+
+      <article class="js-toc-target">
+
+        
+<h1>Notes on Category Theory for Programmers</h1>
+
+<nav class="toc js-toc"></nav>
+
+<section class="post">
+    <h2 id="1-category-the-essence-of-composition">1 Category: The Essence of Composition</h2>
+<ul>
+<li>Categories consist of <em>objects</em> and <em>arrows</em> that go between them</li>
+<li>The essence of a category is <em>composition</em>, i.e. that <code>A -&gt; B</code> and <code>B -&gt; C</code> implies <code>A -&gt; C</code></li>
+</ul>
+<h3 id="11-arrows-as-functions">1.1 Arrows as Functions</h3>
+<ul>
+<li>Arrows are <em>morphisms</em> which are equivalent to functions</li>
+<li>Objects are equivalent to types.</li>
+<li>If we have <code>f :: A -&gt; B</code> and <code>g :: B -&gt; C</code> then <code>(g . f) :: A -&gt; C</code></li>
+</ul>
+<h3 id="12-properties-of-composition">1.2 Properties of Composition</h3>
+<p>Composition in any category must satisfy two properties:</p>
+<ul>
+<li>Composition is <em>associative</em>, which means the order of brackets doesn&rsquo;t matter. This means for functions <code>f</code> <code>g</code> and <code>h</code>, <code>h . (g . f) = (h . g) . f = h . g. f</code></li>
+<li>Every object has an <em>identity</em> mapping back to itself. If we have <code>f :: A -&gt; B</code> then <code>f . identityA = f</code> and <code>identityB . f = f</code>. Note the identity is per object.</li>
+</ul>
+<h3 id="13-composition-is-the-essence-of-programming">1.3 Composition is the Essence of Programming</h3>
+<p>Why does this matter for programming? Because decomposing problems, creating solutions to simpler problems and then composing them is the essence of programming. Categories provide a mathematical basis for thinking about this.</p>
+<h3 id="14-challenges">1.4 Challenges</h3>
+<p>Q: Implement, as best as you can, the identity function in your favorite language (or the second favorite, if your favorite language happens to be Haskell).</p>
+<p>A:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">identity</span> <span class="o">=</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span>
+</span></span></code></pre></div><p>Q: Implement the composition function in your favorite language.It takes two functions as arguments and returns a function that is their composition.</p>
+<p>A:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">comp</span> <span class="o">=</span> <span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">g</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">g</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+</span></span></code></pre></div><p>Q: Write a program that tries to test that your composition function respects identity.</p>
+<p>A:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="kr">double</span> <span class="o">=</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">x</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">assert</span><span class="p">(</span><span class="nx">comp</span><span class="p">(</span><span class="kr">double</span><span class="p">,</span> <span class="nx">identity</span><span class="p">)(</span><span class="mi">10</span><span class="p">)</span> <span class="o">===</span> <span class="kr">double</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</span></span></code></pre></div><p>Q: Is the world-wide web a category in any sense? Are links morphisms?</p>
+<p>A: Yes. If we view links between pages as a function from &ldquo;visiting page A&rdquo; to &ldquo;visiting page B&rdquo; then links are composable (a crawler could follow a chain of links equivalently to a single link), and pages are a category under links.</p>
+<p>Q: Is Facebook a category, with people as objects and friendships as morphisms?</p>
+<p>A: No, as friendship isn&rsquo;t composable (I may be friends with you, but some of your friends are completely unknown to me and thus not my friends), and there&rsquo;s also no identity function as people can&rsquo;t friend themselves. We&rsquo;d need an identity and an axiom such as &ldquo;the friend of my friend is my friend&rdquo; for this to be a category.</p>
+<p>Q: When is a directed graph a category?</p>
+<p>A: A directed graph is a category provided we allow nodes to be adjacent to themselves, otherwise we do not have an identity function.</p>
+<h2 id="2-types-and-functions">2 Types and Functions</h2>
+<h3 id="21-who-needs-types">2.1 Who needs Types?</h3>
+<p>Thought experiment: millions of monkeys typing random keys, producing programs, compiling and running them.</p>
+<blockquote>
+<p>With machine language, any combination of bytes produced by monkeys would be accepted and run. But with higher level languages, we do appreciate the fact that a compiler is able to detect lexical and grammatical errors&hellip; Type checking provides yet another barrier against nonsensical programs.</p>
+</blockquote>
+<blockquote>
+<p>The usual goal in the typing monkeys thought experiment is the pro- duction of the complete works of Shakespeare. Having a spell checker and a grammar checker in the loop would drastically increase the odds. The analog of a type checker would go even further by making sure that, once Romeo is declared a human being, he doesn’t sprout leaves or trap photons in his powerful gravitational field.</p>
+</blockquote>
+<h3 id="22-types-are-about-composability">2.2 Types are about composability</h3>
+<ul>
+<li>Arrows can only be composed when targets and sources match, i.e. for programs to be composable the input / output types must match.</li>
+<li>Strong static typing can eliminate semantically valid programs, but this is rare and escape hatches exist (e.g. <code>unsafeCoerce</code> in Haskell).</li>
+<li>Type inference removes some friction from strong static typing, though designing types up front can be a valuable design technique.</li>
+<li>Strong static typing does not replace testing (e.g. it does not guarantee program logic is correct), and testing does not replace strong typing. Tests are probabilistic not deterministic and can&rsquo;t typically cover all cases.</li>
+</ul>
+<blockquote>
+<p>Testing is a poor substitute for proof</p>
+</blockquote>
+<h3 id="23-what-are-types">2.3 What are Types?</h3>
+<h3 id="24-why-do-we-need-a-mathematical-model">2.4 Why do we need a mathematical model?</h3>
+<h3 id="25-pure-and-dirty-functions">2.5 Pure and dirty functions</h3>
+<h3 id="26-examples-of-types">2.6 Examples of Types</h3>
+<h3 id="27-challenges">2.7 Challenges</h3>
+<p>Q: Define a higher-order function (or a function object) memoize in your favorite language.</p>
+<p>A:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">memoize</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">cache</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nx">cache</span><span class="p">[</span><span class="nx">args</span><span class="p">])</span> <span class="k">return</span> <span class="nx">cache</span><span class="p">[</span><span class="nx">args</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">cache</span><span class="p">[</span><span class="nx">args</span><span class="p">]</span> <span class="o">=</span> <span class="nx">f</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">cache</span><span class="p">[</span><span class="nx">args</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+</section>
+
+
+      </article>
+
+      <div class="footer">
+  <hr class="footer-rule" />
+  <div class="footer-main">
+    <p class="social">
+  <a href="mailto:jamiecollinson@gmail.com">
+    <ion-icon name="mail"></ion-icon>
+  </a>
+  <a href="https://www.linkedin.com/in/jamiecollinson/">
+    <ion-icon name="logo-linkedin"></ion-icon>
+  </a>
+</p>
+
+  </div>
+  <p class="footer-privacy">
+    This page respects your privacy by not using cookies or similar technologies and not collecting any personally identifiable information.
+  </p>
+</div>
+
+
+    </div>
+
+    
+
+</body>
+
+
+
+<script>
+ (function() {
+     var key = "theme";
+     var root = document.documentElement;
+     var toggle = document.getElementById("theme-toggle");
+     if (!toggle) {
+         return;
+     }
+
+     var darkIcon = '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"/></svg>';
+     var lightIcon = '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"/></svg>';
+     var iconSlot = toggle.querySelector(".theme-toggle__icon");
+     var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+     var getStoredTheme = function() {
+         try {
+             return localStorage.getItem(key);
+         } catch (_err) {
+             return null;
+         }
+     };
+
+     var setStoredTheme = function(theme) {
+         try {
+             localStorage.setItem(key, theme);
+         } catch (_err) {}
+     };
+
+     var resolveTheme = function() {
+         var stored = getStoredTheme();
+         if (stored === "light" || stored === "dark") {
+             return stored;
+         }
+         if (media && media.matches) {
+             return "dark";
+         }
+         return "light";
+     };
+
+     var render = function(theme) {
+         root.setAttribute("data-theme", theme);
+         toggle.setAttribute("aria-pressed", String(theme === "dark"));
+         toggle.setAttribute("title", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+         if (iconSlot) {
+             iconSlot.innerHTML = theme === "dark" ? darkIcon : lightIcon;
+         }
+     };
+
+     render(resolveTheme());
+
+     toggle.addEventListener("click", function() {
+         var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+         setStoredTheme(next);
+         render(next);
+     });
+
+     var syncWithSystem = function() {
+         var stored = getStoredTheme();
+         if (stored === "light" || stored === "dark") {
+             return;
+         }
+         render(resolveTheme());
+     };
+
+     if (media) {
+         if (typeof media.addEventListener === "function") {
+             media.addEventListener("change", syncWithSystem);
+         } else if (typeof media.addListener === "function") {
+             media.addListener(syncWithSystem);
+         }
+     }
+ })();
+</script>
+
+</html>
