@@ -18,7 +18,7 @@
     <ul class="now-posts">
     {{ range $recentPosts }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         <span class="now-posts__year">{{ .Date.Format "2006" }}</span>
       </li>
     {{ end }}
@@ -33,7 +33,7 @@
     <ul class="now-posts">
     {{ range $olderPosts }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       </li>
     {{ end }}
     </ul>
