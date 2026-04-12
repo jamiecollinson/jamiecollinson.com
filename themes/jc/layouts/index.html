@@ -12,6 +12,10 @@
 {{ $recentPosts := where $visiblePosts "Date" "ge" $historicCutoff }}
 {{ $olderPosts := where $visiblePosts "Date" "lt" $historicCutoff }}
 
+{{ if gt (len $visiblePosts) 0 }}
+<div id="writing" aria-hidden="true"></div>
+{{ end }}
+
 {{ if gt (len $recentPosts) 0 }}
 <section class="now-page" aria-labelledby="writing-title">
     <h2 id="writing-title">Writing</h2>

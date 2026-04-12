@@ -1,0 +1,157 @@
+{{ $opts := . | default (dict) }} {{ $class := default "" (index $opts "class")
+}} {{ $ariaLabel := default "Decision environments connected to Jamie's work"
+(index $opts "ariaLabel") }} {{ $landPath := readFile
+"themes/jc/data/important-places-land-path.txt" }}
+
+<div class="important-places{{ with $class }} {{ . }}{{ end }}">
+    <svg
+        class="important-places__svg"
+        viewBox="49 55 862 432"
+        role="img"
+        aria-label="{{ $ariaLabel }}"
+        focusable="false"
+    >
+        <title>{{ $ariaLabel }}</title>
+        <desc>
+            A quiet world map highlighting decision environments connected to
+            Jamie's work contexts.
+        </desc>
+
+        <defs>
+            <clipPath id="important-places-clip">
+                <rect x="50" y="56" width="860" height="430" rx="26"></rect>
+            </clipPath>
+        </defs>
+
+        <rect
+            class="important-places__ocean"
+            x="50"
+            y="56"
+            width="860"
+            height="430"
+            rx="26"
+        ></rect>
+
+        <g
+            class="important-places__map"
+            clip-path="url(#important-places-clip)"
+        >
+            <g class="important-places__graticule">
+                <line x1="193.3" y1="56" x2="193.3" y2="486"></line>
+                <line x1="336.7" y1="56" x2="336.7" y2="486"></line>
+                <line x1="480.0" y1="56" x2="480.0" y2="486"></line>
+                <line x1="623.3" y1="56" x2="623.3" y2="486"></line>
+                <line x1="766.7" y1="56" x2="766.7" y2="486"></line>
+                <line x1="50" y1="127.7" x2="910" y2="127.7"></line>
+                <line x1="50" y1="199.3" x2="910" y2="199.3"></line>
+                <line x1="50" y1="271.0" x2="910" y2="271.0"></line>
+                <line x1="50" y1="342.7" x2="910" y2="342.7"></line>
+                <line x1="50" y1="414.3" x2="910" y2="414.3"></line>
+            </g>
+
+            <g class="important-places__land">
+                <path d="{{ $landPath }}"></path>
+            </g>
+        </g>
+
+        <rect
+            class="important-places__frame"
+            x="50"
+            y="56"
+            width="860"
+            height="430"
+            rx="26"
+        ></rect>
+
+        <g class="important-places__points">
+            <circle
+                class="important-places__point"
+                cx="432.5"
+                cy="146.3"
+                r="2.6"
+            >
+                <title>Cambridge</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="140.0"
+                cy="157.3"
+                r="2.6"
+            >
+                <title>Seattle</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="461.6"
+                cy="162.4"
+                r="2.6"
+            >
+                <title>Venice</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="449.9"
+                cy="249.3"
+                r="2.6"
+            >
+                <title>Abuja</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="520.2"
+                cy="274.1"
+                r="2.6"
+            >
+                <title>Nairobi</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="504.0"
+                cy="275.6"
+                r="2.6"
+            >
+                <title>Kigali</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="525.0"
+                cy="289.6"
+                r="2.6"
+            >
+                <title>Dar es Salaam</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="390.5"
+                cy="235.8"
+                r="2.6"
+            >
+                <title>Dakar</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="710.3"
+                cy="175.7"
+                r="2.6"
+            >
+                <title>Beijing</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="721.8"
+                cy="196.2"
+                r="2.6"
+            >
+                <title>Shanghai</title>
+            </circle>
+            <circle
+                class="important-places__point"
+                cx="705.0"
+                cy="217.7"
+                r="2.6"
+            >
+                <title>Hong Kong</title>
+            </circle>
+        </g>
+    </svg>
+</div>
