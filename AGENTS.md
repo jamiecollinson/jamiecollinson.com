@@ -22,6 +22,7 @@
 - Keep runtime assets fully local: do not load JavaScript, CSS, fonts, or icon assets from third-party CDNs.
 - Vendor external dependencies under `static/vendor/` (pinned version directories) and reference them via local paths (for example, `/vendor/...`).
 - Prefer self-contained pages that render correctly without outbound network requests for core functionality.
+- Inline icons directly in templates (SVG) for small icon counts instead of loading icon runtimes; only use vendored icon packages when there is a clear need.
 
 ## Next Steps for New Contributors
 - Explore Hugo templating to extend layouts or add partials (e.g., build out `nav.html`).

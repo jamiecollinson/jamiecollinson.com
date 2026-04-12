@@ -897,9 +897,11 @@ td:last-child {
     content: "";
 }
 
-.social ion-icon {
-    font-size: var(--space-phi-3);
+.social__icon {
+    width: var(--space-phi-3);
+    height: var(--space-phi-3);
     display: block;
+    fill: currentColor;
 }
 
 /* About page portrait: restrained editorial treatment */
