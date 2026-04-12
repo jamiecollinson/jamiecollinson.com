@@ -1,6 +1,6 @@
 {{ $opts := . | default (dict) }} {{ $class := default "" (index $opts "class")
-}} {{ $ariaLabel := default "Decision environments connected to Jamie's work"
-(index $opts "ariaLabel") }} {{ $landPath := readFile
+}} {{ $ariaLabel := default "Places connected to Jamie's work" (index $opts
+"ariaLabel") }} {{ $landPath := readFile
 "themes/jc/data/important-places-land-path.txt" }}
 
 <div class="important-places{{ with $class }} {{ . }}{{ end }}">
@@ -13,8 +13,7 @@
     >
         <title>{{ $ariaLabel }}</title>
         <desc>
-            A quiet world map highlighting decision environments connected to
-            Jamie's work contexts.
+            A quiet world map highlighting places connected to Jamie's work.
         </desc>
 
         <defs>

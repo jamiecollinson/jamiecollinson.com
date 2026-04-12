@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,13 +31,13 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
 
-        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="/vendor/ionicons/5.0.0/ionicons.esm.js"></script>
+        <script nomodule="" src="/vendor/ionicons/5.0.0/ionicons.js"></script>
 </head>
 
     <body>
 
-    <div class="container ">
+    <div class="container">
 
         <nav class="site-nav" aria-label="Main navigation">
   <div class="site-nav__inner">
@@ -68,15 +68,16 @@
 
         
 
-      <article class="js-toc-target">
+      <article>
 
         
 <h1>Solving Knights and Knaves with Z3</h1>
 
-<nav class="toc js-toc"></nav>
+
 
 <section class="post">
-    <p>There&rsquo;s a type of logic puzzle called <a href="https://en.wikipedia.org/wiki/Knights_and_Knaves">Knights and Knaves</a>, in which we have a set of people who will either always tell the truth - a Knight - or always lie - a Knave.</p>
+    <p><em>Historical note: playing with Z3 paid off when I later used it to implement optimal fertiliser selection in <a href="https://isda-africa.com">Virtual Agronomist</a></em></p>
+<p>There&rsquo;s a type of logic puzzle called <a href="https://en.wikipedia.org/wiki/Knights_and_Knaves">Knights and Knaves</a>, in which we have a set of people who will either always tell the truth - a Knight - or always lie - a Knave.</p>
 <p>Suppose we have two people, A and B, with A claiming &ldquo;We are both Knaves&rdquo;. What can we deduce? A must be a Knave, since if he were a Knight he could not claim to be a Knave. Since Knaves always lie A and B cannot both be Knaves, and so B must be a Knight.</p>
 <p>Can this type of problem be solved by a computer? We can clearly imagine a brute force solution, but if we can express this in a certain form we can use well established computational tools. I recently read <a href="https://www.hillelwayne.com/post/knights-knaves/">Hillel Wayne&rsquo;s post about solving the problem with Alloy</a> (a SAT based modeller / solver) and thought it would be fun to show the same in Z3, an open source SMT Solver from Microsoft Research.</p>
 <p>Installing the python interface to Z3 will also set up Z3 on your system (there&rsquo;s no separate installation needed):</p>
@@ -236,11 +237,7 @@
 
     </div>
 
-    
-
 </body>
-
-
 
 <script>
  (function() {

@@ -1,1 +1,3 @@
-{{ partial "important-places.html" (dict "ariaLabel" "Decision environments connected to Jamie's work contexts") }}
+{{- $ariaLabel := .Get "ariaLabel" | default "Places connected to Jamie's work"
+-}} {{- $class := .Get "class" | default "" -}} {{- partial
+"important-places.html" (dict "ariaLabel" $ariaLabel "class" $class) -}}

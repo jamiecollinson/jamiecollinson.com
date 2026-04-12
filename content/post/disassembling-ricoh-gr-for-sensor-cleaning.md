@@ -1,7 +1,7 @@
 ---
 date: 2016-05-30T00:00:00Z
 title: A guide to disassembling the Ricoh GR for sensor cleaning
-toc: true
+toc: false
 ---
 
 _Updated: 2020-06-22 to add GR2 details sent by a kind reader_

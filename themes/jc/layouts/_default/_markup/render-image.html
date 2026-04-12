@@ -1,0 +1,72 @@
+{{- $destination := .Destination -}}
+{{- $alt := .PlainText -}}
+{{- $isRemote := or (or (strings.HasPrefix $destination "http://") (strings.HasPrefix $destination "https://")) (strings.HasPrefix $destination "//") -}}
+{{- $assetPath := strings.TrimPrefix "/" $destination -}}
+{{- $assetPath = strings.TrimPrefix "./" $assetPath -}}
+{{- $ext := lower (path.Ext $assetPath) -}}
+{{- $isRaster := in (slice ".jpg" ".jpeg" ".png" ".webp" ".tif" ".tiff" ".bmp") $ext -}}
+{{- $resource := .Page.Resources.GetMatch $assetPath -}}
+{{- if not $resource -}}
+  {{- $resource = resources.Get $assetPath -}}
+{{- end -}}
+
+{{- if and (not $isRemote) $resource $isRaster -}}
+  {{- $targetWidths := slice 480 768 1024 1360 1920 -}}
+  {{- $widths := slice -}}
+  {{- range $w := $targetWidths -}}
+    {{- if ge $resource.Width $w -}}
+      {{- $widths = $widths | append $w -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if eq (len $widths) 0 -}}
+    {{- $widths = slice $resource.Width -}}
+  {{- else -}}
+    {{- $last := index $widths (sub (len $widths) 1) -}}
+    {{- if lt $last $resource.Width -}}
+      {{- $widths = $widths | append $resource.Width -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $defaultWidth := $resource.Width -}}
+  {{- if gt $defaultWidth 1024 -}}
+    {{- $defaultWidth = 1024 -}}
+  {{- end -}}
+
+  {{- $fallbackDefault := $resource.Resize (printf "%dx" $defaultWidth) -}}
+  {{- if or (eq $ext ".jpg") (eq $ext ".jpeg") -}}
+    {{- $fallbackDefault = $resource.Resize (printf "%dx q75" $defaultWidth) -}}
+  {{- end -}}
+
+  {{- $fallbackSrcset := slice -}}
+  {{- $webpSrcset := slice -}}
+  {{- range $w := $widths -}}
+    {{- $fallbackVariant := $resource.Resize (printf "%dx" $w) -}}
+    {{- if or (eq $ext ".jpg") (eq $ext ".jpeg") -}}
+      {{- $fallbackVariant = $resource.Resize (printf "%dx q75" $w) -}}
+    {{- end -}}
+    {{- $webpVariant := $resource.Resize (printf "%dx webp q72" $w) -}}
+    {{- $fallbackSrcset = $fallbackSrcset | append (printf "%s %dw" $fallbackVariant.RelPermalink $fallbackVariant.Width) -}}
+    {{- $webpSrcset = $webpSrcset | append (printf "%s %dw" $webpVariant.RelPermalink $webpVariant.Width) -}}
+  {{- end -}}
+
+  <picture>
+    <source type="image/webp" srcset='{{ delimit $webpSrcset ", " }}' sizes="(max-width: 860px) 88vw, 37em">
+    <img
+      src="{{ $fallbackDefault.RelPermalink }}"
+      srcset='{{ delimit $fallbackSrcset ", " }}'
+      sizes="(max-width: 860px) 88vw, 37em"
+      alt="{{ $alt }}"
+      width="{{ $fallbackDefault.Width }}"
+      height="{{ $fallbackDefault.Height }}"
+      loading="lazy"
+      decoding="async"
+      {{- with .Title }} title="{{ . }}"{{ end -}}>
+  </picture>
+{{- else -}}
+  <img
+    src="{{ $destination | safeURL }}"
+    alt="{{ $alt }}"
+    loading="lazy"
+    decoding="async"
+    {{- with .Title }} title="{{ . }}"{{ end -}}>
+{{- end -}}

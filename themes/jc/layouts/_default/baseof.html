@@ -27,19 +27,19 @@
 
 	{{ partial "header.html" }}
 
-        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="/vendor/ionicons/5.0.0/ionicons.esm.js"></script>
+        <script nomodule="" src="/vendor/ionicons/5.0.0/ionicons.js"></script>
 </head>
 
     <body>
 
-    <div class="container {{ if .Params.toc }}has-toc{{ end }}">
+    <div class="container">
 
         {{ partial "nav.html" . }}
 
         {{ block "top" . }}{{ end }}
 
-      <article class="js-toc-target">
+      <article>
 
         {{ block "main" . }}{{ end }}
 
@@ -49,31 +49,7 @@
 
     </div>
 
-    {{ template "_internal/google_analytics.html" . }}
-
 </body>
-
-{{ if .Params.toc }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
-<script>
- var initTOC = function() {
-     var tocDomRect = document.querySelector('.js-toc').getBoundingClientRect();
-     tocbot.init({
-	 // Where to render the table of contents.
-	 tocSelector: '.js-toc',
-	 // Where to grab the headings to build the table of contents.
-	 contentSelector: '.js-toc-target',
-	 // Which headings to grab inside of the contentSelector element.
-	 headingSelector: 'h1, h2, h3',
-	 positionFixedSelector: '.js-toc',
-	 fixedSidebarOffset: tocDomRect.top - 50,
-     });
- };
- initTOC();
- window.onresize = initTOC;
-</script>
-{{ end }}
 
 <script>
  (function() {

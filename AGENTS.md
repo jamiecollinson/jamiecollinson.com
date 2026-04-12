@@ -18,6 +18,11 @@
 - Global styling is in `themes/jc/static/css/styles.css`; adjust typography, TOC, and footnote behavior there.
 - Reusable fragments live in `themes/jc/layouts/partials/`, including `footer.html` and `social.html`. The `nav.html` partial is currently empty for potential navigation additions.
 
+## Design Principles
+- Keep runtime assets fully local: do not load JavaScript, CSS, fonts, or icon assets from third-party CDNs.
+- Vendor external dependencies under `static/vendor/` (pinned version directories) and reference them via local paths (for example, `/vendor/...`).
+- Prefer self-contained pages that render correctly without outbound network requests for core functionality.
+
 ## Next Steps for New Contributors
 - Explore Hugo templating to extend layouts or add partials (e.g., build out `nav.html`).
 - Customize styles by editing `styles.css`, especially for responsive tweaks to the TOC and sidenotes.

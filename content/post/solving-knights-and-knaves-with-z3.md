@@ -3,6 +3,8 @@ title: "Solving Knights and Knaves with Z3"
 date: 2019-06-17
 ---
 
+_Historical note: playing with Z3 paid off when I later used it to implement optimal fertiliser selection in [Virtual Agronomist](https://isda-africa.com)_
+
 There's a type of logic puzzle called [Knights and Knaves](https://en.wikipedia.org/wiki/Knights_and_Knaves), in which we have a set of people who will either always tell the truth - a Knight - or always lie - a Knave.
 
 Suppose we have two people, A and B, with A claiming "We are both Knaves". What can we deduce? A must be a Knave, since if he were a Knight he could not claim to be a Knave. Since Knaves always lie A and B cannot both be Knaves, and so B must be a Knight.

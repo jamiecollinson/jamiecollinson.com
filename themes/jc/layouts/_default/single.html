@@ -1,7 +1,11 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 
-<nav class="toc js-toc"></nav>
+{{ if .Params.toc }}
+<nav class="toc">
+    {{ .TableOfContents }}
+</nav>
+{{ end }}
 
 <section class="post">
     {{ .Content }}

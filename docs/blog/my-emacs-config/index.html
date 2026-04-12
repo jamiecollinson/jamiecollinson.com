@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,13 +31,13 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
 
-        <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="/vendor/ionicons/5.0.0/ionicons.esm.js"></script>
+        <script nomodule="" src="/vendor/ionicons/5.0.0/ionicons.js"></script>
 </head>
 
     <body>
 
-    <div class="container has-toc">
+    <div class="container">
 
         <nav class="site-nav" aria-label="Main navigation">
   <div class="site-nav__inner">
@@ -68,12 +68,12 @@
 
         
 
-      <article class="js-toc-target">
+      <article>
 
         
 <h1>Emacs Config</h1>
 
-<nav class="toc js-toc"></nav>
+
 
 <section class="post">
     
@@ -1109,31 +1109,7 @@ Email
 
     </div>
 
-    
-
 </body>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/3.0.5/tocbot.css">
-<script>
- var initTOC = function() {
-     var tocDomRect = document.querySelector('.js-toc').getBoundingClientRect();
-     tocbot.init({
-	 
-	 tocSelector: '.js-toc',
-	 
-	 contentSelector: '.js-toc-target',
-	 
-	 headingSelector: 'h1, h2, h3',
-	 positionFixedSelector: '.js-toc',
-	 fixedSidebarOffset: tocDomRect.top - 50,
-     });
- };
- initTOC();
- window.onresize = initTOC;
-</script>
-
 
 <script>
  (function() {

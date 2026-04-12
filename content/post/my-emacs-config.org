@@ -1,6 +1,6 @@
 #+TITLE: Emacs Config
 #+AUTHOR: Jamie Collinson
-#+TOC: true
+#+TOC:false
 #+DATE: Sun Mar 11 14:33:18 2018
 
 This is my emacs configuration. After many years with vim then a year with spacemacs & prelude, I came to the realisation that I needed to construct my own to really get it[fn:1].
