@@ -9,82 +9,10 @@ Britain’s economic progress continues to exceed predications. Activity in serv
 
 Some assertions might be a bit dodgy. Recent estimates are based on a survey in 2004/05. Earlier calculations presumed 30% of passengers would be on business. This has advanced to 64%. The case is flattered because business travel is counted as five times more valuable than that of others. Options have not been looked at closely. Britain’s big cities will still grow, partly because jobs are becoming more concentrated there, but mostly because of fierce opposition to building homes elsewhere. The full environmental statement on HS2 will not be published until next year. Is it a vanity project? Politicians do not get their names on upgradings. They cannot boast to their foreign counterparts. Economies will rely upon superfast broadband soon. This country has the worst record in Europe for direct fibre-optic cabling. 1% of homes are connected, compared to 57% in South Korea. Maybe we should spend money on embracing technologies of the 21st century?
 
-Innovative people rarely talk about ‘creativity’. It is the buzzword of functionaries. Innovative companies discuss work and self-discipline. Then they ask ‘what is the next point at which we should review this project? What result should we expect by then? And how soon?’ The manager(s) reckons, ‘Isn’t it time we did something else?’ A business of this kind organises itself to abandon the old, the obsolete, the no longer productive product or service. 
-
- 
+Innovative people rarely talk about ‘creativity’. It is the buzzword of functionaries. Innovative companies discuss work and self-discipline. Then they ask ‘what is the next point at which we should review this project? What result should we expect by then? And how soon?’ The manager(s) reckons, ‘Isn’t it time we did something else?’ A business of this kind organises itself to abandon the old, the obsolete, the no longer productive product or service.
 
 Marketing and goodness. Back in the ‘80s, our dilemma of ‘business in society’ was resolved once-and-for-all. The private sector’s task was to be ‘greedy’. Companies would become more competitive by maximising profits and creating employment and wealth to overcome the country’s problems. Asking firms to take their eyes off the competitive ball, confusing them by diluting their single-minded concentration on financial results would rebound on us all. Profits would fall and so would investment, jobs and general prosperity. So that was that. We slept at night. Then, ‘public purpose marketing’ zoomed across the Atlantic. Businesses can pursue profits and show concern for ‘the community’. Indeed, the only way to do the former is by doing the latter, because this is what consumers want. Kind people have long-term advantages in the market place. All this can disturb us a bit. However, bear in mind the dangers of confusing novelty with strategy.
 
 Dangers of being right. ‘You may be on the right track. But don’t just sit there or you’ll be run over’. Anonymous.
 
 Put your foot down. ‘If you don’t drive your business, you will be driven out of the business’. B C Forbes, publisher.
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-19 November 2013

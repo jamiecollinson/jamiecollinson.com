@@ -1,6 +1,12 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
-<p class="archive-dateline">{{ .Date.Format "January 2, 2006" }} · Len Collinson</p>
+<p class="archive-dateline">{{ .Date.Format "January 2, 2006" }} · {{ with .CurrentSection }}<a href="{{ .RelPermalink }}">Len Collinson</a>{{ else }}Len Collinson{{ end }}</p>
+
+{{ with .Params.hero_image }}
+<figure class="post-hero">
+    <img src="{{ . | relURL }}" alt="{{ $.Params.hero_alt | default "" }}" loading="eager" decoding="async">
+</figure>
+{{ end }}
 
 {{ if .Params.toc }}
 <nav class="toc">
