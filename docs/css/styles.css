@@ -256,6 +256,18 @@ article {
     margin-right: auto;
 }
 
+/* Optional wider block within otherwise narrow editorial content. */
+.post .wide {
+    width: min(var(--wrap-wide), calc(100vw - 3rem));
+    max-width: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.post .wide > * {
+    max-width: 100%;
+}
+
 p {
     max-width: var(--wrap-normal);
     margin: 0 0 1.2em;
@@ -270,6 +282,18 @@ small,
 .smaller {
     font-size: var(--font-smaller);
     line-height: 1.4;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 a {
@@ -644,6 +668,15 @@ td:last-child {
     margin-top: 0;
 }
 
+.archive-dateline {
+    margin-top: 0;
+    margin-bottom: calc(var(--space-phi-3) + var(--space-phi-4));
+    color: var(--color-tx-muted);
+    font-family: var(--font-ui);
+    font-size: 1em;
+    line-height: 1.4;
+}
+
 .important-places {
     --places-ocean: var(--color-bg-primary);
     --places-frame: var(--color-ui-normal);
@@ -848,15 +881,16 @@ td:last-child {
 }
 
 .footer-rule {
-    margin: 0 0 var(--space-phi-3);
+    margin: 0 0 calc(var(--space-phi-3) + 0.4rem);
     width: 100%;
     height: 1px;
     border: 0;
     background: var(--color-ui-normal);
+    opacity: 0.85;
 }
 
 .footer-privacy {
-    margin-top: var(--space-phi-3);
+    margin-top: calc(var(--space-phi-2) + 0.25rem);
     margin-bottom: 0;
     max-width: var(--wrap-normal);
     color: var(--color-tx-muted);
@@ -869,39 +903,80 @@ td:last-child {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-phi-2);
+    flex-wrap: nowrap;
+    gap: 2.2rem;
     margin: 0;
 }
 
-.social a {
+.social__link {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: calc(var(--space-phi-3) + var(--space-phi-1));
-    height: calc(var(--space-phi-3) + var(--space-phi-1));
-    border: 1px solid var(--color-ui-normal);
-    border-radius: 999px;
-    background: var(--color-bg-primary);
-    color: var(--color-tx-muted);
+    justify-content: flex-start;
+    gap: 0.7rem;
+    min-height: 4rem;
+    padding: 0.4rem 0.5rem;
+    color: var(--color-tx-normal);
+    opacity: 0.85;
     text-decoration: none;
+    font-size: var(--font-small);
     line-height: 1;
+    white-space: nowrap;
+    transition: opacity 180ms ease, color 180ms ease;
+    transform: none;
+    animation: none;
 }
 
-.social a:hover {
-    color: var(--color-action);
-    border-color: var(--color-ui-active);
-    background: var(--color-bg-secondary);
+.social__link:hover {
+    color: var(--color-tx-normal);
+    opacity: 1;
 }
 
-.social a::after {
-    content: "";
+.social__link:focus {
+    background-color: transparent;
+}
+
+.social__link:focus-visible {
+    outline: 1px solid var(--color-ui-active);
+    outline-offset: 2px;
+    border-radius: 3px;
 }
 
 .social__icon {
-    width: var(--space-phi-3);
-    height: var(--space-phi-3);
+    width: 1.45rem;
+    height: 1.45rem;
     display: block;
+    flex-shrink: 0;
     fill: currentColor;
+    transform: none;
+    animation: none;
+}
+
+.social__link:hover .social__icon,
+.social__link:focus .social__icon,
+.social__link:focus-visible .social__icon {
+    transform: none;
+    animation: none;
+}
+
+.social__label {
+    display: inline-block;
+    letter-spacing: normal;
+}
+
+/* Keep footer contact links completely static on interaction. */
+.footer .social__link,
+.footer .social__link:hover,
+.footer .social__link:focus,
+.footer .social__link:focus-visible,
+.footer .social__link:active,
+.footer .social__icon,
+.footer .social__link:hover .social__icon,
+.footer .social__link:focus .social__icon,
+.footer .social__link:focus-visible .social__icon,
+.footer .social__link:active .social__icon {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
 }
 
 /* About page portrait: restrained editorial treatment */
@@ -953,6 +1028,11 @@ sub {
         gap: var(--space-phi-2);
     }
 
+    .social {
+        flex-wrap: wrap;
+        row-gap: 0.2rem;
+    }
+
     .about-headshot,
     .post img[alt="Jamie Collinson headshot"] {
         float: right;
@@ -969,5 +1049,9 @@ sub {
         display: block;
         margin-top: 0.2rem;
         margin-left: 0;
+    }
+
+    .post .wide {
+        width: calc(100vw - 2rem);
     }
 }

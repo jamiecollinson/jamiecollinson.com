@@ -5,6 +5,9 @@
       {{ if and .IsPage (or (eq .Section "post") (eq .Section "blog")) }}
         <span class="site-nav__crumb-separator" aria-hidden="true">/</span>
         <a class="site-nav__crumb" href="/#writing">Writing</a>
+      {{ else if and (or .IsSection .IsPage) (eq .Section "above-the-parapet") }}
+        <span class="site-nav__crumb-separator" aria-hidden="true">/</span>
+        <a class="site-nav__crumb" href="/above-the-parapet/">Above the parapet</a>
       {{ end }}
     </div>
     <div class="site-nav__right">

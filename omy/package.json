@@ -1,0 +1,16 @@
+{
+  "name": "one-more-year-tool",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf dist ../static/tools/omy",
+    "build:js": "esbuild src/main.ts --bundle --format=esm --target=es2019 --minify --outfile=dist/omy.js",
+    "build:css": "esbuild src/styles.css --bundle --minify --outfile=dist/omy.css",
+    "copy": "mkdir -p ../static/tools/omy && cp dist/omy.js dist/omy.css ../static/tools/omy/",
+    "build": "npm run clean && npm run build:js && npm run build:css && npm run copy"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.4"
+  }
+}

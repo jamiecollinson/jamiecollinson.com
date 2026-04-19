@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ $posts := .RegularPages.ByDate.Reverse }}
+
+<section class="now-page" aria-labelledby="parapet-title">
+    <h1 id="parapet-title">{{ .Title }}</h1>
+    {{ with .Params.description }}
+    <p class="now-page__meta">{{ . }}</p>
+    {{ end }}
+    {{ with .Content }}
+    <div class="now-page__content">
+        {{ . }}
+    </div>
+    {{ end }}
+</section>
+
+{{ if gt (len $posts) 0 }}
+<section class="now-page" aria-labelledby="parapet-posts-title">
+    <h2 id="parapet-posts-title" class="sr-only">Archive entries</h2>
+    {{ range $group := ($posts.GroupByDate "2006") }}
+    <h3>{{ $group.Key }}</h3>
+    <ul class="now-posts">
+        {{ range $group.Pages }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="now-posts__year">{{ .Date.Format "2 Jan" }}</span>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</section>
+{{ else }}
+<section class="now-page" aria-labelledby="parapet-posts-title">
+    <h2 id="parapet-posts-title" class="sr-only">Archive entries</h2>
+    <p class="now-page__meta">No entries yet.</p>
+</section>
+{{ end }}
+{{ end }}

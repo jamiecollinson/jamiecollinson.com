@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<p class="archive-dateline">{{ .Date.Format "January 2, 2006" }} · Len Collinson</p>
+
+{{ if .Params.toc }}
+<nav class="toc">
+    {{ .TableOfContents }}
+</nav>
+{{ end }}
+
+<section class="post">
+    {{ .Content }}
+</section>
+{{ end }}

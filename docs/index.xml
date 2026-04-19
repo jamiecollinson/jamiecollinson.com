@@ -2,46 +2,984 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jamie Collinson</title>
-    <link>https://jamiecollinson.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Jamie Collinson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jun 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jamiecollinson.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>One More Year</title>
+      <link>http://localhost:1313/blog/one-more-year/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/one-more-year/</guid>
+      <description>&lt;p&gt;I built a small decision tool to answer one narrow question:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Is working one more year worth it?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;It compares the financial gain from another year of work against the estimated value of immediate freedom.&lt;/p&gt;&#xA;&lt;div class=&#34;wide&#34;&gt;&#xA;  &lt;div id=&#34;omy-app&#34;&gt;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/tools/omy/omy.css?v=10&#34;&gt;&#xA;&lt;script type=&#34;module&#34; src=&#34;http://localhost:1313/tools/omy/omy.js?v=10&#34;&gt;&lt;/script&gt;&#xA;&#xA;&lt;p&gt;This is intentionally not a full retirement planner. It is a compact way to make the one-year tradeoff legible.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Solving Knights and Knaves with Z3</title>
-      <link>https://jamiecollinson.com/blog/solving-knights-and-knaves-with-z3/</link>
+      <link>http://localhost:1313/blog/solving-knights-and-knaves-with-z3/</link>
       <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://jamiecollinson.com/blog/solving-knights-and-knaves-with-z3/</guid>
+      <guid>http://localhost:1313/blog/solving-knights-and-knaves-with-z3/</guid>
       <description>&lt;p&gt;&lt;em&gt;Historical note: playing with Z3 paid off when I later used it to implement optimal fertiliser selection in &lt;a href=&#34;https://isda-africa.com&#34;&gt;Virtual Agronomist&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s a type of logic puzzle called &lt;a href=&#34;https://en.wikipedia.org/wiki/Knights_and_Knaves&#34;&gt;Knights and Knaves&lt;/a&gt;, in which we have a set of people who will either always tell the truth - a Knight - or always lie - a Knave.&lt;/p&gt;&#xA;&lt;p&gt;Suppose we have two people, A and B, with A claiming &amp;ldquo;We are both Knaves&amp;rdquo;. What can we deduce? A must be a Knave, since if he were a Knight he could not claim to be a Knave. Since Knaves always lie A and B cannot both be Knaves, and so B must be a Knight.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Emacs Config</title>
-      <link>https://jamiecollinson.com/blog/my-emacs-config/</link>
+      <link>http://localhost:1313/blog/my-emacs-config/</link>
       <pubDate>Sun, 11 Mar 2018 14:33:18 +0000</pubDate>
-      <guid>https://jamiecollinson.com/blog/my-emacs-config/</guid>
+      <guid>http://localhost:1313/blog/my-emacs-config/</guid>
       <description>&lt;p&gt;&#xA;This is my emacs configuration. After many years with vim then a year with spacemacs &amp;amp; prelude, I came to the realisation that I needed to construct my own to really get it&lt;sup class=&#34;footnote-reference&#34;&gt;&lt;a id=&#34;footnote-reference-1&#34; href=&#34;#footnote-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;After a few aborted attempts to split the config into separate files, I settled on the single file literate approach via &lt;a href=&#34;http://pages.sachachua.com/.emacs.d/Sacha.html&#34;&gt;Sacha Chua&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;Documenting this is mostly for my benefit, but I hope others might find it useful constucting their own. The live version is &lt;a href=&#34;https://github.com/jamiecollinson/dotfiles/blob/master/config.org/&#34;&gt;on GitHub&lt;/a&gt;, with this version updated periodically.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>AND WE WILL STILL GET A SHOCK OR TWO</title>
+      <link>http://localhost:1313/above-the-parapet/and-we-will-still-get-a-shock-or-two/</link>
+      <pubDate>Thu, 02 Feb 2017 15:51:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/and-we-will-still-get-a-shock-or-two/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;2017&lt;/strong&gt; Charles Stanley is a respected firm of stockbrokers. Its analysts have provided several forecasts for managers of commercial businesses. These are: (1) companies whose shares are quoted on the UK’s blue-chip list (FTSE) will reach a series of all-time highs; (2) the United States’ Russell 2000 is the index to back; (3) but defensive shares (proxies for bonds) could remain weak. Interest rates are likely to rise; (4) fears of inflation in the UK are overdone; (5) the price of oil will not plunge again; (6) emergent markets will shake-off gloom.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>COMPETENT MANAGERS REMAIN PIVOTAL</title>
+      <link>http://localhost:1313/above-the-parapet/competent-managers-remain-pivotal/</link>
+      <pubDate>Tue, 17 Jan 2017 13:44:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/competent-managers-remain-pivotal/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Avoid setbacks for your business.&lt;/strong&gt; Management Today suggested several ‘rules’ a**** long time ago.**** Beware of success, it stimulates laziness. Never do things because that’s how you do them. Invite frank criticism from customers and staff. Fear every new entrant to your market. Allow time to reheal before another upheaval. State the destination often. Be afraid, but don’t show it. Face the truth, and share it. If times change, change leaders.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THOUGHTS TO ENTER 2017</title>
+      <link>http://localhost:1313/above-the-parapet/thoughts-to-enter-2017/</link>
+      <pubDate>Wed, 04 Jan 2017 16:32:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/thoughts-to-enter-2017/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;A lesson from 2016.&lt;/strong&gt; Most people did not expect Brexit to happen. It did. A majority was confident that Trump would not win the presidential election in America. He did. There was a strong assumption that this would cause a crash on the stock market. Shares ended 2016 at around their highest level ever. There’s nothing wrong with distrusting ‘experts.’&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Promises to boardrooms.&lt;/strong&gt; Theresa May said in July, ‘If I’m prime minister . . . we’re going to have not just consumers represented on company boards, but employees as well.’ This was a big shift in policy and a test of determination. She emphasised in late November that there will not be a mandatory requirement for staff to have a place in the boardroom. This sounds like a dramatic change of mind. Last year’s green paper on reform of corporate governance sets out a range of options for extended scrutiny of executives’ pay and responsibilities. There must have been a lot of influential lobbying. The proposals for reform create the challenge for our prime minister of whether government can simultaneously maintain a pro-business and anti-interventionist stance while disrupting the status quo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AND INTO 2017</title>
+      <link>http://localhost:1313/above-the-parapet/and-into-2017/</link>
+      <pubDate>Mon, 19 Dec 2016 14:47:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/and-into-2017/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Attempts to control executives’ pay.&lt;/strong&gt; Prime Minister Theresa May has made tackling corporate excess one of her priorities in government. This is not a new focus of attention, we’ve been there before. It will not work. Concentration is on rules. It is the system that is broken. We must admit that self-regulation is dead, along with the assumptions we have attached to the ownership of businesses. Sir Ferdinand Mount is a former adviser to David Cameron as prime minister. He wrote: ‘We pretend that the shareholders possess powers that they effectively lost long ago, and we imagine that the behaviour of the corporation is disciplined by an array of checks and balances that are often no more than decorative today.’ The Office of National Statistics (ONS) reported in 2012 that nearly 60% of shares in the UK were held in nominee accounts and 10% were registered to private individuals. This means that most beneficial owners are not permitted to vote directly on matters such as pay. Maybe now is the time for radical changes?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MATTERS FOR ATTENTION?</title>
+      <link>http://localhost:1313/above-the-parapet/matters-for-attention/</link>
+      <pubDate>Tue, 06 Dec 2016 11:22:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/matters-for-attention/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Stress for lenders.&lt;/strong&gt; Six of the largest banks and one building society have been assessed on whether they would be able to withstand an economic crisis. This process asks if they would survive oil falling to $20 a barrel, prices of houses going down by 31% and a 4.3% drop in economic output. One failed to prove it would overcome such an unthinkable combination of financial shocks. Analysts pointed to Standard Chartered as having the most difficulty. Barclays, HSBC, Lloyds, Nationwide, Royal Bank of Scotland were tested also. The examination is the first pressure from information made publicly available.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MAYBE THERE WILL BE CHANGES?</title>
+      <link>http://localhost:1313/above-the-parapet/maybe-there-will-be-changes/</link>
+      <pubDate>Mon, 21 Nov 2016 16:24:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/maybe-there-will-be-changes/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Vision&lt;/strong&gt; At the launch of her campaign to become Leader of the Conservative Party, Theresa May emphasised ’a bold new, positive vision &amp;hellip;. a vision of a country that works not for a privileged few, but for every one of us.’ This theme has become a frequent assertion in her speeches as Prime Minister. On the day she became leader, Mrs May said her plans were ‘a different kind of Conservatism’ that ‘marks a break with the past’. However, she might find it easier said than done. Electors know she was home secretary throughout the Cameron/Clegg coalition and the Cameron government. Recent research suggests that 45% of people put themselves on the centre ground of political choices. Only 30% advocate the right-of-centre ground occupied by Thatcherism. With a parliamentary majority of only twelve and both cabinet ministers and rebellious backbenchers showing signs of noisy impatience over delays on Brexit, there are temptations. More radical domestic reforms would please the parliamentary party and many local branches. Whether Theresa May decides to be in the common ground at right-of-centre or steer her government towards the middle, will be one of the defining stances of her premiership.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THE ISSUES DO NOT GO AWAY</title>
+      <link>http://localhost:1313/above-the-parapet/the-issues-do-not-go-away/</link>
+      <pubDate>Wed, 09 Nov 2016 15:49:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/the-issues-do-not-go-away/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;We know. What will happen?&lt;/strong&gt; The European Court of Auditors (ECA) says governance at the European Commission is functional but lags behind international good practice and is in need of an update. Lazaros S Lazarou, a senior member of ECA, likened the Commission’s governance to a car manufactured in 2000. It’s in good working condition. It takes you from A to B, but hasn’t got the technology and the features of a modern vehicle. The ECA found, for example, that the Commission’s own audit service is constrained when compared with those in international bodies because it has limited access to information on spending. There is also too much interest on internal audit, rather than risk management and internal control.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ONWARDS?</title>
+      <link>http://localhost:1313/above-the-parapet/onwards/</link>
+      <pubDate>Mon, 24 Oct 2016 11:23:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/onwards/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Running the national business.&lt;/strong&gt; The International Monetary Fund (IMF) has published its latest review on the future prospects for the world’s economies. It is a subdued picture, predicting global Gross Domestic Product (GDP) to rise by 3.1% this year and 3.4% in 2017. These figures compare with an annual average growth rate at 3.8% in the six years to 2015. Recent growth has been driven largely by emergent economies. For example, over the same six years, PR China’s economy grew at an average rate of 8.4% per annum. But by 2021, the IMF expects China’s rate to be below 6%. The Fund reckons the UK will be the fastest (1.7%/1.8%) rise in the G7 leading economies this year. The prediction falls to 1.1% for 2017.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MORE BLOG</title>
+      <link>http://localhost:1313/above-the-parapet/more-blog/</link>
+      <pubDate>Tue, 11 Oct 2016 14:12:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/more-blog/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;A sudden interest?&lt;/strong&gt; The Financial Reporting Council (FRC) has opened a debate on whether companies and their auditors should provide investors with more information about culture within organisations. In July, the FRC published its report, ‘Corporate Culture and the Role of Boards’. But what is ‘culture’? The FRC says: ‘Culture in a corporate context can be defined as a combination of the values, attitudes and behaviours manifested by a company in its operations and relations with its stakeholders. These stakeholders include shareholders, employees, customers, suppliers and the wider community and environment which are affected by a company’s conduct.&amp;rsquo; This is a starting point. So where do FRC and the rest of us go from here?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WE LIVE IN A COMPLEX WORLD</title>
+      <link>http://localhost:1313/above-the-parapet/we-live-in-a-complex-world/</link>
+      <pubDate>Mon, 26 Sep 2016 17:08:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/we-live-in-a-complex-world/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Forecasts.&lt;/strong&gt; The Organisation for Economic Co-operation and Development (OECD) is the rich countries’ talking shop. It has just published forecasts for the UK. The major feature is that weak growth in trade and financial distortions are worsening slow global economic growth. John Ashcroft points out that unusually low – and sometimes negative – interest rates are distorting financial markets and increasing risk across the financial systems.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;‘Brexit means Brexit’&lt;/strong&gt; our new Prime Minister declares. But non-one is brave enough to give us a definition, other than it is the UK’s withdrawal from the European Union. Propaganda is trying to convince us that there has been no damage to the economy since the Government’s announcement of its decision. Figures on the economy challenge the claim. Living standards have fallen. The international purchasing power of the UK fell immediately as the pound depreciated in the wake of the referendum’s result. The Bank of England’s measure of the value of the currency has fallen by 15% or so since the poll. Such a fall will lead to higher prices.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IS COMPLACENCY ON THE WAY BACK?</title>
+      <link>http://localhost:1313/above-the-parapet/is-complacency-on-the-way-back/</link>
+      <pubDate>Wed, 14 Sep 2016 16:51:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/is-complacency-on-the-way-back/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;British investment in America.&lt;/strong&gt; Confederation of British Industry (CBI) has published the eighth edition of Sterling Assets, its annual survey of British investment in the United States. The report highlights this country’s position as the largest foreign investor, employing over one million Americans. British businesses create jobs in every state. Texas leads the way – with 102,000 of jobs supported by British companies – followed by California and New York.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MORE ON THE ECONOMY THIS TIME</title>
+      <link>http://localhost:1313/above-the-parapet/more-on-the-economy-this-time/</link>
+      <pubDate>Tue, 30 Aug 2016 16:17:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/more-on-the-economy-this-time/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Quantitative easing (QE)&lt;/strong&gt; The Bank of England’s latest programme has hit a proverbial brick wall. The plan was to buy £1.17 billion of long-dated gilts. Not enough bondholders wished to sell, despite the Bank being prepared to pay prices well above those in the market. What’s going on? Pension funds and insurance companies are keen to have the payments from bonds. They especially want long-dated paper, which helps them to match their liabilities with almost guaranteed income. However, reinvestment of funds at historically low and consistently falling interest rates and yields are not attractive options. Investors are worried that they will end-up with too little money to cover payouts in the future. In other words, HM Government’s plan for quantitative easing faces major difficulties caused by earlier quantitative easing.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A FEW THOUGHTS FOR MANAGERS</title>
+      <link>http://localhost:1313/above-the-parapet/a-few-thoughts-for-managers/</link>
+      <pubDate>Mon, 15 Aug 2016 14:40:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-few-thoughts-for-managers/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Carney’s cut.&lt;/strong&gt; The Bank of England recently reduced its interest rate to an historic low of 0.25%. This is the first change since height of the financial crisis in 2009. Governor, Mark Carney, said the action was needed to ‘cushion’ the impact of the decision to leave the European Union (Brexit) and avert recession. He announced also a £60 billion increase in the Bank’s programme of ‘quantitative easing’ to pump more money into the economy, and the creation of a new £100 billion fund to encourage cheaper lending by commercial banks. These plans confirm the view of most economists that Brexit has hit the economy hard. The Times said ‘the Bank has very limited ability to compensate for this’. Mr Carney insisted Britain can ‘handle’ these difficulties.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SEVEN OBSERVATIONS FOR MORE THOUGHT</title>
+      <link>http://localhost:1313/above-the-parapet/seven-observations-for-more-thought/</link>
+      <pubDate>Mon, 01 Aug 2016 15:53:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/seven-observations-for-more-thought/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Interest rates.&lt;/strong&gt; Nat West Bank is owned by the Royal Bank of Scotland. It has just warned business customers that it might start negative interest rates. The reality of such a decision would be the bank charges customers for holding their money. This is partly due to fears that the Bank of England’s base rate could turn to a minus figure. Moves in this direction have happened already in several countries around the world. For example, Denmark, Finland, Germany, Holland, Japan and Switzerland. More than $10 trillion of bonds trade at yields below zero.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THERE ARE OPPORTUNITIES EVERYWHERE</title>
+      <link>http://localhost:1313/above-the-parapet/there-are-opportunities-everywhere/</link>
+      <pubDate>Mon, 18 Jul 2016 15:45:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/there-are-opportunities-everywhere/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Policies for the economy and businesses.&lt;/strong&gt; The vote for leaving the European Union (Brexit) is a rejection of the Government’s plans. In general, electors felt they saw support for business, while their working prospects diminished. Central banks reduced interest rates to historical lows in the name of stimulating the economy and encouraging investment. Several rounds of quantitative easing inflated the prices of assets, driving the price of a home further out of reach. There was official hope that some of the gains would trickle down and benefit those citizens without reserves. However, evidence suggests that shareholders and executives gained from loose monetary policy, but the majority of employees did not. Watch out for changes in regulation. These are likely to include: curtailing the legal powers of shareholders; creating a mandatory place for employees in resisting unwelcome takeovers; controlling speculative acquisitions; making boards of directors more accountable to employees; protecting companies from being distributed to short-term shareholders.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SOME TRICKY ISSUES</title>
+      <link>http://localhost:1313/above-the-parapet/some-tricky-issues/</link>
+      <pubDate>Mon, 04 Jul 2016 15:40:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/some-tricky-issues/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Volatility.&lt;/strong&gt; The headlines say our economy is imploding. Costs of borrowing are going up. The stockmarket has shown signs of collapse. The pound has been on a slippery slope. Merryn Somerset Webb, the shrewd editor-in-chief of MoneyWeek, says this is not all bad. It is volatility, not collapse. The markets are working to find new prices for assets to reflect changes. This is what they are supposed to do. Three things matter right now: sovereignty, trade and migration, and what kind of deal the UK can get in departure from the European Union. Hard work ahead. The sectoral elites will catch up.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KEEPING THE MANAGERIAL EYES OPEN</title>
+      <link>http://localhost:1313/above-the-parapet/keeping-the-managerial-eyes-open/</link>
+      <pubDate>Mon, 20 Jun 2016 15:22:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/keeping-the-managerial-eyes-open/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Confidence.&lt;/strong&gt; The report for the second quarter (2016) from Grant Thornton and the Institute of Chartered Accountants in England and Wales contains some uncomfortable key points. Business confidence remains on the downward trend of the last two years. Domestic sales continue to ease and exports have started to rise. As a result, overall growth in turnover has stabilised but at a slower pace than a year ago. Profit margins are under pressure as businesses are able to achieve only modest increases in prices. Capital investment and research and development are still sluggish because of uncertainty in the wider economy.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LOOKING UNDER THE CARPET</title>
+      <link>http://localhost:1313/above-the-parapet/looking-under-the-carpet/</link>
+      <pubDate>Mon, 06 Jun 2016 15:31:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/looking-under-the-carpet/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;More figures.&lt;/strong&gt; John Ashcroft made a shrewd observation in The Saturday Economist (28 May). The Office of National Statistics released the second estimate of Gross Domestic Product last week. The overall figure is largely unchanged with 2% growth year-on-year. Household consumption is still driving the UK’s recovery with spending up 2.6%. Investment increased by 1.1%. The trade figures (imports and exports) continue to disappoint. Most analysts expect growth of just 2% for 2016. The trade deficit (imports in excess of exports) and the current account deficit (difference between the nation’s savings and investment) are the country’s major problems. This is not a time to take risks with flows of capital, international confidence and foreign direct investment..&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>A guide to disassembling the Ricoh GR for sensor cleaning</title>
-      <link>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</link>
+      <link>http://localhost:1313/blog/disassembling-ricoh-gr-for-sensor-cleaning/</link>
       <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
-      <guid>https://jamiecollinson.com/blog/disassembling-ricoh-gr-for-sensor-cleaning/</guid>
+      <guid>http://localhost:1313/blog/disassembling-ricoh-gr-for-sensor-cleaning/</guid>
       <description>&lt;p&gt;&lt;em&gt;Updated: 2020-06-22 to add GR2 details sent by a kind reader&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;The Ricoh GR is an excellent camera, which has managed to displace all my former dalliances due to it&amp;rsquo;s size, near-perfect ergonomics and incredible performance. But it does have a design flaw. Dust gets sucked into the lens assembly far too easily.&lt;/p&gt;&#xA;&lt;p&gt;On a recent trip I found lots of annoying dust spots. This is easy to fix, but tedious&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A mathematician, a physicist and an engineer...</title>
-      <link>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</link>
+      <link>http://localhost:1313/blog/a-mathematician-a-physicist-and-an-engineer/</link>
       <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
-      <guid>https://jamiecollinson.com/blog/a-mathematician-a-physicist-and-an-engineer/</guid>
+      <guid>http://localhost:1313/blog/a-mathematician-a-physicist-and-an-engineer/</guid>
       <description>&lt;p&gt;A mathematician, a physicist and an engineer are away from home at a conference&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The engineer wakes up in the night to find his bed is on fire. He grabs the fire extinguisher, points it at the fire and sprays until the fire is safely extinguished. He goes back to sleep content he has solved the problem.&lt;/p&gt;&#xA;&lt;p&gt;The physicist wakes up in the middle of the night to find his bed is also on fire. He spots the fire extinguisher, takes his notepad and pencil, and after a quick calculation puts the fire out with one well timed burst. He returns to sleep pleased with his elegant solution.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>A LITTLE MORE CRITICAL THIS TIME</title>
+      <link>http://localhost:1313/above-the-parapet/a-little-more-critical-this-time/</link>
+      <pubDate>Mon, 23 May 2016 17:18:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-little-more-critical-this-time/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Payroll mistakes cost businesses more than £700 million a year.&lt;/strong&gt; Research by accountancy firm UHY Hacker Young found that HM Customs and Excise collected £737.3 million from investigations into compliance. Much of this sum related to cases when firms declared individuals to be self-employed but HMRC decided they should be counted as employees. The businesses were liable for national insurance and often higher tax charges than would have been paid if these people had initially been declared as employees. Small and medium-size enterprises were hit particularly hard by a crackdown on tax deductions from payrolls. They accounted for about half of the collected cash, despite being responsible for only ten percent of the UK’s payrolls.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SHARPEN THE THINKING</title>
+      <link>http://localhost:1313/above-the-parapet/sharpen-the-thinking/</link>
+      <pubDate>Mon, 09 May 2016 15:25:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/sharpen-the-thinking/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Earn our keep?&lt;/strong&gt; Some sociological panaceas are coming back into fashion. Of course, companies must review constantly the organisation of their resources to meet changing markets and technologies. But let’s avoid the managerial magic of the ‘60s. Management is not complex, it’s just difficult. There is a shift from the statement that individuals are the most important factor in a business. The more realistic stance is they are one essential part in the process of economic performance, whose effective contribution varies under moving conditions. Employees are not stupid. They are not fooled by talk of their ‘importance’, especially when they experience the pressures and frustrations in the production bogies, budgets and so on, and this is not always bad. Many of them understand and are willing to accept the organisational demands made upon them. Frankness of the truth works wonders. At best, employees often view a constant ‘you are our most valuable asset’ protestations as whims of managers who might feel guilty about being in charge. At worst, as conscious manipulations which betray a lack of confidence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MANAGERIAL ISSUES</title>
+      <link>http://localhost:1313/above-the-parapet/managerial-issues/</link>
+      <pubDate>Mon, 11 Apr 2016 16:12:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/managerial-issues/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;A worry. Too big to fail.&lt;/strong&gt; The Financial Stability Board is chaired by Mark Carney, governor of the Bank of England. It advises the G20 group of countries and has said that the world’s thirty biggest banks should raise up to $1.2 trillion in loss-bearing debt, in addition to their equity capital. The goal is to make creditors liable for a bank’s failure, rather than taxpayers. The proposals recommend that a bank would fund at least 18% of its risk-weighted assets with such a debt and equity by 2022. Mr Carney said that the plan would ‘support the removal of the implicit public subsidy’ of banks that are ‘too big to fail’.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DIG A BIT DEEPER</title>
+      <link>http://localhost:1313/above-the-parapet/dig-a-bit-deeper/</link>
+      <pubDate>Tue, 29 Mar 2016 12:12:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/dig-a-bit-deeper/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Differences and pensions.&lt;/strong&gt; Jane Parry (University of Southampton) has unpicked that in the UK we have never lived so long as we do now. Public Health England announced recently that life-expectancy has risen again. With baby boomers (born between 1946 and 1964) moving into retirement, the number of pensioners is exploding once more. We may be living longer, but many are not reaching old age in good health. Quality of life is a growing concern for institutions of all kinds, with three-quarters of us likely to reach the state pension with compromised health. Also, the age for payment edges upwards but early or forced retirement remains a norm for the majority. The option of working longer is not open to everyone. Shouts that we will have to carry on earning into our 70s fail to recognise how impossible this is for many. Policy-makers must review those outdated formats of retirement based upon the professional male notion of an upwardly moving career in a single workplace. The breadwinner model has almost gone, few families can live comfortably on a single income and women now enter the labour market at least as well-qualified as men. The country needs pension schemes that reflect these demographic changes and amended working patterns. The challenge is not so much how to keep the well-off saving, but how to open up the possibility of saving to those focused on surviving in the new approaches to work and employment.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MORE THOUGHTS</title>
+      <link>http://localhost:1313/above-the-parapet/more-thoughts/</link>
+      <pubDate>Mon, 14 Mar 2016 15:16:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/more-thoughts/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Things going on.&lt;/strong&gt; Trade figures of PR China in February showed the highest one-month decline since 2009. This situation disturbed a rally in the prices of equities and commodities. Brent crude oil was $40 a barrel. There are indications of a turning point. The Bank of England announced contingency plans to protect the UK’s banks from running out of funds if the forthcoming referendum on the European Union (EU) leads to a withdrawal. Commercial Banks will be able to borrow heavily in the days before and after the vote in June, to offset any threat of a run on them. Mark Carney, the B of E’s governor, had a bad tempered meeting with MPs. He said the prime minister’s renegotiation with the EU had addressed the issues which will assure Britain’s monetary and fiscal stability. He added that leaving would heighten risks in the short-term. Mr Carney denied his opinions were influenced by Downing Street. Microsoft has announced the first big step beyond its Windows operating system. The Department for Transport told Volkswagen to compensate motorists in this country who were hit by the emissions scandal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ANOTHER LOOK AT THINGS OUT THERE</title>
+      <link>http://localhost:1313/above-the-parapet/another-look-at-things-out-there/</link>
+      <pubDate>Mon, 29 Feb 2016 14:38:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/another-look-at-things-out-there/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Volatility of banks.&lt;/strong&gt; The erratic prices of shares in major banks reminds us of the system’s fragility. Sir John Vickers chaired the Independent Commission on Banking (ICB). He says the crisis of 2008 taught us that banks were holding too little equity capital. The Financial Times has pointed out that eight years have gone by and the issue has not been resolved by the myriad of interested institutions. The Basel III regulatory framework obliges banks to have capital worth 8.5% of their risk-weighted assets (RWAs). This is a measure used by regulators to determine capital requirements. An additional buffer of 3%, applied to this country’s six biggest retail banks, would assist them to absorb major losses. But the Bank of England’s latest proposal recommends an additional cushion at 0.5%. This is a milder figure than suggested by the ICB in 2011 and less stringent than advice from some leading economists. Will the Bank of England reconsider its conclusion?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THROUGH THE KEYHOLE</title>
+      <link>http://localhost:1313/above-the-parapet/through-the-keyhole/</link>
+      <pubDate>Mon, 15 Feb 2016 12:03:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/through-the-keyhole/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The big divide.&lt;/strong&gt; The Centre for Cities is a respected think-tank. It notes in a new report that 29 of Britain’s 63 largest cities are ‘low-wage, high-welfare economies’. They have average wages below the UK’s at £504 per week (2014), and expenditure on welfare at above the average of £3,368 per head (2014/15). Nine of the ten worst places on this measure is in northern England and the midlands. Hull has the lowest wages, £376. Blackpool receives the highest welfare spending - £4,338 per head. The fourteen cities with above average wages and below average spending on welfare are mainly in the southeast of England, plus Aberdeen and Edinburgh in Scotland. Wages in London are the highest at £629 a week. Cambridge has the lowest welfare spending at £2,121 per head. The Northern Powerhouse will have an uphill struggle. We can expect determined political demands.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LOOKING SIDEWAYS</title>
+      <link>http://localhost:1313/above-the-parapet/looking-sideways/</link>
+      <pubDate>Mon, 01 Feb 2016 17:01:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/looking-sideways/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Osborne’s army.&lt;/strong&gt; Do you recall the Chancellor of the Exchequer’s ‘march of the makers’ in 2011? Onwards to a ‘more balanced economy’.&lt;/p&gt;&#xA;&lt;p&gt;But the manufacturing marchers have had a bad time. The sector’s share of GDP has gone down from a disappointing 13% to 10%. Of course, factors such as a stronger pound, slowdown in PR China and emergent markets, crisis in the eurozone and general volatility are not George Osborne’s fault. Nonetheless, he has some responsibility for the Government’s fuelling of uncertainty and causing doubts on investment because of the imminent referendum relating to the European Union. Other major obstacles for manufacturing remain. These include skill shortages, access to finance and comparatively high costs of energy. Our political masters must get off their hands. Last November, industrial production (manufacturing, mining and energy supply) in the UK had its worst monthly fall (0.7% for two years.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A FEW MORE POINTERS</title>
+      <link>http://localhost:1313/above-the-parapet/a-few-more-pointers/</link>
+      <pubDate>Mon, 18 Jan 2016 14:48:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-few-more-pointers/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;European Union (EU).&lt;/strong&gt; The prime minister promised a referendum on this country’s membership of the EU before the end-2017. He knows now this was a mistake. The EU is neither a capitalist conspiracy nor a socialist utopia. Over the next year (or two?) we will be bombarded by ‘facts’, half-truths and lies from both sides of the debate. It has prevented wars on the continent. Soon after its foundation, the EU changed into an economic area and later moved towards political co-operation. The reason for greater politicisation is that the members wished to create a common market to eliminate all barriers to trade. This means there is a need for every company in many countries plays by the same regulations. Politicians set the rules. The Maastricht Treaty was signed in 1992 and created the EU in its present form. Margaret Thatcher led negotiations for the UK. Like all other democratic states there is an executive body (the commission), a legislature (the council and parliament), a judiciary (European Court of Justice) and a central bank (ECB). Complaints that the EU has a ‘democratic deficit’ have some validity. The European parliament is elected every five years and the council consists of ministers from nationally elected governments. Commissioners are appointed to the only body that can draft legislation for the EU. The Commission has a strong influence on EU’s policies. This has caused critics to say the EU is run by unelected bureaucrats. ‘Brussels made us do it’ is a common explanation of politicians and public servants at home. In reality, the EU hardly ever makes member states do anything. This is not to say the EU would not benefit from reforms. The present procedures were designed for an organisation of 15 states. There are now 28, with an inefficient way of doing politics. The many layers of decision-making bring high costs and complications and avoid clarity on who’s accountable for what. Pieter Cranenbroek reckons our political leaders like things that way. The EU is top-down, at a time when the world we live in is social and bottom-up.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NOW IN 2016</title>
+      <link>http://localhost:1313/above-the-parapet/now-in-2016/</link>
+      <pubDate>Mon, 04 Jan 2016 16:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/now-in-2016/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;‘Alarm bells are ringing&lt;/strong&gt; in the engine room of the British economy’, says Ed Conway in The Times. People have been depleting their savings since 2013.**** Houses and land in London are less affordable than they have ever been. Britain’s current account has been in deficit since 1998 – that is, we have been importing and borrowing more than we export and earn. Last year, the shortfall hit a record 6%of Gross Domestic Product – the equivalent of every British household borrowing of £3,500 from overseas. We do not live within our means and the pound could be heading for a fall. This might be fine for underperforming exporters. For those who trade in sterling, the outcome will be ‘being squeezed all over again’.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CLOSURE OF A BUSY YEAR</title>
+      <link>http://localhost:1313/above-the-parapet/closure-of-a-busy-year/</link>
+      <pubDate>Tue, 22 Dec 2015 15:40:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/closure-of-a-busy-year/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Pass the stress.&lt;/strong&gt; Britain’s seven biggest banks have passed the second round of annual stress tests. This new procedure is to establish their resilience in a sharp economic downturn. It was based on the possibility of a crisis in emergent markets. A fall in China’s growth to 1.7% rattled the cages of investors, sent oil below $40 a barrel and undermined developing countries over Europe. Mark Carney, the Bank of England’s Governor said the clearing banks were not more resilient than in 2008/09 and within sight of what the Bank’s Financial Policy Committee regard as adequate capital for the long-term. Running a bank used to be a job without pressure. Times have changed and will remain so.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A FEW WORRIES ABOUT CENTRALISM</title>
+      <link>http://localhost:1313/above-the-parapet/a-few-worries-about-centralism/</link>
+      <pubDate>Mon, 07 Dec 2015 16:14:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-few-worries-about-centralism/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Can governments deliver economic stability?&lt;/strong&gt; Continuous technological change make fluctuations inevitable. There is a tension between the promise of steadiness and certain turbulence. Evidence suggests that stability has an inverse relationship with expansion. The UK was steadier than many other economies in the 1960s, but had slower growth. It is possible that deep cycles and macroeconomic shocks flush out inhibitors, anti-competitive interests and the inefficient. The same factors which give ordinary firms the confidence to invest may well offer workers the courage to push for more pay and resist pressures for higher productivity. There are suspicions that the so-called golden age of the 50s and 60s was destined to end in an inflationary surge just because of this connection.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LOOK FORWARD</title>
+      <link>http://localhost:1313/above-the-parapet/look-forward/</link>
+      <pubDate>Wed, 25 Nov 2015 18:22:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/look-forward/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Praise at last.&lt;/strong&gt; The World Bank has published ‘Doing Business 2016 : Measuring Regulatory Quality and Efficiency’. Britain has moved closer to its target of being one of the top five countries in which to do business. Singapore and the UK in particular were applauded by the Bank for taking steps to cut red tape and remove administrative barriers. The UK went up the table because of a reduction in corporation tax, lower employers’ national insurance costs and a fall in the number of days taken to start a business. 4.5 days is the present period. 20 days is the average worldwide.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WARNINGS, MAYBE?</title>
+      <link>http://localhost:1313/above-the-parapet/warnings-maybe/</link>
+      <pubDate>Tue, 10 Nov 2015 16:16:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/warnings-maybe/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Watch the savings gap.&lt;/strong&gt; Deloitte has issued an update on the savings gap – the shortfall predicted between actual pension income and the money needed to live a comfortable life - which is currently at £250 billion in the UK. This could rise to £350 billion by 2050, meaning that UK workers should, on average, each be saving an additional £10,000 a year.&lt;/p&gt;&#xA;&lt;p&gt;Meanwhile the government is busy restricting the tax advantage of investing in a pension with tax relief tapering down to £10,000 for those with earnings of more than £150,000 a year from April 2016. Further changes are mooted to increase the tax-take as government struggles to reduce expenditure.**** **** &lt;strong&gt;Beware of branders.&lt;/strong&gt; &lt;strong&gt;Colgate introduced a toothpaste in France called Cue, which was the name of a local pornographic magazine. The name Coca-Cola in China was first rendered as Ke-kou-ke-la. Unfortunately, Coke did not discover until thousands of signs had been printed that the phrase means &amp;lsquo;bite the wax tadpole&amp;rsquo; or &amp;lsquo;female horse stuffed with wax&amp;rsquo;, depending on the dialect. Coke then researched 40,000 Chinese characters and found a close phonetic equivalent, &amp;lsquo;ko-kou-ko-le&amp;rsquo;, which can be loosely translated as &amp;lsquo;happiness in the mouth&amp;rsquo;. Scandinavian manufacturer of vacuum cleaners, Electrolux, used the following in a US ad campaign: &amp;lsquo;Nothing sucks like an Electrolux&amp;rsquo;. In Italy, a campaign for Schweppes Tonic Water translated the name into Schweppes Toilet Water. Rolls-Royce was going to call a new model the Silver Mist, until it discovered that it means shit in German. The American slogan for Salem cigarettes, &amp;lsquo;Salem-Feeling Free&amp;rsquo; got translated in the Japanese market into &amp;lsquo;When smoking Salem, you feel so refreshed that your mind seems to be free and empty&amp;rsquo;. Many years ago, Ford had a problem in Brazil when the Pinto flopped. The company found out that the word Pinto is offensive Brazilian slang that mocks men. Ford removed all the nameplates and substituted &amp;lsquo;Corcel&amp;rsquo;, which means horse.&lt;/strong&gt; Geddit? And current? **In December 1992, Neil Kinnock reflected on his policies as Labour leader, saying: &amp;ldquo;If it had been possible to have led the Labour Party of 1983 or 1987 or 1992 by Attlean acerbity, or Bevanite evangelism, Wilsonian wiliness or Callaghan bonhomie, then the task would have been much easier&amp;hellip; In the event, however, the condition of the party made management an obligation, so I got on with it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SOME GOOD, SOME BAD</title>
+      <link>http://localhost:1313/above-the-parapet/some-good-some-bad/</link>
+      <pubDate>Mon, 26 Oct 2015 11:20:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/some-good-some-bad/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Deflation for September.&lt;/strong&gt; The UK returned to deflation last month. This is twice since April that prices fell, year-on-year. An annual rate of the consumer price index (CPI) moved to -0.1% from 0% for August. Before April, prices had not dropped since 1960. Unemployment went down to 5.4%, a new low since 2008. In the three months to August, employment rose by 140,000. The number of people in work, 31.1 million, was the highest since records began in 1971. These figures are good and bad news. The downsides reflect a lack of overall demand. Indebted firms and households become cautious. Retrenchment brings lower purchases. The other side of this proverbial coin has falling energy and food prices. This gives households a boost and together with increases in pay should lead to higher expenditure by consumers. It is feasible that recent predictions saying the Bank of England’s increase for interest rates is more than a year away will be wrong.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HERE WE GO AGAIN</title>
+      <link>http://localhost:1313/above-the-parapet/here-we-go-again/</link>
+      <pubDate>Mon, 28 Sep 2015 17:16:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/here-we-go-again/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Continental Europe.&lt;/strong&gt; For a change, there has been some good news from the eurozone in recent weeks. Services and manufacturing have been at their highest performances for four years. Spain’s economy went up by 1%, with stagnation in France. Germany achieved exports at €103.4 billion in July, a new record. Life will become difficult for the eurozone if China suffers a slowdown. Germany accounts for nearly half of the European Union’s exports to China. She is driver of eurozone and accounts for about 30% of the territory’s GDP. Capital Economics points out that many of its exports create demand for products from other eurozone countries. The president of the European Central Bank might have to reintroduce quantitative easing (‘printing of money’) if growth goes down and inflation stays weak. Mind you, that would be good news for European equities.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ONE OR TWO MINOR GRUMBLES</title>
+      <link>http://localhost:1313/above-the-parapet/one-or-two-minor-grumbles/</link>
+      <pubDate>Mon, 14 Sep 2015 11:03:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/one-or-two-minor-grumbles/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Decisions.&lt;/strong&gt; MPs returned to the House of Commons last week after a long break. The government and civil servants appear to do quite well without them. August and September saw the start of both world wars. Kuwait was invaded in August, 1990. August and September of 1992 had a major economic crisis and British armed forces went into Bosnia.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Every craft needs tools.&lt;/strong&gt; Nothing is too exotic when it comes to equipping managers. They go rock-climbing, white-water rafting and fire-walking. They have played Lego, studied medieval painting and gone on retreats in Benedictine monasteries. The prescribed reading at bedtime includes Karl Marx, Machiavelli’s The Prince and Sun Tzu’s Art of War. All of this since F W Taylor, Fayol, Herzberg, McClelland, McGregor and . . . . Cynics say that managers are just insecure and exploited by clever entrepreneurs. They are caught between the demands of efficiency and personal decency. Simultaneously, they search for assurance of success and moral guidance in a world of shifting value. Professional philosophers are taking their offerings to market. They assert an importance for managers to learn what they really believe. In other words, this is supervised brainstorming with real bite. Watch out for the flyers on your screen.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ANOTHER LOOK FROM THE HELICOPTER</title>
+      <link>http://localhost:1313/above-the-parapet/another-look-from-the-helicopter/</link>
+      <pubDate>Tue, 01 Sep 2015 13:09:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/another-look-from-the-helicopter/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Corporate taxes.&lt;/strong&gt; The most common way multinationals avoid taxes is through ‘transfer pricing’. Subsidiaries in tax havens buy goods cheaply from connected businesses in more demanding countries and sell them on at a higher price. This process shifts profits to the tax haven. The Organisation for Economic Co-operation and Development (OECD) is trying to combat schemes of this kind by persuading authorities to require disclosure by firms of where they generate profits and then share the information. Success is not imminent. Outright dodging is an even bigger problem. The Economist has pointed out that undeclared transfers of money, false invoices and the like cost developing countries more than $990 billion in 2012. This figure represents almost 4% of some administrations’ GDP. Maybe helping poorer countries improve tax collection and limit avoidance would do more for growth than targets on financial aid?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BIGGER TARGETS</title>
+      <link>http://localhost:1313/above-the-parapet/bigger-targets/</link>
+      <pubDate>Mon, 17 Aug 2015 16:31:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/bigger-targets/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;What’s different?&lt;/strong&gt; Austerity was presented initially as a crash diet to reduce financial extravagance. Prime Minster David Cameron and Chancellor George Osborne now speak of it as a permanent change in lifestyle. Osborne is reshaping the state. He wants to be fiscally conservative and economically liberal. Local councils will win the freedom to repeal the laws on Sunday trading, tenants of social housing whose earnings are above average will be charged a market rent; the government will no longer pay for free TV licences to the over-75s; the redistributive system of tax credits is being unravelled. Mr Osborne’s demeanour reflects his belief that, as with Margaret Thatcher’s privatisations, the Labour Party will only return to power by accepting the reforms as part of commonsense for the age.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HERE AND THERE FOR MANAGERS</title>
+      <link>http://localhost:1313/above-the-parapet/here-and-there-for-managers/</link>
+      <pubDate>Mon, 03 Aug 2015 16:58:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/here-and-there-for-managers/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Interest rates.&lt;/strong&gt; Katie Allen noted in The Guardian that Britain might experience another dip into deflation. The price of oil has slipped again recently and the strong pound will avoid inflationary pressures. There is no sign of stagnation. Real increase in wages is around 3% a year, good news for retailers. Surveys of employment remain consistent with an increase in the number of jobs. Well- informed economists are confident the Bank of England will not go for dearer money until February 2016.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OUTSIDE THE REPORTED TROUBLED TIMES</title>
+      <link>http://localhost:1313/above-the-parapet/outside-the-reported-troubled-times/</link>
+      <pubDate>Mon, 06 Jul 2015 16:12:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/outside-the-reported-troubled-times/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;On every commentator’s lips.&lt;/strong&gt; Britain’s economy looks OK from the outside, ticking over nicely. It grew by 2.8% last year. This is more than any other member of the G7 club of rich countries. Employment has never been higher. Nonetheless, ‘low productivity’ is said by economists to be the biggest risk to prospects for growth. In using this term, they generally mean the value of goods and services per hour of labour. The calculation is made usually by dividing gross domestic product (GDP) by the number of hours worked. Why this stagnation? There are three components. The pain of recession was spread widely, through lower wages. So there is slack in terms of under-employment at workplaces and low investment in technology and other equipment. The Bank of England suggests that ‘zombie’ businesses may have been kept alive by low interest rates. This has slowed the reallocation of resources to new and dynamic firms. Also, there are substantial structural changes. For example, John Redwood MP has pointed to a rapid drop in output of North Sea Oil leading to the loss of high value-added activities. Others have asserted that labour intensity in services is seen often as better customer-care rather than poor performance.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RESPONSIBILITY IS PERMANENT</title>
+      <link>http://localhost:1313/above-the-parapet/responsibility-is-permanent/</link>
+      <pubDate>Mon, 08 Jun 2015 16:21:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/responsibility-is-permanent/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Recovery is fragile.&lt;/strong&gt; The UK is unlikely to see a rapid recovery from the low growth in the first quarter. Weakness in manufacturing and construction has spread to services. Markit’s Chris Williamson says this ‘effectively kills-off the chances of any imminent hiking of interest rates’. The main source of upward pressure in the economy will be consumption, which is 60% of Gross Domestic Product (GDP). The labour market is still relatively buoyant, increases will continue in earnings and inflation has gone away for the present. With strength of sterling squeezing manufacturers, this country once again relies upon expenditure by households to keep the show on the road. Chancellor George Osborne told us in 2011 about his determination to ‘balance the economy’. Manufacturing was 12.8% of GDP; it is 10% now. Of course, our economy is dominated by services. Perhaps the next budget will tell us when the promised high-tech exporters will come out of the cupboard?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KEEP MANAGING</title>
+      <link>http://localhost:1313/above-the-parapet/keep-managing/</link>
+      <pubDate>Tue, 26 May 2015 15:04:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/keep-managing/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;George Osborne is back as Chancellor.&lt;/strong&gt; Pity him, says James Meadway, neweconomics.org/blog. He has inherited a mess from the last government. Here are five of his major problems. &lt;strong&gt;1.&lt;/strong&gt; Spending cuts will not work. He had to slacken harsh austerity as the economy slumped. So, he missed the targets on reduction of deficit. Things have not changed much. &lt;strong&gt;2.&lt;/strong&gt; The easy reductions in expenditure have been made; for example, capital expenditure on buildings and some benefits. There will now be difficulties in avoiding politically damaging cuts. &lt;strong&gt;3&lt;/strong&gt; Household debt is rising again. Maybe a crisis looms? &lt;strong&gt;4.&lt;/strong&gt; We are less productive. Since 2002, productivity of labour has slumped. There is little scope for raising pay. &lt;strong&gt;5&lt;/strong&gt; The current account deficit – the gap between what we earn from the rest of the world and imports – is nearly 6% of GDP. If interest rates in America go up and/or credit in the PR China collapses, then there would be reductions in exports accompanied by trouble.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SITUATIONS WILL SHIFT</title>
+      <link>http://localhost:1313/above-the-parapet/situations-will-shift/</link>
+      <pubDate>Mon, 11 May 2015 17:06:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/situations-will-shift/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;A good contest to lose?&lt;/strong&gt; Richard Batley of Lombard Research suggested that last week’s election is ‘the harbinger of a new era of persistent political fragility’. Britain could go from being a comparatively stable economy, with an attractive tax regime ‘to a much more uncertain home for anyone’s money’. Look at the figures. The figure on gross domestic product showed the rate of growth halved to 0.3% in the first quarter. The Observer suggested that ‘the upturn of which the Tories are so proud may already be starting to fade’. There are several other warning signs. Higher productivity is essential for economic growth, but the record since 2008 is poor. The Office of National Statistics describes ‘a prolonged period of essentially flat productivity unprecedented in the post-war era’. The UK’s continued reliance for economic growth on consumers’ borrowing and the housing market might be dangerous. The weakness of sectors unconnected with personal expenditure is a third concern. ‘Confidence is certainly higher than five years ago, but aside from notable successes such as the car industry, there is little sign of a radical shift in the economy.’ Nonetheless, Roger Bootle said in The Daily Telegraph, ‘Macro-economic data are notoriously unreliable, and the GDP figures are frequently revised, usually upwards. &amp;hellip;. my money is on a rebound’. Managers would be wise to be cautious.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WHAT WILL THEY TALK ABOUT ON TV AFTER THURSDAY 7 MAY?</title>
+      <link>http://localhost:1313/above-the-parapet/what-will-they-talk-about-on-tv-after-thursday-7-may/</link>
+      <pubDate>Mon, 27 Apr 2015 16:31:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/what-will-they-talk-about-on-tv-after-thursday-7-may/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The auction.&lt;/strong&gt; Right now we are in election campaigns. ‘What will you promise to give me?’ ‘OK, but I’ll wait for another offer.’ Merryn Somerset Webb reminds us that the Coalition came into office promising to resolve this country’s dreadful financial problems. Its ministers suggest they have rescued our economy. Look at the numbers and you will see this is a doubtful claim. The underlying budget deficit is still 6% of GDP – an overspend of £90bn a year. And the total public debt is 80% of GDP, up from just over 60% in 2009. Another vital figure is that our government collects 36% of GDP in taxation. Since the 60s, this component has been between 34% and 36%. However high or low tax rates go, that is how much is raised by the Coalition. HM Treasury knows that if citizens are taxed too much, they stop paying, one way or other. But the state spends around 45% of GDP. We are told the good life is imminent, but we know the funds are not available to pay for it. What we are hearing from politicians is delusional.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ONE OR TWO REFLECTIONS FOR MANAGERS</title>
+      <link>http://localhost:1313/above-the-parapet/one-or-two-reflections-for-managers/</link>
+      <pubDate>Mon, 13 Apr 2015 16:12:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/one-or-two-reflections-for-managers/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Why do we listen?&lt;/strong&gt; Economists had a collective failure to predict the financial crisis and unwisely ignored John Maynard Keyne’s advice to make sure they were thought of as humble, competent people. Nonetheless, they are an influential group. They are retained as expensive consultants, advise politicians, and write articles for respected publications. As the subject has become more mathematical, their confidence has grown. The Economist magazine has pointed to the ‘odd thing’ that we believe in economists almost as much as they believe in themselves. Journalists and politicians like strong argument and clear answers. Most academics are diffident. An economist talks with all the confidence of a witch doctor.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UNCERTAINTY THROWS A DARK SHADOW</title>
+      <link>http://localhost:1313/above-the-parapet/uncertainty-throws-a-dark-shadow/</link>
+      <pubDate>Tue, 17 Mar 2015 11:15:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/uncertainty-throws-a-dark-shadow/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Benefits!&lt;/strong&gt; There is a feeling that any economic recovery is not trickling through to lower income groups, but higher earners are gaining from faster growth. The financial results of supermarkets emphasise this trend. Intense competition from discounters such as Aldi and Lidl have taken sales from the likes of Sainsbury and Tesco. Even premium outlets, for example Waitrose, have felt the pinch on margins, but not so severely on turnover. However, a lot of businesses complain about shortages of skills and this is leading to faster increases in pay. In certain sectors, notably construction and the financial sector, these issues are stimulating significant changes. They will not stop at the present points of pressure. Confidence of businesses has taken a dip in early 2015 according to the Institute of Chartered Accountants/Grant Thornton Business Confidence Monitor. However, performances have been reasonably good. There is universal reticence relating to the general election on 7 May. Uncertainty is in the air. Buoyant spending by households, fuelled by higher credit, will help consumers to drive economic growth this year.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CHANGE IN OUR SIGHTS</title>
+      <link>http://localhost:1313/above-the-parapet/change-in-our-sights/</link>
+      <pubDate>Mon, 02 Mar 2015 16:16:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/change-in-our-sights/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Speed in the UK.&lt;/strong&gt; Changes are everywhere. Digital products and services account for an increasing part of our economy. Only the first unit requires capital and labour. Subsequent output is almost free of cost. These products are immediately global, and the best one takes all after effective marketing. Look at the dominance of Facebook, Google and Microsoft. Digitisation and automation remove more jobs than they create and drive demand for highly skilled people and competition for scarcer and middle and low-grade jobs. BINC is on our lips – biotech, infotech, nanotech and cognitive sciences.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MANAGING REMAINS DIFFICULT</title>
+      <link>http://localhost:1313/above-the-parapet/managing-remains-difficult/</link>
+      <pubDate>Mon, 02 Feb 2015 15:52:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/managing-remains-difficult/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Interest rates into 2016.&lt;/strong&gt; The Bank of England’s Monetary Policy Committee (MPC) is showing concern about deflation. With bills for petrol and utilities falling, the Bank suggests there is a real chance of a drop in prices generally. Also, there is a risk of deep-seated low inflation. This prompts a wariness of raising interest rates in case such a decision would reduce momentum in the economy and push the downward trend in prices. Deutsche Bank has observed that there is a ‘considerable uncertainty for Western economies’. It is reasonable to assume central banks will use any signs of weaker results, including inflation, as grounds for retaining low interest rates. The Bank of England is unlikely to move before mid-2016. MoneyWeek has noted the fall of unemployment in December and that the number of claimants was down by 30,000. Wages moved up for a third month, with exclusions of unskilled/untrained people. Inequality remains a drag on economic growth.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>INTO 2015</title>
+      <link>http://localhost:1313/above-the-parapet/into-2015/</link>
+      <pubDate>Tue, 06 Jan 2015 14:58:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/into-2015/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Issues for managers&lt;/strong&gt; include: * handling disillusionment. Expect an extension of austerity after the general election in May&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;dealing with politics going local as economics move more global&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;balancing the impact of falling costs. There are losers and prospects of deflation in some countries&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;responding to the inevitable increases in taxation of assets/wealth. They are more difficult to hide&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;alleged decline in social mobility. This topic will attract political intervention&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IMMINENT CHANGES</title>
+      <link>http://localhost:1313/above-the-parapet/imminent-changes/</link>
+      <pubDate>Mon, 24 Nov 2014 17:51:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/imminent-changes/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Power to the English regions?&lt;/strong&gt; Politicians of all shapes and sizes have embarked upon a long, complicated and dangerous journey. Britain is still one of the most centralised states in the world and has been run by a Whitehall-based civil service since the mid-1800s – and still is. Bear in mind that talking about devolution is not the same as doing it. So far, caution has reigned. To obtain the full benefits of decentralisation, parliamentary politicians must have more faith in local authorities. Central government has to take substantial action if electors are to notice changes. Sir Richard Leese, leader of Manchester City Council has welcomed the Chancellor’s proposal but says he wants more; the transfer of all £22 billion of government expenditure in the area covered by the Greater Manchester Combined Authority. A shift of this scale would challenge all the controlling activities and reflexes of Westminster and Whitehall. There will be mistakes, bumps and misuses along the road which will test commitments to the plans and expectations. Nonetheless, outlines of additional proposals for Leeds, Liverpool and Sheffield, with more in the queue, might be astute moves by government. We know austerity will continue after next year’s general election. Only half of planned cuts in expenditure have been implemented by the Cabinet and public borrowing continues to increase. Handing budgets to municipalities spreads the blame for cuts and helps to make sure that spending reflects local needs. The dual rise of UK Independence Party (UKIP) and the Scottish nationalists emphasises the decline of faith in Westminster.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TAKING A STEP BACK</title>
+      <link>http://localhost:1313/above-the-parapet/taking-a-step-back/</link>
+      <pubDate>Wed, 12 Nov 2014 11:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/taking-a-step-back/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Self-preservation?&lt;/strong&gt; Inequality of wealth and income has become a popular subject for bankers and economists. Mark Carney, governor of the Bank of England, said earlier this year, ‘a relative equality of outcomes’ is necessary for capitalism to function properly. Janet Yellen, chair of America’s Federal Reserve, told an influential audience, ‘The extent and continuing increase in inequality in the United States greatly concern me’. The chief executive of Goldman Sachs said on TV, ‘If you grow the pie but too few people enjoy the benefits of it &amp;hellip; you’ll have an unstable society’. What’s going on? It is likely they have realised that capitalism does not work in a modern democracy if prospective consumers feel unable to spend on goods and services.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MONEY, MYTHS AND CHRISTINE</title>
+      <link>http://localhost:1313/above-the-parapet/money-myths-and-christine/</link>
+      <pubDate>Mon, 27 Oct 2014 16:58:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/money-myths-and-christine/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Put the pillow over your head!&lt;/strong&gt; Christine Lagarde, head of the International Monetary Fund (IMF) set the scene for financial markets. World’s growth is disappointing, the pace of recovery is uneven and many people are beginning to have concerns about Germany, the Eurozone’s anchor. Have we concluded that France might undermine revival in continental Europe? The IMF predicts world growth at 3.3% this year, rising to 3.8 in 2015. Some influential economists are more pessimistic. This is partial explanation of the fall in trade and commodity prices. The absence of inflation is an international factor. So. Managers must sustain strict controls on costs. Borrowing by UK’s government over the first half of this financial year was higher than for the same period in 2013. The drop in receipts from income tax and national insurance contributions is with us again.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A FEW MORE THOUGHTS</title>
+      <link>http://localhost:1313/above-the-parapet/a-few-more-thoughts/</link>
+      <pubDate>Mon, 13 Oct 2014 15:05:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-few-more-thoughts/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Something has to give.&lt;/strong&gt; Bad news from the retail sector is becoming a daily experience. We do not have signs yet of the recovery in spending by households going away. Nonetheless, there have been several poor results or ‘profit warnings’. Investors are getting jittery. Tate and Lyle and Tesco have issued profit warnings. Next has told the City the unusually warm weather hit growth in sales. The news wiped 4% off the shares and unnerved shareholders elsewhere, notably Debenhams and Marks and Spencer. Sainsbury’s has reported a third successive quarter with falling sales. There are some rational explanations, but the rickety high streets must reconsider the priorities for their future.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AS SCOTLAND WAS THINKING</title>
+      <link>http://localhost:1313/above-the-parapet/as-scotland-was-thinking/</link>
+      <pubDate>Fri, 19 Sep 2014 18:12:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/as-scotland-was-thinking/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Why the upturn?&lt;/strong&gt; A major question is whether the recent economic upturn is due to the austerity measures. Or is it a happy coincidence of falling energy prices, low-cost loans and stimulants to build houses? Is our government repeating the mistakes of the past – a recovery led by the housing market, generated by supply constraints, fuelled by cheap borrowing, and aided and abetted by the Help to Buy scheme? How vulnerable is this to rises in interest rates – quite possibly and for some, unhelpfully, before the next election? It is thought often to be a no-brainer that cutting the government’s deficit reduces the national debt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A CLOSER LOOK</title>
+      <link>http://localhost:1313/above-the-parapet/a-closer-look/</link>
+      <pubDate>Mon, 01 Sep 2014 16:38:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-closer-look/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Austerity. Really?&lt;/strong&gt; Mike Riddell on Bondvigilantes suggests ‘austerity posturing’ among this country’s politicians is ‘built on a completely phoney premise’. In reality, there has been little frugality. Comparing the UK’s budget deficit (the amount by which public outgoings exceed income from taxes) to the results in the Eurozone and America indicates that fiscal consolidation has been more pronounced elsewhere. The Europeans are running a deficit at around 3% of GDP. The United States has reduced the gap from 10% of GDP in 2009 to around 3% now. Britain’s has come back from a scary 11% to a still worrying 6% and remained thereabouts for the past two years. Riddell refers to ‘an addiction to spending’. Total expenditure by government has mounted gradually for eight years. Simultaneously, revenue from taxation has been disappointing. This year is unlikely to deliver a sharp improvement. In the first four months of 2014/15, the government has borrowed 5% more than in 2013. The timetable for eliminating the annual overspend has slipped already. The first budget surplus is expected now in 2018/19. In 2010, the prediction was 2015/16. Winning the election next year might not be such a bright idea!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>COUNTER REFLECTIONS</title>
+      <link>http://localhost:1313/above-the-parapet/counter-reflections/</link>
+      <pubDate>Mon, 18 Aug 2014 16:50:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/counter-reflections/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;UK’s economy looks different from 2008.&lt;/strong&gt; It has, at last, exceeded the previous peak. The recovery has been slow. This country came up at the rear of G7. Only Italy’s GDP is smaller than six years ago. However, we have a different shape. Some industries have dwindled, others have mushroomed. Economic impact has shifted from workers to companies. Economists predicted a boom in exports. George Osborne, chancellor of the exchequer, looked forward to a ‘march of the makers’ as manufacturing businesses became more active. The prognosis that Britain would ‘rebalance’ away from its large services sector became an exciting talking point. It was wrong.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GLIMPSES AWAIT ATTENTION</title>
+      <link>http://localhost:1313/above-the-parapet/glimpses-await-attention/</link>
+      <pubDate>Mon, 21 Jul 2014 12:42:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/glimpses-await-attention/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Legacy for new government in 2015?&lt;/strong&gt; Back in 2010, UK’s chancellor of the exchequer set out plans for ‘fiscal consolidation’. Only around 55% will have been completed before the general election, leaving another £62 billion of spending cuts and/or increases in taxation. Neither of the two main political parties has given electors an indication of how it will deal with this issue. Both the Coalition and Labour appear to assume that highly paid people and property-owners are reliable sources of income. The top 1% of earners pay 25-30% of all income tax. Will this curve break? In 1990/91, a middle group made an average of £908 in net contribution to the chancellor. In 2012/13 it was minus £3,999. There is general agreement for change in public services, with concentration on prevention rather than cure. This means devolving power from Whitehall and reviving the civic activities of personal responsibilities and reciprocity. The natural conservatism and opposition of institutions brings major difficulties. Will they get in the way?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TROUBLE FOR BIG GOVERNMENT</title>
+      <link>http://localhost:1313/above-the-parapet/trouble-for-big-government/</link>
+      <pubDate>Fri, 11 Jul 2014 15:36:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/trouble-for-big-government/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Feeling good about the economy.&lt;/strong&gt; Economic growth has recovered better than predictions. Output is almost back to the level before 2008. Employment is increasing. Inflation seems to be under control and wages are beginning to rise. Shops say they are busier and people feel better about their prospects. However, a big problem remains. Matthew Lynn points out in MoneyWeek that the government’s finances are still in a ‘shocking state’. In April, our masters borrowed in excess of £11 billion for the month, £2 billion more than a year earlier. This is contrary to expectations and promises. Tax receipts were 6.8% lower than 2013. The Office for Budget Responsibility said this was a one-off factor caused by citizens shifting income into the new tax year to take advantage of the top rate coming down from 50% to 45%. One suspects this is not a full explanation. Since 2008, there are 330,000 extra self-employed people compared to 201,000 fewer employees. They can shift income from one year to another, depending on when they invoice customers. They can turn themselves into companies, or take any range of steps to reduce tax. In summary, the self-employed are a moving target for the collector of taxes. Employees are in clusters and easier prey.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A LOOK UNDER SOME CARPETS</title>
+      <link>http://localhost:1313/above-the-parapet/a-look-under-some-carpets/</link>
+      <pubDate>Fri, 27 Jun 2014 14:37:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-look-under-some-carpets/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Big hints.&lt;/strong&gt; The signals are clear. Mark Carney, governor of the Bank of England, has dropped big hints that interest rates will rise sometime in autumn. This would be the first such move for seven years. Commentators of various persuasions and skills have told us each day that rates will go up soon. Growth is on the way up. Unemployment is falling quickly. House prices outside the South East are on an upward trend. New jobs and additional businesses are being created. The deficit is coming down. Trading confidence is higher. It seems sensible to move rates back to their ‘normal’ levels. After all, the present low interest rate was intended as a response to an ‘emergency’. Where is that crisis right now? The City’s traders have enhanced the pound’s value and lenders have nudged-up their interest rates. Some scope to cut them when the economy turns down again is a good idea.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DO THE FIGURES CONFUSE US?</title>
+      <link>http://localhost:1313/above-the-parapet/do-the-figures-confuse-us/</link>
+      <pubDate>Mon, 09 Jun 2014 16:25:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/do-the-figures-confuse-us/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Crisis.&lt;/strong&gt; English local government is facing a financial predicament according to the Local Government Association. It estimates there is a funding gap that starts at about £2.8bn in 2013/14 and exceeds £14.4bn by 2019/20. Social care and waste/recycling absorb an increasing proportion of monies available to councils. Cash for other services is expected to drop by 46% at 2019/20, from £26.6bn in 2010/11. Greater use of technology and digital information has the potential to reduce costs, increase efficiencies and deliver improved outcomes. Also, they would stimulate innovation, enable new ways of working and assist the reshaping of relationships between citizens, communities and councils. John Thornton points out in Public Finance that the UK has one of the world’s strongest internet economies. Maybe it would be wise for local government to invest collectively in more research and pilot schemes to understand better the opportunities offered by digital working, the internet and evolving technologies?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A STEP BACK FOR THOUGHT</title>
+      <link>http://localhost:1313/above-the-parapet/a-step-back-for-thought/</link>
+      <pubDate>Wed, 28 May 2014 17:28:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-step-back-for-thought/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;What is normal?&lt;/strong&gt; David**** Smith said in The Sunday Times that the last quarterly rise in GDP has taken us ‘within a whisker’ of the pre-financial crisis peak. Consumers’ confidence is high. There are increases in employment. Real pay is beginning to rise. Respected analysts say GDP might be higher than statistics suggest. Merryn Somerset Webb points out that these figures do not mean we are on the way to anything like the normal before 2008. This is a new kind of normal. Most of the markets remain artificially boosted by quantitative easing or super-low interest rates. Savers are expected to become poorer. Most debts in the public sector are still at historical highs. There is little appetite for real reductions in spending by government. Also, there is the start of a debate on inequality. This could change fundamentally the political environment. It is why we hear so much about rent controls, wealth and property taxes and caps on prices of energy. The new normal will cause discussion about a different capitalism.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A LOOK AT HIERARCHIES</title>
+      <link>http://localhost:1313/above-the-parapet/a-look-at-hierarchies/</link>
+      <pubDate>Mon, 28 Apr 2014 16:53:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-look-at-hierarchies/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;For the first time since 2007, New York has overtaken London&lt;/strong&gt; as the world’s leading financial centre. The Financial Times says the lead is small. However, it suggests the City’s reputation has been undermined by several problems. Z/Yen Group, which compiled the index reckons these have reached ‘tipping point’. They include political uncertainty caused by doubt relating to Britain’s place in Europe and the possibility of Scotland’s independence. London has been hit harder than other centres by the scandals associated with alleged rigging of Libor (London Interbank Offered Rate) and Forex (Foreign Exchange Market). Local difficulties such as mis-selling products by banks have contributed to negative opinions.**** ‘Regulatory creep’ might become an issue because it is the automatic response of politicians. Some major players believe this would adversely affect the City’s entrepreneurialism. Maybe investment bankers will begin a joint and several plan to change the world’s perception of them? They will know this is not a quick-fix.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LET’S CONSIDER A FEW DIFFERENT ISSUES</title>
+      <link>http://localhost:1313/above-the-parapet/lets-consider-a-few-different-issues/</link>
+      <pubDate>Mon, 14 Apr 2014 17:07:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/lets-consider-a-few-different-issues/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Austerity and wincing.&lt;/strong&gt; Despite all the talk, most of the reductions of public expenditure have not yet started. Information from the Office for Budget Responsibility (OBR) shows total spending fell by 3.5 percentage points of Gross Domestic Product (GDP) to 43.5% since 2009/10. The formal plan is to lower these outgoings by another 5.5 percentage points before 2018/19. This will take public expenditure as a share of GDP to its lowest since 2001/02. The government has not made a case for a smaller state. Is there evidence that such objectives would boost economic growth and reduce the rising inequality? Or has the UK’s political elite come to a silent conclusion that the private sector is not able to fill the gaps left by a shrinking state? Maybe they have lost the ability to argue about big ideas and values? Or perhaps they are being told by mandarins that cuts are unlikely to be offset by gains in efficiencies, meaning deteriorating services?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ARE WE RELUCTANT TO MEASURE WHAT WE DO?</title>
+      <link>http://localhost:1313/above-the-parapet/are-we-reluctant-to-measure-what-we-do/</link>
+      <pubDate>Mon, 31 Mar 2014 17:07:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/are-we-reluctant-to-measure-what-we-do/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Productivity puzzle.&lt;/strong&gt; The economy is growing and the deficit (not debt) is coming down. Significantly, though, our official and independent watchdog, the Office for Budgetary Responsibility (OBR) concluded in December that the ‘surprising’ surge in growth of the past year is ‘cyclical &amp;hellip;&amp;hellip;&amp;hellip; rather than indicating stronger underlying growth potential’. And the Bank of England’s decisions to maintain a low interest rate reminds us the economy is still in difficulties. The factor now standing in the way of the UK’s sustained better results is low productivity. It is 21% below the average for G7 (developed) countries as measured by output per hour. This is the widest gap for twenty years. In terms of output per worker, it is 25%. There are good reasons to suggest that part of the falls in productivity are because of temporary factors; for example, weak demand and turmoil in the financial sector. Inadequate fiscal policies and failures to address problems in banking properly have exacerbated the problems but will not hold back a sustained rebound indefinitely. The lack of investment (machines!) for each worker is a real hindrance for productivity. The fall in hours per employed person has not helped the situation, but has a smaller impact. Better measurement of pivotal ratios would allow managers to pursue relevant targets. The systems and technology are on the shelf.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CONSPIRACIES ARE FASCINATING THOUGHTS.  COCK-UPS ARE OFTEN REALITY.</title>
+      <link>http://localhost:1313/above-the-parapet/conspiracies-are-fascinating-thoughts-cock-ups-are-often-reality/</link>
+      <pubDate>Mon, 17 Mar 2014 17:12:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/conspiracies-are-fascinating-thoughts-cock-ups-are-often-reality/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Is it a plot by HM Government?&lt;/strong&gt; Unlikely, but between October 2008 and February 2009 interest rates were reduced six times. On 5 March 2009, the Bank of England’s Monetary Policy Committee (MPC) decided on a cut from 1% to 0.5%. This was claimed as an emergency measure, a short-term response to an extraordinary crisis. And five years on, the rate remains at 0.5%. We know that this is the lowest figure since records began in the 1600s.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THINGS TO DO</title>
+      <link>http://localhost:1313/above-the-parapet/things-to-do/</link>
+      <pubDate>Mon, 03 Mar 2014 15:17:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/things-to-do/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;A productivity crisis?&lt;/strong&gt; The economy is mired in problems and excuses relating to productivity (GDP per hour worked). The latest estimates from the Office for National Statistics (ONS) show that the gap between performances in the UK and those of other leading countries are now at their widest since 1992. In 2012, output per hour in the UK was 21 percentage points below the average for major G7 industrialised economies. And results in this country fell from 2011 to 2012. Canada, France, Germany, Italy and USA were all more productive than the UK in 2012. Managers have a lot to do.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THE WIDER VIEW</title>
+      <link>http://localhost:1313/above-the-parapet/the-wider-view/</link>
+      <pubDate>Mon, 17 Feb 2014 15:23:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/the-wider-view/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Mark Carney, the Bank of England’s governor, has dumped his ‘forward guidance’ and moved the goalposts.&lt;/strong&gt; He told the nation last summer that the Bank would consider higher interest rates only when unemployment fell to 7%. This figure seemed a long time away. However, a rapid rebound in the economy has seen the number of jobless fall quickly and is already close to 7%. Mr Carney says the Bank will measure ‘spare capacity’ now – the amount of slack in the economy. This approach determines how fast it can grow without causing inflation. We were told also about an upward estimate for growth of gross domestic product (GDP) in 2014, from 2.8% to 3.4%.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ANOTHER LOOK AT THE FIGURES</title>
+      <link>http://localhost:1313/above-the-parapet/another-look-at-the-figures/</link>
+      <pubDate>Mon, 03 Feb 2014 15:04:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/another-look-at-the-figures/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Seeing the figures.&lt;/strong&gt; Felix Martin tells an important tale from an older and wiser colleague when he (Felix Martin) started out in the bond markets. ‘Watch out for salesmen selling recovery stories, never forget the definition of a bond that was down 50% and then recovered 50%. It has lost 25%.’&lt;/p&gt;&#xA;&lt;p&gt;Of course, the UK’s gross domestic product (GDP) rose by nearly 2% in the four quarters to September last year, compared to almost 1% over the whole of the earlier two years. Unemployment and inflation are down. We must be pleased with this trend. However, the reality is this leaves the economy 2% smaller than it was more than six years ago. We need to understand levels, as well as rates, of growth. Otherwise, confusion enters our discussions and decisions. We still have 770,000 more people unemployed than at the end of 2007 and the total number at 2.4 million has barely changed from what it was in May 2010. Productivity (output per person) has gone down. There are signs that the only certainty is that a return to pre-crisis trends in economic growth is a pipe dream. Making up the lost ground by 2020 would require the economy to grow at more than 5.5% annually from now until then. We have to think again.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A RETURN TO HAVING A LOOK AROUND</title>
+      <link>http://localhost:1313/above-the-parapet/a-return-to-having-a-look-around/</link>
+      <pubDate>Mon, 20 Jan 2014 16:11:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-return-to-having-a-look-around/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The dollar and sterling.&lt;/strong&gt; Bill Bonner points out that in the sixteenth century, Spain had the international leading currency. The Netherlands was number one in the seventeenth century. France’s turn came after another one hundred years. In the 1800s, Britain’s pound was the world’s money. The dollar was as good as gold in the twentieth century. Now we have China elbowing its way onto the screen.&lt;/p&gt;&#xA;&lt;p&gt;Since 1980, the US economy doubled in size per capita. Over the same timescale, China’s has grown thirteen-fold and is still moving forward twice as fast as America. China is poor and getting richer, the US is rich and getting poorer. Sometime an upstart, possibly China, will battle it out, hopefully in the marketplace, and win. This information points to the urgency for this country to put exports into our commercial habits. Belgium sells more to India than we do!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IT&#39;S NOW 2014</title>
+      <link>http://localhost:1313/above-the-parapet/it-s-now-2014/</link>
+      <pubDate>Mon, 06 Jan 2014 14:56:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/it-s-now-2014/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Between them, eight urban areas (cities) – Birmingham, Bristol, Leeds, Liverpool, Manchester, Newcastle, Nottingham and Sheffield – produce 27%&lt;/strong&gt; of England’s wealth. Everyone knows London is a dynamo. In the decade to 2011, populations grew: London (12%), Birmingham (10%) and Manchester by a whopping 19%. There is a connection between the figures and an ability to attract jobs, talent and investment. Expect a shift towards additional local control over finances and policies.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AND INTO 2014</title>
+      <link>http://localhost:1313/above-the-parapet/and-into-2014/</link>
+      <pubDate>Thu, 19 Dec 2013 15:59:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/and-into-2014/</guid>
+      <description>&lt;p&gt;Accountability and responsibility. This is a contentious topic at the top of Whitehall. It was emphasised by the mess created over introduction of Universal Credit, a personal mission of Iain Duncan Smith, the secretary of state for Work and Pensions (DWP). There are increasing concerns about accountabilities of ministers and civil servants. The noisy Public Accounts Committee (PAC) published a damning report which nearly blamed Robert Devereux, the permanent secretary (and accounting officer) for the problems. It is important to bear in mind that the PAC rarely interrogates ministers. The current accountability processes are incapable of dealing with situations such as Universal Credit. Senior ministers have become unwilling to appear in the House of Commons, explain the background to a problem and promise corrective action. They wish to make civil servants more responsible for failures of performance and have a greater say in their selection. Here are the ingredients of a huge row. A clash between high-minded idealism and mandarins’ pragmatism. 10 Downing Street has sent hit squads to keep an eye on civil servants. Most ministers do not have a personal record of managerial success elsewhere. They are determined to improve results. Civil servants have equal commitment to resisting politicisation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THERE ARE IMPORTANT THINGS TO DO – OR NOT DO</title>
+      <link>http://localhost:1313/above-the-parapet/there-are-important-things-to-do-or-not-do/</link>
+      <pubDate>Mon, 02 Dec 2013 16:09:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/there-are-important-things-to-do-or-not-do/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The private sector is not making investments.&lt;/strong&gt; ** There is not a shortage of cash in corporate balance sheets. No one seems to be sure of the reasons for reticence. Lots of spare capacity? Little confidence in the future? There is still difficulty in finding lenders? It is almost impossible to find worthwhile opportunities? Overall growth of gross domestic product (GDP) is starting to make satisfactory political progress. Investment disappoints. Speculation by private businesses during twelve months to mid-2013 was at lowest since the 1950s. Remuneration packages for senior executives over the last twenty years might be the real culprit. Options based on share price of a company have become a large component of pay. Participants can become rich. Chief executives are at least tempted to manage the business with an intention to increase short-term profits and the share price. Investment right now reduces profits, so why do it? People adapt behaviour to fit their incentives. We cannot expect to see sustainable recovery until there are changes to these aspects of approval/reward.** Prudent, but painful, decisions.**** That’s what Government bravely claims for its behaviour. There is cross-party agreement on issues for attention: capacity on electricity, Heathrow airport, national debt and deficit, National Health Service, pensions, and roads and rail. Plus others. They have been kicked down the road. Our chancellor, George Osborne, and his predecessors preferred small, short-term and messy actions. Economic indicators told Mr Osborne to spend in 2010 and promise certain austerities on the arrival of recovery. He knew nobody would believe him. And a squeeze during the run-up to a general election in 2015? This is too much to ask of ambitious ministers. Surprise electors and awaken the journalists. That is an imperative right now. We live in what we call a democracy. It’s the politics stupid.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THERE ARE SOME CONTENTIOUS ISSUES</title>
+      <link>http://localhost:1313/above-the-parapet/there-are-some-contentious-issues/</link>
+      <pubDate>Tue, 19 Nov 2013 15:54:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/there-are-some-contentious-issues/</guid>
+      <description>&lt;p&gt;Britain’s economic progress continues to exceed predications. Activity in services during October was the highest since 1997. Employment in that sector is close to a record. Construction is buoyant. Before we rest on our laurels and assume that things look OK for the long-term, we ought to have a look at the nature of this growth. It would be a good idea also to recall that we are still producing and consuming less as a nation than we did five years ago. Output and productivity remain on a downward trend. In truth, we do not understand the figures. We know increases in gross domestic product (GDP) can be sustained only with underpinning by additional investment and exports. There is little evidence of these pivotal factors. A reasonable conclusion indicates growth as being driven again by household-based demand; consumption pushed by an eased housing market and access to cheap credit. There are no signs of a bounce-back in manufacturing, which is down to 10% of GDP, despite the declining pound. Services are encouraging. Financial services and public administration have shrunk, while professional, business and support resources are in good shape. Creative, media and digital industries are thriving. Britain’s post-WW2 experience emphasises a pre-disposition to generate inflation. Examine the prices of services since 2011 and the fastest expansion of money supply for nearly ten years. The cost of essentials – housing, fuel and food – is soaring. A decade ago they accounted for 19.9% of our income; today it’s 27.3%. It must be likely that the Bank of England will cool things off by increasing interest rates. Another boom and bust would be depressing.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MANAGEMENT IS THE TASK OF CARE</title>
+      <link>http://localhost:1313/above-the-parapet/management-is-the-task-of-care/</link>
+      <pubDate>Fri, 08 Nov 2013 16:10:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/management-is-the-task-of-care/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;George Osborne has been likened to Fagin and Scrooge.&lt;/strong&gt; But Margaret Thatcher was hated from being secretary of state for education until she won the voters’ respect. Mr Osborne’s challenge is to build upon limited economic progress and present himself as the iron chancellor who takes the tough decisions needed by the UK. He might talk about putting up more houses, cutting red tape from Brussels and HM Treasury, simplifying tax or increasing capacity of airports.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MORE OF AN OVERVIEW</title>
+      <link>http://localhost:1313/above-the-parapet/more-of-an-overview/</link>
+      <pubDate>Mon, 21 Oct 2013 12:16:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/more-of-an-overview/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The recent recession has looked different.&lt;/strong&gt; It has been deeper and longer than its predecessors in the 1990s, 1980s and 1930s. Income and expenditure of households had a larger fall and remained so for a longer period. Productivity dropped dramatically. Nonetheless, employment remained relatively high and unemployment increased less than most predictions. These facts have connections. Businesses, especially smaller ones, appear to have been willing to retain people even when confronted with big shocks in demand. Also, employees have accepted lower wages. Perhaps these reactions reflect a combination of the effects from welfare reform and greater flexibility in the labour markets. Inequality has fallen as those in work have had real cuts in wages and benefits rose with prices. The contrast with the ‘80s is sharp. There is still a need for reforms by government. Policies that come to mind are: land-use planning, repairing a shortfall in infrastructure investment, improving the quality of education, facilitating the expansion of successful companies, improving productivity, making the tax system more conducive to growth and assuring commercial competition. Of course, each option is riddled with political challenges.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MORE MANAGERS.  BETTER RESULTS?</title>
+      <link>http://localhost:1313/above-the-parapet/more-managers-better-results/</link>
+      <pubDate>Mon, 07 Oct 2013 16:40:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/more-managers-better-results/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Have we seen the wood?&lt;/strong&gt; Or are the trees still getting in the way? Did you notice that even the threat of tapering quantitative easing in America caused trembles in financial markets. They and banks have become accustomed to the injections of new money. One wonders also if pointing to tax avoidance, not evasion, by companies makes a useful fiction for HM Treasury. It is able to claim toughness with cheats, and suggest all kinds of imaginary sums of money from curbs on culprits. The main outcomes are unrealistic hopes that there are simple solutions to the UK’s difficulties by pursuing a few tax dodgers. This is false. We have to confront the fact that output has hardly increased in the last five years. People are starting to spend again, but productivity is stagnant. Figures from the Office for National Statistics show the number of managers has gone up by 7.8% in the last two years, to 3.1 million. This is a tenth of the workforce. Do we measure performances?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IS BOOM TO BUST AND BACK AGAIN A HABIT?</title>
+      <link>http://localhost:1313/above-the-parapet/is-boom-to-bust-and-back-again-a-habit/</link>
+      <pubDate>Wed, 25 Sep 2013 17:09:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/is-boom-to-bust-and-back-again-a-habit/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The economy looks brighter than it did last year.&lt;/strong&gt; Revised figures in August said the UK’s economy grew by 0.7% in the second quarter of 2013. Optimists are suggesting growth could reach 1% in the third period. The rich countries’ think-tank, the Organisation for Economic Co-operation and Development (OECD), has increased its forecast for our economy from 0.8% to 1.5% this year. Retail sales are holding together and prices of houses in some regions are on an upwards trend. Services and manufacturing sectors are doing better than expectations, and jobs are being created in the private sector. No, we are not experiencing a miracle, but there is cautious confidence. There are some arguments about how long it will last and whether it is ‘good’ growth. The doubts rely upon the knowledge of politically preserved low interest rates, excessive debt and house prices shored up by taxpayers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FIGURES ARE IN THE RIGHT DIRECTION.  BUT .....</title>
+      <link>http://localhost:1313/above-the-parapet/figures-are-in-the-right-direction-but/</link>
+      <pubDate>Mon, 09 Sep 2013 14:52:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/figures-are-in-the-right-direction-but/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The UK’s economic performance is getting better.&lt;/strong&gt; Results of manufacturers and services are rising. The pound is buoyant. Businesses feel optimistic. Of course, house prices are going up. Unemployment is on a downwards trend. Does all this mean a sustained recovery? Well, only if we are careful. A usual story of boom and bust is possible.&lt;/p&gt;&#xA;&lt;p&gt;Richard Jeffrey (Cazenove) and John Stepek (Moneyweek) have noted: ‘The reason that the UK’s recession was so deep was that household sector had previously got itself into dire financial straits – encouraged, it may be added, by a protracted period of below normal interest rates’. The Bank of England is taking great pains to tell us that interest rates will be held for the foreseeable future. It means until after the general election in 2015. And the flagship policy on housing is not intended to make house prices more affordable. The plan is to use taxpayer-backed funds to assist people in borrowing enough money to buy houses at inflated values. Inflation climbing faster than wages remains a timebomb awaiting detonation. The trade deficit is still bad news. We do not hear enough about productivity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A FEW ISSUES</title>
+      <link>http://localhost:1313/above-the-parapet/a-few-issues/</link>
+      <pubDate>Tue, 27 Aug 2013 14:10:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-few-issues/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;What did the new governor of the Bank of England, Mark Carney, really do in the first week of August?&lt;/strong&gt; His statement received a lot of coverage in the media. You will recall that before his arrival, the Bank was meant to care about inflation. If the Consumer Prices Index (CPI) was rising at more than 3%, or below 1% a year, the governor was required to give a written explanation to the chancellor, George Osborne. The intention was that CPI should stay close to 2%. Mr Carney’s actions might have been regarded fairly as pivotal if the CPI had not been above the target of 2% since 2009. Remember the Bank’s predictions on inflation have underestimated the future often. One considers the possibility that the primary function of forecasts is to justify low rates of interest. The governor formalised reality. He says interest rates will remain low until unemployment falls to at least 7%. He doubts this will happen before 2016 and even then, he will take another look at the situation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THE MANAGER’S JOB IS NEVER DONE</title>
+      <link>http://localhost:1313/above-the-parapet/the-managers-job-is-never-done/</link>
+      <pubDate>Mon, 12 Aug 2013 15:55:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/the-managers-job-is-never-done/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Corporate profits as a proportion of gross domestic product (GDP) are at record highs in developed countries.&lt;/strong&gt; Big companies do**** not seem to be investing in the projects that will yield sales at reasonable margins in the future. In short, low interest rates right now permit cheap capital. It is reasonable to expect that businesses ought to borrow and invest. Instead, they are hoarding lots of cash. ‘Shareholder value’ caught the imaginations of shareholders in the 80s. Retrospection might provide support for the notion that this prompted a serious intention of executives to do little other than increase earnings per share (EPS). There was a short-term need for such an emphasis. However, it has outlived its position as the top priority. When businesses fund opportunities or new equipment or pay higher wages, EPS goes down. Some self-criticism would not go amiss.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A BIT OF THE LATERAL</title>
+      <link>http://localhost:1313/above-the-parapet/a-bit-of-the-lateral/</link>
+      <pubDate>Mon, 29 Jul 2013 16:51:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-bit-of-the-lateral/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Is Mark Carney, new governor of the Bank of England, pleased with better economic news?&lt;/strong&gt; Possibly not. HM Treasury is his sponsor and protector. Right now a healthy economy is unlikely to be his major goal. Certainly, the government does not want financial results ‘to normalise’. This would mean higher interest rates, which would be a disaster given the size of public and private debts. The Bank’s targeted inflation is at below 2%. The emphasis has given sterling a bumpy ride and is intended to increase lending in businesses. Mr Carney’s policy of ‘forward guidance’ is really a promise to keep rates low for a lengthy period. An overtly political decision. It might keep the situation steady and afloat until the general election. The longer-term is a different kettle of fish.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A SHORT LOOK AT THE HARSHER BITS</title>
+      <link>http://localhost:1313/above-the-parapet/a-short-look-at-the-harsher-bits/</link>
+      <pubDate>Tue, 16 Jul 2013 12:34:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-short-look-at-the-harsher-bits/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Did you notice that chancellor George Osborne’s spending review covered a single year?&lt;/strong&gt; The expected period is three or four. A probable explanation is that our government does not want to highlight additional cuts in expenditure assumed for after 2016. Reductions for 2017 and 2018 are predicted to be a further 7.6%. Of course, some of this will be covered by tax increases. We will not hear much about them now the election campaign has started for 2015.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PERSISTENCE IS THE RULE</title>
+      <link>http://localhost:1313/above-the-parapet/persistence-is-the-rule/</link>
+      <pubDate>Mon, 01 Jul 2013 15:25:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/persistence-is-the-rule/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Is the recovery on its way?&lt;/strong&gt; Observers have started to raise their predictions for growth this year. Services are 75% of this country’s economy and moved to the highest figure for more than twelve months and new business increased faster in April than at any time for three years. Construction and manufacturing seem to be on an upward trend. Industrial output went up for the third consecutive month. The confidence of consumers is in better shape. There have been slight improvements in the overall labour market. However, it is difficult to see a self-sustaining upswing soon. Ernst and Young’s ITEM Club noted that the eurozone is still our biggest market for exports and weak demand will continue to restrain exports. Also, there are unhelpful signs coming from PR China. The Centre for Economics and Business Research (CEBR) expects that households in the UK will focus on restoration of savings as they guard against low rises in pay, high unemployment and continued austerity. So, the emphasis remains on persistent and skilled management.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THERE ARE OPPORTUNITIES.  BE CAREFUL.</title>
+      <link>http://localhost:1313/above-the-parapet/there-are-opportunities-be-careful/</link>
+      <pubDate>Mon, 17 Jun 2013 18:03:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/there-are-opportunities-be-careful/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Green shoots. Do they have roots?&lt;/strong&gt; Sir Mervyn King, the Bank of England’s governor, has said, more than once, that ‘a recovery is in sight’. Of course, some growth is better than none. Chancellor George Osborne suggested recently that the economy is ‘healing’. The purchasing managers’ index showed some pick-up, but reports from the Bank of England’s agents indicated little improvement. The labour market continues to weaken. Net lending to businesses, especially small firms, remains sluggish, at best. The CBI’s quarterly review of the service sector showed hotels, bars and restaurants had the fastest increase in sales since 2007.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BIT OF AN OVERVIEW AND OTHER OBSERVATIONS</title>
+      <link>http://localhost:1313/above-the-parapet/bit-of-an-overview-and-other-observations/</link>
+      <pubDate>Mon, 03 Jun 2013 18:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/bit-of-an-overview-and-other-observations/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;First the new Pope from Latin America&lt;/strong&gt; , &lt;strong&gt;now the head of the World Trade Organisation (WTO).&lt;/strong&gt; Robert Azevedo is a respected Brazilian diplomat, whose appointment was not supported by America or the European Union. His arrival underlines the shift in clout relating to global trade. The WTO has 159 member-states. Its task is to settle disputes between members and promote free trade. The case for positive action is regarded as obvious by most economists and receives enthusiasm from politicians when they are talking about other countries, not their own. There is a history of long and fragmented negotiations. The United States has not ratified the Charter on international trade agreed in 1948. However, things are changing. The number of bilateral and regional trade agreements has shot up from 70-ish in 1990 to over 300 today. Western countries would be wise to overcome their reputation for intransigence and deal with the disenchantment of powerful emerging markets. It would be difficult if developing nations complete deals which exclude us.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A BIT OF A RANT THIS TIME</title>
+      <link>http://localhost:1313/above-the-parapet/a-bit-of-a-rant-this-time/</link>
+      <pubDate>Mon, 20 May 2013 14:07:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-bit-of-a-rant-this-time/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;We must dump austerity in favour of growth.&lt;/strong&gt; This is the daily and increasingly noisy demand of fragmented groups. They suggest it is a simple choice between the two and they appear to believe that the ‘spend and print’ route can get us out of the debt crisis easily. They ignore the fact that the money will have to be repaid. The real issue is who picks up the bill? When the sophisticates talk of inflating away the liabilities, they mean that savers should feel the pain, rather than borrowers. Also, those who push for more quantitative easing are asserting that all of us must meet the financial obligations incurred by a few through lower living standards. And when there are calls for expansionary spending, the advocates mean today’s taxpayers ought to be supported at the expense of future ones. The pivotal fact is that there is not a free lunch. The rival strategies are put clearly by Guy Wolfe (The Observer); they are simply options for the allocation of costs, not magic wands of wealth creation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THERE ARE THINGS TO DO</title>
+      <link>http://localhost:1313/above-the-parapet/there-are-things-to-do/</link>
+      <pubDate>Tue, 07 May 2013 15:50:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/there-are-things-to-do/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The European Commission has decided encouraging entrepreneurs is not supping with the devil after all.&lt;/strong&gt; It has published an ‘Entrepreneurship 2020 action plan’ for ‘Reigniting the entrepreneurial spirit in Europe’. There seems to be no sense of irony in taking thirty-two pages to tell us. There are some level-headed proposals. But most of them are a genius for stating the obvious and give a hypothetical posture. Nothing much will happen in terms of an impact on economic growth until the centralised bureaucracy realises delivery is not through additional regulations, spending taxpayers’ money and interventions into market places. The starting point has to be correction of the Commission’s own admission that the cost of its rules for businesses is €128.8 billion a year.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ANOTHER SIDEWAYS LOOK</title>
+      <link>http://localhost:1313/above-the-parapet/another-sideways-look/</link>
+      <pubDate>Mon, 22 Apr 2013 15:44:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/another-sideways-look/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Mark Carney will soon be governor of the Bank of England.&lt;/strong&gt; He moves amid praise for his work at the Bank of Canada. Have you noticed the signs that its economy is coming unstuck? Growth came to a halt in the second half of 2012. The property market looks sick. Moody’s has downgraded several banks. Debt in Canada as a percentage of households’ income is above the United States and this country and is still rising. Government debt at 83% of gross domestic product (GDP) is higher than in Britain. Is it possible that Mr Carney has that special skill of getting out just in time?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A LOOK UNDERNEATH THE CARPET</title>
+      <link>http://localhost:1313/above-the-parapet/a-look-underneath-the-carpet/</link>
+      <pubDate>Mon, 08 Apr 2013 15:59:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-look-underneath-the-carpet/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Cyprus is the fifth country in the eurozone to be bailed-out.&lt;/strong&gt; We now know that not all euros are equal. Easy movement depends upon the location of your bank. Moreover, these latest events have at last stimulated discussions on the prospects for protection of bank deposits across the developed world. There are assumptions, but little clarity. Ought we to be surprised by the imprecisions? Not really. Your money in an account becomes an asset of the bank. Guarantees will always be a bit dodgy. They pass responsibility for failed banks from lenders to the sovereign state. Not a sound idea.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WITH PITFALLS IN MIND</title>
+      <link>http://localhost:1313/above-the-parapet/with-pitfalls-in-mind/</link>
+      <pubDate>Wed, 27 Mar 2013 16:51:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/with-pitfalls-in-mind/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Have we learned again how to manage resources effectively in a downturn?&lt;/strong&gt; Certainly, businesses in this country are into the sixth year of economic gloom. Each of those previous periods contained a major surprise unseen by the forecasters. There were failures of major banks, a collapse of mortgage-based financial services, the most serious recession since the 30s and a crisis in national debt of countries of the European Union. There are now more inter- and intra-state flashpoints than the world has ever seen.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SOME UNCOMFORTABLE COMMENTS</title>
+      <link>http://localhost:1313/above-the-parapet/some-uncomfortable-comments/</link>
+      <pubDate>Mon, 11 Mar 2013 16:34:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/some-uncomfortable-comments/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Chancellor George Osborne will present a budget on Wednesday 20 March.&lt;/strong&gt; This is an unenviable task. His credentials as a reliable custodian of the economy are falling apart. Things have gone wrong. Public borrowing is likely to exceed last year’s figure. The consequences of slow growth are pushing the annual deficit upwards. Major factors are higher expenditure on benefits and lower revenues from taxation. Debt has risen from £600billion in 2008 to £1.1trillion now. A cautious calculation says this figure will rise to £1.6trillion by 2016, five times higher than in 2000. And this estimate assumes that the austerity programme is implemented fully. Public spending continues on an upward trend. The Bank of England reckons output, which reached a peak at £1.5trillion in 2007, will not return to this size in real terms until 2015. These are huge sums, even for a big economy. Of course, the crisis across the euro and a damaged financial system have to take much of the blame for these difficulties. And there is not a quick fix. Mr Osborne has to face the UK’s position in a global economy; we must recognise an inevitable reduction/correction in comparative size and strength.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>COMPETENCE IS A NECESSITY</title>
+      <link>http://localhost:1313/above-the-parapet/competence-is-a-necessity/</link>
+      <pubDate>Mon, 25 Feb 2013 17:05:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/competence-is-a-necessity/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Chancellor George Osborne on a roller-coaster?&lt;/strong&gt; He once described austerity as a ‘project’. It’s beginning to look more like a permanent state of affairs. Despite having the usual good month for the public purse in January, expenditure continues to run higher than forecast, because of a strong growth in costs of both welfare benefits and delivery/administration of public services. Borrowing is moving towards being £7billion higher than predictions in December. Some of the extra funds are due to Whitehall’s departments underspending by less than the assumptions. The low increase in tax receipts and large boosts in outgoings on welfare benefits will worry the Chancellor. If the trends remain, we can expect more than the large fiscal tightening.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A WIDER SWEEP</title>
+      <link>http://localhost:1313/above-the-parapet/a-wider-sweep/</link>
+      <pubDate>Wed, 13 Feb 2013 15:03:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-wider-sweep/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Is there going to be a currency war?&lt;/strong&gt; In this contest each combatant will fight to make its currency worth less than other major players. Think exports and growth, not holidays.&lt;/p&gt;&#xA;&lt;p&gt;The respected Institute for Fiscal Studies published its Green Budget last week. A formidable document which concludes that public spending in 2014-15 will be £64bn higher than planned originally. Despite constant talk about reducing costs of benefits, spending on social security will rise from 28.5% to 32.5% of all public expenditure by 2017-18. Also, the overall effect of amendments to taxes and benefits to be introduced in 2014-15 will not be a drop in expenditure, but ‘a small net giveaway’. We must bear in mind that UK’s approach to personal taxation is in a terrible mess. For example, MoneyWeek points to the raising of the personal income tax allowance. This has cost £9bn and was accompanied by assertions that the move will take people with low incomes out of the tax system. Not so. Low earners still pay national insurance (an effective income tax) at 12%. The Institute for Fiscal Studies observes, ‘a genuinely coherent tax policy is still lacking’. So, we have a huge debt, a plan for austerity that has few signs of working and a derelict tax system. There have been recommendations for corrective action in the short-term – more schools/roads et al and cuts in red tape. The responses by government are not enough to make an important difference.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A LOOK AT MISSED ISSUES</title>
+      <link>http://localhost:1313/above-the-parapet/a-look-at-missed-issues/</link>
+      <pubDate>Wed, 30 Jan 2013 15:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-look-at-missed-issues/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Productivity of resources is at risk.&lt;/strong&gt; Managers have played their part in neglecting them. A shrinking economy is the inevitable outcome. This, in turn, creates inflationary pressures, social conflict and mutual suspicion. Karl Marx was right when he argued that no system could survive reducing performances of capital – or of any key resource. And it is not good enough to observe that things are, and were, worse in the former communist countries of central and eastern Europe. A dying patient takes little comfort from knowing someone in the next bed is terminally ill. The sustained reversal of trends in output per unit is a major job for managers. In every economy, industry and branch of human activity there are institutions with substantially better results than the average. About double the norm is what marks a company out as a leader. Above all, the front runner always has twice the average for return on capital. It is the cost of staying in business.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WORK IS RECOVERING FROM THE LONG FESTIVE SEASON</title>
+      <link>http://localhost:1313/above-the-parapet/work-is-recovering-from-the-long-festive-season/</link>
+      <pubDate>Mon, 14 Jan 2013 15:26:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/work-is-recovering-from-the-long-festive-season/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The Prime Minister’s tentative decision to lead a Britain in Europe has re-ignited all kinds of wrangles.&lt;/strong&gt; This has happened despite his best efforts to leave the single currency out of the limelight and his emphasis that he is supporting a cross-party campaign. David Cameron insists his intention is to make sure Britain plays its full part in the European Union without endorsement of the euro. But try as he may, the issue will not go away. The debate in Britain has been marked by ignorance and prejudice. But maybe these are the tools of political crusaders? This is no reason for businesses to hide their collective head in the sand. The euro is the coinage of the biggest market in the world after the US. Of course, a weak euro is derided by sceptics, but it is giving our competitors in the euro-zone a big advantage on exports. And this says nothing of balancing base rates in Euroland with Britain’s framework for monetary policy. The scrutinies and commentaries ought to consider hard facts and say less about imagined threats to a sovereignty surrendered years ago to the forces of globalisation. The arguments are not simple ones, nor can they go on for ever.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IT&#39;S 2013</title>
+      <link>http://localhost:1313/above-the-parapet/it-s-2013/</link>
+      <pubDate>Wed, 02 Jan 2013 15:32:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/it-s-2013/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Most of us in the UK must brace ourselves for another hard slog this year.&lt;/strong&gt; That is what we are paid to do as managers. Reliable information suggests there will be fewer jobs, longer working hours and a continuing pressure on incomes. The Chartered Institute of Personnel and Development (CIPD) says that although employment will still rise, the net increase will be less than a fifth of the figure recorded for 2012. &lt;em&gt;The Times (28 December) has pointed to an important statistic.&lt;/em&gt; Workers in the Scotch whisky industry take home a smallish fraction of the pay received by their counterparts in the City of London. However, contribution per person to the British economy is greater. The overall impact of these businesses on the economy is £4.2 billion, including £1.3 billion across the supply chain. It employs or supports 36,000 jobs. There is evidence here that the UK’s private sector is getting better at exports. Our marketing skills and cost structures are becoming more competitive.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AND INTO 2013</title>
+      <link>http://localhost:1313/above-the-parapet/and-into-2013/</link>
+      <pubDate>Wed, 19 Dec 2012 12:26:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/and-into-2013/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;We’ve suspected this reality.&lt;/strong&gt; The Office for Budget Responsibility (OBR) has said it would be an error to put too much emphasis on its estimate of whether borrowing by Government would rise or fall in 2012/13. The Chancellor showed pleasure that OBR’s forecast suggested the deficit would fall by £1 billion this financial year. Many analysts have been predicting the opposite. Robert Chote told the House of Commons’ Treasury Select Committee that, ‘Putting a lot of weight on a forecast that borrowing is going to fall, or indeed rise by £1 billion between one year and the next is ignoring the uncertainty. The average mistake for the budget’s deficit one year ahead is about £15 billion to £16 billion, so I think the best conclusion is that borrowing is expected, on an underlying basis, to be broadly the same this year as it was last year.’ We learn again that trends are the manager’s key factor.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THE TASK HAS NOT GONE AWAY</title>
+      <link>http://localhost:1313/above-the-parapet/the-task-has-not-gone-away/</link>
+      <pubDate>Mon, 03 Dec 2012 15:43:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/the-task-has-not-gone-away/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The figures on the UK’s public finances are not all moving in the right direction.&lt;/strong&gt; Those published on 21 November will have given the Chancellor a disappointing feeling of ‘here we go again’. The decline in receipts for corporation tax in October was worse than expectations. This contributed to an overall lower rise in revenues than relatively recent predictions. Spending by central government rose by 2.3% for the year (2012-13). That is, below the Office for Budget Responsibility’s (OPBR) forecast in the budget last March. Net investment by the public sector was £10.4 billion for the first seven months of the financial year (£1.9 billion in October). The figure excludes transfer of assets from Royal Mail Pension Scheme to the public sector and closure of the Special Liquidity Scheme.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IT’S A FUNNY OLD WORLD</title>
+      <link>http://localhost:1313/above-the-parapet/its-a-funny-old-world/</link>
+      <pubDate>Mon, 19 Nov 2012 16:36:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/its-a-funny-old-world/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Oil, coal, steel, machines in big workplaces was the economy of our earlier years.&lt;/strong&gt; It was successful, if not overly efficient, at making things and moving them around. In two generations, the UK moved from an economy based upon human muscle to one driven mostly by machines. By the 1980s, there were more washing machines than households, more settees than people to sit on them, more cars than drivers, more televisions than pairs of eyes and more burgers than we could eat. Living standards rose rapidly. Additional things suggested higher status and wealth. That is how economists measured the situation. We expected more the next year. Governments and business relied upon the upward shift in consumption of most items. Then we discovered personal credit in big lumps. This is not the same as money earned. Wages and other income are a form of wealth. Debt is a claim on money we have not earned. Debt has to be paid back. Years pass by, then we find ourselves – particularly governments and individuals – in trouble. Thanks to &lt;em&gt;Bill Bonner&lt;/em&gt; for the prompts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THIS AND THAT FOR MANAGERS</title>
+      <link>http://localhost:1313/above-the-parapet/this-and-that-for-managers/</link>
+      <pubDate>Fri, 02 Nov 2012 15:22:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/this-and-that-for-managers/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Everyone talks about growth&lt;/strong&gt; Politicians insist it is the measure of our progress towards economic prosperity. &amp;lsquo;GDP&amp;rsquo; and/or &amp;lsquo;GNP&amp;rsquo; trip off the tongues of the chattering classes. So, to remind only your writer, Gross Domestic Product is the revenue generated in the UK from employees&amp;rsquo; remuneration and profit. Gross National Product starts with GDP and claims to make adjustments to reflect profits, rents and dividends, either paid from abroad to the UK or vice versa. So what? Well, GDP cannot differentiate between real expansion from exporting more goods and services or increasing profits and – for example – higher salaries in the private or public sectors paid for by larger borrowings. It does not measure the assets and liabilities – the value – of British businesses. Neither does it indicate the true prosperity of Joe Soap. Boosted credit for people to buy cars, washing machines and the like is shown as growth. So is the clearing of oil slicks near the Shetland Islands. There is fools&amp;rsquo; gold somewhere.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KEEP IT SIMPLE</title>
+      <link>http://localhost:1313/above-the-parapet/keep-it-simple/</link>
+      <pubDate>Wed, 24 Oct 2012 16:20:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/keep-it-simple/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;New York Times emphasised recently that we live in a funny economic world&lt;/strong&gt; Some commentators and politicians are certain that if the government cuts taxes, good times will be the outcome. Yet close examination says George W Bush passed large reductions in taxation between 2001 and 2003 and the United States experienced the slowest decade of growth since 1945. However, the economy boomed when both Bush senior and Bill Clinton increased taxes in the early 90s. A new non-partisan analysis by the Congressional Research Service has concluded that since the end of WW2, amendments to the top rate of tax ‘do not appear correlated with economic growth’. Dealing with reality is one of the serious challenges to modern politicians.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FROM A DIFFERENT ANGLE</title>
+      <link>http://localhost:1313/above-the-parapet/from-a-different-angle/</link>
+      <pubDate>Mon, 08 Oct 2012 15:32:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/from-a-different-angle/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Plato warned that democratic leaders would ‘ &amp;hellip; rob the rich, keep as much of the proceeds as they can for themselves and distribute the rest to the people’. Democracy was a dirty word among political philosophers for many years. James Madison, one of America’s founding fathers, was concerned that democracy would bring ‘a rage for paper money, for an abolition of debts, for an equal division of property and for any other improper wicked projects’. John Adams, the country’s second president, worried that rule by ordinary people would lead to heavy taxes on the rich in the name of equality.&lt;/strong&gt; &lt;strong&gt;The Economist Intelligence Unit has pointed out that almost half the world’s population now lives in a democracy of one sort or another. It is easy to forget that this is a new approach to government for most nations. Moreover, it is clear that democracy has its faults but other systems have not proved more prudent. Dictatorships appear to feel the need to bribe their citizens and spend large sums on police and the military to maintain their power. These shifts towards democracy grant huge patronage to a growing number of political leaders in the form of contracts, jobs, social benefits and tax breaks. Maybe this country ought to remove fiscal policies out of the hands of elected politicians. We have taken this action on monetary policy. Greece, Iceland, Ireland, Italy, Portugal and Spain have discovered the harsh truth that democracies cannot make foreign lenders extend credit.&lt;/strong&gt; &lt;strong&gt;Management audits are debated hotly by the private sector’s friends and critics. They fit the urge to intervene in the affairs of managers by using several instruments. The proponents usually argue for a searching enquiry into basic managerial qualities: a management’s morale and integrity; its creativity; its social values and its human empathy. The opponents insist the only thing that counts is performance and this is judged by the bottom line. Both are wrong. There is a need to appraise managers. Directors of publicly-quoted companies have an obligation to assess those with pivotal responsibilities. But it is true also that only performance can be evaluated with any hope of objectivity and consistency. Yet the ‘bottom line’ will not do the job either. It reveals a lot about the business and possibly less about managers. A company’s position now may well be a commentary on former incumbents. Of course, today’s executives are not passive custodians of the past. They can only modify the decisions they inherit. In fact, this is one of their most important and difficult tasks. However, managers have a duty to make the future, with leadtimes becoming even longer and sometimes ranging beyond ten years. ‘Performance in management’ means doing a good job in preparing for the certainty of turbulent times head.&lt;/strong&gt; **** &lt;strong&gt;The relevance of the nation-state is in doubt.&lt;/strong&gt; Does this country have baggage? The controls of global financial flows are beyond the powers of governments. The purveyors of news and entertainment have become supranational, especially those who work through television. There is anarchy in the transfers of information across our planet, open to the whims of a new elite. We face a different reality. The idea of ‘greatness’ is an anachronism, at least in the sense that the 1939-45 war established in Whitehall’s mind a dangerous notion that Britain is a cut above the continentals. We should close the scrapbook, replace the album of photographs and refold the faded letters. Then the whole caboodle can be returned to the attic of folk memories, where it belongs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DECISIONS, DECISIONS, DECISIONS</title>
+      <link>http://localhost:1313/above-the-parapet/decisions-decisions-decisions/</link>
+      <pubDate>Mon, 24 Sep 2012 15:36:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/decisions-decisions-decisions/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The economic downturn is into its fifth year.&lt;/strong&gt; There can be no surprises that the government grasps at politicians’ urgings for big building projects. Announcements sound good and create hope for kick-starting an economy stuck in first gear – sometimes reverse. Vince Cable, the secretary of state for business, innovation and skills, has decided that the UK needs an industrial policy. His recent speech in the House of Commons on this subject lacked particulars. He is right to point out that we are the only country in G8 without a national investment strategy and a serious regional investment plan.**** Let’s be careful. The last time our economy was in serious trouble plenty of money was spent on technology and infrastructure. We created Concorde, then realised nobody wanted it. There was a huge campaign to electrify railways. We constructed the Channel Tunnel and watched it run into a financial crisis. In the 1970s, the citizen was saddled with incompetent state-directed monsters such as British Leyland. The state is not good at picking prospective winners and boosting entrepreneurial management. Hard-headed structural changes led to a revival in the 80s and 90s – for example, lower taxes, curbed inflation, privatised public monopolies and deregulation of whole industries. Consumers and businesses need confidence above everything else. Growth of Gross Domestic Product is a result of bringing two things together: an increased working population and higher productivity of resources. But &amp;hellip; to capitalise on rising demand and expand the firm, shareholders usually need to invest in people and/or plant and machinery. Cashflow becomes an issue almost always.**** The ubiquitous City is fascinated by managerial ‘stars’**. The number of burnt fingers rises each year. We are familiar with the hopes and excesses of football clubs and television studios in rewarding stars. Now the makers and marketers of things and services are getting the habit. Users of stars must understand how they operate, the effects they have on neighbours, and their lifestyles. They ought to be put in a place where their results can be assessed and refined safely. Make sure they understand the purpose and limits of their mission. Once launched, they move out of the orbit of co-operation. Stars have to have fuel. Most run on praise and recognition. They may well be loners, but this does not mean they enjoy loneliness. They insist on being consulted on changes of direction. In their infancy, stars are open to criticism from people they respect. But there is no guarantee they will adjust either their trajectory or velocity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GOOD AND BAD NEWS.  WE MUST STILL MANAGE FOR RESULTS</title>
+      <link>http://localhost:1313/above-the-parapet/good-and-bad-news-we-must-still-manage-for-results/</link>
+      <pubDate>Mon, 10 Sep 2012 14:27:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/good-and-bad-news-we-must-still-manage-for-results/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Central bankers have had five years of experiencing failure.&lt;/strong&gt; They still tell us they can ‘stimulate’ economies and make them grow. The evidence is not good. We want to believe them. Investors reckon their shares will rise beyond the sporadic spike. Economists think gross domestic product will go up more quickly. The consumers look forward to spending more than they earn. But, but, the Financial Times points out that seven of the world’s largest banks face new scrutiny over LIBOR by a powerful state prosecutor in the United States. Eric Schneiderman, New York’s attorney-general, has sent subpoenas to them. This is the latest probe into banks’ setting of the London Interbank Offered Rate. Mr Schneiderman is said to have political ambitions and has the power to investigate anyone doing business in New York. Anthony Browne has just started as Chief Executive of the British Bankers’ Association. Influential voices seem to have advised him to take the opportunity to lead by example and work with banks for real action in reforming their practices. Sir Philip Hampton, chairman of RBS, said in Management Today, ‘Banks have a rock bottom reputation; understandably so. Maybe banking is losing its appeal to both potential employees and borrowers? The good news is the formation of new lenders. Also, there are small signals that this country’s economy is clawing its way out of recession. Consistency will take several years. Opportunities for profitable sales are still available to the adaptable, fast-moving businesses. Technological innovation is the key.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ONE OR TWO OBTUSE ISSUES</title>
+      <link>http://localhost:1313/above-the-parapet/one-or-two-obtuse-issues/</link>
+      <pubDate>Fri, 24 Aug 2012 11:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/one-or-two-obtuse-issues/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;‘Libor’ rolls off almost every tongue. But worries are not new. Back in 1998, there were warnings that the polling process to set Libor was susceptible to misreporting, whether intentional or accidental. Practitioners have recognised always that the calculation is not based on actual transactions. It is the result of a self-assessment among a panel of major banks active in the London interbank money market. The specific daily question is, ‘At what rate could you borrow funds, were you to do so by asking for and then accepting interbank offers in a reasonable market size just prior to 11.00am?’ These are subjective estimates. They are neither actual rates nor real transactions or promises to complete any transactions in the future. So, there began to be spreads of rates as lenders looked closely at which banks might be in serious trouble. How can a bank answer the posed question if it is unable to borrow at all? Some did. And just consider the inherent conflicts of interest. Moreover, submissions carry no obligation to deal at a self-proclaimed cost of borrowing. Strange, innit?&lt;/strong&gt; &lt;strong&gt;The Olympics are regarded as a success for good old Blighty by most watchers and commentators.&lt;/strong&gt; There are plans for an ill-defined legacy and actions of all kinds. Let’s keep a sense of proportion. Not so long ago, many of us were aggravated by the insistence of politicians that expenditure of £9.3 billion-ish was within what they claimed as ‘the budget’. The original forecast used for the decision to make a pitch for the job was £2.4 billion. A majority of informed estimates put the final cost at £12 billion, the most expensive Olympic Games ever. Will the feel-good factor have a short life? Keep alert for the promise of a fitter population, better infrastructure and a lot of affordable houses.**** Feeding problems and starving opportunities is one of a manager’s deadly sins. &lt;strong&gt;It is astonishing how many companies assign their best performers to problems. These people are devoted to the old business which is sinking faster than forecasts. They try to avoid the declining product being outflanked by a competitor’s new offering through spending money on ageing technology. The opportunities are left to fend for themselves. They are the future and bring growth. They are every bit as difficult and demanding as problems. Maybe a manager ought to draw up a list of opportunities facing the business and make sure each one is adequately supported? Only then list the problems and worry about managing them.&lt;/strong&gt; Peter Drucker’s thoughts always deserved attention.** He argued in The Wall Street Journal (later in his life) that cutting costs, reducing the labourforce and jettisoning unprofitable products may well be a good starting point for better results. ‘However, it is often only a short time before they return to us, unless managers take other actions.’ Drucker reckoned a firm must re-examine its ‘business theory’. This covers assumptions about external factors (customers, markets, competitors and distribution) and internal matters (technologies, products and processes). The ‘business theory’ often remains intact even though the marketplace and methods have moved on. Unless managers recognise these changes, no amount of surgery and re-engineering will restore and sustain previous performances. A company must stop asserting ‘we know’ and say ‘let’s ask’. What are competitors doing? What ‘business theory’ are they using? What is the value your customers are willing to pay for? It is even more important to find out what those who do not buy from you are seeking. There can be uncomfortable conclusions. Contemplate the probability of difficult decisions. Some parts of a fondly-held core might be a bad investment.** Listen to other people, particularly the inexperienced, but bright, ones. **“So we went to Atari and said, ‘We’ve got this amazing thing, even built with some of your parts and what do you think about funding us? Or we’ll give it to you. We just want to do it. Pay our salary, we’ll work for you’. They said ‘No’. Then we went to Hewlett-Packard; they said, ‘We don’t need you. You haven’t got through college yet’.” *Steve Jobs, founder of Apple Computer, on attempts to secure interest in his and Steve Wozniak’s personal computer. *&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THROUGH THE OTHER END OF OUR TELESCOPE</title>
+      <link>http://localhost:1313/above-the-parapet/through-the-other-end-of-our-telescope/</link>
+      <pubDate>Mon, 13 Aug 2012 15:17:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/through-the-other-end-of-our-telescope/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Well, well. Unintended consequences sometimes have beneficial effects.&lt;/strong&gt; The Financial Times (7 August) pointed out that refunds to banks’ customers in the UK for mis-sold insurance are having a more positive impact on the country’s economy than initiatives by government.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;It is shrewd politics to stand up for small firms.&lt;/strong&gt; They are a large majority of registered businesses. We know that when unemployment rises so does the formation of new traders. But the total declines when the labour market improves. We must keep in mind that large companies in the private sector are generally more productive, offer higher wages and pay more taxes than the smaller ones. Economies dominated by small firms tend to be sluggish. Think about Greece, Italy and Portugal. This comment is not intended to deny the importance of small businesses. The large organisations can be slow to react to customers’ expectations, changing tastes and disruptive, but essential, technologies.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MAYBE THINGS FOR CONSIDERATION?</title>
+      <link>http://localhost:1313/above-the-parapet/maybe-things-for-consideration/</link>
+      <pubDate>Tue, 31 Jul 2012 16:52:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/maybe-things-for-consideration/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Crisis in the eurozone got worse over the last two weeks.&lt;/strong&gt; Has Germany decided to make sure Greece will be expelled from the euro? After all, the country has missed 210 targets set by paymasters. Nobody talks about it, but the major problem is not deficits but high labour costs/low productivity. ‘Reliable sources’ say that Greece could go bust by 20 August if the alleged programme for austerity is not meeting the promises for bailout. A loan at 31 billion euros will not start unless officials of the International Monetary Fund, European Central Bank and the European Commission release the strings. The cost of Italy’s debt is the highest since Mario Monti became prime minister in late 2011. Spain has been making noises relating to need for relief. Its borrowing rate has gone up to what is said to be an unsustainable 7.5%. One wonders if François Hollande can handle promises on becoming president well enough to create the political will for lower sovereign debt. And Britain’s economy hit the buffers in the second quarter, the third successive period of contraction. It is difficult to see how we will avoid a fall in gross domestic product for 2012. This situation will prevail despite a likelihood that the Office of National Statistics’ figures will be revised upwards. The Bank of England might well introduce more quantitative easing. Despite all this doom and gloom, do not expect disintegration of the European Union.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ONWARDS AND ......?</title>
+      <link>http://localhost:1313/above-the-parapet/onwards-and/</link>
+      <pubDate>Mon, 16 Jul 2012 14:39:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/onwards-and/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Major banks in the UK are a pampered and subsidised industry.&lt;/strong&gt; They have been implicitly backed by taxpayers and underpinned by complacent regulators. There is inadequate competition and a formal acceptance that they are too big to fail. This means no fear of &lt;strong&gt;ruin&lt;/strong&gt; in boardrooms. The scandal based on Barclays continues to cause anger in many places. However, it is clear the problems still have legs and the attempts to manipulate Libor, the benchmark interbank interest rate, was not confined to Barclays and this particular issue. There is more to come. The underlying systemic problem is not the danger of the excessively free markets’ mentioned by Allister Heath. Quite the reverse. Our economy has endured a rigged market. The players have not acknowledged that the world has changed. Large indefensible bonuses and do-as-you like behaviour are not acceptable in this age of longish-term austerity. Particularly because the banks were a key cause of the crash in 2007/08. And now the Financial Services Authority has described ‘serious failings’ in the sales of products by banks to small businesses.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TOWARDS A BIT MORE CLARIFICATION</title>
+      <link>http://localhost:1313/above-the-parapet/towards-a-bit-more-clarification/</link>
+      <pubDate>Mon, 02 Jul 2012 17:13:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/towards-a-bit-more-clarification/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;In Europe, the one that includes this country, crisis is a near-permanent condition.&lt;/strong&gt; After the concerns about Greece, Ireland, Italy and Spain, Cyprus has popped-up with its bowl. Are others waiting in the wings? The constant certainty of politicians that everything is under control does not inspire confidence. Devoted believers in the project of Europe regard every predicament as an opening for ‘more Europe’, which means more European Commission. Indeed, the proper emphasis on debts of all shapes, sizes and origins has passed unprecedented powers to intervene in national economic policies. Do we understand fully the consequences of these shifts? Do they raise concerns relating to the Commission’s legitimacy? David Cameron likes to offer advice to his counterparts when they talk in Brussels. But he is unable to calm the storms in the eurozone. For sure, he cannot afford to end his commitment in the medium term to fiscal balance. He does have an obligation to set out strategic purposes in making decisions and providing the support to encourage growth. Austerity cannot be an end in itself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THOUGHTS FOR THE SUMMER SOLSTICE</title>
+      <link>http://localhost:1313/above-the-parapet/thoughts-for-the-summer-solstice/</link>
+      <pubDate>Mon, 18 Jun 2012 16:01:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/thoughts-for-the-summer-solstice/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;There is some certainty that the UK’s double-dip recession will last another quarter.&lt;/strong&gt; Output from manufacturing fell by 0.7% in April. The wider measure of industrial production was flat and 1% lower for the year. The National Institute of Economic and Social Research says the economy will not reach its level of GDP in 2008 until 2014. Politicians, pundits and economists have compiled a standard mantra of blaming the crisis on the eurozone. It sounds plausible, but is untrue. Of course, the turmoil across the Channel has some effect. Greece, Ireland, Portugal and Spain are in serious economic difficulties. Banks have become more reluctant to lend money when they wince at the possible losses on their portfolios of bonds. We wait to see the results of last week’s move on quantitative easing by the Bank of England. Stockmarkets are twitchy and the potent quality of confidence remains low. But why are some countries doing much better than us? Germany grew last quarter and outlooks are better for the whole of 2012. Norway and Sweden are on the edge of the eurozone, but not part of it, like the UK. Both are experiencing growth. Poland depends heavily on markets in the eurozone; GDP went up by 3.5% in the first quarter – we would call that a boom.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THOUGHTS DURING CELEBRATIONS OF THE JUBILEE</title>
+      <link>http://localhost:1313/above-the-parapet/thoughts-during-celebrations-of-the-jubilee/</link>
+      <pubDate>Wed, 06 Jun 2012 17:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/thoughts-during-celebrations-of-the-jubilee/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Correcting the UK’s awful public finances is proving to be more worrying than forecasters have been telling us.&lt;/strong&gt; Economic growth has evaded most sectors. Revenue from taxes has been subdued as a consequence and benefits have remained high. Income from taxation went up by 1.8%, expenditure rose by 3.8%. The figures suggest there is no scope for a substantial rise in public outlays to stimulate growth. A recovery must come from private demand. However, the credit bubble has burst. People are repaying debts and the banking systems seem fractured. Official borrowings for April were unpleasant. The deficit was £11.5billion compared to £9.1billion in April 2011. The International Monetary Fund (IMF) approved the government’s priority to reduce the deficit. It said also that the Bank of England should consider another round of quantitative easing as an additional attempt to promote growth. Moreover, the various authorities should improve efforts to expand lending to businesses. Another suggestion was to cut pay in the public sector and use the savings to enlarge capital expenditure. All easier said than done. One thing is certain. The evidence is that urging decision-makers to be simply optimistic has failed to deliver better results. Maybe we face the realities of managing a smaller economy?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MORE OBSERVATIONS</title>
+      <link>http://localhost:1313/above-the-parapet/more-observations/</link>
+      <pubDate>Mon, 21 May 2012 16:22:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/more-observations/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;‘At best, the supposedly huge cuts in spending delivered by this government amount to little more than £1 in every £100’,&lt;/strong&gt; says Tullet Prebon’s Tim Morgan. Spending by the State grew in 2009/10 and 2011/12. There was finally a fall in 2011/12, but only by 1.5%. Even then, total spending in the last fiscal year was £22.6bn or 2.4% above 2008/09. And the deficit? It was cut from £161bn in 2009/10 to £123bn in 2011/12. 75% of that £38bn came from higher taxation and only 25% from cuts. Taxes have gone up by £30bn since 2009/10, absorbing 75% of the entire period’s £40bn rise in GDP. The private sector remained on 25% of the already tiny increase in GDP of the previous three years. Morgan reckons the UK has been trying to ‘dupe’ bond markets by combining ‘spin with minimum substance’. If he is right, we have been having the wrong kind of austerity. &lt;strong&gt;Thanks to Allister Heath, City AM.&lt;/strong&gt; &lt;strong&gt;Is there a gravy train of executive pay?&lt;/strong&gt; If so, is it grinding to a halt? Alex Brummer and Ruth Sutherland (Daily Mail) accused that the ‘supine attitude of big shareholders’ has helped to create ‘the most cosseted and grasping generation of bosses ever seen in this country’. And shareholders are waking up to the fact that ‘pay for performance translates too often into pay without performance to match’. So what caused the interventions? Two primary reasons. The written media are sure there are good stories. Second, institutional shareholders own investors have taken a deep interest in the matter and threatened to withdraw their funds. Many commentators began to suspect the buoyant markets had become bad for competent governance; only the worst excesses had been stopped. Jonathan Guthrie in the Financial Times reckoned, ‘the genie of executive pay reform is well and truly out of the bottle’. Things have started to happen. Andrew Moss, chief executive at Aviva, stepped down two weeks ago, after shareholders voted against his pay package. High rewards for poor results prompted the departure of Sly Bailey from Trinity Mirror and Astra Zeneca’s David Brennan. There have been substantial protests on this issue at Barclays, William Hill, Immarsat, Prudential, WPP and Xstrata. Plus others. One wonders if these pressures will move to the public sector. Capitalism won the economic argument. Maybe a social mission is the urgent next step?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HOT ISSUES FOR MANAGERS</title>
+      <link>http://localhost:1313/above-the-parapet/hot-issues-for-managers/</link>
+      <pubDate>Tue, 08 May 2012 13:24:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/hot-issues-for-managers/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The economy unexpectedly shrank by 0.2% in the first quarter of 2012.&lt;/strong&gt; This was the second successive period of contraction, fulfilling the technical definition of a recession. This is politically significant, but does not mean a lot in a deeper economic context. Gavyn Davies observed on FT.com that first estimates for gross domestic product are notoriously unreliable. They are based on only 40% of the data collected eventually by the Office of National Statistics (ONS). Revision upwards is common. Also, a dramatic slide in the volatile figures for construction was a major factor, but is especially prone to correction. The minutes of a recent committee of the Bank of England assume the economy is in a bit better shape. And the trends from the respected Chartered Institute of Purchasing and Supply indicated better results than those shown by ONS.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A BIT MORE REFLECTIVE</title>
+      <link>http://localhost:1313/above-the-parapet/a-bit-more-reflective/</link>
+      <pubDate>Wed, 25 Apr 2012 17:20:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-bit-more-reflective/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The exploration of the market and its forces is attracting attention and noisy protagonists.&lt;/strong&gt; Managers must take part in the arguments and defend the need for their contribution. Not so long ago, The New Yorker, hardly a manual for leftists, chose Karl Marx as the thinker of the next decade. A market’s morality has two primary components. The first is an obligation to deliver measurable outcomes, founded on the premise that pursuit of enlightened self-interest leads to the betterment of society. The second conviction is that a system built on property, contracts and initiative protects against arbitrary power of the state. There will be a backlash if the market is seen as having failed on either results or restraint. That is, a return to greater intervention and control. Anyway, what will be the new job of government? After all, there is no dynamic market without a government to define rules and context. The state insists it accepts the disciplines of markets and is reluctant to be producer, controller and intervener. It becomes the referee, setting the rules of the game to assure competition and opportunity. This leaves our political masters with a daunting challenge. They have to decide ways for reducing and redirecting intervention whilst fulfilling their responsibilities and preserving the electorate’s trust. It means redesigning the welfare state so that it is a safety net and securing the skills to cope with global competition. Public policy and politics are one thing. But imagination will be tested to breaking point and is in short supply.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A RANT AND SOME TITBITS</title>
+      <link>http://localhost:1313/above-the-parapet/a-rant-and-some-titbits/</link>
+      <pubDate>Wed, 11 Apr 2012 12:23:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-rant-and-some-titbits/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;I have just completed a few days away from the ‘shop’.&lt;/strong&gt; This time allows a little space to ponder whether I am a busy fool or live in a world that confuses activity with action. Have we retained beliefs, methods and strategies that let us down in these times of fast and increasing information and rapid movement of money and ownership? Many of the conventions on economic theories which steer decision-makers in businesses and government seem tired and unreliable.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A FEW THOUGHTS ON BASICS</title>
+      <link>http://localhost:1313/above-the-parapet/a-few-thoughts-on-basics/</link>
+      <pubDate>Thu, 29 Mar 2012 16:10:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-few-thoughts-on-basics/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Many governments reduced their debt in the 80s and 90s.&lt;/strong&gt; They included the UK and United States. Economies were booming. Credit was expanding. If an economy grows faster than debt, the financial burden declines as a percentage of gross domestic product. Consumers were buying more and more products and services they did not need with more and more money they did not have. This kind of prosperity could not last forever. At the end of 2007, the financial picture changed for governments, plus households and businesses. Revenues from taxation were down, expenditure went up. So, bailouts, quantative easing and a plan for austerity came our way. Will political leaders learn the lesson? The claimers of all-embracing wisdom say we can grow our way out of debt, like we did last time. Cautious analysts suggest we are taking part in an economic correction. Rates of growth will be low and occasionally negative. Moreover, a larger part of our transactions are under the government’s control. This reflects activity, not wealth. It will do little for paying down debt. Bill Bonner prompted this train of thought.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MANAGING IS A TOUGH JOB</title>
+      <link>http://localhost:1313/above-the-parapet/managing-is-a-tough-job/</link>
+      <pubDate>Wed, 14 Mar 2012 14:43:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/managing-is-a-tough-job/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The coalition government seems to have retained most voters’ support for continuing the severe cuts in public expenditure.&lt;/strong&gt; Yet we are only in the first year of austerity. It does not feel good. Lower entitlements to care and longer waiting lists in hospitals appear to gather pace. The UK’s economy has not required intervention from the International Monetary Fund or the European Union to deliver a rigorous programme. Maybe the chancellor has been fortunate? Events elsewhere have damaged economic growth and costs, but they have made Plan A look mostly unavoidable. This month’s budget will tell us whether George Osborne has any intentions to change direction. It’s unlikely.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A FEW REALITIES</title>
+      <link>http://localhost:1313/above-the-parapet/a-few-realities/</link>
+      <pubDate>Wed, 29 Feb 2012 10:22:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-few-realities/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;We are told daily that countries in the developed world must tackle their structural financial deficits.&lt;/strong&gt; But we hear little about the equally ‘unsustainable’ surpluses of corporates. There are good reasons to suggest that a shift in commercial behaviour is a large factor in the fiscal problems of Europe and the United States. Historically, it is unusual for these sectors to have prolonged financial surpluses. For more than fifty years, the major companies have been net borrowers, not savers. They have stepped away from risk right now. The ratio of investment to gross domestic product in the West is at its lowest point for sixty years. A majority of large companies appear to be running themselves for cash. Politicians and policy-makers have been slow to realise this situation. Until the approach changes, it will be difficult to improve the fiscal arithmetic.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ANOTHER SIDEWAYS LOOK AT EVENTS AND TRENDS</title>
+      <link>http://localhost:1313/above-the-parapet/another-sideways-look-at-events-and-trends/</link>
+      <pubDate>Mon, 13 Feb 2012 13:57:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/another-sideways-look-at-events-and-trends/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Are the many politicians at all stages of ‘managing’ our economy the real and consistent underachievers?&lt;/strong&gt; Michael Bateman, a long-standing friend of your scribe, was invited to a seminar in September 1986 (yes, 1986) for managing directors of major firms in the distribution of building products. The keynote speaker was Rt Hon John Smith MP, Leader of the Labour Party. The transcript of his speech shows that Mr Smith opened by saying ‘I identify two main issues, the first being very serious unemployment. The key question here is how do we reduce it? Secondly, there is evidence that our manufacturing sectors have been declining over a fairly long period of time. The second issue is how do we reverse that process?’ Here endeth the lesson in 1986. 2012?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HERE AND THERE</title>
+      <link>http://localhost:1313/above-the-parapet/here-and-there/</link>
+      <pubDate>Thu, 02 Feb 2012 11:27:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/here-and-there/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Without economic growth, most of the world’s major banks will go bust.&lt;/strong&gt; And every government in the developed world is likely to default on its debts and promises. Moreover, the world we have known will fall apart. The only way out of the problems of sovereign debts in Europe is growth. Everybody assumed that growth would continue – even if it is interrupted every now and again by a recession. Previous recessions since the 1940s have been a relatively quick and painless pause. They have not been major changes of direction. Things are different now. My thanks to Bill Bonner for the stimulation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THINGS WILL GET BETTER</title>
+      <link>http://localhost:1313/above-the-parapet/things-will-get-better/</link>
+      <pubDate>Tue, 17 Jan 2012 16:51:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/things-will-get-better/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Standard and Poor’s downgraded nine European economies last Friday.&lt;/strong&gt; Italy and Spain were lowered again to a BBB+ rating and a lonely A, respectively. France had been rated AAA for thirty-six years and was reduced to AA+. This caused damage through publicity, but its politicians said they were not bothered about such antics and did believe the figures anyway. Everyone else knows the action is another blow to the notion of Europe. France and Germany were the financial strengths that would underpin the weaknesses of others. Will France now need its own bail-out? Do we make too much fuss, I wonder? The United States lost its status of AAA last year. The pain was not life-threatening. Bonds became more desirable. Investors knew they would get their money back.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2012 IS A BRAND NEW OPPORTUNITY</title>
+      <link>http://localhost:1313/above-the-parapet/2012-is-a-brand-new-opportunity/</link>
+      <pubDate>Tue, 03 Jan 2012 14:29:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/2012-is-a-brand-new-opportunity/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Hopes that George Osborne can accelerate an economic recovery are almost certainly ill-founded.&lt;/strong&gt; Even economists have realised after years of pain that chancellors’ attempts to manipulate the economic cycle often add to instability rather than reduce it. Nor should we believe that the budget will raise gross domestic product in the long-term by stimulating education and research and development. The evidence that governments can promote sustainable growth from fiscal measures is scarce, as are indications that they can dampen economic fluctuations in the short-run. And official forecasts of the government’s borrowings are tragically unreliable. The average error in predictions for the following year is over £10 billion.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>INTO 2012</title>
+      <link>http://localhost:1313/above-the-parapet/into-2012/</link>
+      <pubDate>Mon, 12 Dec 2011 13:50:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/into-2012/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Omission of uncomfortable realities&lt;/strong&gt; from discussions of politics and the economy are a weakness of popular methods for informing us. For example, the present domestic problems have more to do with a price bubble on assets. Business households and banks find themselves with properties that are no longer worth the price paid for them. However, the consequential debts are still outstanding. Defensive personal and corporate behaviour is an automatic response and include reducing expenditure to lower liabilities. Collectively, these actions are devastating. They eliminate demand from the economy, weaken growth and cause shifts towards more downturns. The double-dip, maybe? Bear in mind that latest estimates on plans relating to public expenditure might achieve only half of the government’s target to bring down debt by the end of this parliament. Managers must continue their pursuit of higher productivity – as an obsession.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>THERE IS MUCH TO DO</title>
+      <link>http://localhost:1313/above-the-parapet/there-is-much-to-do/</link>
+      <pubDate>Mon, 28 Nov 2011 15:40:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/there-is-much-to-do/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The initial emphasis of the crisis in Europe was on the weaker, peripheral countries&lt;/strong&gt; such as Greece, Ireland and Portugal. They were the first to receive bail-outs. Then attention shifted to larger economies like Italy and Spain. The financial engines of France and Germany looked OK, at least to the noisy newspapers. But last Wednesday the warning lights switched on in Europe’s lynchpin. Its government held an auction of ten-year bonds to raise 6 billion euros. Only just over half were sold. This prompted large sales of stocks in European markets and sent yields (at 2.06%) of Germany’s bonds above those of the US Treasury. One has to wonder if these events have called into question Germany’s status as a safe haven.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A JIGSAW</title>
+      <link>http://localhost:1313/above-the-parapet/a-jigsaw/</link>
+      <pubDate>Fri, 11 Nov 2011 14:04:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-jigsaw/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;It’s a strange world.&lt;/strong&gt; Greece cannot pay its bills because it does not have enough money. Ireland and Portugal have already received this kind of largesse. Italy and Spain are on the edge of cliffs. Other European countries, who can barely meet their obligations, will loan funds to overcome immediate problems. Well, they will for the time being. China has indicated a willingness to help. There is real money to spare, which she makes by selling things to those places that cannot handle their debts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>EFFECTIVE MANAGERS ARE SCARCE</title>
+      <link>http://localhost:1313/above-the-parapet/effective-managers-are-scarce/</link>
+      <pubDate>Mon, 31 Oct 2011 16:44:00 +0000</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/effective-managers-are-scarce/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The Government’s figures reveal unemployment at a 17-year high&lt;/strong&gt; of more than 2.5 million. A survey of 533 bankers in the City found that 28% of respondents expect bonuses to drop. One in ten predicts her/his payment will rise by 70% or more. The Centre for Economic and Social Research forecasts that City-based firms will give bonuses totalling £7.2 billion. These amounts are difficult to defend when they seem out of touch with either performance or the rest of our economy. Even Mervyn King, governor of the Bank of England, has argued gently that Project Merlin’s targets overstate the banks’ support. This is because of a focus on the amount of cash they ‘make available’, rather than emphasising the total of loans. All this is at a time when HM Treasury (the taxpayer) has had to take additional steps to fill the shortfall in lendings. And ‘we are all in it together’ insists the prime minister. The political result may well be more unwanted and unwise regulations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OUT OF THE CORNER OF MY EYE</title>
+      <link>http://localhost:1313/above-the-parapet/out-of-the-corner-of-my-eye/</link>
+      <pubDate>Mon, 17 Oct 2011 16:32:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/out-of-the-corner-of-my-eye/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Until recently, bailing out meant obtaining temporary release of an untried prisoner by giving money.&lt;/strong&gt; Do you recall how keen those at the top in Europe and the United States were to ‘prevent a catastrophic collapse’? Banks in Europe bailed out their speculators. Then governments bailed out the banks. They then bailed out the countries that bailed out the banks. The Americans went the whole hog. The government bailed out the banks, the insurance companies, the vehicle manufacturers &amp;hellip;.. and? The Europeans and the Americans bailed out each other. There are huge sovereign deficits all over the place. PR China seems to have become fed up with falling exports and has offered to buy a few assets and bonds. Is it possible that doing more of this sort of thing is not a bright idea? When you lose money on every transaction, it is unwise to go for increased sales. Bit by bit, the mainstream media is starting to realise there was no ordinary recession. A conventional recovery is unlikely. &lt;em&gt;Thanks to Bill Bonner&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SCRAMBLE.  BACK INTO THE HELICOPTER.  LOOK DOWN</title>
+      <link>http://localhost:1313/above-the-parapet/scramble-back-into-the-helicopter-look-down/</link>
+      <pubDate>Mon, 03 Oct 2011 14:22:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/scramble-back-into-the-helicopter-look-down/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The Royal Bank of Scotland went bust.&lt;/strong&gt; A longish list of mortgage lenders that included Bradford and Bingley and Northern Rock were rescued from inevitable liquidation. Lloyds TSB takeover of Halifax Bank of Scotland became a costly bailout by government. Now we have the Vickers report. It sounds tough and recommends that British banks ought to be compelled by 2019 to separate investment and retail banking activities. Much talk of ring-fencing seems to ignore the abilities of major corporations to minimise the impact of regulations. Definitions of ‘retail’ and ‘investment’ will stimulate exciting debates for openers. Sir Mervyn King, governor of the Bank of England, has said if a bank is too big to fail it is too big. There is unlikely to be a practicable method for micro-regulating banks so that one lump of a business can be disconnected effectively from others. Do you recall the charade of ‘Chinese walls’ back in the 80s? Of course, the banks do not enjoy this debate and its prospects. Despite the threats, it is a reasonable assumption they will not move easily from the base of an industry so generously subsidised by the indigenous taxpayer. Moreover, they know they are one of the UK’s most profitable industries.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A SIDEWAYS LOOK</title>
+      <link>http://localhost:1313/above-the-parapet/a-sideways-look/</link>
+      <pubDate>Fri, 16 Sep 2011 17:18:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-sideways-look/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Many futurologists in economic life do a good job foretelling some things.&lt;/strong&gt; But the fundamental changes predicted by no one are always far more important. There was silence twenty-seven years ago over the emergence of 55 million overseas Chinese people as the new economic superpower. We did not realise that the revolution in information would cause a radical rethinking and restructuring of accounting models. Few observers suggested that the Single European Market would usher in a decade of stagnation and bickering rather than release explosive economic growth. The more united Europe of 2011 is weaker in the world’s economy than the fractured Europe of 1985.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JUST LOOK.  YOU&#39;LL SEE THESE THINGS</title>
+      <link>http://localhost:1313/above-the-parapet/just-look-you-ll-see-these-things/</link>
+      <pubDate>Mon, 05 Sep 2011 13:09:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/just-look-you-ll-see-these-things/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;This country’s consumers are frightened by the outlook for our economy.&lt;/strong&gt; They have no faith in the various authorities’ competence to stimulate growth. In fact, they doubt the will and skill to prevent the UK from slipping back into a recession. GfK NOP says that people’s confidence fell for the third consecutive month in August. The biggest downward driver was negative sentiment over the general economic sentiment. The Consumer Price Index (CPI) has returned to 4.4% and the Retail Price Index (RPI) is still at 5%. Inflation is twice the Bank of England’s target. The Governor must have a standard letter of apology. Martin Wolf is Chief Economist at the Financial Times and has concluded that ‘This is no normal recession’. The economies throughout Europe and the US urgently need a serious agenda for growth. Productivity-boosting actions, cutting barriers to trade and more determination on removing excessive regulation are essential everywhere. Faster pace on development and renewal of infrastructure and remodelling of public services are no brainers. The CBI’s president is right, ‘Recent difficulties in the recovery have made the case for economic reforms more pressing, not less &amp;hellip;&amp;hellip;&amp;hellip;.’&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPOTTINGS ABOUT THE PLACE</title>
+      <link>http://localhost:1313/above-the-parapet/spottings-about-the-place/</link>
+      <pubDate>Mon, 22 Aug 2011 11:49:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/spottings-about-the-place/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Most investors have concentrated their thoughts on the eurozone.&lt;/strong&gt; They are worried and confused by the economic situation. Many are furious. Bankers in France had a wheeze. Their idea was to roll over Greece&amp;rsquo;s debt to thirty years. Of course, this would be a default, but so courteous. Lenders might not get the money promised to them. However, the words and procedures would leave their pride in place. Payments will be made later - much later. That is, if everything goes well. Investors seem to be relying on it. Careful observers reckon there is no plausible rate of economic growth that will make sure Greece and Ireland can expand their way out of debt. Italy, Portugal and Spain have shifted into the danger-belt. The recommendation from France and Germany for a co-ordinating body in the eurozone is unsurprising. They know that a commitment to rescue constantly the euro as a result of poorly managed economies in the eurozone would cause major difficulties. Bear in mind: forty-five percent of our exports are to continental Europe.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A LOOK IN THE MIRROR</title>
+      <link>http://localhost:1313/above-the-parapet/a-look-in-the-mirror/</link>
+      <pubDate>Mon, 08 Aug 2011 12:43:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/a-look-in-the-mirror/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The Murdoch mysteries have caused unusual agreement inside the Establishment&lt;/strong&gt; Each participant would have acted differently in hindsight. However, no one admitted blame. Many questions remain to be answered by the criminal investigation and judicial inquiry. One thing is certain. A media mogul can be tamed, eventually, by parliament. But police officers who can be bribed are indicative of a corrupt state.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;The newspapers, magazines, TV presenters, commentators on radio and enewsletters&lt;/strong&gt; have announced with solemnity that professional politicians in the Senate have done an historic deal for the US’s citizens. They have crossed floors, grasped hands and slapped backs. This squabbling group reckons it has saved the world. And America’s economy goes weaker. Its Commerce Department said a week ago that the economy contracted by 5.1% between the fourth quarter of 2007 and the second quarter of 2009. The previous estimate was 4.1%. This is the most severe recession since the end of WW2. And so we go on. Bill Bonner asserts that the real story is worse. Almost all the ‘growth’ since 2007 is the result of US government’s transfer payments. The private sector remains on the downward track. President G W Bush started the big spend. His successor took a long time to acknowledge reality. Are we watching an empire on the way down?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AND INTO THE HELICOPTER</title>
+      <link>http://localhost:1313/above-the-parapet/and-into-the-helicopter/</link>
+      <pubDate>Mon, 25 Jul 2011 12:17:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/and-into-the-helicopter/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;China’s inflation is fast becoming the world’s problem&lt;/strong&gt; The country’s economy is still growing faster than expected. GDP rose by 9.7% for the first quarter of 2010. That was down on the 9.8% seen at the end of 2010, but higher than the 9.4% expected by analysts. More importantly, inflation was at an annual rate of 5.4% in March from 4.9% in February. Prices are now rising at their fastest since 2008. This looks set to continue. Brian Coulton at Legal and General Investment Management, says we should all be watching these figures. He reckons also that the threat of rising charges from China is being underestimated. The trouble is we have become accustomed to the price of consumer goods falling almost constantly. In the early part of this decade, the situation helped to keep down inflation in the developed world, because it offset the effects of loose monetary policies from Western central banks. These trends are bad economic news for the UK. Supplies of cheap labour in China are running low, wage inflation is harder to ignore. Wages are going up quite rapidly. The pool of young labour is drying up, this is partly because of the ‘one-child policy’. The danger facing China is clear. If it tightens too late, inflation takes off and social unrest explodes. There are good reasons for British managers to be cautious. The value of many companies’ shares depend greatly on the continued strength of China. &lt;em&gt;Thanks to Bill Bonner&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>This and that</title>
+      <link>http://localhost:1313/above-the-parapet/this-and-that/</link>
+      <pubDate>Mon, 11 Jul 2011 15:50:00 +0100</pubDate>
+      <guid>http://localhost:1313/above-the-parapet/this-and-that/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;After years of Britain’s prospects being dominated by what is happening in the City and in estate agents’ windows,&lt;/strong&gt; all of us welcome signs that other parts of the economy are now doing better. Recent strong manufacturing figures prove that Britain still has some great companies left. But as Samuel Tombs at Capital Economics pointed out, manufacturing now accounts for just 13% of UK’s GDP. So it can ‘only make a modest contribution at the best of times’. In other words, it cannot save our economy alone. Consumers’ spending, in contrast, accounts for around two thirds of the overall GDP. So it’s clearly the key factor in growth. That is why the latest statements from major retailers concentrate the mind.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>About</title>
-      <link>https://jamiecollinson.com/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jamiecollinson.com/about/</guid>
-      <description>&lt;p&gt;&lt;picture&gt;&#xA;    &lt;source type=&#34;image/webp&#34; srcset=&#39;https://jamiecollinson.com/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_21efc1f0513309b.webp 480w, https://jamiecollinson.com/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_b5a3d51ca90851a9.webp 768w, https://jamiecollinson.com/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_101d8c269503b86c.webp 1024w&#39; sizes=&#34;(max-width: 860px) 88vw, 37em&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;https://jamiecollinson.com/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_a6edccdb73d37e88.png&#34;&#xA;      srcset=&#39;https://jamiecollinson.com/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_46a0d1301bbc6f97.png 480w, https://jamiecollinson.com/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_d7e31af4ab0c7991.png 768w, https://jamiecollinson.com/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_a6edccdb73d37e88.png 1024w&#39;&#xA;      sizes=&#34;(max-width: 860px) 88vw, 37em&#34;&#xA;      alt=&#34;Jamie Collinson headshot&#34;&#xA;      width=&#34;1024&#34;&#xA;      height=&#34;1024&#34;&#xA;      loading=&#34;lazy&#34;&#xA;      decoding=&#34;async&#34;&gt;&#xA;  &lt;/picture&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m interested in how people and organisations make decisions under uncertainty, and how those decisions can be improved.&lt;/p&gt;&#xA;&lt;p&gt;Most of my work sits somewhere between decision systems, practical judgment, capital allocation &amp;ndash; and building tools that make better decisions easier.&lt;/p&gt;&#xA;&lt;p&gt;In practice, this means working on applied systems - most recently as CEO of &lt;a href=&#34;https://isda-africa.com&#34;&gt;iSDA / Virtual Agronomist&lt;/a&gt; - where the challenge is translating complex data into simple, useful decisions at scale. More broadly, I&amp;rsquo;m interested in how expertise scales, how systems shape behaviour, and when simple models outperform complex ones.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;&lt;picture&gt;&#xA;    &lt;source type=&#34;image/webp&#34; srcset=&#39;http://localhost:1313/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_21efc1f0513309b.webp 480w, http://localhost:1313/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_b5a3d51ca90851a9.webp 768w, http://localhost:1313/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_101d8c269503b86c.webp 1024w&#39; sizes=&#34;(max-width: 860px) 88vw, 37em&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;http://localhost:1313/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_a6edccdb73d37e88.png&#34;&#xA;      srcset=&#39;http://localhost:1313/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_46a0d1301bbc6f97.png 480w, http://localhost:1313/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_d7e31af4ab0c7991.png 768w, http://localhost:1313/img/c076907f87df9f7487aaf6f90a4522a9521b0959fab89698a63d27ba226c61bb_hu_a6edccdb73d37e88.png 1024w&#39;&#xA;      sizes=&#34;(max-width: 860px) 88vw, 37em&#34;&#xA;      alt=&#34;Jamie Collinson headshot&#34;&#xA;      width=&#34;1024&#34;&#xA;      height=&#34;1024&#34;&#xA;      loading=&#34;lazy&#34;&#xA;      decoding=&#34;async&#34;&gt;&#xA;  &lt;/picture&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m interested in how people and organisations make decisions under uncertainty, and how those decisions can be improved.&lt;/p&gt;&#xA;&lt;p&gt;Most of my work sits somewhere between decision systems, practical judgment, capital allocation &amp;ndash; and building tools that make better decisions easier.&lt;/p&gt;&#xA;&lt;p&gt;In practice, this means working on applied systems - most recently as CEO of &lt;a href=&#34;https://isda-africa.com&#34;&gt;iSDA / Virtual Agronomist&lt;/a&gt; - where the challenge is translating complex data into simple, useful decisions at scale. More broadly, I&amp;rsquo;m interested in how expertise scales, how systems shape behaviour, and when simple models outperform complex ones.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
