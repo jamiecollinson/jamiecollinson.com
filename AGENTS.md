@@ -7,6 +7,7 @@
 
 ## Working with Content
 - Author homepage copy in `content/_index.md`; long-form posts reside in `content/post/` as Markdown or Org files with TOML front matter.
+- When creating new content, follow the voice and style guidance in `VOICE.md`.
 - Filenames determine permalinks because `disablePathToLower` is enabled—choose slugs carefully.
 - Run `hugo server` for local previews and `hugo --minify` for production builds.
 - During dev work, do **not** run `hugo --minify` unless explicitly requested; assume the user is running a separate watcher/build process.
