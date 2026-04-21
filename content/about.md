@@ -24,10 +24,8 @@ I spend time on martial arts, photography, and an ongoing interest in horology.
 
 {{< important-places >}}
 
----
+## Notes
 
 I've also included an [archive of my grandfather's writings](/above-the-parapet/) here, as part of the broader background to the site.
-
-## Notes
 
 This site is a place to think in public. Most of the ideas here are unfinished.

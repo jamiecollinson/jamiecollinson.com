@@ -27,4 +27,4 @@ to make them appear on an enemy’s radar as a milk float and a wheelbarrow. May
 
 ### Heck
 
-‘The US and Denmark are the only democracies to have debt ceilings’. *The New Yorker, 1 August 2011*
+‘The US and Denmark are the only democracies to have debt ceilings.’ *The New Yorker, 1 August 2011.*

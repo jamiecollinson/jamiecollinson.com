@@ -25,4 +25,4 @@ Charles F Knight was chairman of Emerson Electric in the US. In Harvard Business
 
 ### You will know a few.
 
-‘There are those that are so scrupulously afraid of doing wrong that they seldom venture to do anything.’ *De Vauvenargues* (1715-1747). A French essayist.
+‘There are those that are so scrupulously afraid of doing wrong that they seldom venture to do anything.’ *De Vauvenargues (1715-1747). A French essayist.*

@@ -19,6 +19,10 @@ Information technology (IT) has delivered three big changes. First, it has reduc
 
 Members of elected governments in the western world will be having sleepless nights. There is evidence of a widespread and popular discontentment with conventional stances and their advocates. Upstart candidates and parties seem to be challenging political establishments all over the place. The anti-austerity party, Syriza, dominates Greece and Podemos, its counterpart in Spain, has made gains. Bernie Sanders, a declared socialist prospect for the presidency in America, is drawing record crowds. Donald Trump is making an impact in his campaign for the Republican party’s nomination. He relies on the toxic rhetoric of ultra-nationalism. There have been worrying shifts in Denmark, Finland, France, Germany and the Netherlands. In the UK, Jeremy Corbyn MP continues to shock by outpolling his three centrist rivals for leadership of the Labour Party. The United Kingdom Independence Party (UKIP) delivered a few frights in the recent general election. Peter Bloom (Open University) points out that despite political differences, these movements reveal dissatisfactions with ‘respectable’ offerings and proposals. They are challenges to the comfortable political class and their beliefs. The ‘blame train’ is gathering speed. Sporadic attacks will not deal with the many issues.
 
-Sounds correct.* ‘If you can’t explain it to a six-year-old, you don’t understand it yourself’. *Albert Einstein*. 1879 – 1955. German theoretical physicist.*
+### Sounds correct.
 
-And then it’s too late* ‘Inside every old person is a young person wondering what happened’. *Sir Terry Pratchett. *1948 – 2015. English author of fantasy novels. *Best known for his forty volumes of the Discworld series.
+‘If you can’t explain it to a six-year-old, you don’t understand it yourself.’ *Albert Einstein. 1879 – 1955. German theoretical physicist.*
+
+### And then it’s too late.
+
+‘Inside every old person is a young person wondering what happened.’ *Sir Terry Pratchett. 1948 – 2015. English author of fantasy novels. Best known for his forty volumes of the Discworld series.*

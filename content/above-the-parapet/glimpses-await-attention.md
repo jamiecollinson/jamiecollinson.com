@@ -19,9 +19,9 @@ Many managers do not realise that if they concede/secure a principle, everything
 
 Competitive edge is talked about everywhere. There are few mentions of speed. Businesses must ‘travel light’ and cover ground more quickly. They have to erase operational boundaries, so that work flows seamlessly and swiftly. There is an imperative to dump excess baggage, abandon bureaucratic practices and reduce the time it takes to get things done. We live in an impatient world, with fierce opposition and fleeting opportunities. But organisations cannot be fast if their employees go slowly. Acceleration in all activities brings advantages, even if it means living with some loose ends. Effective managers in this context emphasise action. Quality remains crucial, but must come promptly. Sacrificing speed is a serious error. Relying solely on incremental step-by-step improvements is a big mistake.
 
-### An important source! ‘
+### An important source!
 
-The avoidance of taxes is the only intellectual pursuit that carries any reward.’ *John Maynard Keynes*
+‘The avoidance of taxes is the only intellectual pursuit that carries any reward.’ *John Maynard Keynes*
 
 ### It’s where you sit.
 

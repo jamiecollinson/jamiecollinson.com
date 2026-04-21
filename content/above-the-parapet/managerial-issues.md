@@ -21,4 +21,6 @@ There is a law of marketing fallibility. This says that when a business pauses t
 
 Several analysts have examined the change of jobs by UK’s managers since 1980. They switch employers more often, make more moves sideways and downwards and have fewer promotions. Managers are likely now to be mobile because of necessity. They have to leave. A steady progression upwards is no longer on offer. Managers are finding their skills and careers are obsolete. They have toiled long and had to climb the corporate ladder only to find it pulled from under them. These are permanent alterations to working lives. A ‘career’ will mean the experience of each person, not one path in one industry.
 
-More time. * *‘There is no pleasure worth forgoing just for an extra three years in the geriatric ward.’ *Sir John Mortimer, English dramatist, novelist and barrister.*
+### More time.
+
+‘There is no pleasure worth forgoing just for an extra three years in the geriatric ward.’ *Sir John Mortimer, English dramatist, novelist and barrister.*

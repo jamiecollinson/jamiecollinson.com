@@ -19,6 +19,10 @@ The Office for National Statistics (ONS) has admitted a big and very embarrassin
 
 Mahatma Gandhi was the determined, legendary and successful leader of the movement for independence of India. He once said, ‘First they ignore you, then they laugh at you, then they fight you, then you win’. Rhymer Rigby wonders in the magazine Work if there is a similarity to Donald Trump. He was ignored or laughed at. The Republican Party in America did not take him seriously until he was its candidate. The Democrats thought they had been handed a gift until he beat Hillary Clinton. Mr Rigby concludes, ‘It is never the risks you worry about that undo you, it’s the ones you don’t worry about’.
 
-Just a thought.* ‘All decent people live beyond their incomes nowadays, and those who aren’t respectable live beyond other people’s. A few gifted individuals manage to do both.’ *Saki (Hector Hugh Munro) *(1870 – 1916). English novelist and short story writer.*
+### Just a thought.
 
-Convenient vengeance.* ‘Autobiography is an unrivalled vehicle for telling the truth about other people.’ *Philip Guedalla *(1889 – 1944). English writer.*
+‘All decent people live beyond their incomes nowadays, and those who aren’t respectable live beyond other people’s. A few gifted individuals manage to do both.’ *Saki (Hector Hugh Munro) (1870 – 1916). English novelist and short story writer.*
+
+### Convenient vengeance.
+
+‘Autobiography is an unrivalled vehicle for telling the truth about other people.’ *Philip Guedalla (1889 – 1944). English writer.*

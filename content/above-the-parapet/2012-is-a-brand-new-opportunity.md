@@ -13,10 +13,12 @@ The Office for National Statistics examines the registers of many British firms 
 
 ### Andy Grove is the founder and chairman of Intel and made an important reflection in Businessweek.
 
-‘Our fundamental economic beliefs, which we have elevated from a conviction based on observation to a unquestioned truism, is that the free market is the best of all economic systems – the freer, the better. Our generation has seen the decisive victory of free-market principles over planned economies. So we stick with this belief largely oblivious to emerging evidence that while free markets beat planned economies, there may be room for a modification that is even better.’ This initial conclusion opens an essential debate.
+‘Our fundamental economic beliefs, which we have elevated from a conviction based on observation to a unquestioned truism, is that the free market is the best of all economic systems – the freer, the better. Our generation has seen the decisive victory of free-market principles over planned economies. So we stick with this belief largely oblivious to emerging evidence that while free markets beat planned economies, there may be room for a modification that is even better.’ *This initial conclusion opens an essential debate.*
 
 ### The Chinese People’s Daily says Confucianism has helped East Asia to modernise rapidly.
 
 The west is in crisis because of ‘an irreconcilable conflict: that between science and Christianity.’ You will recall that Max Weber caused a stir when he attributed economic growth to Protestantism. He suggested that Roman Catholicism was anti-enterprise. The People’s Daily has reported on a meeting of the International Confucian Association. It was chaired by Lee Kuan Yew, the former prime minister of Singapore. Confucianism – over 2,550 years old – is in tune with the 21st century and ‘will replace modern and contemporary Western culture’ says the newspaper. An understanding of the beliefs, themes and related processes are a crucial tool for an international manager.
 
-Bear in mind.* ‘Britain’s manufacturing exports are worth six times as much as financial services exports.’ *Prospect, Manufacturing Survey.*
+### Bear in mind.
+
+‘Britain’s manufacturing exports are worth six times as much as financial services exports.’ *Prospect, Manufacturing Survey.*

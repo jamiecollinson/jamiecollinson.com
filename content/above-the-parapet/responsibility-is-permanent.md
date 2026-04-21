@@ -15,9 +15,11 @@ Quite a task. The initiative is seen as part of a broader trend in governance fo
 
 ### Ten principles of success.
 
-Jack Canfield, author of 'Chicken Soup for the Soul', suggests ten principles of success. They deserve more than a passing thought.
+### Jack Canfield, author of
 
-Take 200 percent responsibility for your life and the results you produce.* Avoid blaming others. If you do not like your outcomes, change your responses *Decide what you really want* A lot of the time, we let our past determine our future *Unleash the power of goal-setting* People without goals work for people with goals. Think about your breakthrough goal *Visualise the outcomes you want to achieve, every day* Before you go to bed or early in the morning, go through and visualise quickly what you want, one by one *Commit to constant improvement* Always exceed expectation and keep your promises. Go for excellence *Take action* Get started now. The conditions are never perfect *Take risks and respond to feedback* Solicit a response and do not be offended by it *Practise perseverance* Do not give up too soon *Learn more to earn more* Self-help and motivation *Redefine time* Divide your week into three types of day. Best results, preparation and rest and recuperation.
+'Chicken Soup for the Soul' , suggests ten principles of success. They deserve more than a passing thought.
+
+Take 200 percent responsibility for your life and the results you produce. Avoid blaming others. If you do not like your outcomes, change your responses Decide what you really want A lot of the time, we let our past determine our future Unleash the power of goal-setting People without goals work for people with goals. Think about your breakthrough goal Visualise the outcomes you want to achieve, every day Before you go to bed or early in the morning, go through and visualise quickly what you want, one by one Commit to constant improvement Always exceed expectation and keep your promises. Go for excellence Take action Get started now. The conditions are never perfect Take risks and respond to feedback Solicit a response and do not be offended by it Practise perseverance Do not give up too soon Learn more to earn more Self-help and motivation Redefine time Divide your week into three types of day. Best results, preparation and rest and recuperation.
 
 ### There are so many.
 
@@ -25,7 +27,7 @@ Take 200 percent responsibility for your life and the results you produce.* Avoi
 
 ### Together.
 
-‘Grief can take care of itself, but to get the full value of joy you must have someone to divide it with.’ *Mark Twain*, *1835-1910, American novelist and humorist. *
+‘Grief can take care of itself, but to get the full value of joy you must have someone to divide it with.’ *Mark Twain, 1835-1910, American novelist and humorist.*
 
 ### Can we wait?
 

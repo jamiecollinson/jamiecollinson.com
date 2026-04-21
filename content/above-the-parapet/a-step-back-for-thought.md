@@ -3,7 +3,7 @@ date: '2014-05-28T17:28:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/05/a-step-back-for-thought.html
 title: A STEP BACK FOR THOUGHT
 ---
-What is normal?* David
+What is normal? David
 
 Smith said in The Sunday Times that the last quarterly rise in GDP has taken us ‘within a whisker’ of the pre-financial crisis peak. Consumers’ confidence is high. There are increases in employment. Real pay is beginning to rise. Respected analysts say GDP might be higher than statistics suggest. Merryn Somerset Webb points out that these figures do not mean we are on the way to anything like the normal before 2008. This is a new kind of normal. Most of the markets remain artificially boosted by quantitative easing or super-low interest rates. Savers are expected to become poorer. Most debts in the public sector are still at historical highs. There is little appetite for real reductions in spending by government. Also, there is the start of a debate on inequality. This could change fundamentally the political environment. It is why we hear so much about rent controls, wealth and property taxes and caps on prices of energy. The new normal will cause discussion about a different capitalism.
 
@@ -13,7 +13,7 @@ The typical billionaire can choose to live wherever s/he likes. So it says somet
 
 ### New rules for managers.
 
-Robert Craven* *has popped-up with five suggestions for success in a changing commercial world. He reckons his Directors’ Centre has six more recommendations in the proverbial back pocket. The immediate gems are:
+Robert Craven has popped-up with five suggestions for success in a changing commercial world. He reckons his Directors’ Centre has six more recommendations in the proverbial back pocket. The immediate gems are:
 
 1 Low-cost models are essential. Aldi, Iceland, Poundland and Ryanair report record profits.
 
@@ -27,7 +27,7 @@ Robert Craven* *has popped-up with five suggestions for success in a changing co
 
 ### One thing leads to another.
 
-‘Your beliefs become your thoughts, your thoughts become your words, your words become your actions, your actions become your habits, your habits become your values, your values become your destiny’. *Mahatma Gandhi* quoted in The Washington Post.
+‘Your beliefs become your thoughts, your thoughts become your words, your words become your actions, your actions become your habits, your habits become your values, your values become your destiny.’ *Mahatma Gandhi quoted in The Washington Post.*
 
 ### Promises!
 

@@ -23,4 +23,6 @@ It is relative. Do not attempt to achieve an ideal standard. Competition in most
 
 In a rapidly evolving discipline, the gap between the leading practitioners and the majority is enormously wide and closes slowly. Not many of today’s managers realise that management is defined by responsibility and not by power. Even fewer fight the debilitating disease of bureaucracy: the belief that big budgets and huge staffs are accomplishments, rather than the marks of fools.
 
-Just a thought* ‘There is this weird superstition of management that if you could just use the right techniques you could make dumb people smart and lazy people energetic.’ *Scott Adams, creator of Dilbert, the world’s favourite downtrodden office worker.*
+### Just a thought
+
+‘There is this weird superstition of management that if you could just use the right techniques you could make dumb people smart and lazy people energetic.’ *Scott Adams, creator of Dilbert, the world’s favourite downtrodden office worker.*

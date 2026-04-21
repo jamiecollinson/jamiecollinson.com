@@ -17,8 +17,10 @@ The starting point is: where am I now? Where am I going? How am I going to get t
 
 ### Have you noticed the latest and arrogantly daft idea from the big banks?
 
-They are offering 'advice and support' to smaller firms on everything from finance through to marketing and public relations. The idea is difficult to swallow, especially because two of those banks got themselves in such a mess that they only survived thanks to money from the taxpayer. And some of the others relied in part upon the implicit backing of HM Treasury. Maybe this scheme will tick a few boxes for the Government's ministers or encourage the banks to make more loans to businesses? Reminds one of the old adage: those who can do, those who can't teach. I know, it's a bit unfair.
+### They are offering
+
+'advice and support'to smaller firms on everything from finance through to marketing and public relations. The idea is difficult to swallow, especially because two of those banks got themselves in such a mess that they only survived thanks to money from the taxpayer. And some of the others relied in part upon the implicit backing of HM Treasury. Maybe this scheme will tick a few boxes for the Government's ministers or encourage the banks to make more loans to businesses? Reminds one of the old adage: those who can do, those who can't teach. I know, it' s a bit unfair.
 
 ### Crumbs.
 
-In Britain alone, 800 people still work on the administration of Lehman Brothers. *Guardian, 15 September 2010.*
+In Britain alone, 800 people still work on the administration of Lehman Brothers. Guardian, 15 September 2010.

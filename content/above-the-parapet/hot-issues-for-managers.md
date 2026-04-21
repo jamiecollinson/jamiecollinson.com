@@ -15,7 +15,7 @@ I receive invitations to attend these serious explorations. Of course, this is g
 
 ### Formal watching of social trends is now a component in the toolkit of managers
 
-But which ones? A large number can confuse businesses and lead to wasted money. Here are some key points: * social factors will become important in operating and commercial systems. Designers of such processes will have to adopt a people-centred approach. These issues should have constant scrutiny
+But which ones? A large number can confuse businesses and lead to wasted money. Here are some key points:  social factors will become important in operating and commercial systems. Designers of such processes will have to adopt a people-centred approach. These issues should have constant scrutiny
 
 - directors/senior managers as group would be wise to review systems and working practices to reveal legal, ethical and social vulnerabilities
 
@@ -31,4 +31,6 @@ But which ones? A large number can confuse businesses and lead to wasted money. 
 
 One of your scribe’s respected friends suggested recently that the pursuit of knowledge has caused a loss of wisdom. She reckons this valued quality means behaviour that takes account of what is known and what ‘does most good’ – ethical and social considerations. Maybe those of us who try to manage businesses have lost or ignored these insights? They are often omitted from discussions about leadership. Yet experience points constantly to their importance.
 
-About right.* ‘Meetings are indispensable when you don’t want to do anything.’ *J K Galbraith, an American economist, quoted in the Financial Times.*
+### About right.
+
+‘Meetings are indispensable when you don’t want to do anything.’ *J K Galbraith, an American economist, quoted in the Financial Times.*

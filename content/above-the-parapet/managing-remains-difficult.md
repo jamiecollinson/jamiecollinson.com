@@ -19,8 +19,18 @@ The dramatic expansion in the use of the internet is a major factor in economic 
 
 The PIE News (for professionals in international education) sets out seven emergent trends for this year. These are:
 
-1 More industry consolidation. 2 Increase in public/private partnerships (PPS). 3 Significant growth in access to higher education via pathway programmes and foundation courses. 4 Retention strategies will be more ‘professional’. 5 Elections in Denmark, Nigeria, Spain and Britain could signal changes in policies. 6 Apps in mobile education will rise. 7 Greater scrutiny of agents.
+1. More industry consolidation.
+2. Increase in public/private partnerships (PPS).
+3. Significant growth in access to higher education via pathway programmes and foundation courses.
+4. Retention strategies will be more ‘professional’.
+5. Elections in Denmark, Nigeria, Spain and Britain could signal changes in policies.
+6. Apps in mobile education will rise.
+7. Greater scrutiny of agents.
 
-We all see it.* ‘This is the terrifying paradox of zealotry: no one hates humanity more than those who believe they know what’s best for it.’ *Howard Jacobson, *in The Independent.*
+### We all see it.
 
-Preparation for a job.* ‘He knows nothing and he thinks he knows everything. That points clearly to a political career.’ *George Bernard Shaw* (1856-1950) Irish dramatist and critic.*
+‘This is the terrifying paradox of zealotry: no one hates humanity more than those who believe they know what’s best for it.’ *Howard Jacobson, in The Independent.*
+
+### Preparation for a job.
+
+‘He knows nothing and he thinks he knows everything. That points clearly to a political career.’ *George Bernard Shaw (1856-1950) Irish dramatist and critic.*

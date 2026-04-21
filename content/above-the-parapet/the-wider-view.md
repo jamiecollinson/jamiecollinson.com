@@ -25,7 +25,7 @@ In Summer Lightning, PG Wodehouse dubs Lord Emsworth’s secretary as ‘the eff
 
 ### That’s it.
 
-‘Any activity becomes creative when the doer cares about doing it right, or better.*’ John Updike (1932) – prolific novelist, poet and critic.*
+‘Any activity becomes creative when the doer cares about doing it right, or better.’ *John Updike (1932) – prolific novelist, poet and critic.*
 
 ### Opportunities
 

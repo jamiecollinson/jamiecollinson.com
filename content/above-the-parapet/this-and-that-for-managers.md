@@ -15,19 +15,21 @@ suggest the UK ought to raise more money to get out of the various recessions. S
 
 , bringing the networked corporation and altering the nature of every product and service. Nonetheless, plans for IT have fallen short of their promises. They have been shoehorned into old-style organisations. This is the primary reason for modest payoffs in productivity from huge investments by the service sector, especially in America. The re- or new-shaped firms are taking advantage of IT. The outfits in aspic are getting left in the dust. It is particularly worrying that, as a whole, smaller businesses are lagging badly. A lot may lose their competitive advantage from speed of response.
 
-Do not dismiss competitors.* Take heed of Minute 802 of United States' Security Council, 12 September 1954. ‘Secretary Dulles told Premier Yoshida frankly that Japan should not expect to find a big US market because the Japanese don’t make the things we want. Japan must find markets elsewhere for the goods they export.’
+Do not dismiss competitors. Take heed of Minute 802 of United States' Security Council, 12 September 1954. ‘Secretary Dulles told Premier Yoshida frankly that Japan should not expect to find a big US market because the Japanese don’t make the things we want. Japan must find markets elsewhere for the goods they export.’
 
-Welcome to the nano-second decade. Are you being re-engineered? There is a state of flux in the permanently ephemeral, flattened hierarchy. Are you managing change, functions and activities? But many managers are bitter, unfulfilled, confused and depressed. They may feel ‘The corporation does not own me; I owe it nothing. The reason for this situation is that I am disposable also.’*
+Welcome to the nano-second decade. Are you being re-engineered? There is a state of flux in the permanently ephemeral, flattened hierarchy. Are you managing change, functions and activities? But many managers are bitter, unfulfilled, confused and depressed. They may feel ‘The corporation does not own me; I owe it nothing. The reason for this situation is that I am disposable also.’
 
-From the textbook for managers* Two profound observations: ‘The rule is, jam tomorrow and jam yesterday – but never jam today.’ And, ‘You see it’s like a portmanteau – there are two meanings packed up into one word.’ *Through the Looking-Glass (Lewis Carroll)*
+From the textbook for managers Two profound observations: ‘The rule is, jam tomorrow and jam yesterday – but never jam today.’ And, ‘You see it’s like a portmanteau – there are two meanings packed up into one word.’ Through the Looking-Glass (Lewis Carroll)
 
 ### Little wonder that UK’s companies are approaching claims of recovery with caution
 
 And it is unsurprising that the likes of The Bank of England predict the curve of an upturn will not be steep. Budgets of all kinds will be guarded jealously by those who see their political leaders distracted from the task of rebuilding an economy by old obsessions with inflation. And businesses are right to be nervous and wise to delay recovery as a result of it. There will be more corporate corpses from this recession. Managers who rush into a phoney peace might be among them.
 
-Reality?*
+Reality?
 
-Ouch!* ‘The English people believes itself to be free; it is gravely mistaken; it is free only during election of members of parliament; as soon as the members are elected, the people are enslaved; it is nothing. In the brief moment of its freedom, the English people make such a use of that freedom that is deserves to lose it.’ *Jean-Jacques Rousseau, The Social Contract, 1743*
+### Ouch!
+
+‘The English people believes itself to be free; it is gravely mistaken; it is free only during election of members of parliament; as soon as the members are elected, the people are enslaved; it is nothing. In the brief moment of its freedom, the English people make such a use of that freedom that is deserves to lose it.’ *Jean-Jacques Rousseau, The Social Contract, 1743*
 
 ### Sounds right.
 

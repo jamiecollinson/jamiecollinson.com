@@ -85,7 +85,35 @@
 </section>
 
 
-<section class="now-page" aria-labelledby="parapet-posts-title">
+
+<section
+    class="now-page parapet-search"
+    aria-labelledby="parapet-search-title"
+    data-search-ui
+    data-index-url="/above-the-parapet/index.json"
+    hidden>
+    <h2 id="parapet-search-title">Search archive</h2>
+    <div class="parapet-search__controls">
+        <label class="sr-only" for="parapet-search-input">Search archive entries</label>
+        <input
+            id="parapet-search-input"
+            class="parapet-search__input"
+            type="search"
+            placeholder="search by title or content"
+            autocomplete="off"
+            spellcheck="false"
+            data-search-input>
+        <button type="button" class="parapet-search__clear" data-search-clear hidden>Clear</button>
+    </div>
+    <p class="parapet-search__status" role="status" aria-live="polite" aria-atomic="true" data-search-status></p>
+    <section class="parapet-search__results" aria-labelledby="parapet-search-results-title" data-search-results hidden>
+        <h3 id="parapet-search-results-title" class="sr-only">Search results</h3>
+        <ul class="parapet-search-results" data-search-results-list></ul>
+        <p class="parapet-search__empty" data-search-empty hidden>No matches found.</p>
+    </section>
+</section>
+
+<section class="now-page" aria-labelledby="parapet-posts-title" data-search-archive>
     <h2 id="parapet-posts-title" class="sr-only">Archive entries</h2>
     
     <h3>2017</h3>
@@ -789,6 +817,10 @@
     </ul>
     
 </section>
+
+
+
+<script defer src="/js/above-the-parapet-search.js"></script>
 
 
 

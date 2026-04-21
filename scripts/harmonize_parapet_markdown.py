@@ -28,6 +28,19 @@ BULLET_ENDASH_RE = re.compile(r"^([\s\u00A0]*)[–—]\s+(.*)$")
 JOINED_WORD_RE = re.compile(r"(?<![A-Za-z])[a-z]{2,}[A-Z][a-z]{2,}")
 ITALIC_WITH_EXTRA_STAR_RE = re.compile(r"\*([^*\n]+?)\*\*")
 DOUBLE_STAR_GAP_RE = re.compile(r"(?<=[.!?'\u2019\"”])\*\*\s+\*\*")
+EMPHASIS_SPAN_RE = re.compile(r"\*\*[^*\n]+\*\*|\*[^*\n]+\*")
+CITATION_SPLIT_RE = re.compile(
+    r"(?:(?<=[.;),])|(?<=\*))\s+"
+    r"(Quoted in|quoted in|quoted on|according to|On the|on the|In The|in The|In the|in the)\b"
+)
+CITATION_PREFIX_RE = re.compile(
+    r"^(Quoted in|quoted in|quoted on|according to|On the|on the|In The|in The|In the|in the)\b"
+)
+SPLIT_APOSTROPHE_RE = re.compile(
+    r"([A-Za-z])([’'])\s+"
+    r"(ll|re|ve|nt|d|m|s|t)\b",
+    re.IGNORECASE,
+)
 
 # Common proper names/brands that contain intentional internal capitals.
 JOINED_WORD_ALLOWLIST = {
@@ -89,11 +102,18 @@ def normalize_body(body: str) -> str:
     lines = body.split("\n")
 
     out: list[str] = []
+    pending_quote_opener: str | None = None
     for raw_line in lines:
         line = raw_line.rstrip()
         line = line.lstrip()
         line = line.replace("** **", " ")
+        line = fix_split_apostrophes(line)
         line = ITALIC_WITH_EXTRA_STAR_RE.sub(r"*\1*", line)
+
+        if pending_quote_opener and line:
+            if first_quote_index(line) != 0 and not line.startswith(("#", "- ", "> ", "|")):
+                line = f"{pending_quote_opener}{line}"
+            pending_quote_opener = None
 
         m = BULLET_STAR_RE.match(line)
         if m:
@@ -102,6 +122,18 @@ def normalize_body(body: str) -> str:
             m = BULLET_ENDASH_RE.match(line)
             if m:
                 line = f"{m.group(1)}- {m.group(2)}"
+
+        dangling_heading_quote = re.match(r"^(###\s+.+?)\s+([‘'\"])\s*$", line)
+        if dangling_heading_quote:
+            line = dangling_heading_quote.group(1).rstrip()
+            pending_quote_opener = dangling_heading_quote.group(2)
+
+        quote_leadin_block = normalize_quote_leadin_line(line)
+        if quote_leadin_block is not None:
+            out.extend(quote_leadin_block)
+            continue
+
+        line = normalize_quote_attribution_line(line)
 
         m = LEADIN_RE.match(line)
         # Safe conversion only when line starts with exactly one opening lead-in
@@ -121,6 +153,8 @@ def normalize_body(body: str) -> str:
         if line.count("**") % 2 == 1:
             line = line.replace("**", "")
 
+        line = strip_stray_asterisks(line)
+
         out.append(line)
 
     # Collapse multiple blank lines.
@@ -132,6 +166,8 @@ def normalize_body(body: str) -> str:
             continue
         collapsed.append(line)
         prev_blank = blank
+
+    collapsed = merge_split_quote_attributions(collapsed)
 
     # Remove trailing blank lines first.
     while collapsed and collapsed[-1].strip() == "":
@@ -148,6 +184,253 @@ def normalize_body(body: str) -> str:
         break
 
     return "\n".join(collapsed) + "\n"
+
+
+def strip_stray_asterisks(line: str) -> str:
+    """Remove unmatched '*' while preserving valid emphasis spans."""
+    placeholders: list[str] = []
+
+    def store_emphasis(match: re.Match[str]) -> str:
+        placeholders.append(match.group(0))
+        return f"@@EMPHASIS{len(placeholders) - 1}@@"
+
+    protected = EMPHASIS_SPAN_RE.sub(store_emphasis, line)
+    cleaned = protected.replace("*", "")
+
+    for idx, token in enumerate(placeholders):
+        cleaned = cleaned.replace(f"@@EMPHASIS{idx}@@", token)
+
+    return cleaned
+
+
+def normalize_quote_leadin_line(line: str) -> list[str] | None:
+    s = line.strip()
+    if not s or s.startswith(("#", "-", ">")):
+        return None
+
+    quote_start = first_quote_index(s)
+    if quote_start <= 0:
+        return None
+
+    leadin = s[:quote_start].strip()
+    if not is_short_leadin(leadin):
+        return None
+
+    parsed = split_quote_and_remainder(s[quote_start:].strip())
+    if parsed is None:
+        return None
+
+    quote_text, remainder = parsed
+    quote_text = clean_quote_text(quote_text)
+    remainder = unwrap_non_attribution_italics(remainder)
+    quote_line = quote_text
+    if remainder and looks_like_attribution(remainder):
+        quote_line = f"{quote_text} {italicize_attribution(remainder)}"
+    elif remainder:
+        quote_line = f"{quote_text} {remainder}"
+
+    return [f"### {leadin}", "", quote_line]
+
+
+def normalize_quote_attribution_line(line: str) -> str:
+    s = line.strip()
+    if not s or first_quote_index(s) != 0:
+        return line
+
+    parsed = split_quote_and_remainder(s)
+    if parsed is None:
+        return line
+
+    quote_text, remainder = parsed
+    quote_text = clean_quote_text(quote_text)
+    remainder = unwrap_non_attribution_italics(remainder)
+    if not remainder:
+        return quote_text
+
+    if not looks_like_attribution(remainder):
+        return f"{quote_text} {remainder}".strip()
+
+    return f"{quote_text} {italicize_attribution(remainder)}"
+
+
+def first_quote_index(text: str) -> int:
+    candidates = [idx for char in ("‘", "\"", "'") if (idx := text.find(char)) != -1]
+    if not candidates:
+        return -1
+    return min(candidates)
+
+
+def split_quote_and_remainder(text: str) -> tuple[str, str] | None:
+    if not text:
+        return None
+
+    opener = text[0]
+    if opener == "‘":
+        closer = "’"
+    elif opener == '"':
+        closer = '"'
+    elif opener == "'":
+        closer = "'"
+    else:
+        return None
+
+    for idx in range(1, len(text)):
+        if text[idx] != closer:
+            continue
+
+        prev = text[idx - 1] if idx > 0 else ""
+        tail = text[idx + 1 :]
+
+        # Apostrophe inside a word.
+        if prev.isalpha() and tail and tail[0].isalpha():
+            continue
+
+        # Split contraction/possessive artifact, for example "country’ s".
+        if prev.isalpha() and re.match(r"^\s+(ll|re|ve|nt|d|m|s|t)\b", tail, re.IGNORECASE):
+            continue
+
+        if tail and not (tail[0].isspace() or tail[0] in ",.;:!?)]}\"”’" or tail[0].isupper()):
+            continue
+        return text[: idx + 1].strip(), tail.strip()
+
+    end = text.rfind(closer)
+    if end <= 0:
+        return None
+    return text[: end + 1].strip(), text[end + 1 :].strip()
+
+
+def italicize_attribution(remainder: str) -> str:
+    remainder = remainder.strip()
+    already_italic = re.match(r"^(\*[^*\n]+\*)(?:\s+(.*))?$", remainder)
+    if already_italic:
+        attribution = already_italic.group(1)
+        tail = (already_italic.group(2) or "").strip()
+        if not tail or CITATION_PREFIX_RE.match(tail):
+            return f"{attribution} {tail}".strip()
+
+    marker = CITATION_SPLIT_RE.search(remainder)
+    if marker:
+        attribution = remainder[: marker.start()].strip()
+        tail = remainder[marker.start() :].strip()
+    else:
+        attribution = remainder
+        tail = ""
+
+    attribution = attribution.rstrip("* ").strip()
+
+    if not attribution:
+        return remainder
+
+    if attribution.startswith("*") and attribution.endswith("*"):
+        formatted = attribution
+    else:
+        formatted = f"*{attribution}*"
+
+    return f"{formatted} {tail}".strip()
+
+
+def is_short_leadin(text: str) -> bool:
+    if not text:
+        return False
+
+    words = text.split()
+    if len(words) > 9 or len(text) > 72:
+        return False
+
+    if text.endswith((".", "?", "!")):
+        return True
+
+    return len(words) <= 4
+
+
+def looks_like_attribution(text: str) -> bool:
+    s = text.strip()
+    if not s:
+        return False
+
+    if len(s) > 240:
+        return False
+
+    if s.count(".") > 4 and "quoted in" not in s.lower():
+        return False
+
+    if CITATION_PREFIX_RE.match(s):
+        return False
+
+    token_source = s.lstrip("*").strip()
+    if not token_source:
+        return False
+
+    first_token = token_source.split()[0].strip("“”\"'‘’([{(")
+    if not first_token:
+        return False
+
+    return first_token[0].isupper()
+
+
+def clean_quote_text(text: str) -> str:
+    cleaned = re.sub(r"([’'])\s+\*([A-Za-z])", r"\1\2", text)
+    cleaned = re.sub(r"([’'])\*([A-Za-z])", r"\1\2", cleaned)
+    cleaned = re.sub(r"\s+\*(?=[.,;:!?])", "", cleaned)
+    return cleaned
+
+
+def unwrap_non_attribution_italics(text: str) -> str:
+    s = text.strip()
+    m = re.match(r"^\*([^*\n].*?)\*$", s)
+    if not m:
+        return s
+
+    inner = m.group(1).strip()
+    if looks_like_attribution(inner):
+        return s
+    return inner
+
+
+def fix_split_apostrophes(text: str) -> str:
+    # Extraction frequently inserts a space after apostrophes in contractions
+    # and possessives (for example "you’ ll" or "country’ s").
+    return SPLIT_APOSTROPHE_RE.sub(r"\1\2\3", text)
+
+
+def merge_split_quote_attributions(lines: list[str]) -> list[str]:
+    merged = lines[:]
+    i = 0
+    while i + 2 < len(merged):
+        first = merged[i].strip()
+        spacer = merged[i + 1].strip()
+        second = merged[i + 2].strip()
+
+        if not first or spacer != "" or not second:
+            i += 1
+            continue
+
+        if should_merge_attribution_pair(first, second):
+            merged[i] = f"{first} {second}"
+            del merged[i + 1 : i + 3]
+            continue
+
+        i += 1
+
+    return merged
+
+
+def should_merge_attribution_pair(first: str, second: str) -> bool:
+    if "‘" not in first and "'" not in first:
+        return False
+
+    if not re.search(r"\*[A-Z][^*]{1,40}\*\s*$", first):
+        return False
+
+    if second.startswith(("#", "-", ">")):
+        return False
+
+    # Typical extracted surname/citation continuation, e.g.:
+    # "Douglas, quoted on..." or "Crothers. The Gentle Reader."
+    if re.match(r"^[A-Z][A-Za-z.'’\\-]+(?:,|\\.)\\s+.*", second):
+        return True
+
+    return False
 
 
 def find_file_issues(path: Path, raw: str) -> FileReport:

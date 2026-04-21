@@ -17,7 +17,7 @@ The earlier and sustained successes of Marks and Spencer were a testimony to the
 
 As Charles Darwin observed, it is not the strongest of the species that survives, nor the most intelligent. The ones most responsive to change retain life and get new vigour. The Times first listed Britain’s top 300 industrial firms in 1965. Few are still there now. 46% (230 companies) disappeared from the United States’ Fortune 500 in the ‘80s.
 
-Never mind the additions, feel the profit.* Whatever conclusions or comfort you draw from the various predictions and confusing figures on the UK’s economy, recognise the certainty. It is more appropriate than ever to stress margins rather than higher sales. The main issue facing most managers this year is how to profit from little or no growth in their basic businesses.
+Never mind the additions, feel the profit. Whatever conclusions or comfort you draw from the various predictions and confusing figures on the UK’s economy, recognise the certainty. It is more appropriate than ever to stress margins rather than higher sales. The main issue facing most managers this year is how to profit from little or no growth in their basic businesses.
 
 The problem is that expansion can be, and often is, illusory. It is always patchy and sometimes a result of inflated stock values. At the same time, and more seriously, it all too frequently leads to lax management. So the focus for any business, whatever is happening to growth, must always be productivity – getting more from the same or from less. This is the basic cost of staying in the game.
 
@@ -25,6 +25,10 @@ The problem is that expansion can be, and often is, illusory. It is always patch
 
 The number of people who now work in estate agents’ offices and the sector makes it the fastest growing part of the national workforce. This situation reinforces fears that the UK is moving towards a dangerous bubble in prices of residential property.
 
-Yep.* ‘I don’t make jokes. I just watch the government and report the facts’. *Will Rogers.*
+### Yep.
 
-And* ‘Politics is not a bad profession. If you succeed, there are many rewards. If you disgrace yourself, you can always write a book’. *Ronald Reagan.*
+‘I don’t make jokes. I just watch the government and report the facts.’ *Will Rogers.*
+
+### And
+
+‘Politics is not a bad profession. If you succeed, there are many rewards. If you disgrace yourself, you can always write a book.’ *Ronald Reagan.*

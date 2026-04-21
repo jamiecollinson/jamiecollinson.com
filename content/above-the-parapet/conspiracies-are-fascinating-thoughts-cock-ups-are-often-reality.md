@@ -15,7 +15,7 @@ Those who wish to govern our lives have ambitions, opinions and some influence. 
 
 ### Shake-up of hierarchies.
 
-A report by Accenture predicts that an increasing use of social media will shift the balance of power in organisations and ‘disrupt’ their structures, hierarchies and job titles (the badges of alleged status). Employees will find it easier to create and share information and ideas, and many will grasp an opportunity to define their own learning, career paths and feedback on performances. This is likely to replace conclusions by senior management or centralised departments. LinkedIn’s HR director, Louise Gibney, pointed out in January’s edition of HR magazine that, ‘You only need to look at the number of young people coming into the workplace who use LnikedIn. Last year, we registered 30 million students and graduates on the site – the fastest growing demographic. ‘ Of course, they will expect businesses to have a presence on social media and to use its potential beyond marketing and messages.
+A report by Accenture predicts that an increasing use of social media will shift the balance of power in organisations and ‘disrupt’ their structures, hierarchies and job titles (the badges of alleged status). Employees will find it easier to create and share information and ideas, and many will grasp an opportunity to define their own learning, career paths and feedback on performances. This is likely to replace conclusions by senior management or centralised departments. LinkedIn’s HR director, Louise Gibney, pointed out in January’s edition of HR magazine that, ‘You only need to look at the number of young people coming into the workplace who use LnikedIn. Last year, we registered 30 million students and graduates on the site – the fastest growing demographic.’ Of course, they will expect businesses to have a presence on social media and to use its potential beyond marketing and messages.
 
 ### They come and go.
 
@@ -23,8 +23,8 @@ Bill Bonner recorded in MoneyWeek (10 January) that in the 16th century, Spain h
 
 ### Process, process!
 
-‘Nothing will be attempted, if all possible objections must first be overcome.’ *Samuel Johnson (1709-84).* Biographer, poet and lexicographer.
+‘Nothing will be attempted, if all possible objections must first be overcome.’ *Samuel Johnson (1709-84). Biographer, poet and lexicographer.*
 
 ### That’s so.
 
-‘In innovation, as in any other endeavour, there is talent, there is ingenuity and there is knowledge. But when all is said and done, what innovation requires is hard, focused, purposeful work.’ *Peter Drucker* (1909-2005).
+‘In innovation, as in any other endeavour, there is talent, there is ingenuity and there is knowledge. But when all is said and done, what innovation requires is hard, focused, purposeful work.’ *Peter Drucker (1909-2005).*

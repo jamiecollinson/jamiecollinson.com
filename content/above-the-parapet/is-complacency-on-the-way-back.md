@@ -25,6 +25,8 @@ Donald Trump has introduced them to new approaches. The Economist says he is the
 
 ### Of course.
 
-‘The older I get, the better I used to be.’ Connie Hawkins, baseball star. Quoted in Harper’s Magazine and TheWeek.
+‘The older I get, the better I used to be.’ *Connie Hawkins, baseball star.* Quoted in Harper’s Magazine and The Week.
 
-And again.* ‘When a stupid man is doing something he is ashamed of, he always declares that is his duty.’ *George Bernard Shaw* (1850 – 1950), Irish dramatist and critic.*
+### And again.
+
+‘When a stupid man is doing something he is ashamed of, he always declares that is his duty.’ *George Bernard Shaw (1850 – 1950), Irish dramatist and critic.*

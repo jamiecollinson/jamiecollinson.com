@@ -39,6 +39,10 @@ HE’S getting married. He’ll get more settled. SHE’S getting married. She�
 
 HE’S leaving for a better job. He knows how to recognise a good opportunity. SHE’S leaving for a better job. Women are not dependable.
 
-Decisions.* ‘We know what happens to people who stay in the middle of the road. They get run over’. *Aneurin Bevan*, (1897-1960). British senior politician and statesman.*
+### Decisions.
 
-Pay-up.* ‘Mankind is not a tribe of animals to which we owe compassion. Mankind is a club to which we owe our subscription.’ *G K Chesterton, *(1974-1926). English essayist, novelist, poet and critic.*
+‘We know what happens to people who stay in the middle of the road. They get run over.’ *Aneurin Bevan, (1897-1960). British senior politician and statesman.*
+
+### Pay-up.
+
+‘Mankind is not a tribe of animals to which we owe compassion. Mankind is a club to which we owe our subscription.’ *G K Chesterton, (1974-1926). English essayist, novelist, poet and critic.*

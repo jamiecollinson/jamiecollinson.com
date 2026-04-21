@@ -25,7 +25,7 @@ The government of PR China has published its first guide to investing overseas. 
 
 ### Benn gem.
 
-‘If one meets a powerful person, ask her/him five questions: ‘What power have you got? Where did you get it from? In whose interests do you exercise it? To whom are you accountable? How can we get rid of you?’ If you cannot get rid of the people who govern you, you do not live in a democratic system.*’ Rt Hon Tony Benn*, 1925 – 2014.
+‘If one meets a powerful person, ask her/him five questions: ‘What power have you got? Where did you get it from? In whose interests do you exercise it? To whom are you accountable? How can we get rid of you? If you cannot get rid of the people who govern you, you do not live in a democratic system.’ *Rt Hon Tony Benn, 1925 – 2014.*
 
 ### Not Karl.
 

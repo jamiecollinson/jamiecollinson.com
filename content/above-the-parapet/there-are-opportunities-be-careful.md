@@ -11,7 +11,7 @@ A survey by Lloyds TSB concluded that consumers’ confidence is at a three-year
 
 ### Do we need more doctors?
 
-Between 1960 and 2011 the population rose from approximately 52.4 million to 62.6 million. An increase of 20%. Over the same period, the intake of medical schools went up by more than 70%. From 1990 to 2010, the number of consultants alone increased from 21,410 to 35,781, an expansion of 65% and in ten years to 2009, managers in the NHS swelled by 82%. Advances in technologies and drugs have made investigations, operations and treatments easier and faster. Is there attention to efficiency and productivity? *Thanks to L S Illis, Lymington.*
+Between 1960 and 2011 the population rose from approximately 52.4 million to 62.6 million. An increase of 20%. Over the same period, the intake of medical schools went up by more than 70%. From 1990 to 2010, the number of consultants alone increased from 21,410 to 35,781, an expansion of 65% and in ten years to 2009, managers in the NHS swelled by 82%. Advances in technologies and drugs have made investigations, operations and treatments easier and faster. Is there attention to efficiency and productivity? Thanks to L S Illis, Lymington.
 
 ### Concepts in strategy are a bit like information from the stockmarket.
 
@@ -25,7 +25,9 @@ The search for higher performances at all points in a business is the permanent 
 
 Alvin Toffler surprised thoughtful managers in his books ‘Future Shock’ and ‘The Third Wave’. He observed that ‘all nations now face one inescapable rule – the survival of the fastest’. The then president of Apple confirmed, ‘Companies that can quickly get ideas and information through their organisations for discussion and action will have distinct competitive advantages over others’.
 
-Reality, 1743.* ‘The English people believe themselves to be free; they are gravely mistaken; they are free only during election of Members of Parliament; as soon as the Members are elected, the people are enslaved; it is nothing. In the brief moment of its freedom, the English people make such a use of that freedom that they deserve to lose it’*. *Jean-Jacques Rousseau - The Social Contract, 1743.*
+### Reality, 1743.
+
+‘The English people believe themselves to be free; they are gravely mistaken; they are free only during election of Members of Parliament; as soon as the Members are elected, the people are enslaved; it is nothing. In the brief moment of its freedom, the English people make such a use of that freedom that they deserve to lose it.’ *Jean-Jacques Rousseau - The Social Contract, 1743.*
 
 ### Probably.
 

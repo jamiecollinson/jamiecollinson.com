@@ -17,7 +17,9 @@ The Chartered Institute of Marketing has pointed out that the importance of mini
 4. What gets rewarded gets done - praise pays, but it does not pay the mortgage - watch out for the middle stealing the idea.
 5. What gets reprimanded gets done - keep your cool.
 
-But get the ‘mix’ right. All of one becomes counter-productive.
+### But get the
+
+‘mix’ right. All of one becomes counter-productive.
 
 Ways to tell your boss some home truths:
 
@@ -32,7 +34,7 @@ Ways to tell your boss some home truths:
 - Whatever you do, don’t moan, whinge or whine
 - Ask for some feedback in return
 
-*Thanks to Management Today, December 2012*.
+Thanks to Management Today, December 2012.
 
 ### An important lesson.
 

@@ -19,9 +19,13 @@ The annual ritual is disliked by many employees and their managers. Peter Cheese
 
 The UK is the world’s largest net exporter of financial services, with the City of London as frontrunner. This country has a creditable $95 billion (£61.2 billion) of net exports, nearly twice as high as it was worth in 2005. Second in the table was America at $36 billion, then Switzerland ($24 billion), Luxembourg ($23 billion) and Singapore ($15 billion).
 
-Pay-back.* ‘We have no more right to consume happiness without producing it than to consume wealth without producing it.’ *George Bernard Shaw* *(1856 - 1950). Irish dramatist and critic.*
+### Pay-back.
 
-Reach for the top!* ‘Nothing is impossible for the man who doesn’t have to do it himself.’ *A H Weiler.* American newspaperman and former editor of The New York Times.*
+‘We have no more right to consume happiness without producing it than to consume wealth without producing it.’ *George Bernard Shaw (1856 - 1950). Irish dramatist and critic.*
+
+### Reach for the top!
+
+‘Nothing is impossible for the man who doesn’t have to do it himself.’ *A H Weiler. American newspaperman and former editor of The New York Times.*
 
 ### Graffitti project:
 

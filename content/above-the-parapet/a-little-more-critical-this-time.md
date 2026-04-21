@@ -13,7 +13,9 @@ Your scribe has to enter sometimes the lion’s den of investment decisions. He 
 
 - ‘It’s the biggest’ (or the best) - ‘We must allow the production manager to sleep at night’ - ‘We need the capacity’, which is usually at the top of a
 
-fragile sales forecast - ‘We must expand or die’.
+### fragile sales forecast -
+
+‘We must expand or die’.
 
 Assets need to sweat. Investment is for opportunities and increased margins.
 
@@ -25,7 +27,9 @@ William Feather told a story in the New York Evening News (1933). He said an old
 
 The Chartered Management Institute’s survey in 2016 collected data from 105,000 managers and 425 organisations. The results show that more than one in five (23%) who fell short of expectations on performance still received a bonus in addition to basic pay. The average underperformer received an extra £4,270 (12% of salary). 57% of managers were paid a bonus over the last twelve months compared to 54% in the previous year. The problem of rewarding failure is more acute with senior managers/directors. 43% of those who fell short of forecasts still banked a bonus.
 
-Really? ‘* I am amazed at those people who say MPs’ salaries are hopelessly inadequate. We had a good family life, the kids went to good schools, and we had good family holidays and didn’t stint on them.’ *Sir Vince Cable*, former MP (1997-2015). Quoted in Moneyweek.*
+### Really?
+
+‘I am amazed at those people who say MPs’ salaries are hopelessly inadequate. We had a good family life, the kids went to good schools, and we had good family holidays and didn’t stint on them.’ *Sir Vince Cable, former MP (1997-2015).* Quoted in Moneyweek.
 
 ### Hard work.
 

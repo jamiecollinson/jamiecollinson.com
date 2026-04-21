@@ -23,6 +23,10 @@ Everyone has seen political leaders who give the impression of a thirst for bein
 
 Charles Handy is 83. He has written a new and essential book, ‘The Second Curve – thoughts on reinventing society’ (Random House Books). The high standard remains. Charles Handy has a gentle, but incisive voice, probing questioning and wondering. For forty years, he has been the UK’s leading observer of the world of work. ‘Work is what we do, not where we go’, he says and then considers that employment itself has become more precarious: it may only be a matter of time before the contractual organisation becomes the norm. However, flexibility should be embraced to make working life better. ‘Growth should always be the means to greater purpose, rather than an end in itself’. The unifying theme of this book is that change is needed. However, he has retained the stance that companies should be concerned with creating wealth for all, not only shareholders.
 
-We need more.* ‘People don’t believe in ideas, they believe in people who believe in ideas’. *Scholar Zeev Mankowitz*; quoted in The Guardian.*
+### We need more.
 
-Feeling important.* ‘All governments like to interfere; it elevates their position to make out that they can cure the evils of mankind’. *Walter Bagehot *(1826 – 77); English economist and journalist.*
+‘People don’t believe in ideas, they believe in people who believe in ideas.’ *Scholar Zeev Mankowitz; quoted in The Guardian.*
+
+### Feeling important.
+
+‘All governments like to interfere; it elevates their position to make out that they can cure the evils of mankind.’ *Walter Bagehot (1826 – 77); English economist and journalist.*

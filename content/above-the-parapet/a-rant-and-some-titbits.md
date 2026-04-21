@@ -35,4 +35,4 @@ Lawrence Lovell, a former president of Harvard University, once argued that ‘i
 
 ### A final thought.
 
-‘By definition a government has no conscience. Sometimes, it has a policy, but nothing more.’ *Albert Camus, quoted in The Times and The Week*.
+‘By definition a government has no conscience. Sometimes, it has a policy, but nothing more.’ *Albert Camus, quoted in The Times and The Week.*

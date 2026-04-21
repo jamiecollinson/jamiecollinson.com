@@ -23,7 +23,7 @@ A company which pursues measurable economic performance does not ignore its cons
 
 Necessity is the mother of invention but laziness may well be the midwife.
 
-A deadly sin.* Feeding problems and starving opportunities is one of a manager’s deadly sins.
+A deadly sin. Feeding problems and starving opportunities is one of a manager’s deadly sins.
 
 It is astonishing how many companies assign their best performers to problems. These people become devoted to the old business which is sinking faster than forecasts; to the declining product being outflanked by a competitor’s new offering; to the ageing technology. The opportunities are left to fend for themselves. They are the future. They produce growth. They are every bit as difficult and demanding as problems. Maybe a manager ought to draw up a list of opportunities facing the business and make sure each one is adequately staffed and supported? Only then set out the problems and worry about managing them.
 
@@ -31,4 +31,6 @@ It is astonishing how many companies assign their best performers to problems. T
 
 ‘Management have been allowed to act like owners, but it is the stockholders who own companies, not managements and the stockholders are just beginning to realise it.’ *T Boone Pickens, corporate raider (1985).*
 
-Priorities*. *‘When a subject becomes totally obsolete we make it a required course.’ *Peter Drucker.*
+### Priorities.
+
+‘When a subject becomes totally obsolete we make it a required course.’ *Peter Drucker.*

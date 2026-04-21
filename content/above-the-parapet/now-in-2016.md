@@ -3,7 +3,7 @@ date: '2016-01-04T16:30:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/01/now-in-2016.html
 title: NOW IN 2016
 ---
-‘Alarm bells are ringing* in the engine room of the British economy’, says Ed Conway in The Times. People have been depleting their savings since 2013.
+‘Alarm bells are ringing in the engine room of the British economy’, says Ed Conway in The Times. People have been depleting their savings since 2013.
 
 Houses and land in London are less affordable than they have ever been. Britain’s current account has been in deficit since 1998 – that is, we have been importing and borrowing more than we export and earn. Last year, the shortfall hit a record 6%of Gross Domestic Product – the equivalent of every British household borrowing of £3,500 from overseas. We do not live within our means and the pound could be heading for a fall. This might be fine for underperforming exporters. For those who trade in sterling, the outcome will be ‘being squeezed all over again’.
 
@@ -15,8 +15,10 @@ Momentum was established recently inside The Labour Party by supporters of Jerem
 
 A member of a trades union is as likely to be a lawyer as a factory worker. Figures from the Trades Union Congress showed that professionals such as doctors, managers and teachers now account for over four in ten of unions’ members. The percentage has climbed in recent years. 13% are plant and machine operatives. Salespeople are 3% only. The north-south divide is here too. 40% of employees in the north of England and Wales are in unions, compared with 23% in the south (excluding greater London). Maybe a higher proportion in public services?
 
-Crash.* ‘The crisis happened partly because the economic mainstream rendered that outcome ostensibly so unlikely in theory that they ended up making it far more likely in practice.’ *Martin Wolf* in The Shifts and the Shocks (Allen Lane).*
+### Crash.
 
-More care.* We cannot safely leave politics to politicians, or political economy to college professors. The people themselves must think, because the people alone can act.’ *Henry
+‘The crisis happened partly because the economic mainstream rendered that outcome ostensibly so unlikely in theory that they ended up making it far more likely in practice.’ *Martin Wolf in The Shifts and the Shocks (Allen Lane).*
 
-George (1838-97). American economist.*
+More care. We cannot safely leave politics to politicians, or political economy to college professors. The people themselves must think, because the people alone can act.’ Henry
+
+George (1838-97). American economist.

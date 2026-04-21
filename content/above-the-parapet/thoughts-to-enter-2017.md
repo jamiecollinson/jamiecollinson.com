@@ -23,6 +23,10 @@ Cash has been around for 3,000 years. There is a lot of talk from experts that i
 
 In September 2016, there were 3.91 million 16-to-24-year-olds with jobs in the UK. 591,000 were unemployed and 2.06 million were fulltime students. The average age of retirement is 64.7 for men and 63.1 for women. The average age of managers is 45, of whom 7.6% are under 30. Most enter management in their early 30s. The average Briton will be employed by six companies and be made redundant twice during her/his career. 46% of employees in the UK will at some point completely change career.
 
-Don’t worry.* ‘Have no fear of perfection – you’ll never reach it.’ *Salvador Dali*, (1904-89). Spanish artist.*
+### Don’t worry.
 
-Keep common.* ‘The war against intelligence is always waged in the name of common sense.’ *Roland Barthes* (1915-80). French writer, critic and teacher.*
+‘Have no fear of perfection – you’ll never reach it.’ *Salvador Dali, (1904-89). Spanish artist.*
+
+### Keep common.
+
+‘The war against intelligence is always waged in the name of common sense.’ *Roland Barthes (1915-80). French writer, critic and teacher.*

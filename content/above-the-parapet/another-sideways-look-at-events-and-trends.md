@@ -29,4 +29,4 @@ But can a company protect it by patents and block competitors? If not, the techn
 
 ### Bureaucrats?
 
-‘They are not usually doers, they are not managers and they tend to get introverted’. Sir John Cuckney, former chairman of 3i Group.
+‘They are not usually doers, they are not managers and they tend to get introverted.’ *Sir John Cuckney, former chairman of 3i Group.*

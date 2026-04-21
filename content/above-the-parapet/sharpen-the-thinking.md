@@ -23,10 +23,10 @@ A poll of more than one thousand business owners and professionals revealed a di
 
 Every problem can be resolved at a cost. Negotiation concentrates on differences between parties. Preparation matters, always. Challenge all assumptions and clarity of the business’s plans. Homework, persistence and knowledge of intentions assist removal of fears about the face-to-face component of a negotiation. But do not use a representative who needs to be liked by the other side. If you feel pleased, leave the room. Improve decisions during implementation.
 
-### You get what? . . . ‘
+### You get what? . . .
 
-One of the penalties for refusing to participate in politics is that you end up being governed by your inferiors.’ *Plato (428 – 348 BC). Greek philosopher.*
+‘One of the penalties for refusing to participate in politics is that you end up being governed by your inferiors.’ *Plato (428 – 348 BC). Greek philosopher.*
 
 ### Methods.
 
-People ask the difference between a leader and a boss . . . ‘The leader works in the open, and the boss in covert. The leader leads, and the boss drives.’ *Theodore Roosevelt (1858 – 1919) 26th president of the United States and winner of Nobel Prize.*
+People ask the difference between a leader and a boss . . . ‘The leader works in the open, and the boss in covert. The leader leads, and the boss drives.’ Theodore Roosevelt (1858 – 1919) 26th president of the United States and winner of Nobel Prize.

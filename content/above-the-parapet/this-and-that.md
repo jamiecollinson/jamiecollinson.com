@@ -17,4 +17,7 @@ It is likely to remain the most powerful political organ for a long time but wil
 
 ### Pearls from Bill Gates at Microsoft:
 
-· ‘You cannot count on conventional wisdom. That only makes sense in conventional markets.’· ‘If the 1980s were about quality and the 1990s about re-engineering, the 2000s will be about velocity.’· ‘It’s brains that provide the edge.’· We always over-estimate the change that will occur in the next two years and under-estimate the change in the next ten years.’
+- ‘You cannot count on conventional wisdom. That only makes sense in conventional markets.’
+- ‘If the 1980s were about quality and the 1990s about re-engineering, the 2000s will be about velocity.’
+- ‘It’s brains that provide the edge.’
+- ‘We always over-estimate the change that will occur in the next two years and under-estimate the change in the next ten years.’

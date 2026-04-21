@@ -19,6 +19,10 @@ This is the test of persistence. Managers tend to confuse hopes, requests and in
 
 The Labour Party’s proper members are preparing themselves for a new world. A different universe. Strong signals suggest a new establishment from Saturday 12 September. Jeremy Corbyn MP for Islington North will be leader. The inner circle is likely to include: Diane Abbott MP (Hackney North and Stoke Newington), Richard Burgon MP (Leeds East), John McDonnell MP (Hayes and Harlington), Michael Meacher MP (Oldham West and Royton), Kate Osamor (Edmonton), Cat Smith (Lancaster and Fleetwood), and Jon Trickett (Hemsworth). They are going to be the political centre, will have responsibilities and be part of a management. The ability to pose as outsiders or insurgents will vanish.
 
-But how?* ‘Democracy means government by discussion, but it is only effective if you can stop people talking’. *Clement Attlee, *1883 – 1967. Prime minister of UK, 1945 – 51.*
+### But how?
 
-Prophecy?* ‘In the youth of a state, arms do flourish: in the middle age of a state, learning and then both of them together for a time; in the declining age of a state, mechanical arts and merchandise’. *Francis Bacon*, 1561 – 1626. English writer, philosopher and statesman.*
+‘Democracy means government by discussion, but it is only effective if you can stop people talking.’ *Clement Attlee, 1883 – 1967. Prime minister of UK, 1945 – 51.*
+
+### Prophecy?
+
+‘In the youth of a state, arms do flourish: in the middle age of a state, learning and then both of them together for a time; in the declining age of a state, mechanical arts and merchandise.’ *Francis Bacon, 1561 – 1626. English writer, philosopher and statesman.*

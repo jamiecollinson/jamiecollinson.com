@@ -27,8 +27,10 @@ But the results may be of greater significance: the inability of governments in 
 
 ### The World According to Student Bloopers by Richard Lederer, St Paul's School
 
-reveals: 'Eventually, the Ramons conquered the Greeks. History calls people Romans because they never stayed in one place for very long. At Roman banquets, the guests wore garlics in their hair. Julius Caesar extinguished himself on the battlefields of Gaul. The Ides of March murdered him because they thought he was going to be made king. Nero was a cruel tyranny who would torture his poor subjects by playing the fiddle to them.'
+### reveals:
+
+'Eventually, the Ramons conquered the Greeks. History calls people Romans because they never stayed in one place for very long. At Roman banquets, the guests wore garlics in their hair. Julius Caesar extinguished himself on the battlefields of Gaul. The Ides of March murdered him because they thought he was going to be made king. Nero was a cruel tyranny who would torture his poor subjects by playing the fiddle to them.'
 
 ### Crumbs
 
-In the US, thefts of dogs are up 50 percent this year and have more than trebled since the start of the recession. *American Kennel Club*
+In the US, thefts of dogs are up 50 percent this year and have more than trebled since the start of the recession. American Kennel Club

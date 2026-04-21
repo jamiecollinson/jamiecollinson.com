@@ -17,7 +17,7 @@ Your correspondent has been dipping into ‘The Effective Executive’ again. Th
 
 But they see services as associated with the product and fixed. Businesses typically :
 
-1 add layer upon layer of services, but rarely assess, benchmark, integrate or remove them2 deliver more extras to customers than they want or need3 do not know what services particular buyers or prospects wish to receive, how much they would pay, or what it would cost the business to supply them*4 *do not distinguish between services as part of the product’s offering or as optional additions5 do not control gratuitous use of additions to close a sale, even though this might reduce the profitability of a customer to the company.
+1 add layer upon layer of services, but rarely assess, benchmark, integrate or remove them2 deliver more extras to customers than they want or need3 do not know what services particular buyers or prospects wish to receive, how much they would pay, or what it would cost the business to supply them4 do not distinguish between services as part of the product’s offering or as optional additions5 do not control gratuitous use of additions to close a sale, even though this might reduce the profitability of a customer to the company.
 
 ### Managers in the UK lack confidence and a sense of responsibility as a result of constant change
 
@@ -25,4 +25,4 @@ But they see services as associated with the product and fixed. Businesses typic
 
 ### Context
 
-‘China is now the second-largest world economy – but on a per-capita GDP basis it is 103rd, barely ahead of El Salvador’. *The Enterprise blog, 16 August 2010*.
+‘China is now the second-largest world economy – but on a per-capita GDP basis it is 103rd, barely ahead of El Salvador.’ *The Enterprise blog, 16 August 2010.*

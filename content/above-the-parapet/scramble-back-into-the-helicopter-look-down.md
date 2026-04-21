@@ -17,12 +17,16 @@ They are all experts in managing the affairs of other people and have the certai
 
 ### My pals from University of Central Arkansas and Chuck Williams (MGMT3) reckon there are five major factors that encourage people to withhold effort in teams. They are, if:
 
-1 another team-member is highly qualified to make a decision or comment on an issue2 the arguments for a course of action are persuasive or similar to their own thinking3 they are unsure about their ability to take part in discussions, activities, or decisions. This is especially so for high-profile judgements4 outcomes do not affect them or their units, or they cannot see a connection between their contributions and the team’s successes or failures. Then they will withdraw mentally or adopt a ‘who cares’ attitude5 other members are frustrated or indifferent or if a group is floundering or disorganised.
+1. another team-member is highly qualified to make a decision or comment on an issue
+2. the arguments for a course of action are persuasive or similar to their own thinking
+3. they are unsure about their ability to take part in discussions, activities, or decisions. This is especially so for high-profile judgements
+4. outcomes do not affect them or their units, or they cannot see a connection between their contributions and the team’s successes or failures. Then they will withdraw mentally or adopt a ‘who cares’ attitude
+5. other members are frustrated or indifferent or if a group is floundering or disorganised
 
-### ‘I’m a nice customer – I never complain, no matter what kind of service I get
+### ‘I’m a nice customer – I never complain, no matter what kind of service I get’
 
 I go into a restaurant and sit quietly while the waiter gossips with a friend. It is the same when I enter a shop. I don’t throw my weight around. If a snooty salesperson gets nettled because I want to look at several things before deciding, I am as polite as can be. I neither kick nor criticise and would not dream of making a scene as I’ve seen some people do in public – that’s uncalled for. No, I’m a nice customer. But I’ll tell you what else I am – I’m the customer who never comes back!’ Do unto others . . .
 
 ### Times they are a-changin’.
 
-‘For the first time, there are more than 100 women in the Sunday Times’ Rich List’. *Daily Telegraph, 8 May 2011*
+‘For the first time, there are more than 100 women in the Sunday Times’ Rich List.’ *Daily Telegraph, 8 May 2011.*

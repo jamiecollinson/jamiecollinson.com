@@ -23,6 +23,10 @@ The starting points are: Where am I now? Where am I going? How am I going to get
 
 , managerial grid, transactional analysis, matrix management, one-minute managing, QCs, TQM, Excellence, BPR, NLP and so on. Why are managers still attracted to the quick fix? This, despite many years’ experience of fixes and fads that move in predictable cycles. Many researchers have attempted to explain the fascination. Peter Drucker thought the love of patent medicines neither new nor exclusively managerial, but endemic: ‘It’s an old habit. We love panaceas that can solve everything from bad breath to cancer’. Employees know at first hand the complexities of an organisation. They see the simple solutions embodied in fixes as little more than bandaids for what may be systemic illnesses. Moreover, they have to live with the consequences of applying one sticking plaster after another. When they lose faith in the acumen and actions of managers, no fad nor fix can remedy the situation. Vogues easily become myths that distort reality, promote automatic means and ends, and kill imagination. None of these words of caution should distract from the importance of demanding managers.
 
-Will we ever learn?* ‘Banking establishments are more dangerous than standing armies.’ *Thomas Jefferson (1743 – 1826), US President, in letter dated 26 January 1799.*
+### Will we ever learn?
 
-Makes sense. In retrospect* ! ‘ It wasn’t until quite late in life that I discovered how easy it is to say ‘I don’t know’’. *W. Somerset Maugham, quoted in The Miami Herald*
+‘Banking establishments are more dangerous than standing armies.’ *Thomas Jefferson (1743 – 1826), US President, in letter dated 26 January 1799.*
+
+### Makes sense. In retrospect !
+
+‘It wasn’t until quite late in life that I discovered how easy it is to say ‘I don’t know’.’ *W. Somerset Maugham, quoted in The Miami Herald.*

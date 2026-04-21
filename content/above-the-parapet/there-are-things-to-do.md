@@ -5,7 +5,9 @@ title: THERE ARE THINGS TO DO
 ---
 ### The European Commission has decided encouraging entrepreneurs is not supping with the devil after all.
 
-It has published an ‘Entrepreneurship 2020 action plan’ for ‘Reigniting the entrepreneurial spirit in Europe’. There seems to be no sense of irony in taking thirty-two pages to tell us. There are some level-headed proposals. But most of them are a genius for stating the obvious and give a hypothetical posture. Nothing much will happen in terms of an impact on economic growth until the centralised bureaucracy realises delivery is not through additional regulations, spending taxpayers’ money and interventions into market places. The starting point has to be correction of the Commission’s own admission that the cost of its rules for businesses is €128.8 billion a year.
+### It has published an
+
+‘Entrepreneurship 2020 action plan’ for ‘Reigniting the entrepreneurial spirit in Europe’. There seems to be no sense of irony in taking thirty-two pages to tell us. There are some level-headed proposals. But most of them are a genius for stating the obvious and give a hypothetical posture. Nothing much will happen in terms of an impact on economic growth until the centralised bureaucracy realises delivery is not through additional regulations, spending taxpayers’ money and interventions into market places. The starting point has to be correction of the Commission’s own admission that the cost of its rules for businesses is €128.8 billion a year.
 
 ### The Government is putting together this summer’s spending review.
 

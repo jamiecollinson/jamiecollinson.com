@@ -19,4 +19,6 @@ It should be a last resort. If two divisions – or departments or people – ha
 
 There was an important job to be done and Everybody was sure that Somebody would do it. Anybody could have done it, but Nobody did. Somebody got angry about that, because it was Everybody’s job. Everybody thought Anybody would do it, but Nobody realised that Everybody wouldn’t do it. It ended up that Everybody blamed Somebody when Nobody did what Anybody could have done!
 
-The last bit. *‘I never wonder to see men wicked, but I often wonder to see them not as named.’* Jonathan Swift, quoted in The Times and The Week.
+### The last bit.
+
+‘I never wonder to see men wicked, but I often wonder to see them not as named.’ *Jonathan Swift, quoted in The Times and The Week.*

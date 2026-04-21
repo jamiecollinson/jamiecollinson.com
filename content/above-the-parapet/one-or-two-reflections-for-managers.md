@@ -13,7 +13,7 @@ Economists had a collective failure to predict the financial crisis and unwisely
 
 ### Unaltered perception.
 
-Hilaire Beloc and Cecil Chesterton wrote in their 1911 book, *The Party System:* ‘The House of Commons has ceased to be an instrument of Government. Its ancient functions have been killed under the prolonged and continuous actions of hypocrisy. It affords today ... no more than an opportunity for highly lucrative careers. That career is founded upon the bamboozlement of the public (whose faculty for being duped these professionals hope to prey upon indefinitely), with the complicity of nobodies content to write MP after their name as a sufficient reward for supporting the Party System; to whom, of course, must be added the lawyers and businessmen for whom Parliament offers definite financial rewards, and that in proportion to their indifference to their representative duties.’
+Hilaire Beloc and Cecil Chesterton wrote in their 1911 book, The Party System: ‘The House of Commons has ceased to be an instrument of Government. Its ancient functions have been killed under the prolonged and continuous actions of hypocrisy. It affords today ... no more than an opportunity for highly lucrative careers. That career is founded upon the bamboozlement of the public (whose faculty for being duped these professionals hope to prey upon indefinitely), with the complicity of nobodies content to write MP after their name as a sufficient reward for supporting the Party System; to whom, of course, must be added the lawyers and businessmen for whom Parliament offers definite financial rewards, and that in proportion to their indifference to their representative duties.’
 
 ### Wealth and inequality.
 
@@ -29,6 +29,8 @@ Those who travel the country lanes of industry and commerce will have noted a wh
 
 ### Doers.
 
-‘What we think, or what we believe is, in the end, of little consequence. The only consequence is what we do.’ *John Ruskin* (1818 – 1900).
+‘What we think, or what we believe is, in the end, of little consequence. The only consequence is what we do.’ *John Ruskin (1818 – 1900).*
 
-And.* ‘So much of what we call management consists of making it difficult for people to work.’ *Peter Drucker; *American academic/economist, born in Austria.*
+### And.
+
+‘So much of what we call management consists of making it difficult for people to work.’ *Peter Drucker; American academic/economist, born in Austria.*

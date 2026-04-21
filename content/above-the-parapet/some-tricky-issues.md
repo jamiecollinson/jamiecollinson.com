@@ -25,6 +25,8 @@ Andrew Saunders and Management Today have set out the telltale signs that a mana
 
 ### Good old Clem.
 
-‘Democracy means government by discussion, but it is only effective if you can stop people talking.*’ Clement Attlee*, *1983-1967. Deputy Prime Minister of UK, 1942-45, Prime Minister, 1945-51.*
+‘Democracy means government by discussion, but it is only effective if you can stop people talking.’ *Clement Attlee, 1983-1967. Deputy Prime Minister of UK, 1942-45, Prime Minister, 1945-51.*
 
-So rare.* ‘With conversation, talking is the craft, listening is the art.’ *Oscar Wilde, *1854-1900, Irish playwright, novelist, poet and wit.*
+### So rare.
+
+‘With conversation, talking is the craft, listening is the art.’ *Oscar Wilde, 1854-1900, Irish playwright, novelist, poet and wit.*

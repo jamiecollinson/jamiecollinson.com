@@ -29,6 +29,10 @@ The Financial Stability Board advises the G20 group of countries and is chaired 
 
 There are complaints of inefficient use of email. It is simple to send copies to many people who do not need them. Also, it is easy to forget that email is a permanent record, even if a document is in the electronic waste bin. Senders often say more flippant and incriminating things than they would in a letter. What about libel? Reconsider guidelines and disclaimers in conjunction with internal controls.
 
-Use of power.* ‘A government big enough to give us everything we want would be big enough to take from us everything we have.’ *Gerald Ford*, President of the Union States, 1974-76.*
+### Use of power.
 
-Through which end of the telescope.* ‘It’s more than magnificent – it’s mediocre.’ *Sam Goldwyn,* American film producer.*
+‘A government big enough to give us everything we want would be big enough to take from us everything we have.’ *Gerald Ford, President of the Union States, 1974-76.*
+
+### Through which end of the telescope.
+
+‘It’s more than magnificent – it’s mediocre.’ *Sam Goldwyn, American film producer.*

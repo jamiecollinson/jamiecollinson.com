@@ -17,7 +17,7 @@ Consider middle-managers - those above supervisor but below heads of function. T
 
 ### A move to reality.
 
-*Flipcharts Fairy Tales’* enewsletter has reminded us that micro-firms will not save the economy. Here are three basics:
+Flipcharts Fairy Tales’ enewsletter has reminded us that micro-firms will not save the economy. Here are three basics:
 
 ### The self-employed don’t earn much.
 
@@ -39,4 +39,4 @@ Starting a business might help some people escape their economic circumstances. 
 
 ### From 6 October 1952.
 
-Neither a wise man, nor a brave man lies down on the tracks of history to wait for a train of the future to run over him.’ *Dwight D Eisenhower, former US general and president.*
+Neither a wise man, nor a brave man lies down on the tracks of history to wait for a train of the future to run over him.’ Dwight D Eisenhower, former US general and president.

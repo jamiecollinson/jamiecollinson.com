@@ -19,4 +19,6 @@ CBRE, a major consultancy firm and China-based Genesis, say their research shows
 
 ‘Tact is the ability to tell someone to go to hell in such a way that s/he looks forward to the trip.’ *Winston Churchill, 1874-1965.*
 
-Me too.* ‘I read the newspaper avidly. It is my one form of continuous fiction.’ *Aneurin Bevan, 1877-1960.* British statesman. MP from 1929. Minister of Health, 1945-51.*
+### Me too.
+
+‘I read the newspaper avidly. It is my one form of continuous fiction.’ *Aneurin Bevan, 1877-1960. British statesman. MP from 1929. Minister of Health, 1945-51.*

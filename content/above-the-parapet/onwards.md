@@ -19,6 +19,6 @@ It is a grassroots and left-wing campaign group in the Labour Party. The origins
 
 The French government has banned plastic plates, cups and cutlery. This decision might be the start of a major shift away from plastic. The new law comes into effect during 2020. Pack2Go Europe is based in Brussels. It lobbies for packaging manufacturers in Europe and says it will fight the legislation. Implementation will break the European Union’s rules on trade barriers.
 
-### A danger. ‘
+### A danger.
 
-A lecture is a process by which the notes of the lecturer are passed into the notebook of the student without passing through the brains of either.’ Adage, quoted in a letter to The Times.
+‘A lecture is a process by which the notes of the lecturer are passed into the notebook of the student without passing through the brains of either.’ *Adage,* quoted in a letter to The Times.

@@ -17,6 +17,10 @@ The Government’s and its agencies’ obsession with public finance seems to ha
 
 Jeremy Hunt MP, Secretary of State for Health, has called for ‘an honest discussion with the public’ about the purpose of Accident and Emergency departments in this country’s general hospitals. The debate needs to be wider. Leading clinicians for the Royal College of Physicians have written to the Prime Minister setting out their concerns. Others have asked her to convene COBRA-style meetings to address the situation. The Chairpersons of three Select Committees from the House of Commons have urged the Prime Minister to seek cross-party consensus of health and social care. The evidence indicates a need for urgent action.
 
-Comparison* ‘It’s obvious that women are smarter than men. Think about it – diamonds are a girl’s best friend; man’s best friend is a dog.’ *Joan Rivers* (1933-2014); American writer, actor and producer. Quoted in The Wall Street Journal and The Week.
+### Comparison
 
-Excuses* ‘What good are laurels if you can’t rest on them?’ *Tom Lehrer* (1928 -); retired American singer and songwriter. Quoted in The Observer.
+‘It’s obvious that women are smarter than men. Think about it – diamonds are a girl’s best friend; man’s best friend is a dog.’ *Joan Rivers (1933-2014); American writer, actor and producer.* Quoted in The Wall Street Journal and The Week.
+
+### Excuses
+
+‘What good are laurels if you can’t rest on them?’ *Tom Lehrer (1928 -); retired American singer and songwriter.* Quoted in The Observer.

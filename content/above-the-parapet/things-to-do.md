@@ -19,10 +19,10 @@ EVA has entered the lexicon of managers. Unusually for an acronym, the advocates
 
 is the reaction when an independent body (Independent Parliamentary Standards Authority) suggests MPs ought to have an increase in pay. MPs are too scared to accept. Their leaders express horror at such a decision. No one says it is pointless to debate money when we do not know what we want from our representatives. The business of governing, opposing, communicating and winning elections is done by a handful of MPs and so-called professionals in each of the three main political parties. These people are said to be up-to-the-job. An MP has to be seen as showing concern for the locality and being a social worker. Maybe they compete with local councillors? Or is it possible there are too many MPs, councillors and ‘public’ institutions and appointments? A debate is essential on an MP‘s duties, responsibilities and relationships with other political/elected jobs. When we resolve this matter, we can answer the other questions.
 
-### Good sense. ‘
+### Good sense.
 
-Big business is not dangerous because it is big, but because its bigness is an unwholesome inflation created by privileges and exemptions it ought not to enjoy.’ *Woodrow Wilson, former president of America* in his acceptance speech at the Democratic National Convention in 1912.
+‘Big business is not dangerous because it is big, but because its bigness is an unwholesome inflation created by privileges and exemptions it ought not to enjoy.’ *Woodrow Wilson, former president of America in his acceptance speech at the Democratic National Convention in 1912.*
 
-### The quote has a respectable pedigree. ‘
+### The quote has a respectable pedigree.
 
-The avoidance of taxes is the only intellectual pursuit that still carries any reward.’ *John Maynard Keynes *(1863-1946).
+‘The avoidance of taxes is the only intellectual pursuit that still carries any reward.’ *John Maynard Keynes (1863-1946).*

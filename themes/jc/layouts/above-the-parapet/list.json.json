@@ -1,0 +1,11 @@
+{{- $entries := slice -}}
+{{- range .RegularPages.ByDate.Reverse -}}
+  {{- $entry := dict
+    "title" .Title
+    "permalink" .RelPermalink
+    "date" (.Date.Format "2006-01-02T15:04:05Z07:00")
+    "content" ((.Plain | replaceRE `\s+` " ") | strings.TrimSpace)
+  -}}
+  {{- $entries = $entries | append $entry -}}
+{{- end -}}
+{{- $entries | jsonify -}}

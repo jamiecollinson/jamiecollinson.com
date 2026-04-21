@@ -19,6 +19,10 @@ The Conservative and Labour parties have realised there is need for catch-up wit
 
 Styles of leadership are changing as responses to globalisation, technology, digitisation and demographics of ageing employees. People are working longer, so there will be more generations in a business or institution. The oldest person will not be the most senior. Seasoned managers will have to learn the importance of opinions and expectations of younger and less experienced people. They are the future.
 
-Words.* ‘To exploit and govern mean the same thing .... Exploitation and government are two inseparable expressions of what is called politics.’ *Mikhail Bakunin *(1814-76). Russian anarchist and writer.*
+### Words.
 
-Get ahead.* ‘The only limit of our realisation of tomorrow will be our doubts of today.’ *Franklin D Roosevelt *(1812 - 1945). Former president of America.*
+‘To exploit and govern mean the same thing .... Exploitation and government are two inseparable expressions of what is called politics.’ *Mikhail Bakunin (1814-76). Russian anarchist and writer.*
+
+### Get ahead.
+
+‘The only limit of our realisation of tomorrow will be our doubts of today.’ *Franklin D Roosevelt (1812 - 1945). Former president of America.*

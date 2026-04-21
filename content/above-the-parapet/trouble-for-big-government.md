@@ -13,7 +13,12 @@ The Economist says big banks are retreating quickly from markets, countries and 
 
 ### Any need for ladders?
 
-1 Create each job to suit the individual. Do not force people to adapt to rigid job descriptions. 2 Be a coach, not a command and control general. 3 Realise that many employees seek to be independent of a company’s structures in pursuing their careers. Show them how to take charge of their own occupational destinies. 4 Encourage people to solve problems and make decisions by consultation and collaboration, not by passing paper up and down for approval elsewhere. Unclog and shorten channels of communication and responsibility. 5 Promote the idea of advancement by taking additional responsibilities, doing a different job and gaining visibility. 6 Create cross-functional groups to give broader experience.
+1. Create each job to suit the individual. Do not force people to adapt to rigid job descriptions.
+2. Be a coach, not a command and control general.
+3. Realise that many employees seek to be independent of a company’s structures in pursuing their careers. Show them how to take charge of their own occupational destinies.
+4. Encourage people to solve problems and make decisions by consultation and collaboration, not by passing paper up and down for approval elsewhere. Unclog and shorten channels of communication and responsibility.
+5. Promote the idea of advancement by taking additional responsibilities, doing a different job and gaining visibility.
+6. Create cross-functional groups to give broader experience.
 
 ### Sounds correct.
 

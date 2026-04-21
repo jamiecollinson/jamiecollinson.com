@@ -21,4 +21,4 @@ Demand is sudden and intense. Satisfaction must be swift. A lunatic with firearm
 
 ### The sharp putdown.
 
-‘We may be poor, but we aren’t stupid’, Xia Bin, adviser to China’s sovereign wealth fund on its refusal to buy the European Union’s debt.
+‘We may be poor, but we aren’t stupid.’ *Xia Bin, adviser to China’s sovereign wealth fund on its refusal to buy the European Union’s debt.*

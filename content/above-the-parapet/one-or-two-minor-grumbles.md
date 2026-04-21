@@ -21,6 +21,8 @@ The UK’s strategy for defence is guided by three processes: the Strategic Defe
 
 There are no indications that the UK will devise a robust and responsible foreign policy. In the pre-election debate (2 April) not a single question was asked about foreign or defence policies. The closest the debate came to such issues was immigration and Britain’s membership of the European Union. As a large power in relative decline, this country has a tendency towards hubristic intervention overseas and anxious introspection at home.
 
-Things will change. ‘* The salary of the chief executive of the large corporation is not a market award for achievement. It is frequently in the nature of a warm personal gesture by the individual to himself’. *J K Galbraith*, American economist in ‘Annals of an Abiding Liberal’ 1980. *
+### Things will change.
 
-‘There is no stronger craving in the world than that of the rich for titles, except that of the titled for riches’. *Hesketh Pearson*, 1887 – 1964. British biographer in ‘The Marrying Americans’, 1961.*
+‘The salary of the chief executive of the large corporation is not a market award for achievement. It is frequently in the nature of a warm personal gesture by the individual to himself.’ *J K Galbraith, American economist in ‘Annals of an Abiding Liberal’ 1980.*
+
+‘There is no stronger craving in the world than that of the rich for titles, except that of the titled for riches.’ *Hesketh Pearson, 1887 – 1964. British biographer in ‘The Marrying Americans’, 1961.*

@@ -19,6 +19,10 @@ is a much-used word. Our government loves it. The UK has been ranked third, afte
 
 All decisions should be made as near to the action as possible. The charge of the Light Brigade was ordered by an officer who was not looking at the territory. There are two kinds of decisions: those which are expensive to change, and the rest. A decision on relocation from Manchester to Cardiff must not be made hastily. Nor should one to build the self-drive motor car. Plenty of contributions from operating people and specialists are important, too. But the common or garden decisions ought to be made quickly. Brand of pencil and times for canteen can be decided in three seconds and changed at little cost later. The company might lose a lot of business while you oscillate between blue and white coffee cups.
 
-A warning.* ‘Education costs money. But then so does ignorance.’ *Claus Moser.* British statistician. Quoted in Forbes.com and in MoneyWeek.*
+### A warning.
 
-The future.* ‘That period of time in which our affairs prosper, our friends are true and our happiness is assured.’ *Ambrose Bierce* , 1842 - 1914. *American journalist and humorist.*
+‘Education costs money. But then so does ignorance.’ *Claus Moser. British statistician.* Quoted in Forbes.com and in MoneyWeek.
+
+### The future.
+
+‘That period of time in which our affairs prosper, our friends are true and our happiness is assured.’ *Ambrose Bierce , 1842 - 1914. American journalist and humorist.*

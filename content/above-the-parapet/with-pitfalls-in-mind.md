@@ -13,7 +13,7 @@ There is some good news. This includes: President Obama’s announcement of a wi
 
 Investors appear to be betting on a sharp jump in inflation to its highest level for five years. Inflation is measured by the difference between the nominal figure and yields from inflation-linked bonds. 3.3% was in the frame last week. September 2008 was the previous date for this level. By the way, ‘stagflation’ as used by Iain Macleod MP in 1965, is when inflation is high, economic growth slows down and unemployment remains steadily high.
 
-Have you noticed the claim that small businesses and entrepreneurial businesses are the same thing?* Not necessarily so.
+Have you noticed the claim that small businesses and entrepreneurial businesses are the same thing? Not necessarily so.
 
 The great majority of small firms are incapable of innovation, partly because they don’t have the time or ambition. Just look at the typical small company. It is understaffed. It does not have the muscle or the cashflow. Possibly, the boss does not sweep the warehouse anymore, but he is not far away. S/he fights the daily battle. Often, s/he doesn’t have the discipline or the background. The most successful young entrepreneurs tend to be people who have spent five to eight years in a big organisation. That is where they learn and get some tools. We must not make exaggerated claims for small businesses. This will do them a disservice and is as daft as large companies continuing to believe they can do everything.
 
@@ -23,8 +23,8 @@ Without careful directions, they move quickly and lose touch with technical issu
 
 ### Managing a payroll in a recession is a special challenge for managers.
 
-None of us enjoys the inevitable decisions. Lethargy is a constant tempter. There are a few rules for sustaining a business’s performance. These are: remove costs faster than the drop in volumes; tell everyone about the principles; conversion costs per unit must not rise; concentrate on recovering annual increases in pay *as a matter of routine; *develop a pride in the job and winning; all leavers should be replaced only after a robust case by a senior manager; link plans for expenditure on departments/locations to trends in unit costs; reduce the absolute number of people employed in the company. Cannot be done? But consistently high performers have such determination.
+None of us enjoys the inevitable decisions. Lethargy is a constant tempter. There are a few rules for sustaining a business’s performance. These are: remove costs faster than the drop in volumes; tell everyone about the principles; conversion costs per unit must not rise; concentrate on recovering annual increases in pay as a matter of routine; develop a pride in the job and winning; all leavers should be replaced only after a robust case by a senior manager; link plans for expenditure on departments/locations to trends in unit costs; reduce the absolute number of people employed in the company. Cannot be done? But consistently high performers have such determination.
 
 ### ‘You are what you do, not what you say you’ll do.’
 
-*Carl Jung, quoted in The Week.*
+Carl Jung, quoted in The Week.

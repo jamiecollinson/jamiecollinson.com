@@ -19,6 +19,10 @@ This is the opinion of Morgan Housel. There’s nothing else like it. Is there a
 
 Anyone expecting a rise in interest rates in 2014 is facing disappointment. Mark Carney, governor of the Bank of England, said in the last quarterly report on inflation that Britain’s economy has returned to ‘a semblance of normality’. However, the Bank reckons there is more weakness in the labour market than suggested in earlier comments. It suggests growth in wages will be 1.25% this year, rather than previous estimate at 2.5%. Mr Carney indicated also that even if we eliminated spare capacity overnight in the economy, the appropriate interest rates would be close to the present situation. This is because of high indebtedness of households and the low recovery in the eurozone. Some informed observers have thought for a long time that the Bank is in the dark about the true state of the economy. Moreover, the Bank‘s report said, ‘ .... there is a wide range of views’ in the Monetary Policy Committee about the slack in the system. Measurement in this context is an imprecise skill. We should have learnt from the failure of central banks to do anything about the global financial crisis that they are as clueless as the rest of us.
 
-Experience.* ‘There are no solutions, only trade-offs.’ *Thomas Sowell, a US scholar on democratic politics, *quoted in the Financial Times.* * *
+### Experience.
 
-And more. ‘You can’t learn too soon that the most useful thing about a principle is that it can be sacrificed always to expediency.’ *W Somerset Maugham, *quoted in The Times.*
+‘There are no solutions, only trade-offs.’ *Thomas Sowell, a US scholar on democratic politics, quoted in the Financial Times.*
+
+### And more.
+
+‘You can’t learn too soon that the most useful thing about a principle is that it can be sacrificed always to expediency.’ *W Somerset Maugham, quoted in The Times.*

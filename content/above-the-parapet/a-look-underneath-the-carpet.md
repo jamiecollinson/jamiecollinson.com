@@ -19,8 +19,8 @@ One firm reduces product variety, another sees salvation in diversity. We manife
 
 ### Managers are at it again.
 
-Their need for magic is in good shape. Listen to the buzzwords in conversations, speeches and chats over coffee. Observe the *focus* on *holistic* approaches to help us *envision* the *ownership* and *journey* of activities. In this way, their *impact* is *cascaded* in ways which *empower* the workforce. All this and more in the world of quick fixes, but keep your eye on margins.
+Their need for magic is in good shape. Listen to the buzzwords in conversations, speeches and chats over coffee. Observe the focus on holistic approaches to help us envision the ownership and journey of activities. In this way, their impact is cascaded in ways which empower the workforce. All this and more in the world of quick fixes, but keep your eye on margins.
 
-### From across the pond. ‘
+### From across the pond.
 
-A genuine leader is not a searcher for consensus but a moulder of consensus.’ *Martin Luther King*, quoted in the Montreal Gazette and The Week.
+‘A genuine leader is not a searcher for consensus but a moulder of consensus.’ *Martin Luther King,* quoted in the Montreal Gazette and The Week.

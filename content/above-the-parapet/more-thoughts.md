@@ -19,12 +19,14 @@ The way we deliver strategies and plans has altered over seventy years, after sa
 
 Oxfam has calculated that the world’s wealthiest sixty-two people – who could just about fill a double-decker bus – are collectively richer than the poorest half of the population (3.5 billion). For some, being rich and conventionally successful keeps them in the headlines. Others keep a lower profile.
 
-Cheerio. * *‘Las Vegas is the only place I know where money really talks – it says ‘Goodbye’.’ *Frank Sinatra* (1915–98). US singer and film actor, quoted in *Moneyweek* (4 March).
+### Cheerio.
+
+‘Las Vegas is the only place I know where money really talks – it says ‘Goodbye’.’ *Frank Sinatra (1915–98). US singer and film actor,* quoted in Moneyweek (4 March).
 
 ### A pity.
 
-‘The tragedy of modern man is not that he knows less and less about the meaning of his own life, but that it bothers him less and less.’ *Vaclav Havel,* *Czech dramatist and statesman.*
+‘The tragedy of modern man is not that he knows less and less about the meaning of his own life, but that it bothers him less and less.’ *Vaclav Havel, Czech dramatist and statesman.*
 
-### Care. ‘
+### Care.
 
-A business must have a conscience, as well as a counting house’. *Sir Montague Burton*, *English tailor and manufacturer.*
+‘A business must have a conscience, as well as a counting house.’ *Sir Montague Burton, English tailor and manufacturer.*

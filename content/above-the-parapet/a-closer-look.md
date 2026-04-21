@@ -21,8 +21,14 @@ Most people have learned the hard way that dieting is more difficult than puttin
 
 ### Top of the list.
 
-From a professor in South America. ‘You guys, you got it all wrong. You spend your life loving your products. Why do that? Nasty, uncomfortable things with sharp corners and hard edges. Better you have something soft and warm. Better you love the customer.’
+### From a professor in South America.
 
-Dead on Ron.* ‘There is nothing more permanent than a temporary government programme.’ *President Ronald Reagan, *quoted on AmericanThinker.com*
+‘You guys, you got it all wrong. You spend your life loving your products. Why do that? Nasty, uncomfortable things with sharp corners and hard edges. Better you have something soft and warm. Better you love the customer.’
 
-Important definition.* ‘Science is a belief in the ignorance of experts.’ *Physicist, Richard Feynman, *quoted on RefDesk.com*
+### Dead on Ron.
+
+‘There is nothing more permanent than a temporary government programme.’ *President Ronald Reagan, quoted on AmericanThinker.com*
+
+### Important definition.
+
+‘Science is a belief in the ignorance of experts.’ *Physicist, Richard Feynman, quoted on RefDesk.com*

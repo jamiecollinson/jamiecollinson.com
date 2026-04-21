@@ -19,14 +19,34 @@ The Americans reckon a buyer who is pleased with a new car informs, on average, 
 
 He says that successful entrepreneurs are:
 
-· impatient and driven by results · in need of achievement, setting high but realistic and attainable goals · competitive, with self-imposed standards and a readiness to learn from their own failures · pushed by a strong sense of self-responsibility and a belief that they can control their destinies · takers of calculated risks · creative thinkers, with strong belief in their intuitions · tolerant of uncertainty, such as not knowing when the next cheque is coming.
+- impatient and driven by results
+- in need of achievement, setting high but realistic and attainable goals
+- competitive, with self-imposed standards and a readiness to learn from their own failures
+- pushed by a strong sense of self-responsibility and a belief that they can control their destinies
+- takers of calculated risks
+- creative thinkers, with strong belief in their intuitions
+- tolerant of uncertainty, such as not knowing when the next cheque is coming
 
 ### Pay close attention to how you reach a deal in the next few years
 
 For example:
 
-Concentrate on what you can control* You cannot do much about tomorrow’s shifts in marketplaces. You can put your house in order. Use telephones, renew your contacts, make appointments – get information and opportunities for additional customers. Share the burden* When the economy goes downwards, risks increase. Discussions with colleagues will bring recommendations and support. Stay confident* Reviews and commentaries might overflow with despair. Allowing that to affect your approach will not help. Determined and coherent belief will hearten customers and employees. Do not look over-keen.* This passes advantages elsewhere. Completing the transaction brings a good feeling. But the stock you accepted in your impatience to do so can be an expensive error. Cultivate affinity* Your interpersonal skills become especially important in difficult trading conditions. Visit people. Stimulate trust in your company. Understand what present and new buyers want. Get them to pledge purchases* But be careful. Promises beyond reality lead to disenchantment. Strive for balance. Make sure the deal fits the publicity* Chances are rare. Be certain that the agreement will realise the value you expect. Make sure the other party is happy to get what you want.
+Concentrate on what you can control. You cannot do much about tomorrow’s shifts in marketplaces. You can put your house in order. Use telephones, renew your contacts, make appointments – get information and opportunities for additional customers.
+
+Share the burden. When the economy goes downwards, risks increase. Discussions with colleagues will bring recommendations and support.
+
+Stay confident. Reviews and commentaries might overflow with despair. Allowing that to affect your approach will not help. Determined and coherent belief will hearten customers and employees.
+
+Do not look over-keen. This passes advantages elsewhere. Completing the transaction brings a good feeling. But the stock you accepted in your impatience to do so can be an expensive error.
+
+Cultivate affinity. Your interpersonal skills become especially important in difficult trading conditions. Visit people. Stimulate trust in your company. Understand what present and new buyers want.
+
+Get them to pledge purchases. But be careful. Promises beyond reality lead to disenchantment.
+
+Strive for balance.
+
+Make sure the deal fits the publicity. Chances are rare. Be certain that the agreement will realise the value you expect. Make sure the other party is happy to get what you want.
 
 ### About right.
 
-‘We know what happens to people who stay in the middle of the road. They get run over.’ *Aneurin Bevan*.
+‘We know what happens to people who stay in the middle of the road. They get run over.’ *Aneurin Bevan.*

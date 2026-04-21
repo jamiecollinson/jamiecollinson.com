@@ -27,4 +27,6 @@ Consistent characteristics are: a bias towards action; simple form and tight sta
 
 Excellence in management is brute perseverance – time, repetition and simplicity. Constant pressure must be upon the creation of an organisation with fast responses. Then there is less reliance on forecasting and other planning techniques.
 
-We sit on the evidence.* ‘In the youth of a state, arms do flourish. In the middle age of a state, learning, and then both of them together for a time. In the declining age of a state, mechanical arts and merchandise.*’ * Francis Bacon (1561-1626),* English writer and philosopher.
+### We sit on the evidence.
+
+‘In the youth of a state, arms do flourish. In the middle age of a state, learning, and then both of them together for a time. In the declining age of a state, mechanical arts and merchandise.’ *Francis Bacon (1561-1626), English writer and philosopher.*

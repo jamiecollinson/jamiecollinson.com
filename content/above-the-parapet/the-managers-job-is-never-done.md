@@ -3,7 +3,7 @@ date: '2013-08-12T15:55:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/08/the-managers-job-is-never-done.html
 title: "THE MANAGER\u2019S JOB IS NEVER DONE"
 ---
-Corporate profits as a proportion of gross domestic product (GDP) are at record highs in developed countries.* Big companies do
+Corporate profits as a proportion of gross domestic product (GDP) are at record highs in developed countries. Big companies do
 
 not seem to be investing in the projects that will yield sales at reasonable margins in the future. In short, low interest rates right now permit cheap capital. It is reasonable to expect that businesses ought to borrow and invest. Instead, they are hoarding lots of cash. ‘Shareholder value’ caught the imaginations of shareholders in the 80s. Retrospection might provide support for the notion that this prompted a serious intention of executives to do little other than increase earnings per share (EPS). There was a short-term need for such an emphasis. However, it has outlived its position as the top priority. When businesses fund opportunities or new equipment or pay higher wages, EPS goes down. Some self-criticism would not go amiss.
 
@@ -21,6 +21,6 @@ All decisions should be made as near to the action as possible. The infamous Cha
 
 Everyone knows the Peter Principle, that people are promoted often to their point of incompetence. But little is said about why this happens. The overwhelming reason for over-promotion is the visibility of technical expertise, which is recognised by elevation as a supervisor or manager. Here, untried (and possibly non-existent) abilities and interpersonal skills are tested and found wanting. Worse, many poor souls are prevented from doing the things they are good at: the brilliant sales representative who becomes a pedestrian sales manager, the former financial analyst who is unhappy as an assistant controller, the embarrassing supervisor who has been an inspired fitter. The good news? A lot of employees are passed over because their results and qualities are not noticed by ‘the system’. They are performing at below their competence. Better appraisal (or tests) will reveal these hidden stars. They are likely to blossom without the training wasted on specialists.
 
-### Deserves a thought or two. ‘
+### Deserves a thought or two.
 
-Any intelligent fool can make things bigger and more complex. It takes a touch of genius and a lot of courage to move in the opposite direction.’ *Albert Einstein (1879 – 1955)*
+‘Any intelligent fool can make things bigger and more complex. It takes a touch of genius and a lot of courage to move in the opposite direction.’ *Albert Einstein (1879 – 1955)*

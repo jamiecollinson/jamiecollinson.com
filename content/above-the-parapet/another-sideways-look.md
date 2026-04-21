@@ -27,4 +27,4 @@ The first systematic census of population for Britain was in 1910. It defined lo
 
 ### Correct.
 
-‘My grandfather once told me that there are two kinds of people: those who do the work and those who take the credit. He told me to try to be in the first group; there is much less competition’. *Indira Gandhi, quoted on Forbes.com*
+‘My grandfather once told me that there are two kinds of people: those who do the work and those who take the credit. He told me to try to be in the first group; there is much less competition.’ *Indira Gandhi, quoted on Forbes.com.*

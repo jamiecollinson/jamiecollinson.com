@@ -125,7 +125,7 @@ function createField(
           : (bounds.max ?? 60).toString()
     input.step =
       kind === "return-slider"
-        ? (Number(step) * 100).toString()
+        ? Number(step).toString()
         : "1"
 
     input.setAttribute("aria-describedby", `${helperId} ${errorId}`)
@@ -247,25 +247,6 @@ export function createOMYDom(container: HTMLElement): OMYDomRefs {
   container.innerHTML = ""
 
   const root = el("section", "omy-app")
-  const header = el("header", "omy-header")
-  const title = el("h2", "omy-title", "One More Year")
-  const framing = el(
-    "p",
-    "omy-framing",
-    "A narrow decision instrument for comparing one more year of work with one year of immediate freedom.",
-  )
-  const questionLabel = el("p", "omy-question-label", "Key question")
-  const question = el(
-    "p",
-    "omy-question",
-    "Is working one more year worth it?",
-  )
-  const subtitle = el(
-    "p",
-    "omy-subtitle",
-    "The model keeps objective portfolio effects separate from subjective value judgements.",
-  )
-  header.append(title, framing, questionLabel, question, subtitle)
 
   const layout = el("div", "omy-layout")
   const inputsColumn = el("div", "omy-inputs")
@@ -427,7 +408,7 @@ export function createOMYDom(container: HTMLElement): OMYDomRefs {
   diagnosticsColumn.append(diagnosticsCard, costCard, sensitivityCard)
   layout.append(resultCard, inputsColumn, diagnosticsColumn)
 
-  root.append(header, layout)
+  root.append(layout)
   container.appendChild(root)
 
   if (!returnValue) {

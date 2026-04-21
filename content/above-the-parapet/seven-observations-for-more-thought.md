@@ -23,6 +23,10 @@ The Intergenerational Foundation says employers in the UK spend twenty times mor
 
 Leadership seems to be discussed seriously when it is absent. Your scribe notes that those who think about it a lot are not leaders. Natural leaders are those who do not reflect on leadership, but have never considered any other position.
 
-Be careful.* ‘Always remember that the crowd that applauds your coronation is the same crowd that will applaud your beheading.’ *Sir Terry Pratchett* , *1948 - 2015. English novelist. More than 85 million books sold worldwide in 37 languages.*
+### Be careful.
 
-Think ahead.* ‘The art of statesmanship consists as much in foreseeing as in doing.’ *John Bright* , 1811 – 1889. *A Quaker, British radical and Liberal statesman. President of the Board of Trade, 1868 – 1871.*
+‘Always remember that the crowd that applauds your coronation is the same crowd that will applaud your beheading.’ *Sir Terry Pratchett , 1948 - 2015. English novelist. More than 85 million books sold worldwide in 37 languages.*
+
+### Think ahead.
+
+‘The art of statesmanship consists as much in foreseeing as in doing.’ *John Bright , 1811 – 1889. A Quaker, British radical and Liberal statesman. President of the Board of Trade, 1868 – 1871.*

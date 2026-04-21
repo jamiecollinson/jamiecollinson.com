@@ -23,4 +23,6 @@ Relationships go through five Cs: courtship, consummation, complacency, criticis
 
 ‘Cabinet minutes should reflect the lies that were told at the time, not the lies people wish they had told after the time.’ *Lord Norman Tebbit.*
 
-Objectives.* ‘Mankind always sets itself only such problems as it can solve; since, looking at the matter more closely, it will always be found that the task itself arises only when the material conditions for its solution already exist or are at least in the process of formation*.*’* Karl Marx, 1818-83.*
+### Objectives.
+
+‘Mankind always sets itself only such problems as it can solve; since, looking at the matter more closely, it will always be found that the task itself arises only when the material conditions for its solution already exist or are at least in the process of formation.’ *Karl Marx, 1818-83.*

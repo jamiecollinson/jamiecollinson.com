@@ -19,6 +19,10 @@ Zero hours contracts (ZHC) often receive a bad press. However, research by the C
 
 Grant Thornton, Deloitte, BBC and HR Magazine have gathered information about the impact of automation on jobs. 35% of workforces in the UK are at risk over the next twenty years. This figure includes: 99% of telephone salespeople, 98.5% of typists or keyboard-related workers and 97.6% of routine inspectors and testers. Those tasks which will change in content but remain in place are: telecommunications engineer (2.5% fewer), midwife (0.8%), nurse (0.9%), publican or manager of licensed premises (0.4%). Occupations paying less than £30,000 a year are five times more likely to be replaced than those at over £100,000. 3.5 million low risk jobs have been created since 2001. 800,000 of those in danger have been lost. Reason for all this change in forthcoming years? More accuracy and efficiency (56%), lower long-term costs (53%); greater flexibility in use of resources (49%).
 
-Failure.* ‘There is no formula for success. But there is a formula for failure, and that is trying to please everybody.’ *Nicholas Ray*, American film director.*
+### Failure.
 
-Be careful.* ‘Integrity without knowledge is weak and useless, and knowledge without integrity is dangerous and dreadful.’ *Samuel Johnson* (1709-84). English lexicographer, essayist and poet.*
+‘There is no formula for success. But there is a formula for failure, and that is trying to please everybody.’ *Nicholas Ray, American film director.*
+
+### Be careful.
+
+‘Integrity without knowledge is weak and useless, and knowledge without integrity is dangerous and dreadful.’ *Samuel Johnson (1709-84). English lexicographer, essayist and poet.*

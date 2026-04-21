@@ -25,6 +25,8 @@ The Chartered Institute of Personnel and Development’s research points to issu
 
 ### Ouch!
 
-‘Leadership is like rugby. It requires you to put your head where it hurts.*’ Mark Evans*, *chief marketing and communications officer at Direct Line Group.*
+‘Leadership is like rugby. It requires you to put your head where it hurts.’ *Mark Evans, chief marketing and communications officer at Direct Line Group.*
 
-It’s good to know.* ‘The purpose of studying economics is not to acquire a set of ready-made answers to economic questions, but to learn how to avoid being deceived by economists.’ *Economist* *Joan Robinson*, quoted in a newsletter from PFP Wealth Management and in MoneyWeek (3 June 2016).*
+### It’s good to know.
+
+‘The purpose of studying economics is not to acquire a set of ready-made answers to economic questions, but to learn how to avoid being deceived by economists.’ *Economist Joan Robinson, quoted in a newsletter from PFP Wealth Management and in MoneyWeek (3 June 2016).*

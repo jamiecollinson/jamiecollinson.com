@@ -21,8 +21,10 @@ The elite of the UK’s two major political parties has started to accept reluct
 
 (a) Focus is vital. Do not try to do too many things at once. You might lose time and money; (b) realise when you need to give up on an idea or change direction and make the move. Do not delay; (c) be cautious about being a pioneer. You not only have to market/sell that new product but the overall concept as well; (d) never fall in love with the technology or the final product. It will skew your focus; (e) launching a new product or business will always cost more than you think. When you do your business plan, add 10% to 20% for contingency. Make sure you set aside an even larger budget for marketing.
 
-Motivation.* ‘I don’t want any yes-men around me. I want everyone to tell me the truth, even if it costs them their jobs.’ *Sam Goldwyn (1879-1974), *film maker.*
+### Motivation.
+
+‘I don’t want any yes-men around me. I want everyone to tell me the truth, even if it costs them their jobs.’ *Sam Goldwyn (1879-1974), film maker.*
 
 ### Cold light.
 
-‘Your assumptions are your windows on the world. Scrub them off every once in a while, or the light won’t come in.’ *Isaac Asimov (1920-92),* *author and biochemist.*
+‘Your assumptions are your windows on the world. Scrub them off every once in a while, or the light won’t come in.’ *Isaac Asimov (1920-92), author and biochemist.*

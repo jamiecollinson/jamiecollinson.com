@@ -19,6 +19,10 @@ The Office of National Statistics has reported that 29% of graduates last year a
 
 Mark Halsey is a respected and admired referee of matches in the Premier League. This is the most watched league in the world, a product that generates substantial revenue and profits. The intense competition creates significant pressure on clubs, managers and players to get positive results. Mr Halsey has claimed he was told to state he had not seen in incident in a game he was officiating in 2011 between Stoke City and Blackburn Rovers, in order to make sure that the offending player was punished after the fixture. This admission prompted immediate denials, confirmations and debate. There are now good reasons to reconsider the management, networks and protocols relating to referees in England.
 
-Confirms our suspicions?* ‘Alcohol enables Parliament to do things at 11 at night that no sane person would do at 11 in the morning.’ *George Bernard Shaw* (1850-1950), Irish dramatist and critic.*
+### Confirms our suspicions?
 
-The battle.* ‘Class distinctions do not die; they merely learn new ways of expressing themselves.’ *Richard Hoggart* (1918-2014), British academic in sociology, English literature and cultural studies.*
+‘Alcohol enables Parliament to do things at 11 at night that no sane person would do at 11 in the morning.’ *George Bernard Shaw (1850-1950), Irish dramatist and critic.*
+
+### The battle.
+
+‘Class distinctions do not die; they merely learn new ways of expressing themselves.’ *Richard Hoggart (1918-2014), British academic in sociology, English literature and cultural studies.*

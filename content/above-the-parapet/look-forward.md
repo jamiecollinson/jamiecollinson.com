@@ -21,8 +21,10 @@ The figures have been looking better recently. Employment continues to rise and 
 
 This might explain the presence of Ukip in these places. It’s not so much a case of immigrants ‘taking our jobs’ – most of the vacancies are in London and that’s where immigrants tend to go. Do the unemployed wait for the magic.
 
-Famous last words.* ‘There’s no chance that the iPhone is going to get any significant market share. No chance.’ *Steve Bulmer*, chief executive of Microsoft, April 2007.*
+### Famous last words.
 
-Muddle.* ‘The trouble with facts is that there are so many of them.’ *Samuel McChord
+‘There’s no chance that the iPhone is going to get any significant market share. No chance.’ *Steve Bulmer, chief executive of Microsoft, April 2007.*
 
-Crothers. The Gentle Reader.*
+### Muddle.
+
+‘The trouble with facts is that there are so many of them.’ *Samuel McChord Crothers. The Gentle Reader.*

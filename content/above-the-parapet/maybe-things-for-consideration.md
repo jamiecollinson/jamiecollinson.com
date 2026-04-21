@@ -19,4 +19,6 @@ This ailment affects organisations with several subsidiaries, outlets, sites, br
 
 Those people with poor skills are more likely: to be in prison; be in debt; be unemployed; be unwell and have problems of mental health; have a child who cannot read at 9 years of age; and be involved with, or have to be supported by, the state. And, they are less likely to: vote; own their own homes; take up a voluntary job such as school governor; and hear their children read. Makes you wonder?
 
-Can this comfort us?* ‘Since we have no more power of knowing the future than any other men, we have made many mistakes (who has not during the past five years?), but our mistakes have been errors of judgement and not of principle.’ *J P Morgan junior in 1933.* Now look at the performance of his successors.
+### Can this comfort us?
+
+‘Since we have no more power of knowing the future than any other men, we have made many mistakes (who has not during the past five years?), but our mistakes have been errors of judgement and not of principle.’ *J P Morgan junior in 1933. Now look at the performance of his successors.*

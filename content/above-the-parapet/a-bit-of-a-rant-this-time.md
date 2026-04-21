@@ -19,7 +19,7 @@ And it is seldom the facts are unavailable. Rather, for whatever reason, manager
 
 There has to be a proper balance between saving costs and generating revenues. Jobs exist because employers believe their performance will bring substantially more profit than the associated outgoings. Thus, it is right always to eliminate those activities which do not satisfy this criterion. But it is suicidal to delay filling those posts which do pass the test.
 
-Giving somebody else the authority to do something is all very well.* BUT, there are times when delegation is plainly wrong: *Crisis –* you have to be out in front and visible; *People* – don’t shirk the nasty job of a reprimand or dismissal; *Sudden change* – if you are altering things, be on call to explain anything to anybody; *Major decisions* – you must make them. The choice between two business strategies is not for delegation; *Ceremonies* – your absence at crucial moments can be seen as a deliberate insult.
+Giving somebody else the authority to do something is all very well. BUT, there are times when delegation is plainly wrong: Crisis – you have to be out in front and visible; People – don’t shirk the nasty job of a reprimand or dismissal; Sudden change – if you are altering things, be on call to explain anything to anybody; Major decisions – you must make them. The choice between two business strategies is not for delegation; Ceremonies – your absence at crucial moments can be seen as a deliberate insult.
 
 ### Makes you think.
 

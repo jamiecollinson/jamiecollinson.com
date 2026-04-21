@@ -17,7 +17,7 @@ export const SWR_HORIZON_ANCHORS = [
 
 export const DEFAULT_INPUTS: OMYInputs = {
   currentPortfolio: 620_000,
-  annualSpending: 45_000,
+  annualSpending: 40_000,
   annualSavingsIfWork: 15_000,
   expectedRealReturn: 0.03,
   yearsInRetirementIfStopNow: 30,
@@ -76,7 +76,7 @@ export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
     annualIncome: 37_000,
     appliedInputs: {
       currentPortfolio: 294_000,
-      annualSpending: 32_000,
+      annualSpending: 28_000,
       annualSavingsIfWork: 8_000,
     },
   },
@@ -89,7 +89,7 @@ export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
     annualIncome: 55_000,
     appliedInputs: {
       currentPortfolio: 620_000,
-      annualSpending: 45_000,
+      annualSpending: 40_000,
       annualSavingsIfWork: 15_000,
     },
   },
@@ -102,7 +102,7 @@ export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
     annualIncome: 78_000,
     appliedInputs: {
       currentPortfolio: 1_200_500,
-      annualSpending: 60_000,
+      annualSpending: 55_000,
       annualSavingsIfWork: 25_000,
     },
   },
@@ -115,7 +115,7 @@ export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
     annualIncome: 180_000,
     appliedInputs: {
       currentPortfolio: 3_600_000,
-      annualSpending: 120_000,
+      annualSpending: 95_000,
       annualSavingsIfWork: 60_000,
     },
   },
@@ -157,7 +157,7 @@ export const INPUT_CONFIGS: OMYInputConfig[] = [
     label: "Annual spending",
     helper: "Annual spending required in retirement.",
     kind: "currency",
-    placeholder: "45000",
+    placeholder: "40000",
     step: "1000",
   },
   {

@@ -25,7 +25,7 @@ Employment has been higher than expectations after the biggest fall in output si
 
 The other group of reasons for lower pay and conditions concentrates on how the economic situation might have change businesses’ decisions in ways that lowered productivity. Investment has fallen sharply. Firms, especially smaller ones with few physical assets, have found capital impossible to obtain at affordable rates. Of course, the poor outlook for sales and the general air of uncertainty have made companies of all sizes cautious on investment. Low interest rates have enabled some poor performers to remain trading by paying interest on debt, but not reducing the principal.
 
-There is a crucial part for Government to play in overcoming these complications. It is almost impossible to know which options work. *These observations were prompted by Mark Beatson, Chartered Institute of Personnel and Development.*
+There is a crucial part for Government to play in overcoming these complications. It is almost impossible to know which options work. These observations were prompted by Mark Beatson, Chartered Institute of Personnel and Development.
 
 ### Leadership?
 
@@ -33,7 +33,7 @@ Many (most?) people are administered at a workplace, not led. They are treated a
 
 ### Just random thoughts.
 
-‘Worry is the interest paid on trouble before it is due.’ ‘The public and private sectors are distinguished by the former to live after death.’ ‘One of the great puzzles in life is how a fool and his money got together in the first place’. ‘Luck is when preparation meets opportunity.’
+‘Worry is the interest paid on trouble before it is due.’ *‘The public and private sectors are distinguished by the former to live after death.’ ‘One of the great puzzles in life is how a fool and his money got together in the first place’. ‘Luck is when preparation meets opportunity.’ *
 
 ### A thought from John Maynard Keynes
 

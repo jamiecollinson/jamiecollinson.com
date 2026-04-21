@@ -27,12 +27,14 @@ celebrated America’s new commercial power during a speech in Osawatomie, Kansa
 
 MoneyWeek says most observers find it hard to disagree with the view that Donald Trump spends little time in self-examination. In the Sunday Telegraph, Bruce Anderson quotes a banker who knows Mr Trump well: ‘It is impossible to know what he thinks or what he is going to say. How could it be otherwise? He has no idea what he will say - until he opens his mouth.’
 
-Just think.* ‘You can tell the ideals of a nation by its advertisements.’ *Norman
+### Just think.
 
-Douglas, quoted on Forbes.com and in TheWeek.*
+‘You can tell the ideals of a nation by its advertisements.’ *Norman Douglas,* quoted on Forbes.com and in The Week.
 
 ### The vanishing act.
 
 ‘Public money is like holy water; everyone helps himself.’ *Italian proverb.*
 
-Making things work. ‘* Bad administration, to be sure, can destroy good policy; but good administration can never save bad policy.’ *Adlai Stevenson* (1900-68). American politician and statesman.*
+### Making things work.
+
+‘Bad administration, to be sure, can destroy good policy; but good administration can never save bad policy.’ *Adlai Stevenson (1900-68). American politician and statesman.*

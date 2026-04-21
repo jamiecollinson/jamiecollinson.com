@@ -25,6 +25,8 @@ An organisation’s self-perception plays only a minor part in its personality. 
 
 ### Sad reality.
 
-‘We have more ability than willpower, and it is often an excuse to ourselves that we imagine that things are impossible.*’ Francois La Rochefoucauld*, *1613-80, French writer.*
+‘We have more ability than willpower, and it is often an excuse to ourselves that we imagine that things are impossible.’ *Francois La Rochefoucauld, 1613-80, French writer.*
 
-Process.* ‘Between saying and doing many a pair of shoes is worn out.’ *Proverb*.*
+### Process.
+
+‘Between saying and doing many a pair of shoes is worn out.’ *Proverb.*

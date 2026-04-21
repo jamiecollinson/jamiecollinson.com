@@ -19,4 +19,6 @@ It provoked a long, and sometimes bitter, debate on who has the right to tell wh
 
 There are ten spokes to that wheel. Know what you want; obtain good information; separate facts from assumptions; accept uncertainty without anxiety; pursue outcomes, not personal preferences; try to keep an open mind; draw lessons from your errors; learn from others; stay on the same wavelength; and remember – you are in control.
 
-And there is a difference.* ‘Price is what you pay. Value is what you get.’ *Warren Buffett, *quoted in The Week (12 January).*
+### And there is a difference.
+
+‘Price is what you pay. Value is what you get.’ *Warren Buffett, quoted in The Week (12 January).*

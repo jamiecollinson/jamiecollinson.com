@@ -3,7 +3,7 @@ date: '2017-01-17T13:44:00Z'
 original_url: http://overtheparapet.blogspot.com/2017/01/competent-managers-remain-pivotal.html
 title: COMPETENT MANAGERS REMAIN PIVOTAL
 ---
-Avoid setbacks for your business.* Management Today suggested several ‘rules’ a
+Avoid setbacks for your business. Management Today suggested several ‘rules’ a
 
 long time ago.
 
@@ -27,8 +27,8 @@ This country decided in a referendum to leave the European Union. This came as a
 
 ### Sounds right.
 
-‘The war against intelligence is always waged in the name of common sense.’ *Roland Barthes*, *(1915 – 1980). French philosopher, linguist and critic.*
+‘The war against intelligence is always waged in the name of common sense.’ *Roland Barthes, (1915 – 1980). French philosopher, linguist and critic.*
 
 ### Hope it’s sooner.
 
-‘I don’t know how long a child will remain utterly static in front of the television, but my guess is that it could be well into their 30s.’ *A A Gill*, *(1954 – 2016). British writer and columnist.*
+‘I don’t know how long a child will remain utterly static in front of the television, but my guess is that it could be well into their 30s.’ *A A Gill, (1954 – 2016). British writer and columnist.*

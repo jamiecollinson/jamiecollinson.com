@@ -13,14 +13,16 @@ Our financial sector is supposed to move money to where it is needed for our eco
 
 ### And more changes.
 
-The PR China simplified the process for registering businesses in February 2014. According to the State Administrations for Industry and Commerce, there were 3.65 million new registrations in 2014, an increase of 46% on 2013. China had moved by 2012 from having an economy based upon the public sector. At that time, the country had 50 million active and registered private firms; 40 million of them were smaller ’household enterprises’. Andrew Atherton (University of Lancaster) notes that this is a huge shift from 1978, the year reforms began, when only 140,000 registered private concerns generated less than 1% of economic activity. The private sector is at least three-quarters of China’s economy now. These businesses account for 90% of new jobs and are the major employer in many parts of the country. State-owned establishments have dropped from over 70% of total employment during 1990 to 26% in 2012. Phew!
+The PR China simplified the process for registering businesses in February 2014. According to the State Administrations for Industry and Commerce, there were 3.65 million new registrations in 2014, an increase of 46% on 2013. China had moved by 2012 from having an economy based upon the public sector. At that time, the country had 50 million active and registered private firms; 40 million of them were smaller ‘household enterprises’. Andrew Atherton (University of Lancaster) notes that this is a huge shift from 1978, the year reforms began, when only 140,000 registered private concerns generated less than 1% of economic activity. The private sector is at least three-quarters of China’s economy now. These businesses account for 90% of new jobs and are the major employer in many parts of the country. State-owned establishments have dropped from over 70% of total employment during 1990 to 26% in 2012. Phew!
 
 ### Know thyself.
 
 Research in America showed that eight out of ten subordinates have a better idea of a manager’s performance than their own boss. The survey questioned 1,100 employees in 70 firms, many of them in Fortune’s 500. None of this is new. Only protective pyramids in structures have prevented better access to informed comments. A manager has to earn the mandate. It’s not about popularity. Leaders make us feel different, not always better.
 
-Maybe?* ‘We become moral when we are unhappy.’ *Marcel Proust *(1871 – 1922); French novelist.* *
+### Maybe?
+
+‘We become moral when we are unhappy.’ *Marcel Proust (1871 – 1922); French novelist.*
 
 ### Strings and bows.
 
-‘Most of us find it difficult to play second fiddle. If, on the other hand, all the second fiddles in an orchestra stopped playing, we would be well and truly sunk.’ *Sir Georg Solti. *
+‘Most of us find it difficult to play second fiddle. If, on the other hand, all the second fiddles in an orchestra stopped playing, we would be well and truly sunk.’ *Sir Georg Solti.*

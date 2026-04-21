@@ -19,6 +19,10 @@ That knowledge is power is an old adage. This is why people who had it in the pa
 
 Soon, the arguments for and against the European Union (EU) will enter conversations, agendas and speeches more often. There are plenty of good reasons for remaining a member. It is likely to give the UK more influence around the world. It strengthens bonds between countries. It underpins the free movement of people and goods. What happens in continental Europe matters, so there is sense in affecting direction. But we must get the facts straight. Investment from the EU will count for far less in the future. The reality is that the economics do not have much impact one way or the other. Keeping the EU’s companies on board will not be a conclusive contention. There are not enough of them and the number is declining each year.
 
-Makes sense.* ‘Name the greatest of all the inventors. Accident.’ *Mark Twain *(1835-1910) in* Notebook.*
+### Makes sense.
 
-That’s experience.* ‘Like all weak men, he laid an exaggerated stress on not changing one’s mind.’ *W Somerset Maugham *(1874-1965) in chapter 37,* Of Human Bondage.*
+‘Name the greatest of all the inventors. Accident.’ *Mark Twain (1835-1910) in Notebook.*
+
+### That’s experience.
+
+‘Like all weak men, he laid an exaggerated stress on not changing one’s mind.’ *W Somerset Maugham (1874-1965) in chapter 37, Of Human Bondage.*

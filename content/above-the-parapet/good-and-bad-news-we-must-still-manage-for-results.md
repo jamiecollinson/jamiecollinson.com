@@ -33,4 +33,6 @@ If you organise a shoot, we know of experienced beaters for the safari through t
 - The Willow Warbler flutters around the upper branches all day, but refuses to come down to the ground
 - The Domestic Budgie lives in a private world.
 
-### Interesting opinion. ‘Life itself is a universally sexually transmitted disease.‘ Professor Petr Skrabamek, quoted in The Week.
+### Interesting opinion.
+
+‘Life itself is a universally sexually transmitted disease.’ *Professor Petr Skrabamek, quoted in The Week.*

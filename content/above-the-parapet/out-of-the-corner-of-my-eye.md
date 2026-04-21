@@ -5,11 +5,11 @@ title: OUT OF THE CORNER OF MY EYE
 ---
 ### Until recently, bailing out meant obtaining temporary release of an untried prisoner by giving money.
 
-Do you recall how keen those at the top in Europe and the United States were to ‘prevent a catastrophic collapse’? Banks in Europe bailed out their speculators. Then governments bailed out the banks. They then bailed out the countries that bailed out the banks. The Americans went the whole hog. The government bailed out the banks, the insurance companies, the vehicle manufacturers ..... and? The Europeans and the Americans bailed out each other. There are huge sovereign deficits all over the place. PR China seems to have become fed up with falling exports and has offered to buy a few assets and bonds. Is it possible that doing more of this sort of thing is not a bright idea? When you lose money on every transaction, it is unwise to go for increased sales. Bit by bit, the mainstream media is starting to realise there was no ordinary recession. A conventional recovery is unlikely. *Thanks to Bill Bonner*.
+Do you recall how keen those at the top in Europe and the United States were to ‘prevent a catastrophic collapse’? Banks in Europe bailed out their speculators. Then governments bailed out the banks. They then bailed out the countries that bailed out the banks. The Americans went the whole hog. The government bailed out the banks, the insurance companies, the vehicle manufacturers ..... and? The Europeans and the Americans bailed out each other. There are huge sovereign deficits all over the place. PR China seems to have become fed up with falling exports and has offered to buy a few assets and bonds. Is it possible that doing more of this sort of thing is not a bright idea? When you lose money on every transaction, it is unwise to go for increased sales. Bit by bit, the mainstream media is starting to realise there was no ordinary recession. A conventional recovery is unlikely. Thanks to Bill Bonner.
 
 The goings on are a reminder of a nursery rhyme from childhood: Ring a Ring O’ Roses, A pocketful of posies, Atishoo, Atishoo!, We all fall down! It is said to be about the horrors of the Great Plague.
 
-Makes you think During the times of a humourless Cold War* , the inner-councils of Government in America asked the Central Intelligence Agency (CIA) to write a profile of a country that might have a revolution. These professional interventionists decided upon three characteristics. They were: (i) a large gap between rich and poor; (ii) a middle class that is disappearing, or one that never existed in the first place; (iii) a lot of people with a grudge.
+Makes you think During the times of a humourless Cold War , the inner-councils of Government in America asked the Central Intelligence Agency (CIA) to write a profile of a country that might have a revolution. These professional interventionists decided upon three characteristics. They were: (i) a large gap between rich and poor; (ii) a middle class that is disappearing, or one that never existed in the first place; (iii) a lot of people with a grudge.
 
 ### Robert Heller reckons managing is a far more homely business than its would-be scientists suggest
 
@@ -21,4 +21,4 @@ Our world is confusing. The young person is told, ‘Look before you leap or be 
 
 ### By jove, he’s right.
 
-‘Just because you do not take an interest in politics doesn’t mean politicians won’t take an interest in you’. *Pericles (430 BC).*
+‘Just because you do not take an interest in politics doesn’t mean politicians won’t take an interest in you.’ *Pericles (430 BC).*

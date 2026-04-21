@@ -10,6 +10,8 @@ I built a small decision tool to answer one narrow question:
 
 It compares the financial gain from another year of work against the estimated value of immediate freedom.
 
+The model keeps objective portfolio effects separate from subjective value judgements.
+
 {{< omy-tool >}}
 
 This is intentionally not a full retirement planner. It is a compact way to make the one-year tradeoff legible.

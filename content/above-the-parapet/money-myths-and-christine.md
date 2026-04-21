@@ -19,8 +19,10 @@ Boris Johnson has pointed out in The Daily Telegraph that there are more than 39
 
 The Chartered Institute of Personnel and Development (CIPD) has pointed to major reputational risks. Recent information reveals that chief executives often go through fewer interviews and tests than graduates when applying for a new job. One in three does not undergo any due diligence in the selection process. There is evidence that in a quarter of companies there are board members who may not have had checks on their qualifications, work experience or criminal record. In recent years, there has been a string of high-profile cases where senior executives were found to have a chequered history or inadequate qualifications, or, both. One observer said, ‘An entire organisation’s reputation can be damaged with a mobile ‘phone image or an inaccurate cv, followed by the click of a mouse’.
 
-Problems.* ‘Nothing will ever be attempted, if all possible objections must be first overcome.’ *Samuel Johnson (1709-84). *English lexicographer, essayist and poet.*
+### Problems.
+
+‘Nothing will ever be attempted, if all possible objections must be first overcome.’ *Samuel Johnson (1709-84). English lexicographer, essayist and poet.*
 
 ### Do you recall?
 
-‘Comparison is the thief of joy.’ *Theodore Roosevelt;* *26th president of the United States (1901-09).*
+‘Comparison is the thief of joy.’ *Theodore Roosevelt; 26th president of the United States (1901-09).*

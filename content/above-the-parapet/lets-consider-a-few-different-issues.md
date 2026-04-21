@@ -23,4 +23,6 @@ Managers who rely on exhorting the workforce to ‘do the job right first time�
 
 ‘I find the public utterances of permanent secretaries so predictable and completely interchangeable that I have stopped listening to them. It has to do with Civil Servant English. You have to squeeze all personality out of it.’ *Sir Antony Jay, co-author of the TV series ‘Yes Minister’.*
 
-Obtaining an agreement.* ‘One of the things I learnt when I was negotiating, was that until I changed myself I could not change others.’ *Nelson Mandela, former president of South Africa.* *
+### Obtaining an agreement.
+
+‘One of the things I learnt when I was negotiating, was that until I changed myself I could not change others.’ *Nelson Mandela, former president of South Africa.*

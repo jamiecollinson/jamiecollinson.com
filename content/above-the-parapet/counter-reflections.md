@@ -21,9 +21,13 @@ He invented leadership as a business idea. Central to his thinking was a distinc
 
 Managers tend to make their biggest mistakes on issues and decisions they handled successfully in earlier years. In business, as elsewhere, acting cocky when things are going well is an unforgivable sin. As the Greek’s kept telling us, Hubris is followed inevitably by Nemesis.
 
-What is this thing?* ‘I have nothing against work, particularly when performed quietly and unobtrusively, by someone else.’ *Writer, Barbara Ehrenreich, in Real Simple.*
+### What is this thing?
 
-Wise planning: ‘Build your enemy a golden bridge to retreat across.’ *Confucius, according to The Guardian.*
+‘I have nothing against work, particularly when performed quietly and unobtrusively, by someone else.’ *Writer, Barbara Ehrenreich, in Real Simple.*
+
+### Wise planning:
+
+‘Build your enemy a golden bridge to retreat across.’ *Confucius, according to The Guardian.*
 
 ### And there are not many.
 
