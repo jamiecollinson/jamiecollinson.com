@@ -1,12 +1,22 @@
 {{ define "main" }}
 {{ $posts := .RegularPages.ByDate.Reverse }}
+{{ $avatar := .Params.avatar }}
+{{ $avatarAlt := .Params.avatar_alt | default "Portrait of Len Collinson" }}
 
-<section class="now-page" aria-labelledby="parapet-title">
-    <h1 id="parapet-title">{{ .Title }}</h1>
-    {{ with .Params.description }}
+<section class="now-page parapet-intro" aria-labelledby="parapet-title">
+    {{ with $avatar }}
+    {{ $avatarPath := . }}
+    {{ with resources.Get $avatarPath }}
+    <img class="about-headshot" src="{{ .RelPermalink }}" alt="{{ $avatarAlt }}" loading="lazy" decoding="async">
+    {{ else }}
+    <img class="about-headshot" src="{{ $avatarPath | relURL }}" alt="{{ $avatarAlt }}" loading="lazy" decoding="async">
+    {{ end }}
+    {{ end }}
+    <h1 id="parapet-title">{{ $.Title }}</h1>
+    {{ with $.Params.description }}
     <p class="now-page__meta">{{ . }}</p>
     {{ end }}
-    {{ with .Content }}
+    {{ with $.Content }}
     <div class="now-page__content">
         {{ . }}
     </div>

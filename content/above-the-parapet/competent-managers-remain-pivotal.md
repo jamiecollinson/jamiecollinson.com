@@ -2,12 +2,21 @@
 date: '2017-01-17T13:44:00Z'
 original_url: http://overtheparapet.blogspot.com/2017/01/competent-managers-remain-pivotal.html
 title: COMPETENT MANAGERS REMAIN PIVOTAL
+hero_image: "img/parapet/competent-managers-remain-pivotal.png"
+hero_alt: Satirical editorial-style cartoon of a manager guiding a team through 2017 political and economic shifts.
 ---
-Avoid setbacks for your business. Management Today suggested several ‘rules’ a
+## Avoid setbacks for your business. 
 
-long time ago.
-
-Beware of success, it stimulates laziness. Never do things because that’s how you do them. Invite frank criticism from customers and staff. Fear every new entrant to your market. Allow time to reheal before another upheaval. State the destination often. Be afraid, but don’t show it. Face the truth, and share it. If times change, change leaders.
+Management Today suggested several ‘rules’ a long time ago.
+- Beware of success, it stimulates laziness. 
+- Never do things because that’s how you do them. 
+- Invite frank criticism from customers and staff. 
+- Fear every new entrant to your market. 
+- Allow time to reheal before another upheaval. 
+- State the destination often. 
+- Be afraid, but don’t show it. 
+- Face the truth, and share it. 
+- If times change, change leaders.
 
 ### From tenth to fifth.
 

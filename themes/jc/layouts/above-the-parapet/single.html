@@ -4,7 +4,12 @@
 
 {{ with .Params.hero_image }}
 <figure class="post-hero">
-    <img src="{{ . | relURL }}" alt="{{ $.Params.hero_alt | default "" }}" loading="eager" decoding="async">
+    {{ $heroPath := . }}
+    {{ with resources.Get $heroPath }}
+    <img src="{{ .RelPermalink }}" alt="{{ $.Params.hero_alt | default "" }}" loading="eager" decoding="async">
+    {{ else }}
+    <img src="{{ $heroPath | relURL }}" alt="{{ $.Params.hero_alt | default "" }}" loading="eager" decoding="async">
+    {{ end }}
 </figure>
 {{ end }}
 

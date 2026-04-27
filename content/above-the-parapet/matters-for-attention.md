@@ -2,6 +2,8 @@
 date: '2016-12-06T11:22:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/12/matters-for-attention.html
 title: MATTERS FOR ATTENTION?
+hero_image: "img/parapet/matters-for-attention.png"
+hero_alt: Satirical editorial-style cartoon of British banks undergoing a stress test while productivity and expert trust issues wait nearby.
 ---
 ### Stress for lenders.
 

@@ -2,6 +2,8 @@
 date: '2016-12-19T14:47:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/12/and-into-2017.html
 title: AND INTO 2017
+hero_image: "img/parapet/and-into-2017.png"
+hero_alt: Satirical editorial-style cartoon of executive pay, decorative checks and balances, self-employed workers, and a corrected trade deficit ledger.
 ---
 ### Attempts to control executives’ pay.
 

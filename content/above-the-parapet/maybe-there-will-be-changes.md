@@ -2,6 +2,8 @@
 date: '2016-11-21T16:24:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/11/maybe-there-will-be-changes_21.html
 title: MAYBE THERE WILL BE CHANGES?
+hero_image: "img/parapet/maybe-there-will-be-changes.png"
+hero_alt: Satirical editorial-style cartoon of a prime minister at a political fork in the road while managers face post-Brexit predictions.
 ---
 ### Vision
 

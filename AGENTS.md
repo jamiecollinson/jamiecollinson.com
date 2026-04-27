@@ -26,6 +26,12 @@
 - Inline icons directly in templates (SVG) for small icon counts instead of loading icon runtimes; only use vendored icon packages when there is a clear need.
 - For Phosphor icons, use pinned paths from `@phosphor-icons/core` (currently `2.1.1`) and load them as inline SVG `<symbol>` defs via a shared partial (no runtime JS/CDN); this is the default performance tradeoff for small shared icon sets like the footer.
 
+## Agent7d1 Notes
+- For new **Above the Parapet** hero images, use the prompt/style guidance in `PARAPET_SKETCH.md`.
+- Generate the image first, then copy it into `assets/img/parapet/` with a descriptive slug filename.
+- Always use the Hugo asset pipeline for parapet images: set `hero_image` to an assets path such as `img/parapet/<filename>.png`, and let the template resolve it via `resources.Get`.
+- Do not add new parapet hero images under `static/images/...` unless explicitly requested.
+
 ## Next Steps for New Contributors
 - Explore Hugo templating to extend layouts or add partials (e.g., build out `nav.html`).
 - Customize styles by editing `styles.css`, especially for responsive tweaks to the TOC and sidenotes.

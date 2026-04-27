@@ -2,6 +2,8 @@
 date: '2017-01-04T16:32:00Z'
 original_url: http://overtheparapet.blogspot.com/2017/01/thoughts-to-enter-2017.html
 title: THOUGHTS TO ENTER 2017
+hero_image: "img/parapet/thoughts-to-enter-2017.png"
+hero_alt: Satirical editorial-style cartoon of experts pointing in different directions as workers enter 2017.
 ---
 ### A lesson from 2016.
 

@@ -2,6 +2,8 @@
 date: '2016-10-24T11:23:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/10/onwards.html
 title: ONWARDS?
+hero_image: "img/parapet/onwards.png"
+hero_alt: Satirical editorial-style cartoon of a central banker driving an overloaded national business bus while politicians avoid fiscal choices.
 ---
 ### Running the national business.
 
