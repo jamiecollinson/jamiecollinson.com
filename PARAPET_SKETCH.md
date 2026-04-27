@@ -19,3 +19,5 @@ Overall tone: wry, dry British humour with a slightly sharper comic edge, but st
 Maintain a newspaper editorial feel: restrained, economical, and visually readable at a glance.
 
 Base the image content on the most interesting point(s) from the post content.
+
+Important: make every scene historically plausible for the post's publication date. Avoid anachronisms in technology, devices, interfaces, clothing cues, vehicles, signage language, and political or cultural references that would not have been current at that time.

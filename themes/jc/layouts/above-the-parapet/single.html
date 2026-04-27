@@ -6,7 +6,21 @@
 <figure class="post-hero">
     {{ $heroPath := . }}
     {{ with resources.Get $heroPath }}
-    <img src="{{ .RelPermalink }}" alt="{{ $.Params.hero_alt | default "" }}" loading="eager" decoding="async">
+    {{ $smallW := 960 }}
+    {{ $largeW := 1600 }}
+    {{ if lt .Width $smallW }}{{ $smallW = .Width }}{{ end }}
+    {{ if lt .Width $largeW }}{{ $largeW = .Width }}{{ end }}
+    {{ $heroSmall := .Resize (printf "%dx webp q78" $smallW) }}
+    {{ $heroLarge := .Resize (printf "%dx webp q78" $largeW) }}
+    <img
+        src="{{ $heroSmall.RelPermalink }}"
+        srcset="{{ $heroSmall.RelPermalink }} {{ $heroSmall.Width }}w, {{ $heroLarge.RelPermalink }} {{ $heroLarge.Width }}w"
+        sizes="(max-width: 860px) 100vw, 54em"
+        width="{{ $heroSmall.Width }}"
+        height="{{ $heroSmall.Height }}"
+        alt="{{ $.Params.hero_alt | default "" }}"
+        loading="eager"
+        decoding="async">
     {{ else }}
     <img src="{{ $heroPath | relURL }}" alt="{{ $.Params.hero_alt | default "" }}" loading="eager" decoding="async">
     {{ end }}

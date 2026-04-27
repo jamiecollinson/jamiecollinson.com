@@ -7,7 +7,22 @@
     {{ with $avatar }}
     {{ $avatarPath := . }}
     {{ with resources.Get $avatarPath }}
-    <img class="about-headshot" src="{{ .RelPermalink }}" alt="{{ $avatarAlt }}" loading="lazy" decoding="async">
+    {{ $smallW := 168 }}
+    {{ $largeW := 336 }}
+    {{ if lt .Width $smallW }}{{ $smallW = .Width }}{{ end }}
+    {{ if lt .Width $largeW }}{{ $largeW = .Width }}{{ end }}
+    {{ $avatarSmall := .Resize (printf "%dx webp q80" $smallW) }}
+    {{ $avatarLarge := .Resize (printf "%dx webp q80" $largeW) }}
+    <img
+        class="about-headshot"
+        src="{{ $avatarSmall.RelPermalink }}"
+        srcset="{{ $avatarSmall.RelPermalink }} {{ $avatarSmall.Width }}w, {{ $avatarLarge.RelPermalink }} {{ $avatarLarge.Width }}w"
+        sizes="(max-width: 600px) 42vw, 168px"
+        width="{{ $avatarSmall.Width }}"
+        height="{{ $avatarSmall.Height }}"
+        alt="{{ $avatarAlt }}"
+        loading="lazy"
+        decoding="async">
     {{ else }}
     <img class="about-headshot" src="{{ $avatarPath | relURL }}" alt="{{ $avatarAlt }}" loading="lazy" decoding="async">
     {{ end }}
