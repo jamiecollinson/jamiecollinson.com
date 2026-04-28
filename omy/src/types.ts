@@ -1,14 +1,25 @@
-export type OMYInputs = {
+export type OMYRecommendation =
+  | "strong-work"
+  | "lean-work"
+  | "close-call"
+  | "lean-stop"
+  | "strong-stop"
+
+export type OMYReadinessStatus = "not-ready" | "borderline" | "ready"
+
+export type OMYModelInputs = {
   currentPortfolio: number
   annualSpending: number
   annualSavingsIfWork: number
   expectedRealReturn: number
+  safetyWithdrawalTarget: number
   yearsInRetirementIfStopNow: number
-  payForYearOff: number
-  extraCompNeededToWork: number
-  freedomOpportunityProbability: number
-  freedomOpportunityValue: number
+  freeYearValue: number
+  workDisutility: number
+  opportunityValue: number
 }
+
+export type OMYNumericInputKey = keyof OMYModelInputs
 
 export type OMYDerived = {
   portfolioNow: number
@@ -22,34 +33,39 @@ export type OMYDerived = {
   fundedYearsGain: number
   retirementYearsNow: number
   retirementYearsInOneYear: number
+  requiredPortfolioAtTarget: number
+  requiredPortfolioAtTargetInOneYear: number
+  gapNow: number
+  gapInOneYear: number
   freeYearValue: number
   workDisutility: number
   opportunityValue: number
-  safeWithdrawalRateTarget: number
-  safeWithdrawalRateTargetInOneYear: number
-  requiredPortfolioAtSafeWithdrawal: number
-  swrGapNow: number
-  swrGapInOneYear: number
+  impliedIncome: number
 }
 
-export type OMYRecommendation =
-  | "strong-work"
-  | "lean-work"
-  | "close-call"
-  | "lean-stop"
-  | "strong-stop"
+export type OMYReadinessResult = {
+  status: OMYReadinessStatus
+  isReadyNow: boolean
+  closesGapInOneYear: boolean
+  currentWithdrawalRate: number
+  oneYearWithdrawalRate: number
+  targetWithdrawalRate: number
+  gapNow: number
+  gapInOneYear: number
+}
+
+export type OMYMarginalResult = {
+  benefitOfWorking: number
+  estimatedValueOfDelayedFreedom: number
+  score: number
+  status: OMYRecommendation
+}
 
 export type OMYResult = {
-  benefitOfWorking: number
-  costOfWorking: number
-  score: number
-  recommendationFromScore: OMYRecommendation
-  recommendation: OMYRecommendation
-  swrAdjusted: boolean
-  isSafeNow: boolean
-  isSafeInOneYear: boolean
-  explanation: string
+  readiness: OMYReadinessResult
+  marginal: OMYMarginalResult
+  primaryConclusion: string
+  primaryExplanation: string
+  secondaryInsight: string
   derived: OMYDerived
 }
-
-export type OMYInputKey = keyof OMYInputs

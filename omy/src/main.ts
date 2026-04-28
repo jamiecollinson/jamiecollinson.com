@@ -1,40 +1,50 @@
 import {
+  DEFAULT_CUSTOM_OPPORTUNITY_MULTIPLIER,
+  DEFAULT_FREE_YEAR_PLAN,
   DEFAULT_INPUTS,
   DEFAULT_SCENARIO,
+  DEFAULT_WORK_ATTITUDE,
+  FREE_YEAR_PLAN_OPTIONS,
   HARD_LIMITS,
   OMY_SCENARIOS,
   OMY_SCENARIO_ORDER,
   SAFE_FALLBACKS,
+  WORK_ATTITUDE_OPTIONS,
+  type FreeYearPlanKey,
   type OMYScenarioKey,
+  type WorkAttitudeKey,
 } from "./constants"
 import {
   RECOMMENDATION_CLASS_LIST,
   createOMYDom,
+  readinessFallbackTone,
   recommendationClass,
 } from "./dom"
 import {
   formatCurrency,
+  formatCurrencyCompact,
   formatPercent,
   formatPercentInput,
-  formatRecommendation,
+  formatReadiness,
+  formatRecommendationBadge,
   formatSignedCurrency,
+  formatSignedCurrencyCompact,
   formatWholeYears,
   formatYears,
 } from "./format"
 import { calculateOMY } from "./model"
-import type { OMYInputKey, OMYInputs } from "./types"
+import type { OMYModelInputs, OMYNumericInputKey } from "./types"
 
-type RawInputs = Record<OMYInputKey, string>
-type ValidationErrors = Partial<Record<OMYInputKey, string>>
-
-const INPUT_KEYS = Object.keys(DEFAULT_INPUTS) as OMYInputKey[]
-
-function toRawInputs(inputs: OMYInputs): RawInputs {
-  const raw = {} as RawInputs
-  for (const key of INPUT_KEYS) {
-    raw[key] = inputs[key].toString()
-  }
-  return raw
+type AppState = {
+  modelInputs: OMYModelInputs
+  activeScenario: OMYScenarioKey
+  workAttitude: WorkAttitudeKey
+  freeYearPlan: FreeYearPlanKey
+  customOpportunityMultiplier: number
+  advancedSubjective: boolean
+  manualWorkDisutility: number
+  manualOpportunityValue: number
+  sabbaticalTouched: boolean
 }
 
 function setText(node: HTMLElement, value: string): void {
@@ -43,300 +53,105 @@ function setText(node: HTMLElement, value: string): void {
   }
 }
 
-function formatInputNumber(value: number): string {
-  if (Number.isInteger(value)) {
-    return value.toString()
-  }
-  return Number(value.toFixed(6)).toString()
-}
-
-function parseRawNumber(rawValue: string): number | null {
-  if (rawValue.trim() === "") {
+function parseNumber(raw: string): number | null {
+  if (raw.trim() === "") {
     return null
   }
-  const parsed = Number(rawValue)
+  const parsed = Number(raw)
   return Number.isFinite(parsed) ? parsed : null
 }
 
-function minMessageForKey(key: OMYInputKey): string {
-  if (key === "annualSavingsIfWork") {
-    return "Must be zero or greater."
+function clampInput(key: OMYNumericInputKey, value: number): number {
+  const limits = HARD_LIMITS[key]
+  if (value < limits.min) {
+    return limits.min
   }
-  if (
-    key === "payForYearOff" ||
-    key === "extraCompNeededToWork" ||
-    key === "freedomOpportunityValue"
-  ) {
-    return "Must be zero or greater."
+  if (limits.max !== undefined && value > limits.max) {
+    return limits.max
   }
-  if (key === "freedomOpportunityProbability") {
-    return "Must be between 0% and 100%."
-  }
-  if (key === "yearsInRetirementIfStopNow") {
-    return "Must be at least 5 years."
-  }
-  return "Must be greater than zero."
+  return value
 }
 
-function maxMessageForKey(key: OMYInputKey): string {
-  if (key === "expectedRealReturn") {
-    return "Capped at 0.15 (15%)."
-  }
-  if (key === "freedomOpportunityProbability") {
-    return "Must be between 0% and 100%."
-  }
-  if (key === "yearsInRetirementIfStopNow") {
-    return "Capped at 60 years."
-  }
-  return "Value is above the allowed range."
+function workDisutilityRate(attitude: WorkAttitudeKey): number {
+  return WORK_ATTITUDE_OPTIONS.find((option) => option.key === attitude)?.disutilityRate ?? 0
 }
 
-function normalizeInputs(raw: RawInputs): {
-  inputs: OMYInputs
-  errors: ValidationErrors
-} {
-  const errors: ValidationErrors = {}
-  const inputs = {} as OMYInputs
-
-  for (const key of INPUT_KEYS) {
-    const parsed = parseRawNumber(raw[key])
-
-    if (parsed === null) {
-      inputs[key] = SAFE_FALLBACKS[key]
-      errors[key] = "Enter a valid number."
-      continue
-    }
-
-    const bounds = HARD_LIMITS[key]
-    let next = parsed
-
-    if (next < bounds.min) {
-      next = bounds.min
-      errors[key] = minMessageForKey(key)
-    }
-
-    if (bounds.max !== undefined && next > bounds.max) {
-      next = bounds.max
-      errors[key] = maxMessageForKey(key)
-    }
-
-    if (key === "yearsInRetirementIfStopNow") {
-      const rounded = Math.round(next)
-      if (rounded !== next && !errors[key]) {
-        errors[key] = "Rounded to the nearest year."
-      }
-      next = rounded
-    }
-
-    inputs[key] = next
+function planMultiplier(plan: FreeYearPlanKey, customMultiplier: number): number {
+  const option = FREE_YEAR_PLAN_OPTIONS.find((item) => item.key === plan)
+  if (!option) {
+    return 0
   }
-
-  return { inputs, errors }
+  return option.usesCustomMultiplier ? customMultiplier : option.multiplier
 }
 
-function syncInputsFromValues(
-  rawInputs: RawInputs,
-  domInputs: Record<OMYInputKey, HTMLInputElement>,
-): void {
-  for (const key of INPUT_KEYS) {
-    const input = domInputs[key]
-    if (key === "expectedRealReturn") {
-      const decimal = parseRawNumber(rawInputs[key]) ?? 0
-      input.value = (decimal * 100).toString()
-      continue
-    }
-    if (key === "freedomOpportunityProbability") {
-      const decimal = parseRawNumber(rawInputs[key]) ?? 0
-      input.value = Math.round(decimal * 100).toString()
-      continue
-    }
-    if (key === "yearsInRetirementIfStopNow") {
-      const years = parseRawNumber(rawInputs[key]) ?? 30
-      input.value = Math.round(years).toString()
-      continue
-    }
-    input.value = rawInputs[key]
-  }
-}
-
-function applyInputErrors(
-  domInputs: Record<OMYInputKey, HTMLInputElement>,
-  errorNodes: Record<OMYInputKey, HTMLElement>,
-  errors: ValidationErrors,
-): void {
-  for (const key of INPUT_KEYS) {
-    const error = errors[key] ?? ""
-    const input = domInputs[key]
-    const node = errorNodes[key]
-
-    input.setAttribute("aria-invalid", error ? "true" : "false")
-    node.hidden = !error
-    setText(node, error)
-  }
-}
-
-function formatFlipPoint(value: number): string {
+function toInputString(value: number): string {
   if (!Number.isFinite(value)) {
-    return "-"
+    return "0"
   }
-  if (value <= 0) {
-    return "Already below zero"
+  if (Number.isInteger(value)) {
+    return value.toString()
   }
-  return formatCurrency(value)
+  return Number(value.toFixed(4)).toString()
 }
 
-function formatReturnSliderInput(decimal: number): string {
-  if (!Number.isFinite(decimal)) {
-    return "0.0%"
+function createDefaultState(): AppState {
+  return {
+    modelInputs: { ...DEFAULT_INPUTS },
+    activeScenario: DEFAULT_SCENARIO,
+    workAttitude: DEFAULT_WORK_ATTITUDE,
+    freeYearPlan: DEFAULT_FREE_YEAR_PLAN,
+    customOpportunityMultiplier: DEFAULT_CUSTOM_OPPORTUNITY_MULTIPLIER,
+    advancedSubjective: false,
+    manualWorkDisutility: DEFAULT_INPUTS.workDisutility,
+    manualOpportunityValue: DEFAULT_INPUTS.opportunityValue,
+    sabbaticalTouched: false,
   }
-  return `${(decimal * 100).toFixed(1)}%`
 }
 
 function mount(container: HTMLElement): void {
   const refs = createOMYDom(container)
-  let rawInputs = toRawInputs(DEFAULT_INPUTS)
-  let activeScenario: OMYScenarioKey = DEFAULT_SCENARIO
-  syncInputsFromValues(rawInputs, refs.inputs)
+  const anchorButtons = Array.from(
+    refs.root.querySelectorAll<HTMLButtonElement>(".omy-anchor-button"),
+  )
 
-  const updateScenarioUI = (): void => {
+  let state = createDefaultState()
+
+  const syncScenarioUI = (): void => {
     for (const key of OMY_SCENARIO_ORDER) {
       const button = refs.scenarioButtons[key]
-      const selected = key === activeScenario
+      const selected = key === state.activeScenario
       button.classList.toggle("is-active", selected)
       button.setAttribute("aria-pressed", selected ? "true" : "false")
     }
 
-    const scenario = OMY_SCENARIOS[activeScenario]
+    const scenario = OMY_SCENARIOS[state.activeScenario]
     setText(
       refs.scenarioSummary,
       `${scenario.percentileLabel}: net worth ~${formatCurrency(scenario.netWorth)}, annual income ~${formatCurrency(scenario.annualIncome)}.`,
     )
   }
 
-  const render = (normalizeToInputs = false): void => {
-    const normalized = normalizeInputs(rawInputs)
-
-    if (normalizeToInputs) {
-      rawInputs = toRawInputs(normalized.inputs)
-      syncInputsFromValues(rawInputs, refs.inputs)
-    }
-
-    const result = calculateOMY(normalized.inputs)
-    applyInputErrors(refs.inputs, refs.errors, normalized.errors)
-
-    refs.resultCard.classList.remove(...RECOMMENDATION_CLASS_LIST)
-    refs.resultCard.classList.add(recommendationClass(result.recommendation))
-
-    setText(
-      refs.probabilityValue,
-      formatPercentInput(normalized.inputs.freedomOpportunityProbability),
+  const syncInputs = (): void => {
+    refs.inputs.currentPortfolio.value = toInputString(state.modelInputs.currentPortfolio)
+    refs.inputs.annualSpending.value = toInputString(state.modelInputs.annualSpending)
+    refs.inputs.annualSavingsIfWork.value = toInputString(state.modelInputs.annualSavingsIfWork)
+    refs.inputs.expectedRealReturn.value = toInputString(state.modelInputs.expectedRealReturn * 100)
+    refs.inputs.safetyWithdrawalTarget.value = toInputString(
+      state.modelInputs.safetyWithdrawalTarget * 100,
     )
-    setText(
-      refs.returnValue,
-      formatReturnSliderInput(normalized.inputs.expectedRealReturn),
+    refs.inputs.yearsInRetirementIfStopNow.value = toInputString(
+      state.modelInputs.yearsInRetirementIfStopNow,
     )
-    setText(
-      refs.retirementYearsValue,
-      `${Math.round(normalized.inputs.yearsInRetirementIfStopNow).toString()} years`,
+    refs.inputs.sabbaticalWillingnessToPay.value = toInputString(state.modelInputs.freeYearValue)
+
+    refs.inputs.workYearAttitude.value = state.workAttitude
+    refs.inputs.freeYearPlan.value = state.freeYearPlan
+    refs.inputs.customOpportunityMultiplier.value = toInputString(
+      state.customOpportunityMultiplier,
     )
-
-    setText(refs.recommendationLabel, formatRecommendation(result.recommendation))
-    setText(refs.score, formatSignedCurrency(result.score))
-    setText(refs.explanation, result.explanation)
-    setText(refs.benefitValue, formatCurrency(result.benefitOfWorking))
-    setText(refs.costValue, formatCurrency(result.costOfWorking))
-
-    setText(refs.derived.portfolioNow, formatCurrency(result.derived.portfolioNow))
-    setText(refs.derived.portfolioInOneYear, formatCurrency(result.derived.portfolioInOneYear))
-    setText(refs.derived.portfolioGain, formatSignedCurrency(result.derived.portfolioGain))
-
-    setText(refs.derived.withdrawalRateNow, formatPercent(result.derived.withdrawalRateNow))
-    setText(refs.derived.withdrawalRateInOneYear, formatPercent(result.derived.withdrawalRateInOneYear))
-    setText(
-      refs.derived.withdrawalRateImprovement,
-      formatPercent(result.derived.withdrawalRateImprovement),
-    )
-
-    setText(refs.derived.fundedYearsNow, formatYears(result.derived.fundedYearsNow))
-    setText(refs.derived.fundedYearsInOneYear, formatYears(result.derived.fundedYearsInOneYear))
-    setText(refs.derived.fundedYearsGain, formatYears(result.derived.fundedYearsGain))
-
-    setText(refs.derived.retirementYearsNow, formatWholeYears(result.derived.retirementYearsNow))
-    setText(
-      refs.derived.retirementYearsInOneYear,
-      formatWholeYears(result.derived.retirementYearsInOneYear),
-    )
-
-    setText(refs.derived.freeYearValue, formatCurrency(result.derived.freeYearValue))
-    setText(refs.derived.workDisutility, formatCurrency(result.derived.workDisutility))
-    setText(refs.derived.opportunityValue, formatCurrency(result.derived.opportunityValue))
-    setText(refs.totalCostValue, formatCurrency(result.costOfWorking))
-    setText(
-      refs.swrTargetValue,
-      `${formatPercent(result.derived.safeWithdrawalRateTarget)} -> ${formatPercent(result.derived.safeWithdrawalRateTargetInOneYear)}`,
-    )
-    setText(
-      refs.swrRequiredPortfolioValue,
-      formatCurrency(result.derived.requiredPortfolioAtSafeWithdrawal),
-    )
-    setText(refs.swrGapNowValue, formatCurrency(result.derived.swrGapNow))
-    setText(refs.swrGapInOneYearValue, formatCurrency(result.derived.swrGapInOneYear))
-    setText(
-      refs.swrStatusValue,
-      result.isSafeNow
-        ? "At or below target now"
-        : result.isSafeInOneYear
-          ? "Above target now, at target after one year"
-          : "Above target in both scenarios",
-    )
-
-    const components = [
-      { label: "Free year value", value: result.derived.freeYearValue },
-      { label: "Work disutility", value: result.derived.workDisutility },
-      {
-        label: "Foregone opportunity",
-        value: result.derived.opportunityValue,
-      },
-    ]
-    const largest = components.reduce((current, next) =>
-      next.value > current.value ? next : current,
-    )
-
-    const dominantSide =
-      result.benefitOfWorking >= result.costOfWorking
-        ? "Financial gain dominates"
-        : "Cost of giving up freedom dominates"
-
-    const freeYearFlipPoint =
-      result.benefitOfWorking -
-      result.derived.workDisutility -
-      result.derived.opportunityValue
-
-    const workDisutilityFlipPoint =
-      result.benefitOfWorking -
-      result.derived.freeYearValue -
-      result.derived.opportunityValue
-
-    const opportunityFlipPoint =
-      result.benefitOfWorking -
-      result.derived.freeYearValue -
-      result.derived.workDisutility
-
-    setText(refs.dominantSideValue, dominantSide)
-    setText(
-      refs.largestCostValue,
-      `${largest.label} (${formatCurrency(largest.value)})`,
-    )
-    setText(refs.flipFreeYearValue, formatFlipPoint(freeYearFlipPoint))
-    setText(refs.flipWorkDisutilityValue, formatFlipPoint(workDisutilityFlipPoint))
-    setText(refs.flipOpportunityValue, formatFlipPoint(opportunityFlipPoint))
-
-    setText(
-      refs.liveRegion,
-      `${formatRecommendation(result.recommendation)}. Score ${formatSignedCurrency(result.score)}.` +
-        (result.swrAdjusted ? " Recommendation adjusted for SWR safety." : ""),
-    )
-    updateScenarioUI()
+    refs.inputs.manualWorkDisutility.value = toInputString(state.manualWorkDisutility)
+    refs.inputs.manualOpportunityValue.value = toInputString(state.manualOpportunityValue)
+    refs.advancedToggle.checked = state.advancedSubjective
   }
 
   const applyScenario = (
@@ -344,49 +159,278 @@ function mount(container: HTMLElement): void {
     opts?: { resetAll?: boolean },
   ): void => {
     if (opts?.resetAll) {
-      rawInputs = toRawInputs(DEFAULT_INPUTS)
+      state = createDefaultState()
     }
+
     const scenario = OMY_SCENARIOS[scenarioKey]
-    rawInputs.currentPortfolio = scenario.appliedInputs.currentPortfolio.toString()
-    rawInputs.annualSpending = scenario.appliedInputs.annualSpending.toString()
-    rawInputs.annualSavingsIfWork = scenario.appliedInputs.annualSavingsIfWork.toString()
-    activeScenario = scenarioKey
-    syncInputsFromValues(rawInputs, refs.inputs)
-    render(true)
+    state.modelInputs.currentPortfolio = scenario.appliedInputs.currentPortfolio
+    state.modelInputs.annualSpending = scenario.appliedInputs.annualSpending
+    state.modelInputs.annualSavingsIfWork = scenario.appliedInputs.annualSavingsIfWork
+
+    if (!state.sabbaticalTouched) {
+      state.modelInputs.freeYearValue = state.modelInputs.annualSpending
+    }
+
+    state.activeScenario = scenarioKey
+    syncInputs()
+    render()
   }
 
-  for (const key of INPUT_KEYS) {
-    const input = refs.inputs[key]
+  const render = (): void => {
+    const impliedIncome = state.modelInputs.annualSpending + state.modelInputs.annualSavingsIfWork
+    const derivedWorkDisutility = impliedIncome * workDisutilityRate(state.workAttitude)
+    const derivedOpportunityValue =
+      state.modelInputs.annualSpending *
+      planMultiplier(state.freeYearPlan, state.customOpportunityMultiplier)
 
-    input.addEventListener("input", () => {
-      if (key === "expectedRealReturn") {
-        const asPercent = parseRawNumber(input.value) ?? 0
-        rawInputs[key] = (asPercent / 100).toString()
-      } else if (key === "freedomOpportunityProbability") {
-        const asPercent = parseRawNumber(input.value) ?? 0
-        rawInputs[key] = (asPercent / 100).toString()
-      } else {
-        rawInputs[key] = input.value
-      }
+    const workDisutility = state.advancedSubjective
+      ? state.manualWorkDisutility
+      : derivedWorkDisutility
+    const opportunityValue = state.advancedSubjective
+      ? state.manualOpportunityValue
+      : derivedOpportunityValue
 
-      render(false)
+    const calculation = calculateOMY({
+      ...state.modelInputs,
+      workDisutility,
+      opportunityValue,
     })
 
-    input.addEventListener("blur", () => {
-      if (key === "expectedRealReturn") {
-        const asPercent = parseRawNumber(input.value) ?? 0
-        rawInputs[key] = (asPercent / 100).toString()
-      } else if (key === "freedomOpportunityProbability") {
-        const asPercent = parseRawNumber(input.value) ?? 0
-        rawInputs[key] = (asPercent / 100).toString()
-      } else {
-        rawInputs[key] = input.value
+    refs.customOpportunityField.hidden = !FREE_YEAR_PLAN_OPTIONS.find(
+      (option) => option.key === state.freeYearPlan,
+    )?.usesCustomMultiplier
+    refs.manualFields.hidden = !state.advancedSubjective
+
+    const toneClass =
+      calculation.readiness.status === "ready"
+        ? recommendationClass(calculation.marginal.status)
+        : readinessFallbackTone(calculation.readiness.status)
+
+    refs.resultCard.classList.remove(...RECOMMENDATION_CLASS_LIST)
+    if (toneClass) {
+      refs.resultCard.classList.add(toneClass)
+    }
+
+    setText(refs.primaryConclusion, calculation.primaryConclusion)
+    setText(refs.score, formatSignedCurrencyCompact(calculation.marginal.score))
+    setText(refs.primaryExplanation, calculation.primaryExplanation)
+    setText(refs.secondaryInsight, calculation.secondaryInsight)
+
+    setText(refs.readinessBadge, `Readiness: ${formatReadiness(calculation.readiness.status)}`)
+    setText(
+      refs.marginalBadge,
+      `Marginal year: ${formatRecommendationBadge(calculation.marginal.status)}`,
+    )
+
+    setText(refs.headlineBenefit, formatCurrencyCompact(calculation.marginal.benefitOfWorking))
+    setText(
+      refs.headlineDelayedFreedom,
+      formatCurrencyCompact(calculation.marginal.estimatedValueOfDelayedFreedom),
+    )
+
+    setText(refs.comparisonStopPortfolio, formatCurrency(calculation.derived.portfolioNow))
+    setText(refs.comparisonStopWithdrawal, formatPercent(calculation.derived.withdrawalRateNow))
+    setText(refs.comparisonStopGap, formatCurrency(calculation.derived.gapNow))
+
+    setText(refs.comparisonWorkPortfolio, formatCurrency(calculation.derived.portfolioInOneYear))
+    setText(
+      refs.comparisonWorkWithdrawal,
+      formatPercent(calculation.derived.withdrawalRateInOneYear),
+    )
+    setText(refs.comparisonWorkGap, formatCurrency(calculation.derived.gapInOneYear))
+
+    setText(refs.tradeoffBenefit, formatCurrency(calculation.marginal.benefitOfWorking))
+    setText(refs.tradeoffFreeYear, formatCurrency(calculation.derived.freeYearValue))
+    setText(refs.tradeoffWorkDisutility, formatCurrency(calculation.derived.workDisutility))
+    setText(refs.tradeoffOpportunity, formatCurrency(calculation.derived.opportunityValue))
+    setText(
+      refs.tradeoffDelayedFreedom,
+      formatCurrency(calculation.marginal.estimatedValueOfDelayedFreedom),
+    )
+    setText(refs.tradeoffNet, formatSignedCurrency(calculation.marginal.score))
+
+    setText(refs.returnValue, formatPercentInput(state.modelInputs.expectedRealReturn))
+    setText(refs.safetyTargetValue, formatPercentInput(state.modelInputs.safetyWithdrawalTarget))
+    setText(refs.retirementYearsValue, formatWholeYears(state.modelInputs.yearsInRetirementIfStopNow))
+
+    setText(refs.impliedIncome, formatCurrency(impliedIncome))
+    setText(
+      refs.workDisutilityHint,
+      state.advancedSubjective
+        ? `Manual work burden: ${formatCurrency(workDisutility)}`
+        : `Implied work burden from your answer: ${formatCurrency(workDisutility)}`,
+    )
+    setText(
+      refs.opportunityHint,
+      state.advancedSubjective
+        ? `Manual foregone opportunity: ${formatCurrency(opportunityValue)}`
+        : `Implied foregone opportunity: ${formatCurrency(opportunityValue)}`,
+    )
+
+    setText(refs.requiredPortfolio, formatCurrency(calculation.derived.requiredPortfolioAtTarget))
+    setText(refs.gapNow, formatCurrency(calculation.derived.gapNow))
+    setText(refs.gapInOneYear, formatCurrency(calculation.derived.gapInOneYear))
+    setText(refs.fundedYearsNow, formatYears(calculation.derived.fundedYearsNow))
+    setText(refs.fundedYearsInOneYear, formatYears(calculation.derived.fundedYearsInOneYear))
+    setText(refs.fundedYearsGain, formatYears(calculation.derived.fundedYearsGain))
+    setText(
+      refs.withdrawalImprovement,
+      formatPercent(calculation.derived.withdrawalRateImprovement),
+    )
+
+    const freeFlip =
+      calculation.marginal.benefitOfWorking -
+      calculation.derived.workDisutility -
+      calculation.derived.opportunityValue
+    const workFlip =
+      calculation.marginal.benefitOfWorking -
+      calculation.derived.freeYearValue -
+      calculation.derived.opportunityValue
+    const opportunityFlip =
+      calculation.marginal.benefitOfWorking -
+      calculation.derived.freeYearValue -
+      calculation.derived.workDisutility
+
+    setText(
+      refs.flipFreeYear,
+      freeFlip <= 0
+        ? "Marginal trade-off already favours stopping before this factor."
+        : `Would flip near ${formatCurrency(freeFlip)}.`,
+    )
+    setText(
+      refs.flipWorkDisutility,
+      workFlip <= 0
+        ? "Marginal trade-off already favours stopping before this factor."
+        : `Would flip near ${formatCurrency(workFlip)}.`,
+    )
+    setText(
+      refs.flipOpportunity,
+      opportunityFlip <= 0
+        ? "Marginal trade-off already favours stopping before this factor."
+        : `Would flip near ${formatCurrency(opportunityFlip)}.`,
+    )
+
+    setText(
+      refs.liveRegion,
+      `${calculation.primaryConclusion}. ${formatReadiness(calculation.readiness.status)} readiness. ${formatRecommendationBadge(calculation.marginal.status)} marginal year.`,
+    )
+
+    syncScenarioUI()
+  }
+
+  const updateNumericInput = (
+    key: OMYNumericInputKey,
+    rawValue: string,
+    opts?: { isPercent?: boolean; round?: boolean },
+  ): void => {
+    const parsed = parseNumber(rawValue)
+    if (parsed === null) {
+      state.modelInputs[key] = SAFE_FALLBACKS[key]
+      return
+    }
+
+    let next = opts?.isPercent ? parsed / 100 : parsed
+    next = clampInput(key, next)
+
+    if (opts?.round) {
+      next = Math.round(next)
+    }
+
+    state.modelInputs[key] = next
+  }
+
+  refs.inputs.currentPortfolio.addEventListener("input", () => {
+    updateNumericInput("currentPortfolio", refs.inputs.currentPortfolio.value)
+    render()
+  })
+
+  refs.inputs.annualSpending.addEventListener("input", () => {
+    updateNumericInput("annualSpending", refs.inputs.annualSpending.value)
+    if (!state.sabbaticalTouched) {
+      state.modelInputs.freeYearValue = state.modelInputs.annualSpending
+      refs.inputs.sabbaticalWillingnessToPay.value = toInputString(state.modelInputs.freeYearValue)
+    }
+    render()
+  })
+
+  refs.inputs.annualSavingsIfWork.addEventListener("input", () => {
+    updateNumericInput("annualSavingsIfWork", refs.inputs.annualSavingsIfWork.value)
+    render()
+  })
+
+  refs.inputs.expectedRealReturn.addEventListener("input", () => {
+    updateNumericInput("expectedRealReturn", refs.inputs.expectedRealReturn.value, {
+      isPercent: true,
+    })
+    render()
+  })
+
+  refs.inputs.safetyWithdrawalTarget.addEventListener("input", () => {
+    updateNumericInput("safetyWithdrawalTarget", refs.inputs.safetyWithdrawalTarget.value, {
+      isPercent: true,
+    })
+    render()
+  })
+
+  refs.inputs.yearsInRetirementIfStopNow.addEventListener("input", () => {
+    updateNumericInput(
+      "yearsInRetirementIfStopNow",
+      refs.inputs.yearsInRetirementIfStopNow.value,
+      { round: true },
+    )
+    render()
+  })
+
+  refs.inputs.sabbaticalWillingnessToPay.addEventListener("input", () => {
+    updateNumericInput("freeYearValue", refs.inputs.sabbaticalWillingnessToPay.value)
+    state.sabbaticalTouched = true
+    render()
+  })
+
+  refs.inputs.workYearAttitude.addEventListener("change", () => {
+    state.workAttitude = refs.inputs.workYearAttitude.value as WorkAttitudeKey
+    render()
+  })
+
+  refs.inputs.freeYearPlan.addEventListener("change", () => {
+    state.freeYearPlan = refs.inputs.freeYearPlan.value as FreeYearPlanKey
+    render()
+  })
+
+  refs.inputs.customOpportunityMultiplier.addEventListener("input", () => {
+    const parsed = parseNumber(refs.inputs.customOpportunityMultiplier.value)
+    state.customOpportunityMultiplier =
+      parsed === null ? DEFAULT_CUSTOM_OPPORTUNITY_MULTIPLIER : Math.max(parsed, 0)
+    render()
+  })
+
+  refs.advancedToggle.addEventListener("change", () => {
+    state.advancedSubjective = refs.advancedToggle.checked
+    render()
+  })
+
+  refs.inputs.manualWorkDisutility.addEventListener("input", () => {
+    const parsed = parseNumber(refs.inputs.manualWorkDisutility.value)
+    state.manualWorkDisutility = parsed === null ? 0 : Math.max(parsed, 0)
+    render()
+  })
+
+  refs.inputs.manualOpportunityValue.addEventListener("input", () => {
+    const parsed = parseNumber(refs.inputs.manualOpportunityValue.value)
+    state.manualOpportunityValue = parsed === null ? 0 : Math.max(parsed, 0)
+    render()
+  })
+
+  for (const button of anchorButtons) {
+    button.addEventListener("click", () => {
+      const anchor = parseNumber(button.dataset.anchor ?? "")
+      if (anchor === null) {
+        return
       }
-
-      const normalized = normalizeInputs(rawInputs)
-      rawInputs[key] = formatInputNumber(normalized.inputs[key])
-
-      render(true)
+      state.modelInputs.freeYearValue = Math.round(state.modelInputs.annualSpending * anchor)
+      state.sabbaticalTouched = true
+      refs.inputs.sabbaticalWillingnessToPay.value = toInputString(state.modelInputs.freeYearValue)
+      render()
     })
   }
 

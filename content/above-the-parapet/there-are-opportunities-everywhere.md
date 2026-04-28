@@ -2,6 +2,8 @@
 date: '2016-07-18T15:45:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/07/there-are-opportunities-everywhere.html
 title: THERE ARE OPPORTUNITIES EVERYWHERE
+hero_image: "img/parapet/there-are-opportunities-everywhere.png"
+hero_alt: Satirical editorial-style cartoon of managers balancing opportunity, volatility, and rising debt pressures.
 ---
 ### Policies for the economy and businesses.
 
@@ -19,7 +21,13 @@ This is not the time for hasty decisions and fast judgements. The UK’s decisio
 
 Our new Prime Minister has emphasised that ‘putting people back in control’ is central to her vision. She has shown her government is neither a continuation of David Cameron’s stance, nor a bonfire of regulations in the labour market, as favoured by Andrea Leadsom, her former rival. Theresa May’s proposal to have representatives of workers on the boards of public limited companies puts commercial democracy at the top of political agendas. Of course, the devil will be in the detail. Has the Labour Party been out-manoeuvred on this issue? In 1977, the then Prime Minister, Tony Blair, received an extensive report on industrial democracy from a commission led by Oxford academic Baron Alan Bullock. There were many recommendations. Nothing happened. The trades unions could not agree how it would all work.
 
-Get the facts. From an article titled 'Humanism in Medicine' - The Lancet (1978):  'One way of catching class attention is to ask what advice students would give when presented with the following family history. The father has syphilis, the mother tuberculosis, they already had four children - the first is blind, the second died, the third is deaf and dumb, and the fourth has tuberculosis. The mother is pregnant with her fifth child, and the parents are willing to have an abortion should you so decide. Assuming there aren’t too many Roman Catholics in the class, you will usually find a majority in favour of abortion. You congratulate the class on their decision … and then tell them they have just murdered Beethoven.' There is evidence. ‘History teaches us that men and nations behave wisely once they have exhausted all other alternatives.’ Abba Eban, Foreign Minister of Israel, 1966-74.
+### Get the facts. 
+
+From an article titled 'Humanism in Medicine' - The Lancet (1978):  'One way of catching class attention is to ask what advice students would give when presented with the following family history. The father has syphilis, the mother tuberculosis, they already had four children - the first is blind, the second died, the third is deaf and dumb, and the fourth has tuberculosis. The mother is pregnant with her fifth child, and the parents are willing to have an abortion should you so decide. Assuming there aren’t too many Roman Catholics in the class, you will usually find a majority in favour of abortion. You congratulate the class on their decision … and then tell them they have just murdered Beethoven.' 
+
+### There is evidence. 
+
+‘History teaches us that men and nations behave wisely once they have exhausted all other alternatives.’ *Abba Eban, Foreign Minister of Israel, 1966-74.*
 
 ### Debts.
 

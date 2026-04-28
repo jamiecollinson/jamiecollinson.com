@@ -2,6 +2,8 @@
 date: '2016-09-14T16:51:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/09/is-complacency-on-way-back.html
 title: IS COMPLACENCY ON THE WAY BACK?
+hero_image: "img/parapet/is-complacency-on-the-way-back.png"
+hero_alt: Satirical editorial-style cartoon of complacent leaders amid Brexit-era shocks and political spin.
 ---
 ### British investment in America.
 

@@ -2,6 +2,8 @@
 date: '2016-02-29T14:38:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/02/another-look-at-things-out-there.html
 title: ANOTHER LOOK AT THINGS OUT THERE
+hero_image: "img/parapet/another-look-at-things-out-there.png"
+hero_alt: Satirical editorial-style cartoon of bank volatility and practical management choices in early 2016.
 ---
 ### Volatility of banks.
 
@@ -15,7 +17,9 @@ Did you think it went OK and then suffered rejection? It is possible that you we
 
 Many commentators say there is a trade-off between being a ‘good’ employer and running a profitable business. However, there is a lot of evidence that the opposite is true. ‘A great place to work’ is a concrete concept, but such a place is not the upshot of crèches, subsidised meals or other perks. Instead, it stems from quality of relationships. The foundation for consistent success is trusting the people with whom you work, having pride in what you do and enjoying being with your colleagues.
 
-Teenagers are not like we used to be! The NextDraft emphasises this is correct. They smoke less than we did. They don’t get pregnant as often, and don’t do great quantities of meth. They do not binge drink regularly. They do not watch television as much. Are they likely to be too distracted by their mobile phones? Or are an advanced breed? Is it possible they are devoting all their time to building a billion dollar startup? Maybe they are just boring? Whatever the explanation, today’s youngsters are not as bad as we were.
+### Teenagers are not like we used to be! 
+
+The NextDraft emphasises this is correct. They smoke less than we did. They don’t get pregnant as often, and don’t do great quantities of meth. They do not binge drink regularly. They do not watch television as much. Are they likely to be too distracted by their mobile phones? Or are an advanced breed? Is it possible they are devoting all their time to building a billion dollar startup? Maybe they are just boring? Whatever the explanation, today’s youngsters are not as bad as we were.
 
 ### A thought.
 

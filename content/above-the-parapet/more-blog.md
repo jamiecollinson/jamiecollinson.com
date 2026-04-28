@@ -2,6 +2,8 @@
 date: '2016-10-11T14:12:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/10/more-blog.html
 title: MORE BLOG
+hero_image: "img/parapet/more-blog.png"
+hero_alt: Satirical editorial-style cartoon of a manager-blogger mapping political and business themes in 2016.
 ---
 ### A sudden interest?
 

@@ -2,6 +2,8 @@
 date: '2016-02-01T17:01:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/02/looking-sideways.html
 title: LOOKING SIDEWAYS
+hero_image: "img/parapet/looking-sideways.png"
+hero_alt: Satirical editorial-style cartoon of business leaders using a sideways telescope to navigate 2016 risks.
 ---
 ### Osborne’s army.
 
@@ -11,15 +13,18 @@ But the manufacturing marchers have had a bad time. The sector’s share of GDP 
 
 ### Politics, policies and imagination.
 
-Markets and their forces attract analysts and commentators. Managers ought to take part in the arguments and defend the need for their contributions. Not so long ago, the New Yorker, hardly a manual for the Left, chose Karl Marx as major thinker of the next decade. A market’s morality has two pivotal components. The first is an obligation to deliver measureable outcomes, founded upon the premise that pursuit if enlightened self-interest leads to the betterment of society. There will be a backlash if the market is seen to fail on either results or restraint.
+Markets and their forces attract analysts and commentators. Managers ought to take part in the arguments and defend the need for their contributions. Not so long ago, the New Yorker, hardly a manual for the Left, chose Karl Marx as major thinker of the next decade. A market’s morality has two pivotal components. The first is an obligation to deliver measureable outcomes, founded upon the premise that pursuit of enlightened self-interest leads to the betterment of society. There will be a backlash if the market is seen to fail on either results or restraint.
 
 Anyway, what is the job of government? After all, there are not dynamic markets without a government to define rules and context. The state must accept the disciplines of markets and understand the impact of control and intervention. This leaves our politicians with a daunting challenge. They have to devise ways for reducing and redirecting intrusion whilst fulfilling their responsibilities and preserving the electorate’s trust. It means redesigning the welfare state and securing the competences to cope with global competition. Public policies and politics are one thing. But imagination will be tested to breaking point and is in short supply.
 
 ### Big questions for businesses in 2016:
 
-1 Will PR China continue to cause economic ructions throughout the
-
-world? 2 Are prices and margins across commodity markets likely to still feel the squeeze? Oil fell 35% to an 11-year low of below $40 a barrel in 2015. 3 What is the outlook for emerging countries? Growth has halved since a peak in 2011. 4 Is it possible an ‘out’ vote in the forthcoming referendum on UK and the European Union would derail investment projects? In any event, will there be an urgent need to rebuild economic and trading bridges? 5 Can we find greater clarity for the outlook between America and Europe? Will elections in the US ‘cast a gloomy shadow'?, asks Allister Heath. 6 Will the Bank of England raise interest rates? Also, it is keen to use new powers to limit risky mortgages.
+1. Will PR China continue to cause economic ructions throughout the world? 
+2. Are prices and margins across commodity markets likely to still feel the squeeze? Oil fell 35% to an 11-year low of below $40 a barrel in 2015. 
+3. What is the outlook for emerging countries? Growth has halved since a peak in 2011.
+4. Is it possible an ‘out’ vote in the forthcoming referendum on UK and the European Union would derail investment projects? In any event, will there be an urgent need to rebuild economic and trading bridges?
+5. Can we find greater clarity for the outlook between America and Europe? Will elections in the US ‘cast a gloomy shadow'?, asks Allister Heath.
+6. Will the Bank of England raise interest rates? Also, it is keen to use new powers to limit risky mortgages.
 
 ### Too big to fail.
 

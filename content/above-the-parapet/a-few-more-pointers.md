@@ -2,6 +2,8 @@
 date: '2016-01-18T14:48:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/01/a-few-more-pointers.html
 title: A FEW MORE POINTERS
+hero_image: "img/parapet/a-few-more-pointers.png"
+hero_alt: Satirical editorial-style cartoon of managers, automation, and contract risks in early 2016.
 ---
 ### European Union (EU).
 

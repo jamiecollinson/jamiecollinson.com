@@ -2,6 +2,8 @@
 date: '2016-09-26T17:08:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/09/we-live-in-complex-world.html
 title: WE LIVE IN A COMPLEX WORLD
+hero_image: "img/parapet/we-live-in-a-complex-world.png"
+hero_alt: Satirical editorial-style cartoon of forecasters and managers wrestling with Brexit-era complexity.
 ---
 ### Forecasts.
 

@@ -2,10 +2,12 @@
 date: '2016-01-04T16:30:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/01/now-in-2016.html
 title: NOW IN 2016
+hero_image: "img/parapet/now-in-2016.png"
+hero_alt: Satirical editorial-style cartoon of a manager in early 2016 tracking growth concern and crash risk signals.
 ---
 ‘Alarm bells are ringing in the engine room of the British economy’, says Ed Conway in The Times. People have been depleting their savings since 2013.
 
-Houses and land in London are less affordable than they have ever been. Britain’s current account has been in deficit since 1998 – that is, we have been importing and borrowing more than we export and earn. Last year, the shortfall hit a record 6%of Gross Domestic Product – the equivalent of every British household borrowing of £3,500 from overseas. We do not live within our means and the pound could be heading for a fall. This might be fine for underperforming exporters. For those who trade in sterling, the outcome will be ‘being squeezed all over again’.
+Houses and land in London are less affordable than they have ever been. Britain’s current account has been in deficit since 1998 – that is, we have been importing and borrowing more than we export and earn. Last year, the shortfall hit a record 6% of Gross Domestic Product – the equivalent of every British household borrowing of £3,500 from overseas. We do not live within our means and the pound could be heading for a fall. This might be fine for underperforming exporters. For those who trade in sterling, the outcome will be ‘being squeezed all over again’.
 
 ### A growing concern?
 
@@ -19,6 +21,6 @@ A member of a trades union is as likely to be a lawyer as a factory worker. Figu
 
 ‘The crisis happened partly because the economic mainstream rendered that outcome ostensibly so unlikely in theory that they ended up making it far more likely in practice.’ *Martin Wolf in The Shifts and the Shocks (Allen Lane).*
 
-More care. We cannot safely leave politics to politicians, or political economy to college professors. The people themselves must think, because the people alone can act.’ Henry
+### More care. 
 
-George (1838-97). American economist.
+‘We cannot safely leave politics to politicians, or political economy to college professors. The people themselves must think, because the people alone can act.’ *Henry George (1838-97). American economist.*

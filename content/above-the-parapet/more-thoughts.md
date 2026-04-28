@@ -2,6 +2,8 @@
 date: '2016-03-14T15:16:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/03/more-thoughts.html
 title: MORE THOUGHTS
+hero_image: "img/parapet/more-thoughts.png"
+hero_alt: Satirical editorial-style cartoon of a managers' delivery van navigating government targets and inequality.
 ---
 ### Things going on.
 

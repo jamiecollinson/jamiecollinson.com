@@ -2,6 +2,8 @@
 date: '2016-07-04T15:40:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/07/some-tricky-issues.html
 title: SOME TRICKY ISSUES
+hero_image: "img/parapet/some-tricky-issues.png"
+hero_alt: Satirical editorial-style cartoon of managers navigating volatility, fraud, pensions, and difficult leadership.
 ---
 ### Volatility.
 

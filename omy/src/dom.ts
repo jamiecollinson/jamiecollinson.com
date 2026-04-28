@@ -1,454 +1,361 @@
 import {
   DEFAULT_SCENARIO,
-  HARD_LIMITS,
-  INPUT_CONFIGS,
+  FREE_YEAR_PLAN_OPTIONS,
   OMY_SCENARIOS,
   OMY_SCENARIO_ORDER,
+  RECOMMENDATION_TONES,
+  WORK_ATTITUDE_OPTIONS,
   type OMYScenarioKey,
 } from "./constants"
-import type { OMYDerived, OMYInputKey, OMYRecommendation } from "./types"
+import type { OMYReadinessStatus, OMYRecommendation } from "./types"
 
 export type OMYDomRefs = {
   root: HTMLElement
   resultCard: HTMLElement
-  inputs: Record<OMYInputKey, HTMLInputElement>
-  errors: Record<OMYInputKey, HTMLElement>
+  primaryConclusion: HTMLElement
+  score: HTMLElement
+  primaryExplanation: HTMLElement
+  secondaryInsight: HTMLElement
+  readinessBadge: HTMLElement
+  marginalBadge: HTMLElement
+  headlineBenefit: HTMLElement
+  headlineDelayedFreedom: HTMLElement
+  comparisonStopPortfolio: HTMLElement
+  comparisonStopWithdrawal: HTMLElement
+  comparisonStopGap: HTMLElement
+  comparisonWorkPortfolio: HTMLElement
+  comparisonWorkWithdrawal: HTMLElement
+  comparisonWorkGap: HTMLElement
+  tradeoffBenefit: HTMLElement
+  tradeoffFreeYear: HTMLElement
+  tradeoffWorkDisutility: HTMLElement
+  tradeoffOpportunity: HTMLElement
+  tradeoffDelayedFreedom: HTMLElement
+  tradeoffNet: HTMLElement
+  impliedIncome: HTMLElement
+  workDisutilityHint: HTMLElement
+  opportunityHint: HTMLElement
+  requiredPortfolio: HTMLElement
+  gapNow: HTMLElement
+  gapInOneYear: HTMLElement
+  fundedYearsNow: HTMLElement
+  fundedYearsInOneYear: HTMLElement
+  fundedYearsGain: HTMLElement
+  withdrawalImprovement: HTMLElement
+  flipFreeYear: HTMLElement
+  flipWorkDisutility: HTMLElement
+  flipOpportunity: HTMLElement
   returnValue: HTMLElement
-  probabilityValue: HTMLElement
+  safetyTargetValue: HTMLElement
   retirementYearsValue: HTMLElement
   scenarioButtons: Record<OMYScenarioKey, HTMLButtonElement>
   scenarioSummary: HTMLElement
   resetButton: HTMLButtonElement
-  recommendationLabel: HTMLElement
-  score: HTMLElement
-  explanation: HTMLElement
-  benefitValue: HTMLElement
-  costValue: HTMLElement
-  derived: Record<keyof OMYDerived, HTMLElement>
-  totalCostValue: HTMLElement
-  swrTargetValue: HTMLElement
-  swrRequiredPortfolioValue: HTMLElement
-  swrGapNowValue: HTMLElement
-  swrGapInOneYearValue: HTMLElement
-  swrStatusValue: HTMLElement
-  dominantSideValue: HTMLElement
-  largestCostValue: HTMLElement
-  flipFreeYearValue: HTMLElement
-  flipWorkDisutilityValue: HTMLElement
-  flipOpportunityValue: HTMLElement
+  advancedToggle: HTMLInputElement
+  customOpportunityField: HTMLElement
+  manualFields: HTMLElement
+  inputs: {
+    currentPortfolio: HTMLInputElement
+    annualSpending: HTMLInputElement
+    annualSavingsIfWork: HTMLInputElement
+    expectedRealReturn: HTMLInputElement
+    safetyWithdrawalTarget: HTMLInputElement
+    yearsInRetirementIfStopNow: HTMLInputElement
+    sabbaticalWillingnessToPay: HTMLInputElement
+    workYearAttitude: HTMLSelectElement
+    freeYearPlan: HTMLSelectElement
+    customOpportunityMultiplier: HTMLInputElement
+    manualWorkDisutility: HTMLInputElement
+    manualOpportunityValue: HTMLInputElement
+  }
   liveRegion: HTMLElement
 }
 
-const RECOMMENDATION_CLASSES: Record<OMYRecommendation, string> = {
-  "strong-work": "omy-tone-strong-work",
-  "lean-work": "omy-tone-lean-work",
-  "close-call": "omy-tone-close-call",
-  "lean-stop": "omy-tone-lean-stop",
-  "strong-stop": "omy-tone-strong-stop",
-}
+const RECOMMENDATION_CLASSES = Object.values(RECOMMENDATION_TONES)
 
-export const RECOMMENDATION_CLASS_LIST = Object.values(RECOMMENDATION_CLASSES)
+export const RECOMMENDATION_CLASS_LIST = RECOMMENDATION_CLASSES
 
 export function recommendationClass(recommendation: OMYRecommendation): string {
-  return RECOMMENDATION_CLASSES[recommendation]
+  return RECOMMENDATION_TONES[recommendation]
 }
 
-function el<K extends keyof HTMLElementTagNameMap>(
-  tag: K,
-  className?: string,
-  text?: string,
-): HTMLElementTagNameMap[K] {
-  const node = document.createElement(tag)
-  if (className) {
-    node.className = className
+export function readinessFallbackTone(readiness: OMYReadinessStatus): string {
+  if (readiness === "not-ready") {
+    return RECOMMENDATION_TONES["strong-work"]
   }
-  if (text) {
-    node.textContent = text
+  if (readiness === "borderline") {
+    return RECOMMENDATION_TONES["close-call"]
   }
-  return node
+  return ""
 }
 
-function createField(
-  key: OMYInputKey,
-  labelText: string,
-  helperText: string,
-  kind:
-    | "currency"
-    | "decimal"
-    | "return-slider"
-    | "probability-slider"
-    | "years-slider",
-  step: string,
-): {
-  wrapper: HTMLElement
-  input: HTMLInputElement
-  error: HTMLElement
-  sliderValue?: HTMLElement
-} {
-  const wrapper = el("div", "omy-field")
-  const label = el("label", "omy-label", labelText)
-  const helper = el("p", "omy-helper", helperText)
-  const error = el("p", "omy-error")
-  const inputId = `omy-${key}`
-  const helperId = `${inputId}-helper`
-  const errorId = `${inputId}-error`
-
-  label.htmlFor = inputId
-  helper.id = helperId
-  error.id = errorId
-  error.hidden = true
-
-  let sliderValue: HTMLElement | undefined
-
-  if (
-    kind === "return-slider" ||
-    kind === "probability-slider" ||
-    kind === "years-slider"
-  ) {
-    const row = el("div", "omy-slider-row")
-    const input = el("input", "omy-input omy-input-slider")
-    const bounds = HARD_LIMITS[key]
-    input.type = "range"
-    input.id = inputId
-    input.name = key
-    input.min =
-      kind === "return-slider"
-        ? Math.round(bounds.min * 100).toString()
-        : kind === "probability-slider"
-          ? Math.round(bounds.min * 100).toString()
-          : bounds.min.toString()
-    input.max =
-      kind === "return-slider"
-        ? Math.round((bounds.max ?? 0.15) * 100).toString()
-        : kind === "probability-slider"
-          ? Math.round((bounds.max ?? 1) * 100).toString()
-          : (bounds.max ?? 60).toString()
-    input.step =
-      kind === "return-slider"
-        ? Number(step).toString()
-        : "1"
-
-    input.setAttribute("aria-describedby", `${helperId} ${errorId}`)
-
-    sliderValue = el(
-      "output",
-      "omy-slider-value omy-mono",
-      kind === "probability-slider"
-        ? "0%"
-        : kind === "years-slider"
-          ? "30 years"
-          : "3.0%",
-    )
-    sliderValue.id = `${inputId}-value`
-
-    row.append(input, sliderValue)
-    wrapper.append(label, helper, row, error)
-
-    return { wrapper, input, error, sliderValue }
+function queryRequired<T extends HTMLElement>(container: HTMLElement, selector: string): T {
+  const node = container.querySelector(selector)
+  if (!node) {
+    throw new Error(`Missing required element: ${selector}`)
   }
-
-  const input = el("input", "omy-input")
-  input.type = "number"
-  input.id = inputId
-  input.name = key
-  input.step = step
-  input.inputMode = "decimal"
-  input.autocomplete = "off"
-  input.setAttribute("aria-describedby", `${helperId} ${errorId}`)
-
-  const bounds = HARD_LIMITS[key]
-  if (bounds.min >= 0) {
-    input.min = bounds.min.toString()
-  }
-  if (bounds.max !== undefined) {
-    input.max = bounds.max.toString()
-  }
-
-  wrapper.append(label, helper, input, error)
-  return { wrapper, input, error }
-}
-
-function createComparisonGrid(
-  title: string,
-  derivedRefs: Record<keyof OMYDerived, HTMLElement>,
-): HTMLElement {
-  const section = el("section", "omy-diagnostic-section")
-  const heading = el("h4", "omy-subheading", title)
-  const grid = el("div", "omy-comparison-grid")
-
-  const headers = ["", "Now", "In one year", "Change"]
-  for (const text of headers) {
-    const headerCell = el("div", "omy-comparison-head", text)
-    grid.appendChild(headerCell)
-  }
-
-  const rows: Array<{
-    label: string
-    now: keyof OMYDerived
-    future: keyof OMYDerived
-    change?: keyof OMYDerived
-  }> = [
-    {
-      label: "Portfolio",
-      now: "portfolioNow",
-      future: "portfolioInOneYear",
-      change: "portfolioGain",
-    },
-    {
-      label: "Withdrawal rate",
-      now: "withdrawalRateNow",
-      future: "withdrawalRateInOneYear",
-      change: "withdrawalRateImprovement",
-    },
-    {
-      label: "Funded years",
-      now: "fundedYearsNow",
-      future: "fundedYearsInOneYear",
-      change: "fundedYearsGain",
-    },
-    {
-      label: "Retirement horizon",
-      now: "retirementYearsNow",
-      future: "retirementYearsInOneYear",
-    },
-  ]
-
-  for (const row of rows) {
-    const labelCell = el("div", "omy-comparison-label", row.label)
-    const nowCell = el("div", "omy-comparison-value omy-mono", "-")
-    const futureCell = el("div", "omy-comparison-value omy-mono", "-")
-    const changeCell = el("div", "omy-comparison-value omy-mono", "-")
-
-    derivedRefs[row.now] = nowCell
-    derivedRefs[row.future] = futureCell
-
-    if (row.change) {
-      derivedRefs[row.change] = changeCell
-    } else {
-      changeCell.textContent = "-"
-    }
-
-    grid.append(labelCell, nowCell, futureCell, changeCell)
-  }
-
-  section.append(heading, grid)
-  return section
-}
-
-function createMetricRow(labelText: string): { row: HTMLElement; value: HTMLElement } {
-  const row = el("div", "omy-metric-row")
-  const label = el("span", "omy-metric-label", labelText)
-  const value = el("span", "omy-metric-value omy-mono", "-")
-  row.append(label, value)
-  return { row, value }
+  return node as T
 }
 
 export function createOMYDom(container: HTMLElement): OMYDomRefs {
   container.innerHTML = ""
 
-  const root = el("section", "omy-app")
+  const root = document.createElement("section")
+  root.className = "omy-app"
 
-  const layout = el("div", "omy-layout")
-  const inputsColumn = el("div", "omy-inputs")
-  const diagnosticsColumn = el("div", "omy-diagnostics")
+  const scenarioButtons = OMY_SCENARIO_ORDER.map((key) => {
+    const isActive = key === DEFAULT_SCENARIO
+    return `<button type=\"button\" class=\"omy-scenario-button${isActive ? " is-active" : ""}\" data-scenario=\"${key}\" aria-pressed=\"${isActive ? "true" : "false"}\">${OMY_SCENARIOS[key].shortLabel}</button>`
+  }).join("")
 
-  const resultCard = el("section", "omy-card omy-result-card")
-  const resultLabel = el("p", "omy-result-label", "Primary conclusion")
-  const recommendationLabel = el("p", "omy-recommendation", "-")
-  const score = el("p", "omy-score omy-mono", "-")
-  const explanation = el("p", "omy-explanation", "-")
-  const liveRegion = el("p", "omy-sr-only")
-  liveRegion.setAttribute("aria-live", "polite")
+  const workAttitudeOptions = WORK_ATTITUDE_OPTIONS.map(
+    (option) =>
+      `<option value=\"${option.key}\">${option.label}</option>`,
+  ).join("")
 
-  const summaryGrid = el("div", "omy-summary-grid")
-  const benefit = createMetricRow("Financial benefit of working")
-  const cost = createMetricRow("Estimated cost of working")
-  summaryGrid.append(benefit.row, cost.row)
+  const freeYearPlanOptions = FREE_YEAR_PLAN_OPTIONS.map(
+    (option) =>
+      `<option value=\"${option.key}\">${option.label}</option>`,
+  ).join("")
 
-  resultCard.append(
-    resultLabel,
-    recommendationLabel,
-    score,
-    explanation,
-    summaryGrid,
-    liveRegion,
-  )
+  root.innerHTML = `
+    <section class="omy-panel omy-result-card">
+      <p class="omy-result-label">Primary conclusion</p>
+      <h3 class="omy-primary-conclusion">-</h3>
+      <p class="omy-score-label">Marginal one-year net</p>
+      <p class="omy-score omy-mono">-</p>
+      <p class="omy-explanation">-</p>
+      <p class="omy-secondary">-</p>
+      <div class="omy-badges">
+        <span class="omy-badge" data-output="readiness-badge">Readiness: -</span>
+        <span class="omy-badge" data-output="marginal-badge">Marginal year: -</span>
+      </div>
+      <div class="omy-summary-grid">
+        <div class="omy-metric-row">
+          <span class="omy-metric-label">Financial benefit of one more year</span>
+          <span class="omy-metric-value omy-mono" data-output="headline-benefit">-</span>
+        </div>
+        <div class="omy-metric-row">
+          <span class="omy-metric-label">Estimated value of delayed freedom</span>
+          <span class="omy-metric-value omy-mono" data-output="headline-cost">-</span>
+        </div>
+      </div>
+      <p class="omy-sr-only" aria-live="polite"></p>
+    </section>
 
-  const diagnosticsCard = el("section", "omy-card")
-  const diagnosticsHeading = el("h3", "omy-card-title", "Diagnostics")
-  const derived = {} as Record<keyof OMYDerived, HTMLElement>
-  const diagnosticsGrid = createComparisonGrid("Derived comparisons", derived)
-  diagnosticsCard.append(diagnosticsHeading, diagnosticsGrid)
+    <section class="omy-panel">
+      <h3 class="omy-section-title">Stop now vs work one more year</h3>
+      <div class="omy-compare-grid">
+        <div class="omy-compare-column">
+          <h4 class="omy-column-title">Stop now</h4>
+          <div class="omy-metric-row"><span class="omy-metric-label">Portfolio</span><span class="omy-metric-value omy-mono" data-output="stop-portfolio">-</span></div>
+          <div class="omy-metric-row"><span class="omy-metric-label">Withdrawal rate</span><span class="omy-metric-value omy-mono" data-output="stop-withdrawal">-</span></div>
+          <div class="omy-metric-row"><span class="omy-metric-label">Gap to target</span><span class="omy-metric-value omy-mono" data-output="stop-gap">-</span></div>
+        </div>
+        <div class="omy-compare-column">
+          <h4 class="omy-column-title">Work one more year</h4>
+          <div class="omy-metric-row"><span class="omy-metric-label">Portfolio</span><span class="omy-metric-value omy-mono" data-output="work-portfolio">-</span></div>
+          <div class="omy-metric-row"><span class="omy-metric-label">Withdrawal rate</span><span class="omy-metric-value omy-mono" data-output="work-withdrawal">-</span></div>
+          <div class="omy-metric-row"><span class="omy-metric-label">Gap to target</span><span class="omy-metric-value omy-mono" data-output="work-gap">-</span></div>
+        </div>
+      </div>
+    </section>
 
-  const costCard = el("section", "omy-card")
-  const costHeading = el("h3", "omy-card-title", "Cost terms")
-  const freeYearRow = createMetricRow("Free year value")
-  const workRow = createMetricRow("Work disutility")
-  const opportunityRow = createMetricRow("Foregone opportunity value")
-  const totalCostRow = createMetricRow("Total cost of working")
-  const costRows = el("div", "omy-metrics")
-  costRows.append(freeYearRow.row, workRow.row, opportunityRow.row, totalCostRow.row)
-  costCard.append(costHeading, costRows)
+    <section class="omy-panel">
+      <h3 class="omy-section-title">The marginal year</h3>
+      <div class="omy-metric-row"><span class="omy-metric-label">Portfolio gain</span><span class="omy-metric-value omy-mono" data-output="tradeoff-benefit">-</span></div>
+      <div class="omy-metric-row"><span class="omy-metric-label">Value of a free year</span><span class="omy-metric-value omy-mono" data-output="tradeoff-free">-</span></div>
+      <div class="omy-metric-row"><span class="omy-metric-label">Burden of another work year</span><span class="omy-metric-value omy-mono" data-output="tradeoff-work">-</span></div>
+      <div class="omy-metric-row"><span class="omy-metric-label">Foregone opportunity value</span><span class="omy-metric-value omy-mono" data-output="tradeoff-opportunity">-</span></div>
+      <div class="omy-metric-row"><span class="omy-metric-label">Estimated value of delayed freedom</span><span class="omy-metric-value omy-mono" data-output="tradeoff-cost">-</span></div>
+      <div class="omy-metric-row omy-metric-row-strong"><span class="omy-metric-label">Net trade-off</span><span class="omy-metric-value omy-mono" data-output="tradeoff-net">-</span></div>
+    </section>
 
-  derived.freeYearValue = freeYearRow.value
-  derived.workDisutility = workRow.value
-  derived.opportunityValue = opportunityRow.value
+    <section class="omy-panel">
+      <h3 class="omy-section-title">Assumptions</h3>
+      <div class="omy-scenarios">
+        <p class="omy-scenarios-title">Scenario presets (UK overall percentiles)</p>
+        <p class="omy-scenarios-helper">Use as a starting point, then adjust assumptions manually.</p>
+        <div class="omy-scenario-buttons">${scenarioButtons}</div>
+        <p class="omy-scenarios-summary" data-output="scenario-summary">-</p>
+      </div>
 
-  const sensitivityCard = el("section", "omy-card")
-  const sensitivityHeading = el("h3", "omy-card-title", "SWR and sensitivity")
-  const swrTargetRow = createMetricRow("Safe withdrawal target (now -> in one year)")
-  const swrRequiredPortfolioRow = createMetricRow("Portfolio needed at target")
-  const swrGapNowRow = createMetricRow("Gap to safe level (now)")
-  const swrGapInOneYearRow = createMetricRow("Gap to safe level (in one year)")
-  const swrStatusRow = createMetricRow("SWR safety status")
-  const dominantRow = createMetricRow("Currently dominant side")
-  const largestCostRow = createMetricRow("Largest cost component")
-  const flipFreeRow = createMetricRow("Free-year value flip point")
-  const flipWorkRow = createMetricRow("Work disutility flip point")
-  const flipOpportunityRow = createMetricRow("Opportunity value flip point")
-  const sensitivityRows = el("div", "omy-metrics")
-  sensitivityRows.append(
-    swrTargetRow.row,
-    swrRequiredPortfolioRow.row,
-    swrGapNowRow.row,
-    swrGapInOneYearRow.row,
-    swrStatusRow.row,
-    dominantRow.row,
-    largestCostRow.row,
-    flipFreeRow.row,
-    flipWorkRow.row,
-    flipOpportunityRow.row,
-  )
-  sensitivityCard.append(sensitivityHeading, sensitivityRows)
+      <div class="omy-assumptions-grid">
+        <section class="omy-input-group">
+          <h4 class="omy-group-title">Financial assumptions</h4>
 
-  const financialInputsCard = el("section", "omy-card")
-  const financialHeading = el("h3", "omy-card-title", "Assumptions")
-  financialInputsCard.appendChild(financialHeading)
+          <label class="omy-label" for="omy-currentPortfolio">Current portfolio</label>
+          <p class="omy-helper">Current investable portfolio value.</p>
+          <input id="omy-currentPortfolio" class="omy-input" type="number" step="1000" min="1" inputmode="decimal" />
 
-  const scenarioBlock = el("div", "omy-scenarios")
-  const scenarioHeading = el(
-    "p",
-    "omy-scenarios-title",
-    "Scenario presets (UK overall percentiles)",
-  )
-  const scenarioHelper = el(
-    "p",
-    "omy-scenarios-helper",
-    "Use as a starting point, then adjust assumptions manually.",
-  )
-  const scenarioButtonsRow = el("div", "omy-scenario-buttons")
-  const scenarioSummary = el("p", "omy-scenarios-summary")
-  const scenarioButtons = {} as Record<OMYScenarioKey, HTMLButtonElement>
+          <label class="omy-label" for="omy-annualSpending">Annual spending</label>
+          <p class="omy-helper">Annual spending required in retirement.</p>
+          <input id="omy-annualSpending" class="omy-input" type="number" step="1000" min="1" inputmode="decimal" />
 
-  for (const scenarioKey of OMY_SCENARIO_ORDER) {
-    const button = el("button", "omy-scenario-button", scenarioKey)
-    button.type = "button"
-    button.dataset.scenario = scenarioKey
-    button.textContent =
-      OMY_SCENARIOS[scenarioKey].shortLabel
-    button.classList.toggle("is-active", scenarioKey === DEFAULT_SCENARIO)
-    button.setAttribute(
-      "aria-pressed",
-      scenarioKey === DEFAULT_SCENARIO ? "true" : "false",
-    )
-    scenarioButtons[scenarioKey] = button
-    scenarioButtonsRow.appendChild(button)
-  }
+          <label class="omy-label" for="omy-annualSavingsIfWork">Annual savings if you work</label>
+          <p class="omy-helper">Additional amount added over the next year.</p>
+          <input id="omy-annualSavingsIfWork" class="omy-input" type="number" step="1000" min="0" inputmode="decimal" />
 
-  scenarioBlock.append(scenarioHeading, scenarioHelper, scenarioButtonsRow, scenarioSummary)
-  financialInputsCard.appendChild(scenarioBlock)
+          <label class="omy-label" for="omy-expectedRealReturn">Expected real return</label>
+          <p class="omy-helper">Long-run return after inflation.</p>
+          <div class="omy-slider-row">
+            <input id="omy-expectedRealReturn" class="omy-input omy-input-slider" type="range" min="-10" max="15" step="0.5" />
+            <output class="omy-slider-value omy-mono" data-output="return-value">0.0%</output>
+          </div>
 
-  const freedomInputsCard = el("section", "omy-card")
-  const freedomHeading = el("h3", "omy-card-title", "Subjective assumptions")
-  freedomInputsCard.appendChild(freedomHeading)
+          <label class="omy-label" for="omy-safetyWithdrawalTarget">Safety withdrawal target</label>
+          <p class="omy-helper">Your personal safety threshold.</p>
+          <div class="omy-slider-row">
+            <input id="omy-safetyWithdrawalTarget" class="omy-input omy-input-slider" type="range" min="2.5" max="6" step="0.1" />
+            <output class="omy-slider-value omy-mono" data-output="safety-value">4.0%</output>
+          </div>
 
-  const inputs = {} as Record<OMYInputKey, HTMLInputElement>
-  const errors = {} as Record<OMYInputKey, HTMLElement>
+          <label class="omy-label" for="omy-yearsInRetirementIfStopNow">Planning horizon</label>
+          <p class="omy-helper">Used in advanced diagnostics.</p>
+          <div class="omy-slider-row">
+            <input id="omy-yearsInRetirementIfStopNow" class="omy-input omy-input-slider" type="range" min="5" max="60" step="1" />
+            <output class="omy-slider-value omy-mono" data-output="years-value">30 years</output>
+          </div>
+        </section>
 
-  let returnValue: HTMLElement | undefined
-  let probabilityValue: HTMLElement | undefined
-  let retirementYearsValue: HTMLElement | undefined
+        <section class="omy-input-group">
+          <h4 class="omy-group-title">Life assumptions</h4>
 
-  for (const config of INPUT_CONFIGS) {
-    const field = createField(
-      config.key,
-      config.label,
-      config.helper,
-      config.kind,
-      config.step,
-    )
+          <label class="omy-label" for="omy-sabbaticalWillingnessToPay">Sabbatical trade-off</label>
+          <p class="omy-helper">If you could take a one-year unpaid sabbatical and return to the same role, what is the most you would give up financially?</p>
+          <input id="omy-sabbaticalWillingnessToPay" class="omy-input" type="number" step="1000" min="0" inputmode="decimal" />
+          <div class="omy-anchor-buttons">
+            <button type="button" class="omy-anchor-button" data-anchor="0">£0</button>
+            <button type="button" class="omy-anchor-button" data-anchor="0.25">3 months</button>
+            <button type="button" class="omy-anchor-button" data-anchor="0.5">6 months</button>
+            <button type="button" class="omy-anchor-button" data-anchor="1">1 year</button>
+            <button type="button" class="omy-anchor-button" data-anchor="2">2 years</button>
+          </div>
 
-    field.input.placeholder = config.placeholder
-    inputs[config.key] = field.input
-    errors[config.key] = field.error
+          <label class="omy-label" for="omy-workYearAttitude">Would you work one more year at current compensation?</label>
+          <p class="omy-helper">This sets an implied burden of another work year.</p>
+          <select id="omy-workYearAttitude" class="omy-input">${workAttitudeOptions}</select>
+          <p class="omy-derived" data-output="work-disutility-hint">-</p>
 
-    if (config.kind === "return-slider" && field.sliderValue) {
-      returnValue = field.sliderValue
-    }
-    if (config.kind === "probability-slider" && field.sliderValue) {
-      probabilityValue = field.sliderValue
-    }
-    if (config.kind === "years-slider" && field.sliderValue) {
-      retirementYearsValue = field.sliderValue
-    }
+          <label class="omy-label" for="omy-freeYearPlan">What would you do with a free year?</label>
+          <p class="omy-helper">This sets a default foregone-opportunity value.</p>
+          <select id="omy-freeYearPlan" class="omy-input">${freeYearPlanOptions}</select>
 
-    if (config.group === "financial") {
-      financialInputsCard.appendChild(field.wrapper)
-    } else {
-      freedomInputsCard.appendChild(field.wrapper)
-    }
-  }
+          <div class="omy-field" data-field="custom-opportunity">
+            <label class="omy-label" for="omy-customOpportunityMultiplier">Opportunity multiplier</label>
+            <p class="omy-helper">Multiplier of annual spending for business or rare-opportunity cases.</p>
+            <input id="omy-customOpportunityMultiplier" class="omy-input" type="number" step="0.1" min="0" inputmode="decimal" />
+          </div>
 
-  const actions = el("div", "omy-actions")
-  const resetButton = el("button", "omy-reset", "Reset assumptions")
-  resetButton.type = "button"
-  actions.appendChild(resetButton)
+          <p class="omy-derived" data-output="opportunity-hint">-</p>
 
-  inputsColumn.append(financialInputsCard, freedomInputsCard, actions)
-  diagnosticsColumn.append(diagnosticsCard, costCard, sensitivityCard)
-  layout.append(resultCard, inputsColumn, diagnosticsColumn)
+          <label class="omy-toggle-row" for="omy-advancedToggle">
+            <input id="omy-advancedToggle" type="checkbox" />
+            <span>Advanced subjective overrides</span>
+          </label>
 
-  root.append(layout)
+          <div class="omy-advanced-fields" data-field="manual-fields">
+            <label class="omy-label" for="omy-manualWorkDisutility">Manual work burden</label>
+            <input id="omy-manualWorkDisutility" class="omy-input" type="number" step="1000" min="0" inputmode="decimal" />
+
+            <label class="omy-label" for="omy-manualOpportunityValue">Manual foregone opportunity value</label>
+            <input id="omy-manualOpportunityValue" class="omy-input" type="number" step="1000" min="0" inputmode="decimal" />
+          </div>
+        </section>
+      </div>
+
+      <div class="omy-actions">
+        <button type="button" class="omy-reset">Reset assumptions</button>
+      </div>
+    </section>
+
+    <details class="omy-panel omy-advanced-details">
+      <summary>Advanced details</summary>
+      <div class="omy-metrics">
+        <div class="omy-metric-row"><span class="omy-metric-label">Portfolio needed at target</span><span class="omy-metric-value omy-mono" data-output="required-portfolio">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Gap to target (now)</span><span class="omy-metric-value omy-mono" data-output="gap-now">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Gap to target (in one year)</span><span class="omy-metric-value omy-mono" data-output="gap-year">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Funded years now</span><span class="omy-metric-value omy-mono" data-output="funded-now">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Funded years in one year</span><span class="omy-metric-value omy-mono" data-output="funded-year">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Funded years gain</span><span class="omy-metric-value omy-mono" data-output="funded-gain">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Withdrawal-rate improvement</span><span class="omy-metric-value omy-mono" data-output="withdrawal-improvement">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Free-year flip point</span><span class="omy-metric-value" data-output="flip-free">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Work-burden flip point</span><span class="omy-metric-value" data-output="flip-work">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Opportunity flip point</span><span class="omy-metric-value" data-output="flip-opportunity">-</span></div>
+        <div class="omy-metric-row"><span class="omy-metric-label">Implied income (spending + savings)</span><span class="omy-metric-value omy-mono" data-output="implied-income">-</span></div>
+      </div>
+    </details>
+  `
+
   container.appendChild(root)
 
-  if (!returnValue) {
-    returnValue = el("span", "omy-slider-value omy-mono", "3.0%")
-  }
-  if (!probabilityValue) {
-    probabilityValue = el("span", "omy-slider-value omy-mono", "0%")
-  }
-  if (!retirementYearsValue) {
-    retirementYearsValue = el("span", "omy-slider-value omy-mono", "30 years")
+  const scenarioButtonRefs = {} as Record<OMYScenarioKey, HTMLButtonElement>
+  for (const scenarioKey of OMY_SCENARIO_ORDER) {
+    scenarioButtonRefs[scenarioKey] = queryRequired<HTMLButtonElement>(
+      root,
+      `.omy-scenario-button[data-scenario="${scenarioKey}"]`,
+    )
   }
 
   return {
     root,
-    resultCard,
-    inputs,
-    errors,
-    returnValue,
-    probabilityValue,
-    retirementYearsValue,
-    scenarioButtons,
-    scenarioSummary,
-    resetButton,
-    recommendationLabel,
-    score,
-    explanation,
-    benefitValue: benefit.value,
-    costValue: cost.value,
-    derived,
-    totalCostValue: totalCostRow.value,
-    swrTargetValue: swrTargetRow.value,
-    swrRequiredPortfolioValue: swrRequiredPortfolioRow.value,
-    swrGapNowValue: swrGapNowRow.value,
-    swrGapInOneYearValue: swrGapInOneYearRow.value,
-    swrStatusValue: swrStatusRow.value,
-    dominantSideValue: dominantRow.value,
-    largestCostValue: largestCostRow.value,
-    flipFreeYearValue: flipFreeRow.value,
-    flipWorkDisutilityValue: flipWorkRow.value,
-    flipOpportunityValue: flipOpportunityRow.value,
-    liveRegion,
+    resultCard: queryRequired(root, ".omy-result-card"),
+    primaryConclusion: queryRequired(root, ".omy-primary-conclusion"),
+    score: queryRequired(root, ".omy-score"),
+    primaryExplanation: queryRequired(root, ".omy-explanation"),
+    secondaryInsight: queryRequired(root, ".omy-secondary"),
+    readinessBadge: queryRequired(root, "[data-output='readiness-badge']"),
+    marginalBadge: queryRequired(root, "[data-output='marginal-badge']"),
+    headlineBenefit: queryRequired(root, "[data-output='headline-benefit']"),
+    headlineDelayedFreedom: queryRequired(root, "[data-output='headline-cost']"),
+    comparisonStopPortfolio: queryRequired(root, "[data-output='stop-portfolio']"),
+    comparisonStopWithdrawal: queryRequired(root, "[data-output='stop-withdrawal']"),
+    comparisonStopGap: queryRequired(root, "[data-output='stop-gap']"),
+    comparisonWorkPortfolio: queryRequired(root, "[data-output='work-portfolio']"),
+    comparisonWorkWithdrawal: queryRequired(root, "[data-output='work-withdrawal']"),
+    comparisonWorkGap: queryRequired(root, "[data-output='work-gap']"),
+    tradeoffBenefit: queryRequired(root, "[data-output='tradeoff-benefit']"),
+    tradeoffFreeYear: queryRequired(root, "[data-output='tradeoff-free']"),
+    tradeoffWorkDisutility: queryRequired(root, "[data-output='tradeoff-work']"),
+    tradeoffOpportunity: queryRequired(root, "[data-output='tradeoff-opportunity']"),
+    tradeoffDelayedFreedom: queryRequired(root, "[data-output='tradeoff-cost']"),
+    tradeoffNet: queryRequired(root, "[data-output='tradeoff-net']"),
+    impliedIncome: queryRequired(root, "[data-output='implied-income']"),
+    workDisutilityHint: queryRequired(root, "[data-output='work-disutility-hint']"),
+    opportunityHint: queryRequired(root, "[data-output='opportunity-hint']"),
+    requiredPortfolio: queryRequired(root, "[data-output='required-portfolio']"),
+    gapNow: queryRequired(root, "[data-output='gap-now']"),
+    gapInOneYear: queryRequired(root, "[data-output='gap-year']"),
+    fundedYearsNow: queryRequired(root, "[data-output='funded-now']"),
+    fundedYearsInOneYear: queryRequired(root, "[data-output='funded-year']"),
+    fundedYearsGain: queryRequired(root, "[data-output='funded-gain']"),
+    withdrawalImprovement: queryRequired(root, "[data-output='withdrawal-improvement']"),
+    flipFreeYear: queryRequired(root, "[data-output='flip-free']"),
+    flipWorkDisutility: queryRequired(root, "[data-output='flip-work']"),
+    flipOpportunity: queryRequired(root, "[data-output='flip-opportunity']"),
+    returnValue: queryRequired(root, "[data-output='return-value']"),
+    safetyTargetValue: queryRequired(root, "[data-output='safety-value']"),
+    retirementYearsValue: queryRequired(root, "[data-output='years-value']"),
+    scenarioButtons: scenarioButtonRefs,
+    scenarioSummary: queryRequired(root, "[data-output='scenario-summary']"),
+    resetButton: queryRequired(root, ".omy-reset"),
+    advancedToggle: queryRequired(root, "#omy-advancedToggle"),
+    customOpportunityField: queryRequired(root, "[data-field='custom-opportunity']"),
+    manualFields: queryRequired(root, "[data-field='manual-fields']"),
+    inputs: {
+      currentPortfolio: queryRequired(root, "#omy-currentPortfolio"),
+      annualSpending: queryRequired(root, "#omy-annualSpending"),
+      annualSavingsIfWork: queryRequired(root, "#omy-annualSavingsIfWork"),
+      expectedRealReturn: queryRequired(root, "#omy-expectedRealReturn"),
+      safetyWithdrawalTarget: queryRequired(root, "#omy-safetyWithdrawalTarget"),
+      yearsInRetirementIfStopNow: queryRequired(root, "#omy-yearsInRetirementIfStopNow"),
+      sabbaticalWillingnessToPay: queryRequired(root, "#omy-sabbaticalWillingnessToPay"),
+      workYearAttitude: queryRequired(root, "#omy-workYearAttitude"),
+      freeYearPlan: queryRequired(root, "#omy-freeYearPlan"),
+      customOpportunityMultiplier: queryRequired(root, "#omy-customOpportunityMultiplier"),
+      manualWorkDisutility: queryRequired(root, "#omy-manualWorkDisutility"),
+      manualOpportunityValue: queryRequired(root, "#omy-manualOpportunityValue"),
+    },
+    liveRegion: queryRequired(root, ".omy-sr-only"),
   }
 }

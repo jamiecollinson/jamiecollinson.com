@@ -1,4 +1,9 @@
-import type { OMYInputKey, OMYInputs, OMYRecommendation } from "./types"
+import type {
+  OMYModelInputs,
+  OMYNumericInputKey,
+  OMYReadinessStatus,
+  OMYRecommendation,
+} from "./types"
 
 export const SCORE_THRESHOLDS = {
   strongWork: 100_000,
@@ -7,48 +12,42 @@ export const SCORE_THRESHOLDS = {
   strongStop: -100_000,
 } as const
 
-export const SWR_HORIZON_ANCHORS = [
-  { years: 20, swr: 0.045 },
-  { years: 30, swr: 0.04 },
-  { years: 40, swr: 0.035 },
-  { years: 50, swr: 0.033 },
-  { years: 60, swr: 0.03 },
-] as const
+export const READINESS_TOLERANCE_RATIO = 1.1
 
-export const DEFAULT_INPUTS: OMYInputs = {
+export const DEFAULT_INPUTS: OMYModelInputs = {
   currentPortfolio: 620_000,
   annualSpending: 40_000,
   annualSavingsIfWork: 15_000,
   expectedRealReturn: 0.03,
+  safetyWithdrawalTarget: 0.04,
   yearsInRetirementIfStopNow: 30,
-  payForYearOff: 60_000,
-  extraCompNeededToWork: 20_000,
-  freedomOpportunityProbability: 0.2,
-  freedomOpportunityValue: 300_000,
+  freeYearValue: 40_000,
+  workDisutility: 13_750,
+  opportunityValue: 20_000,
 }
 
-export const SAFE_FALLBACKS: OMYInputs = {
+export const SAFE_FALLBACKS: OMYModelInputs = {
   currentPortfolio: 1,
   annualSpending: 1,
   annualSavingsIfWork: 0,
   expectedRealReturn: 0,
-  yearsInRetirementIfStopNow: 5,
-  payForYearOff: 0,
-  extraCompNeededToWork: 0,
-  freedomOpportunityProbability: 0,
-  freedomOpportunityValue: 0,
+  safetyWithdrawalTarget: 0.04,
+  yearsInRetirementIfStopNow: 30,
+  freeYearValue: 0,
+  workDisutility: 0,
+  opportunityValue: 0,
 }
 
-export const HARD_LIMITS: Record<OMYInputKey, { min: number; max?: number }> = {
+export const HARD_LIMITS: Record<OMYNumericInputKey, { min: number; max?: number }> = {
   currentPortfolio: { min: 1 },
   annualSpending: { min: 1 },
   annualSavingsIfWork: { min: 0 },
   expectedRealReturn: { min: -0.1, max: 0.15 },
+  safetyWithdrawalTarget: { min: 0.025, max: 0.06 },
   yearsInRetirementIfStopNow: { min: 5, max: 60 },
-  payForYearOff: { min: 0 },
-  extraCompNeededToWork: { min: 0 },
-  freedomOpportunityProbability: { min: 0, max: 1 },
-  freedomOpportunityValue: { min: 0 },
+  freeYearValue: { min: 0 },
+  workDisutility: { min: 0 },
+  opportunityValue: { min: 0 },
 }
 
 export type OMYScenarioKey = "p50" | "p75" | "p90" | "p99"
@@ -60,12 +59,12 @@ export type OMYScenario = {
   percentileLabel: string
   netWorth: number
   annualIncome: number
-  appliedInputs: Pick<OMYInputs, "currentPortfolio" | "annualSpending" | "annualSavingsIfWork">
+  appliedInputs: Pick<
+    OMYModelInputs,
+    "currentPortfolio" | "annualSpending" | "annualSavingsIfWork"
+  >
 }
 
-// Approximate UK household wealth and income percentile anchors.
-// Wealth anchors align to ONS Wealth and Assets Survey headlines for p50/p90 and
-// interpolated high-percentile points for p75/p99 to provide practical presets.
 export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
   p50: {
     key: "p50",
@@ -76,8 +75,8 @@ export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
     annualIncome: 37_000,
     appliedInputs: {
       currentPortfolio: 294_000,
-      annualSpending: 28_000,
-      annualSavingsIfWork: 8_000,
+      annualSpending: 27_000,
+      annualSavingsIfWork: 7_000,
     },
   },
   p75: {
@@ -89,8 +88,8 @@ export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
     annualIncome: 55_000,
     appliedInputs: {
       currentPortfolio: 620_000,
-      annualSpending: 40_000,
-      annualSavingsIfWork: 15_000,
+      annualSpending: 38_000,
+      annualSavingsIfWork: 17_000,
     },
   },
   p90: {
@@ -102,8 +101,8 @@ export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
     annualIncome: 78_000,
     appliedInputs: {
       currentPortfolio: 1_200_500,
-      annualSpending: 55_000,
-      annualSavingsIfWork: 25_000,
+      annualSpending: 52_000,
+      annualSavingsIfWork: 26_000,
     },
   },
   p99: {
@@ -115,8 +114,8 @@ export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
     annualIncome: 180_000,
     appliedInputs: {
       currentPortfolio: 3_600_000,
-      annualSpending: 95_000,
-      annualSavingsIfWork: 60_000,
+      annualSpending: 110_000,
+      annualSavingsIfWork: 70_000,
     },
   },
 }
@@ -124,115 +123,88 @@ export const OMY_SCENARIOS: Record<OMYScenarioKey, OMYScenario> = {
 export const OMY_SCENARIO_ORDER: OMYScenarioKey[] = ["p50", "p75", "p90", "p99"]
 export const DEFAULT_SCENARIO: OMYScenarioKey = "p75"
 
-export type OMYInputKind =
-  | "currency"
-  | "decimal"
-  | "return-slider"
-  | "probability-slider"
-  | "years-slider"
+export type WorkAttitudeKey =
+  | "definitely-yes"
+  | "probably-yes"
+  | "unsure"
+  | "probably-no"
+  | "definitely-no"
 
-export type OMYInputConfig = {
-  key: OMYInputKey
-  group: "financial" | "freedom"
+export type WorkAttitudeOption = {
+  key: WorkAttitudeKey
   label: string
-  helper: string
-  kind: OMYInputKind
-  placeholder: string
-  step: string
+  disutilityRate: number
 }
 
-export const INPUT_CONFIGS: OMYInputConfig[] = [
+export const WORK_ATTITUDE_OPTIONS: WorkAttitudeOption[] = [
+  { key: "definitely-yes", label: "Definitely yes", disutilityRate: 0 },
+  { key: "probably-yes", label: "Probably yes", disutilityRate: 0.1 },
+  { key: "unsure", label: "Unsure", disutilityRate: 0.25 },
+  { key: "probably-no", label: "Probably no", disutilityRate: 0.5 },
+  { key: "definitely-no", label: "Definitely no", disutilityRate: 1 },
+]
+
+export const DEFAULT_WORK_ATTITUDE: WorkAttitudeKey = "unsure"
+
+export type FreeYearPlanKey =
+  | "none"
+  | "rest"
+  | "explore"
+  | "project"
+  | "business"
+  | "opportunity"
+
+export type FreeYearPlanOption = {
+  key: FreeYearPlanKey
+  label: string
+  multiplier: number
+  usesCustomMultiplier?: boolean
+}
+
+export const FREE_YEAR_PLAN_OPTIONS: FreeYearPlanOption[] = [
+  { key: "none", label: "No clear plan", multiplier: 0 },
+  { key: "rest", label: "Rest / family", multiplier: 0.25 },
+  { key: "explore", label: "Explore options", multiplier: 0.5 },
+  { key: "project", label: "Build a serious project", multiplier: 1 },
   {
-    key: "currentPortfolio",
-    group: "financial",
-    label: "Current portfolio",
-    helper: "Current investable portfolio value.",
-    kind: "currency",
-    placeholder: "620000",
-    step: "1000",
+    key: "business",
+    label: "Start or buy a business",
+    multiplier: 2,
+    usesCustomMultiplier: true,
   },
   {
-    key: "annualSpending",
-    group: "financial",
-    label: "Annual spending",
-    helper: "Annual spending required in retirement.",
-    kind: "currency",
-    placeholder: "40000",
-    step: "1000",
-  },
-  {
-    key: "annualSavingsIfWork",
-    group: "financial",
-    label: "Annual savings if you work",
-    helper: "Additional amount added over the next year.",
-    kind: "currency",
-    placeholder: "15000",
-    step: "1000",
-  },
-  {
-    key: "expectedRealReturn",
-    group: "financial",
-    label: "Expected real return",
-    helper:
-      "Long-run return after inflation. Start around 3% and test a lower and higher case.",
-    kind: "return-slider",
-    placeholder: "3.0",
-    step: "0.5",
-  },
-  {
-    key: "yearsInRetirementIfStopNow",
-    group: "financial",
-    label: "Retirement years if stopping now",
-    helper: "Planning horizon in years if you stop today.",
-    kind: "years-slider",
-    placeholder: "30",
-    step: "1",
-  },
-  {
-    key: "payForYearOff",
-    group: "freedom",
-    label: "Value of a fully free year",
-    helper:
-      "Imagine you could buy 12 months of full freedom: what one-off amount would feel fair? Use your honest gut figure, not what sounds sensible.",
-    kind: "currency",
-    placeholder: "60000",
-    step: "1000",
-  },
-  {
-    key: "extraCompNeededToWork",
-    group: "freedom",
-    label: "Extra compensation needed to feel good about working",
-    helper: "Proxy for work disutility.",
-    kind: "currency",
-    placeholder: "20000",
-    step: "1000",
-  },
-  {
-    key: "freedomOpportunityProbability",
-    group: "freedom",
-    label: "Chance a free year unlocks meaningful upside",
-    helper: "Probability from 0% to 100%.",
-    kind: "probability-slider",
-    placeholder: "20",
-    step: "1",
-  },
-  {
-    key: "freedomOpportunityValue",
-    group: "freedom",
-    label: "Value if that upside happens",
-    helper: "Potential value if the opportunity materializes.",
-    kind: "currency",
-    placeholder: "300000",
-    step: "1000",
+    key: "opportunity",
+    label: "Rare opportunity already in sight",
+    multiplier: 2,
+    usesCustomMultiplier: true,
   },
 ]
 
+export const DEFAULT_FREE_YEAR_PLAN: FreeYearPlanKey = "explore"
+export const DEFAULT_CUSTOM_OPPORTUNITY_MULTIPLIER = 2
+
+export const SABBATICAL_ANCHORS = [
+  { label: "£0", multiple: 0 },
+  { label: "3 months", multiple: 0.25 },
+  { label: "6 months", multiple: 0.5 },
+  { label: "1 year", multiple: 1 },
+  { label: "2 years", multiple: 2 },
+] as const
+
 export const RECOMMENDATION_LABELS: Record<OMYRecommendation, string> = {
-  "strong-work": "Strongly work one more year",
-  "lean-work": "Lean work one more year",
+  "strong-work": "Strongly favours working one more year",
+  "lean-work": "Leans toward working one more year",
   "close-call": "Close call",
-  "lean-stop": "Lean retire now",
-  "strong-stop": "Strongly retire now",
+  "lean-stop": "Leans toward stopping now",
+  "strong-stop": "Strongly favours stopping now",
+}
+
+export const RECOMMENDATION_BADGES: Record<OMYRecommendation, string> = {
+  "strong-work": "Favours working",
+  "lean-work": "Slightly favours working",
+  "close-call": "Close call",
+  "lean-stop": "Slightly favours stopping",
+  "strong-stop": "Favours stopping",
 }
 
 export const RECOMMENDATION_TONES: Record<OMYRecommendation, string> = {
@@ -241,4 +213,10 @@ export const RECOMMENDATION_TONES: Record<OMYRecommendation, string> = {
   "close-call": "omy-tone-close-call",
   "lean-stop": "omy-tone-lean-stop",
   "strong-stop": "omy-tone-strong-stop",
+}
+
+export const READINESS_LABELS: Record<OMYReadinessStatus, string> = {
+  "not-ready": "Not ready",
+  borderline: "Borderline",
+  ready: "Ready",
 }

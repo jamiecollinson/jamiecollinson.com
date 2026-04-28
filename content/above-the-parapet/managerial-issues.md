@@ -2,6 +2,8 @@
 date: '2016-04-11T16:12:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/04/managerial-issues.html
 title: MANAGERIAL ISSUES
+hero_image: "img/parapet/managerial-issues.png"
+hero_alt: Satirical editorial-style cartoon of too-big-to-fail institutions and fragile management ladders.
 ---
 ### A worry. Too big to fail.
 

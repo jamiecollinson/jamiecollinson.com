@@ -2,6 +2,8 @@
 date: '2016-05-23T17:18:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/05/a-little-more-critical-this-time.html
 title: A LITTLE MORE CRITICAL THIS TIME
+hero_image: "img/parapet/a-little-more-critical-this-time.png"
+hero_alt: Satirical editorial-style cartoon of payroll losses, investment debates, and fragile sales expectations.
 ---
 ### Payroll mistakes cost businesses more than £700 million a year.
 
@@ -11,17 +13,16 @@ Research by accountancy firm UHY Hacker Young found that HM Customs and Excise c
 
 Your scribe has to enter sometimes the lion’s den of investment decisions. He notes a consistency of reasons (excuses?) permitted by sloppy companies:
 
-- ‘It’s the biggest’ (or the best) - ‘We must allow the production manager to sleep at night’ - ‘We need the capacity’, which is usually at the top of a
-
-### fragile sales forecast -
-
-‘We must expand or die’.
+- ‘It’s the biggest’ (or the best) 
+- ‘We must allow the production manager to sleep at night’
+- ‘We need the capacity’, which is usually at the top of a fragile sales forecast 
+- ‘We must expand or die’.
 
 Assets need to sweat. Investment is for opportunities and increased margins.
 
 ### Worth thinking about.
 
-William Feather told a story in the New York Evening News (1933). He said an old man once observed that in every successful organisation there is a thoroughly mean person who exercises a good deal of authority. The founder and president of the company, he suggested, might be the soul of geniality, a pillar of the church and a leader in all civic enterprises, but in deciding hard and ugly questions the mean man is given his way.‘Mean problems must be met’, continued the old man. ‘Suppliers become indifferent. Salespeople grow lazy. Faithful but useless employees must be discharged. Expenses rise. Profits dwindle.’ The mean man says what he thinks and insists faults be corrected. Perhaps someone must be demoted? Or dividends have to be suspended. Or salaries cut. The mean man may or may not have initiated this unpleasant business, but to him is passed the nasty job of effecting these new policies. Success is partly the consequences of willingness to undertake unpleasant duties. Postponement of the difficult operation can send sick people to an early grave, and by the same process, sick businesses drift into receiverships. The mean man, who may be president, vice-president or a director, refused to put off until tomorrow what should be done today. His meanness keeps the business healthy and is a great asset to the firm.
+William Feather told a story in the New York Evening News (1933). He said an old man once observed that in every successful organisation there is a thoroughly mean person who exercises a good deal of authority. The founder and president of the company, he suggested, might be the soul of geniality, a pillar of the church and a leader in all civic enterprises, but in deciding hard and ugly questions the mean man is given his way. ‘Mean problems must be met’, continued the old man. ‘Suppliers become indifferent. Salespeople grow lazy. Faithful but useless employees must be discharged. Expenses rise. Profits dwindle.’ The mean man says what he thinks and insists faults be corrected. Perhaps someone must be demoted? Or dividends have to be suspended. Or salaries cut. The mean man may or may not have initiated this unpleasant business, but to him is passed the nasty job of effecting these new policies. Success is partly the consequences of willingness to undertake unpleasant duties. Postponement of the difficult operation can send sick people to an early grave, and by the same process, sick businesses drift into receiverships. The mean man, who may be president, vice-president or a director, refused to put off until tomorrow what should be done today. His meanness keeps the business healthy and is a great asset to the firm.
 
 ### Does your bonus scheme for managers work?
 

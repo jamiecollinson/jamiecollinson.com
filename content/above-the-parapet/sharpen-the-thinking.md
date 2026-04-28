@@ -2,6 +2,8 @@
 date: '2016-05-09T15:25:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/05/sharpen-thinking.html
 title: SHARPEN THE THINKING
+hero_image: "img/parapet/sharpen-the-thinking.png"
+hero_alt: Satirical editorial-style cartoon of managers sharpening strategy and negotiation tools in 2016.
 ---
 ### Earn our keep?
 
@@ -29,4 +31,4 @@ Every problem can be resolved at a cost. Negotiation concentrates on differences
 
 ### Methods.
 
-People ask the difference between a leader and a boss . . . ‘The leader works in the open, and the boss in covert. The leader leads, and the boss drives.’ Theodore Roosevelt (1858 – 1919) 26th president of the United States and winner of Nobel Prize.
+People ask the difference between a leader and a boss . . . ‘The leader works in the open, and the boss in covert. The leader leads, and the boss drives.’ *Theodore Roosevelt (1858 – 1919) 26th president of the United States and winner of Nobel Prize.*

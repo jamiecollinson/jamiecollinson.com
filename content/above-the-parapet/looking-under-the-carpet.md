@@ -2,6 +2,8 @@
 date: '2016-06-06T15:31:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/06/looking-under-carpet.html
 title: LOOKING UNDER THE CARPET
+hero_image: "img/parapet/looking-under-the-carpet.png"
+hero_alt: Satirical editorial-style cartoon of managers lifting a carpet to reveal debt and interest-rate pressures.
 ---
 ### More figures.
 

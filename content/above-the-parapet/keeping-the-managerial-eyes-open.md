@@ -2,6 +2,8 @@
 date: '2016-06-20T15:22:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/06/keeping-managerial-eyes-open_20.html
 title: KEEPING THE MANAGERIAL EYES OPEN
+hero_image: "img/parapet/keeping-the-managerial-eyes-open.png"
+hero_alt: Satirical editorial-style cartoon of managers scanning confidence, caution, and workplace signals.
 ---
 ### Confidence.
 

@@ -2,6 +2,8 @@
 date: '2016-08-01T15:53:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/08/seven-observations-for-more-thought.html
 title: SEVEN OBSERVATIONS FOR MORE THOUGHT
+hero_image: "img/parapet/seven-observations-for-more-thought.png"
+hero_alt: Satirical editorial-style cartoon of seven management observations laid out for strategic debate.
 ---
 ### Interest rates.
 

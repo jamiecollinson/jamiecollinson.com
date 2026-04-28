@@ -2,6 +2,8 @@
 date: '2016-08-30T16:17:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2016/08/more-on-economy-this-time.html
 title: MORE ON THE ECONOMY THIS TIME
+hero_image: "img/parapet/more-on-the-economy-this-time.png"
+hero_alt: Satirical editorial-style cartoon of quantitative easing machinery and difficult economic decisions.
 ---
 ### Quantitative easing (QE)
 

@@ -2,6 +2,8 @@
 date: '2016-02-15T12:03:00Z'
 original_url: http://overtheparapet.blogspot.com/2016/02/through-keyhole.html
 title: THROUGH THE KEYHOLE
+hero_image: "img/parapet/through-the-keyhole.png"
+hero_alt: Satirical editorial-style cartoon of managers peering through a keyhole at stagnation and service-economy tensions.
 ---
 ### The big divide.
 
