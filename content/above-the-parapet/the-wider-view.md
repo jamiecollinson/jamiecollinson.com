@@ -2,6 +2,7 @@
 date: '2014-02-17T15:23:00Z'
 original_url: http://overtheparapet.blogspot.com/2014/02/the-wider-view.html
 title: THE WIDER VIEW
+hero_image: "img/parapet/the-wider-view.png"
 ---
 ### Mark Carney, the Bank of England’s governor, has dumped his ‘forward guidance’ and moved the goalposts.
 

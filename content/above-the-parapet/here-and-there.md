@@ -2,6 +2,7 @@
 date: '2012-02-02T11:27:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/02/here-and-there.html
 title: HERE AND THERE
+hero_image: "img/parapet/here-and-there.png"
 ---
 ### Without economic growth, most of the world’s major banks will go bust.
 

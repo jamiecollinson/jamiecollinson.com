@@ -2,6 +2,7 @@
 date: '2013-02-25T17:05:00Z'
 original_url: http://overtheparapet.blogspot.com/2013/02/competence-is-necessity.html
 title: COMPETENCE IS A NECESSITY
+hero_image: "img/parapet/competence-is-a-necessity.png"
 ---
 ### Chancellor George Osborne on a roller-coaster?
 

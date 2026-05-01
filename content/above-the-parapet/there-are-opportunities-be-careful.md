@@ -2,6 +2,7 @@
 date: '2013-06-17T18:03:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/06/there-are-opportunities-be-careful.html
 title: THERE ARE OPPORTUNITIES.  BE CAREFUL.
+hero_image: "img/parapet/there-are-opportunities-be-careful.png"
 ---
 ### Green shoots. Do they have roots?
 

@@ -2,6 +2,8 @@
 date: '2015-03-17T11:15:00Z'
 original_url: http://overtheparapet.blogspot.com/2015/03/uncertainty-throws-dark-shadow.html
 title: UNCERTAINTY THROWS A DARK SHADOW
+hero_image: "img/parapet/uncertainty-throws-a-dark-shadow.png"
+hero_alt: Satirical editorial-style cartoon of uncertainty casting a shadow over households, prices, and managerial choices in 2015.
 ---
 ### Benefits!
 

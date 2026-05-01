@@ -2,6 +2,7 @@
 date: '2014-03-31T17:07:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/03/are-we-reluctant-to-measure-what-we-do.html
 title: ARE WE RELUCTANT TO MEASURE WHAT WE DO?
+hero_image: "img/parapet/are-we-reluctant-to-measure-what-we-do.png"
 ---
 ### Productivity puzzle.
 

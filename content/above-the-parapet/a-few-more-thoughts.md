@@ -2,6 +2,7 @@
 date: '2014-10-13T15:05:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/10/a-few-more-thoughts.html
 title: A FEW MORE THOUGHTS
+hero_image: "img/parapet/a-few-more-thoughts.png"
 ---
 ### Something has to give.
 

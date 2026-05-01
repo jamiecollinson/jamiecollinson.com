@@ -2,6 +2,7 @@
 date: '2013-07-01T15:25:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/07/persistence-is-rule.html
 title: PERSISTENCE IS THE RULE
+hero_image: "img/parapet/persistence-is-the-rule.png"
 ---
 ### Is the recovery on its way?
 

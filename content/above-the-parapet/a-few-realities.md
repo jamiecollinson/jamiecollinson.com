@@ -2,6 +2,7 @@
 date: '2012-02-29T10:22:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/02/few-realities.html
 title: A FEW REALITIES
+hero_image: "img/parapet/a-few-realities.png"
 ---
 ### We are told daily that countries in the developed world must tackle their structural financial deficits.
 

@@ -2,6 +2,7 @@
 date: '2012-11-02T15:22:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/11/this-and-that-for-managers.html
 title: THIS AND THAT FOR MANAGERS
+hero_image: "img/parapet/this-and-that-for-managers.png"
 ---
 ### Everyone talks about growth
 

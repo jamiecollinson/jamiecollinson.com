@@ -2,6 +2,7 @@
 date: '2014-09-01T16:38:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/09/a-closer-look.html
 title: A CLOSER LOOK
+hero_image: "img/parapet/a-closer-look.png"
 ---
 ### Austerity. Really?
 
@@ -17,9 +18,7 @@ The Chartered Management Institute’s (CMI) Commission on Management and Leader
 
 ### Try prevention.
 
-Most people have learned the hard way that dieting is more difficult than putting on fat in the first place. Excess costs are overindulgence. Careful observers have realised over the years that successful businesses – by whatever measure – are devoted to constant reduction of their unit costs. It is an obsession.
-
-### Top of the list.
+Most people have learned the hard way that dieting is more difficult than putting on fat in the first place. Excess costs are overindulgence. Careful observers have realised over the years that successful businesses – by whatever measure – are devoted to constant reduction of their unit costs. It is an obsession. Top of the list.
 
 ### From a professor in South America.
 

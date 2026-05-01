@@ -2,6 +2,7 @@
 date: '2013-10-21T12:16:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/10/more-of-overview.html
 title: MORE OF AN OVERVIEW
+hero_image: "img/parapet/more-of-an-overview.png"
 ---
 ### The recent recession has looked different.
 

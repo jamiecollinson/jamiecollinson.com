@@ -2,6 +2,7 @@
 date: '2013-09-09T14:52:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/09/figures-are-in-right-direction-but.html
 title: FIGURES ARE IN THE RIGHT DIRECTION.  BUT .....
+hero_image: "img/parapet/figures-are-in-the-right-direction-but.png"
 ---
 ### The UK’s economic performance is getting better.
 

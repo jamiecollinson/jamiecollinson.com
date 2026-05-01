@@ -2,6 +2,7 @@
 date: '2012-03-14T14:43:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/03/managing-is-tough-job.html
 title: MANAGING IS A TOUGH JOB
+hero_image: "img/parapet/managing-is-a-tough-job.png"
 ---
 ### The coalition government seems to have retained most voters’ support for continuing the severe cuts in public expenditure.
 

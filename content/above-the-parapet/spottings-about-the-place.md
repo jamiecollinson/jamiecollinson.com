@@ -2,6 +2,7 @@
 date: '2011-08-22T11:49:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2011/08/spottings-about-place.html
 title: SPOTTINGS ABOUT THE PLACE
+hero_image: "img/parapet/spottings-about-the-place.png"
 ---
 ### Most investors have concentrated their thoughts on the eurozone.
 

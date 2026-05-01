@@ -2,6 +2,7 @@
 date: '2011-10-03T14:22:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2011/10/scramble-back-into-helicopter-look-down.html
 title: SCRAMBLE.  BACK INTO THE HELICOPTER.  LOOK DOWN
+hero_image: "img/parapet/scramble-back-into-the-helicopter-look-down.png"
 ---
 ### The Royal Bank of Scotland went bust.
 

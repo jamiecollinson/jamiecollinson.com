@@ -2,6 +2,7 @@
 date: '2013-09-25T17:09:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/09/is-boom-to-bust-and-back-again-habit.html
 title: IS BOOM TO BUST AND BACK AGAIN A HABIT?
+hero_image: "img/parapet/is-boom-to-bust-and-back-again-a-habit.png"
 ---
 ### The economy looks brighter than it did last year.
 

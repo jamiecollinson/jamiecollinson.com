@@ -2,6 +2,7 @@
 date: '2012-06-18T16:01:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/06/thoughts-for-summer-solstice.html
 title: THOUGHTS FOR THE SUMMER SOLSTICE
+hero_image: "img/parapet/thoughts-for-the-summer-solstice.png"
 ---
 ### There is some certainty that the UK’s double-dip recession will last another quarter.
 

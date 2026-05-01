@@ -2,6 +2,8 @@
 date: '2015-03-02T16:16:00Z'
 original_url: http://overtheparapet.blogspot.com/2015/03/change-in-our-sights.html
 title: CHANGE IN OUR SIGHTS
+hero_image: "img/parapet/change-in-our-sights.png"
+hero_alt: Satirical editorial-style cartoon of managers reframing strategy as digital economics accelerates in 2015.
 ---
 ### Speed in the UK.
 

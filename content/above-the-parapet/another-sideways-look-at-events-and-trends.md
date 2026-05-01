@@ -2,6 +2,7 @@
 date: '2012-02-13T13:57:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/02/another-sideways-look-at-events-and.html
 title: ANOTHER SIDEWAYS LOOK AT EVENTS AND TRENDS
+hero_image: "img/parapet/another-sideways-look-at-events-and-trends.png"
 ---
 ### Are the many politicians at all stages of ‘managing’ our economy the real and consistent underachievers?
 

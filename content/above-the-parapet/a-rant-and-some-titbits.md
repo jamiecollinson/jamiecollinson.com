@@ -2,6 +2,7 @@
 date: '2012-04-11T12:23:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/04/rant-and-some-titbits.html
 title: A RANT AND SOME TITBITS
+hero_image: "img/parapet/a-rant-and-some-titbits.png"
 ---
 ### I have just completed a few days away from the ‘shop’.
 

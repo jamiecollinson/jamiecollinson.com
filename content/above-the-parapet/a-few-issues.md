@@ -2,6 +2,7 @@
 date: '2013-08-27T14:10:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/08/a-few-issues.html
 title: A FEW ISSUES
+hero_image: "img/parapet/a-few-issues.png"
 ---
 ### What did the new governor of the Bank of England, Mark Carney, really do in the first week of August?
 

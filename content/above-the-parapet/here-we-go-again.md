@@ -2,12 +2,16 @@
 date: '2015-09-28T17:16:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/09/here-we-go-again.html
 title: HERE WE GO AGAIN
+hero_image: "img/parapet/here-we-go-again.png"
+hero_alt: Satirical editorial-style cartoon of cautious recovery signals and recurring management risks across Europe.
 ---
 ### Continental Europe.
 
 For a change, there has been some good news from the eurozone in recent weeks. Services and manufacturing have been at their highest performances for four years. Spain’s economy went up by 1%, with stagnation in France. Germany achieved exports at €103.4 billion in July, a new record. Life will become difficult for the eurozone if China suffers a slowdown. Germany accounts for nearly half of the European Union’s exports to China. She is driver of eurozone and accounts for about 30% of the territory’s GDP. Capital Economics points out that many of its exports create demand for products from other eurozone countries. The president of the European Central Bank might have to reintroduce quantitative easing (‘printing of money’) if growth goes down and inflation stays weak. Mind you, that would be good news for European equities.
 
-A crisis for housing. Yes, there is one and it is a good example of what happens where our kind of democracy wobbles.
+### A crisis for housing. 
+
+Yes, there is one and it is a good example of what happens where our kind of democracy wobbles.
 
 Everyone says s/he supports the building of affordable homes. Most of them do not want such initiatives to be taken where they live. Green fields and Green Belts near cities are untouchable. Governments are faced with the danger of losing votes and stimulating protests in those parts of the country where people most want to live and work. They have avoided the issues year-in and year-out. One after the other. Of course, the changing demography of Britain is a large part of the problem. Not only more people, but older ones and many living alone. Immigration is a factor, but only a small one. The difficulties cannot be solved without central government. This is the one institution which can set the balance between national needs and local planning. Or construct railways and roads so that people can easily live in one place and work elsewhere.
 

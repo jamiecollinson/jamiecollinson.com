@@ -2,6 +2,7 @@
 date: '2013-12-19T15:59:00Z'
 original_url: http://overtheparapet.blogspot.com/2013/12/and-into-2014.html
 title: AND INTO 2014
+hero_image: "img/parapet/and-into-2014.png"
 ---
 Accountability and responsibility. This is a contentious topic at the top of Whitehall. It was emphasised by the mess created over introduction of Universal Credit, a personal mission of Iain Duncan Smith, the secretary of state for Work and Pensions (DWP). There are increasing concerns about accountabilities of ministers and civil servants. The noisy Public Accounts Committee (PAC) published a damning report which nearly blamed Robert Devereux, the permanent secretary (and accounting officer) for the problems. It is important to bear in mind that the PAC rarely interrogates ministers. The current accountability processes are incapable of dealing with situations such as Universal Credit. Senior ministers have become unwilling to appear in the House of Commons, explain the background to a problem and promise corrective action. They wish to make civil servants more responsible for failures of performance and have a greater say in their selection. Here are the ingredients of a huge row. A clash between high-minded idealism and mandarins’ pragmatism. 10 Downing Street has sent hit squads to keep an eye on civil servants. Most ministers do not have a personal record of managerial success elsewhere. They are determined to improve results. Civil servants have equal commitment to resisting politicisation.
 

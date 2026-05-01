@@ -2,6 +2,7 @@
 date: '2014-06-27T14:37:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/06/a-look-under-some-carpets.html
 title: A LOOK UNDER SOME CARPETS
+hero_image: "img/parapet/a-look-under-some-carpets.png"
 ---
 ### Big hints.
 
@@ -23,7 +24,9 @@ A company which pursues measurable economic performance does not ignore its cons
 
 Necessity is the mother of invention but laziness may well be the midwife.
 
-A deadly sin. Feeding problems and starving opportunities is one of a manager’s deadly sins.
+### A deadly sin. 
+
+Feeding problems and starving opportunities is one of a manager’s deadly sins.
 
 It is astonishing how many companies assign their best performers to problems. These people become devoted to the old business which is sinking faster than forecasts; to the declining product being outflanked by a competitor’s new offering; to the ageing technology. The opportunities are left to fend for themselves. They are the future. They produce growth. They are every bit as difficult and demanding as problems. Maybe a manager ought to draw up a list of opportunities facing the business and make sure each one is adequately staffed and supported? Only then set out the problems and worry about managing them.
 

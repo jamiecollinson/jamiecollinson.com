@@ -2,6 +2,7 @@
 date: '2011-08-08T12:43:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2011/08/look-in-mirror.html
 title: A LOOK IN THE MIRROR
+hero_image: "img/parapet/a-look-in-the-mirror.png"
 ---
 ### The Murdoch mysteries have caused unusual agreement inside the Establishment
 

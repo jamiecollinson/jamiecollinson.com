@@ -2,6 +2,7 @@
 date: '2013-07-16T12:34:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/07/a-short-look-at-harsher-bits.html
 title: A SHORT LOOK AT THE HARSHER BITS
+hero_image: "img/parapet/a-short-look-at-the-harsher-bits.png"
 ---
 ### Did you notice that chancellor George Osborne’s spending review covered a single year?
 

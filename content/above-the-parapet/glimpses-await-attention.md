@@ -2,6 +2,7 @@
 date: '2014-07-21T12:42:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/07/glimpses-await-attention.html
 title: GLIMPSES AWAIT ATTENTION
+hero_image: "img/parapet/glimpses-await-attention.png"
 ---
 ### Legacy for new government in 2015?
 

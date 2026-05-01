@@ -2,6 +2,7 @@
 date: '2011-07-25T12:17:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2011/07/and-into-helicopter.html
 title: AND INTO THE HELICOPTER
+hero_image: "img/parapet/and-into-the-helicopter.png"
 ---
 ### China’s inflation is fast becoming the world’s problem
 

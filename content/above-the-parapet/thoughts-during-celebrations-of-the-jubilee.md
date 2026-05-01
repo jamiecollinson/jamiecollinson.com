@@ -2,6 +2,7 @@
 date: '2012-06-06T17:30:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/06/thoughts-during-celebrations-of-jubilee.html
 title: THOUGHTS DURING CELEBRATIONS OF THE JUBILEE
+hero_image: "img/parapet/thoughts-during-celebrations-of-the-jubilee.png"
 ---
 ### Correcting the UK’s awful public finances is proving to be more worrying than forecasters have been telling us.
 

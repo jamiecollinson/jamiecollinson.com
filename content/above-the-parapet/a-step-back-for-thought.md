@@ -2,10 +2,11 @@
 date: '2014-05-28T17:28:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/05/a-step-back-for-thought.html
 title: A STEP BACK FOR THOUGHT
+hero_image: "img/parapet/a-step-back-for-thought.png"
 ---
-What is normal? David
+### What is normal? 
 
-Smith said in The Sunday Times that the last quarterly rise in GDP has taken us ‘within a whisker’ of the pre-financial crisis peak. Consumers’ confidence is high. There are increases in employment. Real pay is beginning to rise. Respected analysts say GDP might be higher than statistics suggest. Merryn Somerset Webb points out that these figures do not mean we are on the way to anything like the normal before 2008. This is a new kind of normal. Most of the markets remain artificially boosted by quantitative easing or super-low interest rates. Savers are expected to become poorer. Most debts in the public sector are still at historical highs. There is little appetite for real reductions in spending by government. Also, there is the start of a debate on inequality. This could change fundamentally the political environment. It is why we hear so much about rent controls, wealth and property taxes and caps on prices of energy. The new normal will cause discussion about a different capitalism.
+David Smith said in The Sunday Times that the last quarterly rise in GDP has taken us ‘within a whisker’ of the pre-financial crisis peak. Consumers’ confidence is high. There are increases in employment. Real pay is beginning to rise. Respected analysts say GDP might be higher than statistics suggest. Merryn Somerset Webb points out that these figures do not mean we are on the way to anything like the normal before 2008. This is a new kind of normal. Most of the markets remain artificially boosted by quantitative easing or super-low interest rates. Savers are expected to become poorer. Most debts in the public sector are still at historical highs. There is little appetite for real reductions in spending by government. Also, there is the start of a debate on inequality. This could change fundamentally the political environment. It is why we hear so much about rent controls, wealth and property taxes and caps on prices of energy. The new normal will cause discussion about a different capitalism.
 
 ### The new immigrants.
 
@@ -15,15 +16,15 @@ The typical billionaire can choose to live wherever s/he likes. So it says somet
 
 Robert Craven has popped-up with five suggestions for success in a changing commercial world. He reckons his Directors’ Centre has six more recommendations in the proverbial back pocket. The immediate gems are:
 
-1 Low-cost models are essential. Aldi, Iceland, Poundland and Ryanair report record profits.
+1. Low-cost models are essential. Aldi, Iceland, Poundland and Ryanair report record profits.
 
-2 Partnerships are the future, David and Goliath work together. Smaller firms use the resources and connections of larger businesses. Big companies get access to the speed and innovation of their smaller collaborators.
+2. Partnerships are the future, David and Goliath work together. Smaller firms use the resources and connections of larger businesses. Big companies get access to the speed and innovation of their smaller collaborators.
 
-3 Advertising doesn’t need to be risky now. Deals based upon cost per click (CPC) and cost per action (CPA) dominate costs online.
+3. Advertising doesn’t need to be risky now. Deals based upon cost per click (CPC) and cost per action (CPA) dominate costs online.
 
-4 You snooze, you lose. The velocity of doing business has accelerated to the speed of light. This alters investors’ horizons.
+4. You snooze, you lose. The velocity of doing business has accelerated to the speed of light. This alters investors’ horizons.
 
-5 Goodbye high street, hello supermarkets and the internet. Where, how and when people buy is changing faster than ever.
+5. Goodbye high street, hello supermarkets and the internet. Where, how and when people buy is changing faster than ever.
 
 ### One thing leads to another.
 

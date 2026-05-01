@@ -2,6 +2,7 @@
 date: '2012-10-08T15:32:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/10/from-different-angle.html
 title: FROM A DIFFERENT ANGLE
+hero_image: "img/parapet/from-a-different-angle.png"
 ---
 Plato warned that democratic leaders would ‘ ... rob the rich, keep as much of the proceeds as they can for themselves and distribute the rest to the people’. Democracy was a dirty word among political philosophers for many years. James Madison, one of America’s founding fathers, was concerned that democracy would bring ‘a rage for paper money, for an abolition of debts, for an equal division of property and for any other improper wicked projects’. John Adams, the country’s second president, worried that rule by ordinary people would lead to heavy taxes on the rich in the name of equality.
 

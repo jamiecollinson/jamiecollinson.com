@@ -2,6 +2,7 @@
 date: '2011-07-11T15:50:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2011/07/this-and-that.html
 title: This and that
+hero_image: "img/parapet/this-and-that.png"
 ---
 ### After years of Britain’s prospects being dominated by what is happening in the City and in estate agents’ windows,
 

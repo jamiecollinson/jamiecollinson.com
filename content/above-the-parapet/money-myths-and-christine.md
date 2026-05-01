@@ -2,6 +2,7 @@
 date: '2014-10-27T16:58:00Z'
 original_url: http://overtheparapet.blogspot.com/2014/10/money-myths-and-christine.html
 title: MONEY, MYTHS AND CHRISTINE
+hero_image: "img/parapet/money-myths-and-christine.png"
 ---
 ### Put the pillow over your head!
 

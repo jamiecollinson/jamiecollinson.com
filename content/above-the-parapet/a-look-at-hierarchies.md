@@ -2,6 +2,7 @@
 date: '2014-04-28T16:53:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/04/a-look-at-hierarchies.html
 title: A LOOK AT HIERARCHIES
+hero_image: "img/parapet/a-look-at-hierarchies.png"
 ---
 For the first time since 2007, New York has overtaken London as the world’s leading financial centre. The Financial Times says the lead is small. However, it suggests the City’s reputation has been undermined by several problems. Z/Yen Group, which compiled the index reckons these have reached ‘tipping point’. They include political uncertainty caused by doubt relating to Britain’s place in Europe and the possibility of Scotland’s independence. London has been hit harder than other centres by the scandals associated with alleged rigging of Libor (London Interbank Offered Rate) and Forex (Foreign Exchange Market). Local difficulties such as mis-selling products by banks have contributed to negative opinions.
 

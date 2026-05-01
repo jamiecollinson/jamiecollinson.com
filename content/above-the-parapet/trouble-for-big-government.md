@@ -2,6 +2,7 @@
 date: '2014-07-11T15:36:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/07/trouble-for-big-government.html
 title: TROUBLE FOR BIG GOVERNMENT
+hero_image: "img/parapet/trouble-for-big-government.png"
 ---
 ### Feeling good about the economy.
 

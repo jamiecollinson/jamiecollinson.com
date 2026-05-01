@@ -2,6 +2,7 @@
 date: '2013-04-08T15:59:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/04/a-look-underneath-carpet.html
 title: A LOOK UNDERNEATH THE CARPET
+hero_image: "img/parapet/a-look-underneath-the-carpet.png"
 ---
 ### Cyprus is the fifth country in the eurozone to be bailed-out.
 

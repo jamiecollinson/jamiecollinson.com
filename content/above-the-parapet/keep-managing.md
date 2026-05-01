@@ -2,8 +2,18 @@
 date: '2015-05-26T15:04:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/05/keep-managing.html
 title: KEEP MANAGING
+hero_image: "img/parapet/keep-managing.png"
+hero_alt: Satirical editorial-style cartoon of managers continuing operations while fiscal and policy pressures intensify.
 ---
-George Osborne is back as Chancellor. Pity him, says James Meadway, neweconomics.org/blog. He has inherited a mess from the last government. Here are five of his major problems. 1. Spending cuts will not work. He had to slacken harsh austerity as the economy slumped. So, he missed the targets on reduction of deficit. Things have not changed much. 2. The easy reductions in expenditure have been made; for example, capital expenditure on buildings and some benefits. There will now be difficulties in avoiding politically damaging cuts. 3 Household debt is rising again. Maybe a crisis looms? 4. We are less productive. Since 2002, productivity of labour has slumped. There is little scope for raising pay. 5 The current account deficit – the gap between what we earn from the rest of the world and imports – is nearly 6% of GDP. If interest rates in America go up and/or credit in the PR China collapses, then there would be reductions in exports accompanied by trouble.
+### George Osborne is back as Chancellor. 
+
+Pity him, says James Meadway, neweconomics.org/blog. He has inherited a mess from the last government. Here are five of his major problems. 
+
+1. Spending cuts will not work. He had to slacken harsh austerity as the economy slumped. So, he missed the targets on reduction of deficit. Things have not changed much. 
+2. The easy reductions in expenditure have been made; for example, capital expenditure on buildings and some benefits. There will now be difficulties in avoiding politically damaging cuts. 
+3. Household debt is rising again. Maybe a crisis looms? 
+4. We are less productive. Since 2002, productivity of labour has slumped. There is little scope for raising pay.
+5. The current account deficit – the gap between what we earn from the rest of the world and imports – is nearly 6% of GDP. If interest rates in America go up and/or credit in the PR China collapses, then there would be reductions in exports accompanied by trouble.
 
 ### A different place.
 
@@ -42,9 +52,7 @@ The British public has, for more than 10 years, been urged by politicians and pu
 
 ### Paying the price.
 
-### John Ruskin (1819-1900), gives a warning.
-
-‘It’s unwise to pay too much, but it’s worse to pay too little. When you pay too much, you lose a little money – that is all. When you pay too little, you sometimes lose everything, because the thing you bought was incapable of doing the thing it was bought to do. The common law of business balance prohibits paying a little and getting a lot – it can’t be done. If you deal with the lowest bidder, it is well to add something for the risk you run, and if you do that you will have enough to pay for something better.’
+John Ruskin (1819-1900), gives a warning. ‘It’s unwise to pay too much, but it’s worse to pay too little. When you pay too much, you lose a little money – that is all. When you pay too little, you sometimes lose everything, because the thing you bought was incapable of doing the thing it was bought to do. The common law of business balance prohibits paying a little and getting a lot – it can’t be done. If you deal with the lowest bidder, it is well to add something for the risk you run, and if you do that you will have enough to pay for something better.’
 
 ### Experience tells.
 

@@ -2,6 +2,7 @@
 date: '2012-04-25T17:20:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/04/bit-more-reflective.html
 title: A BIT MORE REFLECTIVE
+hero_image: "img/parapet/a-bit-more-reflective.png"
 ---
 ### The exploration of the market and its forces is attracting attention and noisy protagonists.
 

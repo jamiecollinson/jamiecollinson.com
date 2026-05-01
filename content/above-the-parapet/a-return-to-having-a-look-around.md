@@ -2,6 +2,7 @@
 date: '2014-01-20T16:11:00Z'
 original_url: http://overtheparapet.blogspot.com/2014/01/a-return-to-having-look-around.html
 title: A RETURN TO HAVING A LOOK AROUND
+hero_image: "img/parapet/a-return-to-having-a-look-around.png"
 ---
 ### The dollar and sterling.
 
@@ -39,4 +40,4 @@ Starting a business might help some people escape their economic circumstances. 
 
 ### From 6 October 1952.
 
-Neither a wise man, nor a brave man lies down on the tracks of history to wait for a train of the future to run over him.’ Dwight D Eisenhower, former US general and president.
+Neither a wise man, nor a brave man lies down on the tracks of history to wait for a train of the future to run over him.’ *Dwight D Eisenhower, former US general and president.*

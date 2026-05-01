@@ -2,6 +2,7 @@
 date: '2012-05-21T16:22:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/05/more-observations.html
 title: MORE OBSERVATIONS
+hero_image: "img/parapet/more-observations.png"
 ---
 ‘At best, the supposedly huge cuts in spending delivered by this government amount to little more than £1 in every £100’, says Tullet Prebon’s Tim Morgan. Spending by the State grew in 2009/10 and 2011/12. There was finally a fall in 2011/12, but only by 1.5%. Even then, total spending in the last fiscal year was £22.6bn or 2.4% above 2008/09. And the deficit? It was cut from £161bn in 2009/10 to £123bn in 2011/12. 75% of that £38bn came from higher taxation and only 25% from cuts. Taxes have gone up by £30bn since 2009/10, absorbing 75% of the entire period’s £40bn rise in GDP. The private sector remained on 25% of the already tiny increase in GDP of the previous three years. Morgan reckons the UK has been trying to ‘dupe’ bond markets by combining ‘spin with minimum substance’. If he is right, we have been having the wrong kind of austerity. Thanks to Allister Heath, City AM.
 

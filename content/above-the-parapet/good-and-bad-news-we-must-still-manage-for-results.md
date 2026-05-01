@@ -2,6 +2,7 @@
 date: '2012-09-10T14:27:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/09/good-and-bad-news-we-must-still-manage.html
 title: GOOD AND BAD NEWS.  WE MUST STILL MANAGE FOR RESULTS
+hero_image: "img/parapet/good-and-bad-news-we-must-still-manage-for-results.png"
 ---
 ### Central bankers have had five years of experiencing failure.
 

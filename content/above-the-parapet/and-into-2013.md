@@ -2,6 +2,7 @@
 date: '2012-12-19T12:26:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/12/and-into-2013_19.html
 title: AND INTO 2013
+hero_image: "img/parapet/and-into-2013.png"
 ---
 ### We’ve suspected this reality.
 

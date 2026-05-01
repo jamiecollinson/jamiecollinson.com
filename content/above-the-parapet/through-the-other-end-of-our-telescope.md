@@ -2,6 +2,7 @@
 date: '2012-08-13T15:17:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/08/through-other-end-of-our-telescope.html
 title: THROUGH THE OTHER END OF OUR TELESCOPE
+hero_image: "img/parapet/through-the-other-end-of-our-telescope.png"
 ---
 ### Well, well. Unintended consequences sometimes have beneficial effects.
 

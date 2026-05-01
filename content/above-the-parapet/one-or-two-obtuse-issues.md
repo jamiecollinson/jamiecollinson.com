@@ -2,6 +2,7 @@
 date: '2012-08-24T11:30:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/08/one-or-two-obtuse-issues.html
 title: ONE OR TWO OBTUSE ISSUES
+hero_image: "img/parapet/one-or-two-obtuse-issues.png"
 ---
 ‘Libor’ rolls off almost every tongue. But worries are not new. Back in 1998, there were warnings that the polling process to set Libor was susceptible to misreporting, whether intentional or accidental. Practitioners have recognised always that the calculation is not based on actual transactions. It is the result of a self-assessment among a panel of major banks active in the London interbank money market. The specific daily question is, ‘At what rate could you borrow funds, were you to do so by asking for and then accepting interbank offers in a reasonable market size just prior to 11.00am?’ These are subjective estimates. They are neither actual rates nor real transactions or promises to complete any transactions in the future. So, there began to be spreads of rates as lenders looked closely at which banks might be in serious trouble. How can a bank answer the posed question if it is unable to borrow at all? Some did. And just consider the inherent conflicts of interest. Moreover, submissions carry no obligation to deal at a self-proclaimed cost of borrowing. Strange, innit?
 

@@ -2,6 +2,7 @@
 date: '2013-12-02T16:09:00Z'
 original_url: http://overtheparapet.blogspot.com/2013/12/there-are-important-things-to-do-or-not.html
 title: "THERE ARE IMPORTANT THINGS TO DO \u2013 OR NOT DO"
+hero_image: "img/parapet/there-are-important-things-to-do-or-not-do.png"
 ---
 The private sector is not making investments.
 

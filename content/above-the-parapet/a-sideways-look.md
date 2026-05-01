@@ -2,6 +2,7 @@
 date: '2011-09-16T17:18:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2011/09/sideways-look.html
 title: A SIDEWAYS LOOK
+hero_image: "img/parapet/a-sideways-look.png"
 ---
 ### Many futurologists in economic life do a good job foretelling some things.
 

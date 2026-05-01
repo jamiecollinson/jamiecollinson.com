@@ -2,6 +2,8 @@
 date: '2015-11-25T18:22:00Z'
 original_url: http://overtheparapet.blogspot.com/2015/11/look-forward.html
 title: LOOK FORWARD
+hero_image: "img/parapet/look-forward.png"
+hero_alt: Satirical editorial-style cartoon of managers looking toward 2016 amid regulation and automation pressures.
 ---
 ### Praise at last.
 

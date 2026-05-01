@@ -2,6 +2,7 @@
 date: '2013-01-14T15:26:00Z'
 original_url: http://overtheparapet.blogspot.com/2013/01/work-is-recovering-from-long-festive.html
 title: WORK IS RECOVERING FROM THE LONG FESTIVE SEASON
+hero_image: "img/parapet/work-is-recovering-from-the-long-festive-season.png"
 ---
 ### The Prime Minister’s tentative decision to lead a Britain in Europe has re-ignited all kinds of wrangles.
 

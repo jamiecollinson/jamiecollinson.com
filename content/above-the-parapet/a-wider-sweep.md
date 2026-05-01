@@ -2,6 +2,7 @@
 date: '2013-02-13T15:03:00Z'
 original_url: http://overtheparapet.blogspot.com/2013/02/a-wider-sweep.html
 title: A WIDER SWEEP
+hero_image: "img/parapet/a-wider-sweep.png"
 ---
 ### Is there going to be a currency war?
 

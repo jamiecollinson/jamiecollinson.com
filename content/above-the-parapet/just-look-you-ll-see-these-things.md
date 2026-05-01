@@ -2,6 +2,7 @@
 date: '2011-09-05T13:09:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2011/09/just-look-youll-see-these-things.html
 title: JUST LOOK.  YOU'LL SEE THESE THINGS
+hero_image: "img/parapet/just-look-you-ll-see-these-things.png"
 ---
 ### This country’s consumers are frightened by the outlook for our economy.
 

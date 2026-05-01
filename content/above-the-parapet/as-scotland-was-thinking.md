@@ -2,6 +2,7 @@
 date: '2014-09-19T18:12:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/09/as-scotland-was-thinking.html
 title: AS SCOTLAND WAS THINKING
+hero_image: "img/parapet/as-scotland-was-thinking.png"
 ---
 ### Why the upturn?
 

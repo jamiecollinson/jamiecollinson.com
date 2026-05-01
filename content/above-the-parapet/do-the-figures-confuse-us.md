@@ -2,6 +2,7 @@
 date: '2014-06-09T16:25:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/06/do-figures-confuse-us.html
 title: DO THE FIGURES CONFUSE US?
+hero_image: "img/parapet/do-the-figures-confuse-us.png"
 ---
 ### Crisis.
 

@@ -2,6 +2,7 @@
 date: '2011-10-17T16:32:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2011/10/out-of-corner-of-my-eye.html
 title: OUT OF THE CORNER OF MY EYE
+hero_image: "img/parapet/out-of-the-corner-of-my-eye.png"
 ---
 ### Until recently, bailing out meant obtaining temporary release of an untried prisoner by giving money.
 

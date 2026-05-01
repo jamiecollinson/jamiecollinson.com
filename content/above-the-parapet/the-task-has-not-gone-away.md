@@ -2,6 +2,7 @@
 date: '2012-12-03T15:43:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/12/the-task-has-not-gone-away.html
 title: THE TASK HAS NOT GONE AWAY
+hero_image: "img/parapet/the-task-has-not-gone-away.png"
 ---
 ### The figures on the UK’s public finances are not all moving in the right direction.
 

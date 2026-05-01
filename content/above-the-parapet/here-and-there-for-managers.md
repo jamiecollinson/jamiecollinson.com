@@ -2,6 +2,8 @@
 date: '2015-08-03T16:58:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/08/here-and-there-for-managers.html
 title: HERE AND THERE FOR MANAGERS
+hero_image: "img/parapet/here-and-there-for-managers.png"
+hero_alt: Satirical editorial-style cartoon of managers navigating deflation risk, workplace shifts, and productivity concerns.
 ---
 ### Interest rates.
 

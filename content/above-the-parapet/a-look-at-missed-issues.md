@@ -2,6 +2,7 @@
 date: '2013-01-30T15:00:00Z'
 original_url: http://overtheparapet.blogspot.com/2013/01/a-look-at-missed-issues.html
 title: A LOOK AT MISSED ISSUES
+hero_image: "img/parapet/a-look-at-missed-issues.png"
 ---
 ### Productivity of resources is at risk.
 

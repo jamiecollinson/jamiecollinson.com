@@ -2,6 +2,7 @@
 date: '2011-10-31T16:44:00Z'
 original_url: http://overtheparapet.blogspot.com/2011/10/effective-managers-are-scarce_31.html
 title: EFFECTIVE MANAGERS ARE SCARCE
+hero_image: "img/parapet/effective-managers-are-scarce.png"
 ---
 ### The Government’s figures reveal unemployment at a 17-year high
 

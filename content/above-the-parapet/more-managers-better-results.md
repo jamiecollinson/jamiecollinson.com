@@ -2,6 +2,7 @@
 date: '2013-10-07T16:40:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/10/more-managers-better-results_596.html
 title: MORE MANAGERS.  BETTER RESULTS?
+hero_image: "img/parapet/more-managers-better-results.png"
 ---
 ### Have we seen the wood?
 

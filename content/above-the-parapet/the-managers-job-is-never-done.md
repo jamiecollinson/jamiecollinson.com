@@ -2,6 +2,7 @@
 date: '2013-08-12T15:55:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/08/the-managers-job-is-never-done.html
 title: "THE MANAGER\u2019S JOB IS NEVER DONE"
+hero_image: "img/parapet/the-managers-job-is-never-done.png"
 ---
 Corporate profits as a proportion of gross domestic product (GDP) are at record highs in developed countries. Big companies do
 

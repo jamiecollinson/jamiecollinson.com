@@ -2,6 +2,7 @@
 date: '2013-03-11T16:34:00Z'
 original_url: http://overtheparapet.blogspot.com/2013/03/some-uncomfortable-comments.html
 title: SOME UNCOMFORTABLE COMMENTS
+hero_image: "img/parapet/some-uncomfortable-comments.png"
 ---
 ### Chancellor George Osborne will present a budget on Wednesday 20 March.
 

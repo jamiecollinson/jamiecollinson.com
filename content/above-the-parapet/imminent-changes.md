@@ -2,6 +2,7 @@
 date: '2014-11-24T17:51:00Z'
 original_url: http://overtheparapet.blogspot.com/2014/11/imminent-changes.html
 title: IMMINENT CHANGES
+hero_image: "img/parapet/imminent-changes.png"
 ---
 ### Power to the English regions?
 

@@ -2,6 +2,7 @@
 date: '2011-11-11T14:04:00Z'
 original_url: http://overtheparapet.blogspot.com/2011/11/jigsaw.html
 title: A JIGSAW
+hero_image: "img/parapet/a-jigsaw.png"
 ---
 ### It’s a strange world.
 

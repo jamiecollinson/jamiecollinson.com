@@ -2,6 +2,7 @@
 date: '2012-01-17T16:51:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/01/things-will-get-better.html
 title: THINGS WILL GET BETTER
+hero_image: "img/parapet/things-will-get-better.png"
 ---
 ### Standard and Poor’s downgraded nine European economies last Friday.
 

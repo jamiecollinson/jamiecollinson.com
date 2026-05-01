@@ -2,6 +2,8 @@
 date: '2015-04-13T16:12:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/04/one-or-two-reflections-for-managers.html
 title: ONE OR TWO REFLECTIONS FOR MANAGERS
+hero_image: "img/parapet/one-or-two-reflections-for-managers.png"
+hero_alt: Satirical editorial-style cartoon of managers comparing expert forecasts with stubborn inflation and workplace reality.
 ---
 ### Why do we listen?
 

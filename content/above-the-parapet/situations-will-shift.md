@@ -2,6 +2,8 @@
 date: '2015-05-11T17:06:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/05/situations-will-shift.html
 title: SITUATIONS WILL SHIFT
+hero_image: "img/parapet/situations-will-shift.png"
+hero_alt: Satirical editorial-style cartoon of post-election managers navigating political fragility and shifting business conditions.
 ---
 ### A good contest to lose?
 

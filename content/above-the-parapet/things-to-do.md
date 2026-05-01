@@ -2,6 +2,7 @@
 date: '2014-03-03T15:17:00Z'
 original_url: http://overtheparapet.blogspot.com/2014/03/things-to-do.html
 title: THINGS TO DO
+hero_image: "img/parapet/things-to-do.png"
 ---
 ### A productivity crisis?
 

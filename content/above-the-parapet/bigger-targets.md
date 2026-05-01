@@ -2,6 +2,8 @@
 date: '2015-08-17T16:31:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/08/bigger-targets.html
 title: BIGGER TARGETS
+hero_image: "img/parapet/bigger-targets.png"
+hero_alt: Satirical editorial-style cartoon of moving austerity and technology targets challenging managers in 2015.
 ---
 ### What’s different?
 
@@ -19,7 +21,9 @@ When small firms need cash to get off the ground and/or expand, they increasingl
 
 Most people believe they are less biased than their counterparts. Researchers have concluded there is a ‘bias blind spot’. In a recent survey, only one person out of 661, thought s/he held more biases than others. This ‘blind spot’ has disadvantages. It prevents a person from accurately assessing her/his own abilities. This leads to the belief they are better than most at simple tasks but not so good with challenging ones. It also damages working relationships. Irene Scopelliti, of Cass Business School and leader of the study, says: ‘We think the ‘bias blind spot’ is a critical determinant of misunderstandings, mistrust and pessimism when attempting to reach agreements in interpersonal, political and professional relationships.’ Those with a bigger ‘bias blind spot’ are also more likely to ignore advice and might be less responsive to training.
 
-Doers are not new, but still scarce. ‘It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things. Leonardo da Vinci, 1452-1519. Italian painter, sculptor, architect and engineer.
+### Doers are not new, but still scarce. 
+
+‘It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things. *Leonardo da Vinci, 1452-1519. Italian painter, sculptor, architect and engineer.*
 
 ### We know.
 

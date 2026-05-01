@@ -2,6 +2,7 @@
 date: '2012-09-24T15:36:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/09/normal-0-false-false-false-en-gb-x-none.html
 title: DECISIONS, DECISIONS, DECISIONS
+hero_image: "img/parapet/decisions-decisions-decisions.png"
 ---
 The economic downturn is into its fifth year. There can be no surprises that the government grasps at politicians’ urgings for big building projects. Announcements sound good and create hope for kick-starting an economy stuck in first gear – sometimes reverse. Vince Cable, the secretary of state for business, innovation and skills, has decided that the UK needs an industrial policy. His recent speech in the House of Commons on this subject lacked particulars. He is right to point out that we are the only country in G8 without a national investment strategy and a serious regional investment plan.
 

@@ -2,6 +2,7 @@
 date: '2014-04-14T17:07:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/04/lets-consider-few-different-issues.html
 title: "LET\u2019S CONSIDER A FEW DIFFERENT ISSUES"
+hero_image: "img/parapet/lets-consider-a-few-different-issues.png"
 ---
 ### Austerity and wincing.
 

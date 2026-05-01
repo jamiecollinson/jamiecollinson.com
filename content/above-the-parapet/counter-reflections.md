@@ -2,6 +2,7 @@
 date: '2014-08-18T16:50:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2014/08/counter-reflections.html
 title: COUNTER REFLECTIONS
+hero_image: "img/parapet/counter-reflections.png"
 ---
 ### UK’s economy looks different from 2008.
 

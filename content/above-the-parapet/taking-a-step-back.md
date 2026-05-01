@@ -2,6 +2,7 @@
 date: '2014-11-12T11:30:00Z'
 original_url: http://overtheparapet.blogspot.com/2014/11/taking-step-back_12.html
 title: TAKING A STEP BACK
+hero_image: "img/parapet/taking-a-step-back.png"
 ---
 ### Self-preservation?
 
@@ -13,7 +14,7 @@ The elite of the UK’s two major political parties has started to accept reluct
 
 ### The best advice.
 
-[www.fool.com/investing](http://www.fool.com/investing) gives advice gathered from experience by Morgan Housel.
+Motley Fool gives advice gathered from experience by Morgan Housel.
 
 (1) Changing your mind is one of the most difficult things to do. It is far easier to fool yourself into believing a falsehood; (2) strong political beliefs limit your ability to make rational decisions more than almost anything else; (3) debt can cause more social problems than some drugs, yet drugs are illegal and debt is tax-deductible; (4) finance is simple, but it’s made to look complicated to justify fees; (5) ‘unsustainable’ can last years, even decades; (6) ‘do nothing’ is the best advice for almost everyone almost all the time.
 

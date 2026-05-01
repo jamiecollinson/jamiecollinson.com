@@ -2,6 +2,8 @@
 date: '2015-12-07T16:14:00Z'
 original_url: http://overtheparapet.blogspot.com/2015/12/a-few-worries-about-centralism_50.html
 title: A FEW WORRIES ABOUT CENTRALISM
+hero_image: "img/parapet/a-few-worries-about-centralism.png"
+hero_alt: Satirical editorial-style cartoon of over-central control meeting regional business turbulence in late 2015.
 ---
 ### Can governments deliver economic stability?
 
@@ -25,9 +27,7 @@ Goldman Sachs has closed its ‘BRIC’ fund after years of poor performances. T
 
 The family picture is on HIS desk. Ah, a solid, responsible family man.
 
-The family picture is on HER desk. Umm, her family will come before
-
-her career.
+The family picture is on HER desk. Umm, her family will come before her career.
 
 HIS desk is cluttered. He’s obviously a hard worker and a busy man. HER desk is cluttered. She’s obviously a disorganised scatterbrain.
 

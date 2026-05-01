@@ -2,6 +2,8 @@
 date: '2015-07-06T16:12:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/07/outside-reported-troubled-times.html
 title: OUTSIDE THE REPORTED TROUBLED TIMES
+hero_image: "img/parapet/outside-the-reported-troubled-times.png"
+hero_alt: Satirical editorial-style cartoon contrasting headline stability with hidden structural business pressures.
 ---
 ### On every commentator’s lips.
 
@@ -25,7 +27,13 @@ Managers like to congratulate themselves by declaring we face unprecedented chal
 
 Talent is not enough. The world is full of unsuccessful people with talent. Genius is not enough. The unrewarded genius is proverbial. Education is insufficient. Our society is full of educated derelicts. Persistence and determination are omnipotent.
 
-Be careful. Wise managers are a bit wary of ‘commonsense’, educators and exporters. ‘The earth is flat’. ‘Iron ships won’t float.’ ‘Human beings not meant to fly.’ ‘Impossible to have a horseless carriage.’ ‘Space flight is hokum’, said the Astronomer Royal, 1956. ‘There is no reason why anyone would want to have a computer in their home’, Ken Olsen, president, chairman and founder of Digital Equipment Corporation 1977. Even Bill Gates of Microsoft said in 1981: ‘640K ought to be enough for anybody.’ Not m e guv! ‘People are always blaming their circumstances for what they are. I don’t believe in circumstances. The people who get on in this world are the people who get up and look for the circumstances they want, and, if they can’t find them, make them.’ George Bernard Shaw (1856-1950). Irish dramatist and critic.
+### Be careful. 
+
+Wise managers are a bit wary of ‘commonsense’ educators and exporters. ‘The earth is flat’. ‘Iron ships won’t float.’ ‘Human beings not meant to fly.’ ‘Impossible to have a horseless carriage.’ ‘Space flight is hokum’, said the Astronomer Royal, 1956. ‘There is no reason why anyone would want to have a computer in their home’, Ken Olsen, president, chairman and founder of Digital Equipment Corporation 1977. Even Bill Gates of Microsoft said in 1981: ‘640K ought to be enough for anybody.’ 
+
+### Not me guv! 
+
+‘People are always blaming their circumstances for what they are. I don’t believe in circumstances. The people who get on in this world are the people who get up and look for the circumstances they want, and, if they can’t find them, make them.’ *George Bernard Shaw (1856-1950). Irish dramatist and critic.*
 
 ### Personal fears.
 

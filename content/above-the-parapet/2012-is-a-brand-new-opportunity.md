@@ -2,6 +2,7 @@
 date: '2012-01-03T14:29:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/01/2012-is-brand-new-opportunity.html
 title: 2012 IS A BRAND NEW OPPORTUNITY
+hero_image: "img/parapet/2012-is-a-brand-new-opportunity.png"
 ---
 ### Hopes that George Osborne can accelerate an economic recovery are almost certainly ill-founded.
 

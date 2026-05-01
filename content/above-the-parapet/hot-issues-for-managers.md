@@ -2,6 +2,7 @@
 date: '2012-05-08T13:24:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/05/hot-issues-for-managers.html
 title: HOT ISSUES FOR MANAGERS
+hero_image: "img/parapet/hot-issues-for-managers.png"
 ---
 ### The economy unexpectedly shrank by 0.2% in the first quarter of 2012.
 

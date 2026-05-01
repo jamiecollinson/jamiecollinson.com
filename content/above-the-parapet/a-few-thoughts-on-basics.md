@@ -2,6 +2,7 @@
 date: '2012-03-29T16:10:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/03/few-thoughts-on-basics.html
 title: A FEW THOUGHTS ON BASICS
+hero_image: "img/parapet/a-few-thoughts-on-basics.png"
 ---
 ### Many governments reduced their debt in the 80s and 90s.
 

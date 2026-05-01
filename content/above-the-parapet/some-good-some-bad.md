@@ -2,6 +2,8 @@
 date: '2015-10-26T11:20:00Z'
 original_url: http://overtheparapet.blogspot.com/2015/10/some-good-some-bad.html
 title: SOME GOOD, SOME BAD
+hero_image: "img/parapet/some-good-some-bad.png"
+hero_alt: Satirical editorial-style cartoon of mixed economic signals and uneasy appraisal culture in late 2015.
 ---
 ### Deflation for September.
 

@@ -2,6 +2,7 @@
 date: '2013-04-22T15:44:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/04/another-sideways-look.html
 title: ANOTHER SIDEWAYS LOOK
+hero_image: "img/parapet/another-sideways-look.png"
 ---
 ### Mark Carney will soon be governor of the Bank of England.
 

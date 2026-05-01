@@ -2,6 +2,8 @@
 date: '2015-09-14T11:03:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/09/one-or-two-minor-grumbles.html
 title: ONE OR TWO MINOR GRUMBLES
+hero_image: "img/parapet/one-or-two-minor-grumbles.png"
+hero_alt: Satirical editorial-style cartoon of practical management concerns continuing while politics idles.
 ---
 ### Decisions.
 

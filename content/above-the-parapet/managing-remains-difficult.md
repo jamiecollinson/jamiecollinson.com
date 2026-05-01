@@ -2,6 +2,8 @@
 date: '2015-02-02T15:52:00Z'
 original_url: http://overtheparapet.blogspot.com/2015/02/managing-remains-difficult.html
 title: MANAGING REMAINS DIFFICULT
+hero_image: "img/parapet/managing-remains-difficult.png"
+hero_alt: Satirical editorial-style cartoon of managers balancing low rates, board strain, and digital disruption in 2015.
 ---
 ### Interest rates into 2016.
 

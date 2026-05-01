@@ -2,6 +2,7 @@
 date: '2014-03-17T17:12:00Z'
 original_url: http://overtheparapet.blogspot.com/2014/03/conspiracies-are-fascinating-thoughts.html
 title: CONSPIRACIES ARE FASCINATING THOUGHTS.  COCK-UPS ARE OFTEN REALITY.
+hero_image: "img/parapet/conspiracies-are-fascinating-thoughts-cock-ups-are-often-reality.png"
 ---
 ### Is it a plot by HM Government?
 

@@ -2,6 +2,8 @@
 date: '2015-09-01T13:09:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/09/another-look-from-helicopter.html
 title: ANOTHER LOOK FROM THE HELICOPTER
+hero_image: "img/parapet/another-look-from-the-helicopter.png"
+hero_alt: Satirical editorial-style cartoon of managers viewing tax structures and execution risks from a wider vantage point.
 ---
 ### Corporate taxes.
 

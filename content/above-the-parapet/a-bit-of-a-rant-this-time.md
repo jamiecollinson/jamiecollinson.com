@@ -2,6 +2,7 @@
 date: '2013-05-20T14:07:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/05/a-bit-of-rant-this-time.html
 title: A BIT OF A RANT THIS TIME
+hero_image: "img/parapet/a-bit-of-a-rant-this-time.png"
 ---
 ### We must dump austerity in favour of growth.
 

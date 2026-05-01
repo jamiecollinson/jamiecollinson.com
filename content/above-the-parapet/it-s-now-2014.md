@@ -2,10 +2,11 @@
 date: '2014-01-06T14:56:00Z'
 original_url: http://overtheparapet.blogspot.com/2014/01/its-now-2014_6.html
 title: IT'S NOW 2014
+hero_image: "img/parapet/it-s-now-2014.png"
 ---
-### Between them, eight urban areas (cities) – Birmingham, Bristol, Leeds, Liverpool, Manchester, Newcastle, Nottingham and Sheffield – produce 27%
+### Between them, eight urban areas (cities) – Birmingham, Bristol, Leeds, Liverpool, Manchester, Newcastle, Nottingham and Sheffield – produce 27% of England’s wealth. 
 
-of England’s wealth. Everyone knows London is a dynamo. In the decade to 2011, populations grew: London (12%), Birmingham (10%) and Manchester by a whopping 19%. There is a connection between the figures and an ability to attract jobs, talent and investment. Expect a shift towards additional local control over finances and policies.
+Everyone knows London is a dynamo. In the decade to 2011, populations grew: London (12%), Birmingham (10%) and Manchester by a whopping 19%. There is a connection between the figures and an ability to attract jobs, talent and investment. Expect a shift towards additional local control over finances and policies.
 
 ### The politics of rejection and resentment will be a destabilising factor in 2014.
 

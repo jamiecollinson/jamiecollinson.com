@@ -2,6 +2,7 @@
 date: '2012-10-24T16:20:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/10/keep-it-simple.html
 title: KEEP IT SIMPLE
+hero_image: "img/parapet/keep-it-simple.png"
 ---
 ### New York Times emphasised recently that we live in a funny economic world
 

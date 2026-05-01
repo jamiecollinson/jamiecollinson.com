@@ -2,6 +2,7 @@
 date: '2012-07-31T16:52:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/07/maybe-things-for-consideration.html
 title: MAYBE THINGS FOR CONSIDERATION?
+hero_image: "img/parapet/maybe-things-for-consideration.png"
 ---
 ### Crisis in the eurozone got worse over the last two weeks.
 

@@ -2,6 +2,7 @@
 date: '2011-11-28T15:40:00Z'
 original_url: http://overtheparapet.blogspot.com/2011/11/there-is-much-to-do.html
 title: THERE IS MUCH TO DO
+hero_image: "img/parapet/there-is-much-to-do.png"
 ---
 ### The initial emphasis of the crisis in Europe was on the weaker, peripheral countries
 

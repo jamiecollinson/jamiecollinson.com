@@ -2,6 +2,7 @@
 date: '2012-07-16T14:39:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/07/onwards-and.html
 title: ONWARDS AND ......?
+hero_image: "img/parapet/onwards-and.png"
 ---
 Major banks in the UK are a pampered and subsidised industry. They have been implicitly backed by taxpayers and underpinned by complacent regulators. There is inadequate competition and a formal acceptance that they are too big to fail. This means no fear of ruin in boardrooms. The scandal based on Barclays continues to cause anger in many places. However, it is clear the problems still have legs and the attempts to manipulate Libor, the benchmark interbank interest rate, was not confined to Barclays and this particular issue. There is more to come. The underlying systemic problem is not the danger of the excessively free markets’ mentioned by Allister Heath. Quite the reverse. Our economy has endured a rigged market. The players have not acknowledged that the world has changed. Large indefensible bonuses and do-as-you like behaviour are not acceptable in this age of longish-term austerity. Particularly because the banks were a key cause of the crash in 2007/08. And now the Financial Services Authority has described ‘serious failings’ in the sales of products by banks to small businesses.
 

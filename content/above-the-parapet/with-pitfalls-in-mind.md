@@ -2,6 +2,7 @@
 date: '2013-03-27T16:51:00Z'
 original_url: http://overtheparapet.blogspot.com/2013/03/with-pitfalls-in-mind.html
 title: WITH PITFALLS IN MIND
+hero_image: "img/parapet/with-pitfalls-in-mind.png"
 ---
 ### Have we learned again how to manage resources effectively in a downturn?
 

@@ -2,6 +2,8 @@
 date: '2015-12-22T15:40:00Z'
 original_url: http://overtheparapet.blogspot.com/2015/12/closure-of-busy-year.html
 title: CLOSURE OF A BUSY YEAR
+hero_image: "img/parapet/closure-of-a-busy-year.png"
+hero_alt: Satirical editorial-style cartoon of year-end stress tests and managers preparing for 2016 risks.
 ---
 ### Pass the stress.
 

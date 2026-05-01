@@ -2,6 +2,7 @@
 date: '2013-11-08T16:10:00Z'
 original_url: http://overtheparapet.blogspot.com/2013/11/management-is-task-of-care.html
 title: MANAGEMENT IS THE TASK OF CARE
+hero_image: "img/parapet/management-is-the-task-of-care.png"
 ---
 ### George Osborne has been likened to Fagin and Scrooge.
 

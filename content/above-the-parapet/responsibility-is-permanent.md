@@ -2,6 +2,8 @@
 date: '2015-06-08T16:21:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2015/06/responsibility-is-permanent.html
 title: RESPONSIBILITY IS PERMANENT
+hero_image: "img/parapet/responsibility-is-permanent.png"
+hero_alt: Satirical editorial-style cartoon of managers carrying long-term responsibility through fragile recovery conditions.
 ---
 ### Recovery is fragile.
 
@@ -11,15 +13,24 @@ The UK is unlikely to see a rapid recovery from the low growth in the first quar
 
 The Greater Manchester Combined Authority (GMCA) has taken a big step in moves towards additional localised decision-making. An agreement promoted by George Osborne, chancellor of the exchequer, will devolve the budget of £6 billion for the region’s National Health Service. That is, to complete responsibilities relating to health and social care. Sam Warner and Max Lempriere, both from University of Birmingham, have made an important commentary. There will be a new board bringing together NHS England, twelve clinical commissioning groups (formerly the primary care trusts), fifteen providers of services to the NHS and the ten constituent local authorities of GMCA. Its main functions are to allocate funds and take decisions associated with personnel, estates, sharing information, regulation and the commissioning of clinical services.
 
-Quite a task. The initiative is seen as part of a broader trend in governance for the public sector. It is reasonable to suspect the true scope of central control is hidden from view. The agreement between HM Treasury and GMCA makes the point: ‘In the context of the wider fiscal-consolidation agenda, the City Region will be required to take a fair share of any reductions that are made to any of the devolved funding streams’. Moreover, central government retains substantial control beyond the purse strings. It is clear in a memorandum of agreement between GMCA and NHS England that government will have the ultimate say over the strategic direction of health services in Greater Manchester. Any major additions to the estate will be agreed nationally and there will not be much local discretion to deviate from prescribed arrangements on governance. The most interesting question concerns accountability and, specifically, where the electorate sees it lies under these plans. Who/what will be deemed at fault if there are failures? The NHS has a unique position in the minds of British voters and remains a political hot potato. Of course, these changes are a move in the right direction. Maybe it would be wise initially to treat this deal with caution. It is the guinea pig.
+### Quite a task. 
+
+The initiative is seen as part of a broader trend in governance for the public sector. It is reasonable to suspect the true scope of central control is hidden from view. The agreement between HM Treasury and GMCA makes the point: ‘In the context of the wider fiscal-consolidation agenda, the City Region will be required to take a fair share of any reductions that are made to any of the devolved funding streams’. Moreover, central government retains substantial control beyond the purse strings. It is clear in a memorandum of agreement between GMCA and NHS England that government will have the ultimate say over the strategic direction of health services in Greater Manchester. Any major additions to the estate will be agreed nationally and there will not be much local discretion to deviate from prescribed arrangements on governance. The most interesting question concerns accountability and, specifically, where the electorate sees it lies under these plans. Who/what will be deemed at fault if there are failures? The NHS has a unique position in the minds of British voters and remains a political hot potato. Of course, these changes are a move in the right direction. Maybe it would be wise initially to treat this deal with caution. It is the guinea pig.
 
 ### Ten principles of success.
 
-### Jack Canfield, author of
+Jack Canfield, author of 'Chicken Soup for the Soul' , suggests ten principles of success. They deserve more than a passing thought.
 
-'Chicken Soup for the Soul' , suggests ten principles of success. They deserve more than a passing thought.
-
-Take 200 percent responsibility for your life and the results you produce. Avoid blaming others. If you do not like your outcomes, change your responses Decide what you really want A lot of the time, we let our past determine our future Unleash the power of goal-setting People without goals work for people with goals. Think about your breakthrough goal Visualise the outcomes you want to achieve, every day Before you go to bed or early in the morning, go through and visualise quickly what you want, one by one Commit to constant improvement Always exceed expectation and keep your promises. Go for excellence Take action Get started now. The conditions are never perfect Take risks and respond to feedback Solicit a response and do not be offended by it Practise perseverance Do not give up too soon Learn more to earn more Self-help and motivation Redefine time Divide your week into three types of day. Best results, preparation and rest and recuperation.
+1. Take 200 percent responsibility for your life and the results you produce. Avoid blaming others. If you do not like your outcomes, change your responses. 
+2. Decide what you really want. A lot of the time, we let our past determine our future.
+3. Unleash the power of goal-setting People without goals work for people with goals. Think about your breakthrough goal.
+4. Visualise the outcomes you want to achieve, every day before you go to bed or early in the morning, go through and visualise quickly what you want, one by one.
+5. Commit to constant improvement Always exceed expectation and keep your promises. Go for excellence.
+6. Take action. Get started now. The conditions are never perfect. 
+7. Take risks and respond to feedback. Solicit a response and do not be offended by it. 
+8. Practise perseverance. Do not give up too soon. 
+9. Learn more to earn more. Self-help and motivation.
+10. Redefine time. Divide your week into three types of day. Best results, preparation and rest and recuperation.
 
 ### There are so many.
 

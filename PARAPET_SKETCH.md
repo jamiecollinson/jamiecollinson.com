@@ -14,7 +14,7 @@ Include small, telling details and props that carry the satire (labels, objects,
 
 Speech bubbles are hand-lettered in uppercase, slightly irregular, as if written with a marker or brush pen.
 
-Overall tone: wry, dry British humour with a slightly sharper comic edge, but still not overt slapstick. The joke should emerge from the juxtaposition of elements, mildly absurd props, and deadpan captions rather than exaggerated chaos.
+Overall tone: wry, dry British humour with a slightly sharper comic edge, but still not overt slapstick. Lean a little further into gentle whimsy and playful satire: use mildly surreal visual metaphors, lightly absurd props, and deadpan contrasts while keeping the composition controlled and editorial.
 
 Maintain a newspaper editorial feel: restrained, economical, and visually readable at a glance.
 

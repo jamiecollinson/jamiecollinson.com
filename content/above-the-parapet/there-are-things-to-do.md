@@ -2,6 +2,7 @@
 date: '2013-05-07T15:50:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/05/there-are-things-to-do.html
 title: THERE ARE THINGS TO DO
+hero_image: "img/parapet/there-are-things-to-do.png"
 ---
 ### The European Commission has decided encouraging entrepreneurs is not supping with the devil after all.
 

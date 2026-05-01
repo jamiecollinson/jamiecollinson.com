@@ -2,6 +2,7 @@
 date: '2013-07-29T16:51:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2013/07/a-bit-of-lateral.html
 title: A BIT OF THE LATERAL
+hero_image: "img/parapet/a-bit-of-the-lateral.png"
 ---
 ### Is Mark Carney, new governor of the Bank of England, pleased with better economic news?
 

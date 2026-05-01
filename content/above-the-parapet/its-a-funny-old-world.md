@@ -2,6 +2,7 @@
 date: '2012-11-19T16:36:00Z'
 original_url: http://overtheparapet.blogspot.com/2012/11/its-funny-old-world.html
 title: "IT\u2019S A FUNNY OLD WORLD"
+hero_image: "img/parapet/its-a-funny-old-world.png"
 ---
 ### Oil, coal, steel, machines in big workplaces was the economy of our earlier years.
 

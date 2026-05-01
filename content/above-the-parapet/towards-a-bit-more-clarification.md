@@ -2,6 +2,7 @@
 date: '2012-07-02T17:13:00+01:00'
 original_url: http://overtheparapet.blogspot.com/2012/07/towards-bit-more-clarification.html
 title: TOWARDS A BIT MORE CLARIFICATION
+hero_image: "img/parapet/towards-a-bit-more-clarification.png"
 ---
 ### In Europe, the one that includes this country, crisis is a near-permanent condition.
 
