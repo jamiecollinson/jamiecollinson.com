@@ -14,9 +14,9 @@ There is some good news. This includes: President Obama’s announcement of a wi
 
 Investors appear to be betting on a sharp jump in inflation to its highest level for five years. Inflation is measured by the difference between the nominal figure and yields from inflation-linked bonds. 3.3% was in the frame last week. September 2008 was the previous date for this level. By the way, ‘stagflation’ as used by Iain Macleod MP in 1965, is when inflation is high, economic growth slows down and unemployment remains steadily high.
 
-Have you noticed the claim that small businesses and entrepreneurial businesses are the same thing? Not necessarily so.
+### Have you noticed the claim that small businesses and entrepreneurial businesses are the same thing? 
 
-The great majority of small firms are incapable of innovation, partly because they don’t have the time or ambition. Just look at the typical small company. It is understaffed. It does not have the muscle or the cashflow. Possibly, the boss does not sweep the warehouse anymore, but he is not far away. S/he fights the daily battle. Often, s/he doesn’t have the discipline or the background. The most successful young entrepreneurs tend to be people who have spent five to eight years in a big organisation. That is where they learn and get some tools. We must not make exaggerated claims for small businesses. This will do them a disservice and is as daft as large companies continuing to believe they can do everything.
+Not necessarily so. The great majority of small firms are incapable of innovation, partly because they don’t have the time or ambition. Just look at the typical small company. It is understaffed. It does not have the muscle or the cashflow. Possibly, the boss does not sweep the warehouse anymore, but he is not far away. S/he fights the daily battle. Often, s/he doesn’t have the discipline or the background. The most successful young entrepreneurs tend to be people who have spent five to eight years in a big organisation. That is where they learn and get some tools. We must not make exaggerated claims for small businesses. This will do them a disservice and is as daft as large companies continuing to believe they can do everything.
 
 ### ‘Fast trackers’ can threaten a company’s stability.
 

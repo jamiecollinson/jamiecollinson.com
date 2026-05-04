@@ -16,7 +16,7 @@ According to government’s figures, 51.3% of the country’s 1.35 billion peopl
 
 Emerging markets offer greater security and now higher yields. With younger populations, smaller governments, less welfare and lower taxes, they grow faster. The question is unlikely to be how much money you want to have in Brazil, Russia, India, China et al, but why leave any in the developed countries? We have a lot to do.
 
-A consumer:
+### A consumer:
 
 - is no longer average – polarisation in spending power is increasing. The gap is set to widen between rich and poor consumers
 - buys on price – research suggests that more than 70% of customers actively look out for price-based promotions

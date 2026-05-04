@@ -16,7 +16,11 @@ If British managers feel themselves to be different in kind, rather than degree,
 
 Observers note that within a company committed to delivery of top quality products, good employee relations fall into place almost automatically. Some British managers are often self-conscious about their job titles, regardless of what is their responsibility. Maybe we have allowed ourselves to become people processors with production as a constraint; rather than the other way round?
 
-Employees’ personal development. Changes in aspirations and technologies will require an adjustment: From the belief that managers can develop subordinates’ skills in interpersonal competence and accurate diagnosis of administrative situations. To the knowledge that no one can develop anyone else, except the person her/himself. This door is unlocked from the inside. Some of the reasons are:
+### Employees’ personal development. 
+
+Changes in aspirations and technologies will require an adjustment: From the belief that managers can develop subordinates’ skills in interpersonal competence and accurate diagnosis of administrative situations. To the knowledge that no one can develop anyone else, except the person her/himself. This door is unlocked from the inside. 
+
+Some of the reasons are:
 
 - Much of what is given the name of development is the creation of people in the image of a select group of executives. The danger is clear. Today’s managerial skills for success may pave the way for tomorrow’s failure.
 
@@ -28,4 +32,8 @@ Final note: Successful managers make effective decisions. They know this is a ju
 
 ### Oh! costing.
 
-‘The only mistakes that General Motors made in automation were based on the fact that they have perhaps the world’s most advanced cost accountancy. Cost accounting gives you information on the cost of doing, but not on the cost of not doing – which is increasingly the bigger cost.’ Peter Drucker From Patrik Engellau. ‘Bureaucracy functions according to the bacteria principle. If you place bacteria in a test-tube filled with nourishment, it will expand until the nourishment is finished. The same with bureaucracy: as long as it gets funding, it expands.’
+‘The only mistakes that General Motors made in automation were based on the fact that they have perhaps the world’s most advanced cost accountancy. Cost accounting gives you information on the cost of doing, but not on the cost of not doing – which is increasingly the bigger cost.’ *Peter Drucker* 
+
+### From Patrik Engellau. 
+
+‘Bureaucracy functions according to the bacteria principle. If you place bacteria in a test-tube filled with nourishment, it will expand until the nourishment is finished. The same with bureaucracy: as long as it gets funding, it expands.’

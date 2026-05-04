@@ -14,19 +14,19 @@ compared to the self-image of less senior managers in their organisations. This 
 
 ### Smart managers are reconsidering value for customers in a post-digital economy.
 
-They are finding that it is now less about the quality of a product or service – performance is taken for granted. Increasingly, customers are favouring the suppliers who can best answer such questions as: delivery: are you reliable?
+They are finding that it is now less about the quality of a product or service – performance is taken for granted. Increasingly, customers are favouring the suppliers who can best answer such questions as: 
 
+- delivery: are you reliable?
 - total cost of procurement and ownership: how much will I pay – in time and aggravation – to do business with you?
-
 - information: what can you tell me about my customers?
-
 - business-based expertise: which of my internal processes can you make more effective?
-
 - brand: what promise does your product or name imply?
 
 There is emphasis on new value for customers, shareholders, employees and the community.
 
-Gary Hamel, the corporate strategist and author, sprays important ideas all over the place. Intangible assets such as innovation, organisational culture and strategic capabilities now account for as much as 85 per cent of market capitalisation for many firms in the United States, he calculates. The future is about differentiation; size is no longer a defining issue. ‘Capture new wealth by being novel and ask yourself if the voice of imagination is as loud as the noise of experience.’Market share is dead, asserts Hamel. If companies want to increase their proportion of wealth; they will have to ‘reboot’ and rethink plans more quickly. He suggests three types of capital – intellectual, structural and financial. A lot of businesses are threatened by their traditional ways of doing things.
+### Gary Hamel, the corporate strategist and author, sprays important ideas all over the place. 
+
+Intangible assets such as innovation, organisational culture and strategic capabilities now account for as much as 85 per cent of market capitalisation for many firms in the United States, he calculates. The future is about differentiation; size is no longer a defining issue. ‘Capture new wealth by being novel and ask yourself if the voice of imagination is as loud as the noise of experience.’ Market share is dead, asserts Hamel. If companies want to increase their proportion of wealth; they will have to ‘reboot’ and rethink plans more quickly. He suggests three types of capital – intellectual, structural and financial. A lot of businesses are threatened by their traditional ways of doing things.
 
 ### Blimey
 

@@ -12,9 +12,18 @@ Managers have played their part in neglecting them. A shrinking economy is the i
 
 But there have been general shifts:
 
-1940s/50s Run an organisation like an army 1960s Meet the budget 1970s Predict the future 1980s Think strategically 1990s One best way Now No one best way. The vision thing.
+- 1940s/50s Run an organisation like an army 
+- 1960s Meet the budget 
+- 1970s Predict the future 
+- 1980s Think strategically 
+- 1990s One best way 
+- Now No one best way. The vision thing.
 
-There are two schools of thought. One sees strategy as a wish-list, rallying cry and statements of mission. Strategy is a vision, not a plan. Luck, opportunism, intuition and inspiration are the essentials in commercial success. The other group argues strategy is not a vision, but about knowing key sources of internal competitive advantage. It should be defined and applied by each business through an impartial logic and rigorous analysis. There is room for confusion and meaningless words. ‘Generation Y: unlocking the talent of young managers’ was a valuable report from the Chartered Management Institute and Ordnance Survey. But the results of Dr Alison Macleod’s research into managers aged 35 and under challenge many hoary myths: Generation Y is self-indulgent Not so. Young managers are driven by ethics and a sense of purpose. Only 13 per cent ‘would quit their job tomorrow’ if they won the lottery. 90 per cent ‘want to work for an organisation that does something I believe in’ and 56 per cent ‘would only work for organisations with strong values’. Generation Y lacks commitment No more. It is committed to the cause. Sixty-three per cent of respondents had been in their jobs for 3 years or more and only 4 per cent strongly agree that ‘there’s no point being excessively loyal to an organisation’. Almost two-fifths (38 per cent) also work in the evenings and one-fifth (23 per cent) use ‘travel time’ for working. Generation Y is less attached to career planning. Oh no it isn’t! Seventy-five per cent chose their jobs for the long-term opportunities available. Sixty-two per cent claim to have a personal development plan, and 65 per cent ‘know what they need to achieve their ambitions’.
+There are two schools of thought. One sees strategy as a wish-list, rallying cry and statements of mission. Strategy is a vision, not a plan. Luck, opportunism, intuition and inspiration are the essentials in commercial success. The other group argues strategy is not a vision, but about knowing key sources of internal competitive advantage. It should be defined and applied by each business through an impartial logic and rigorous analysis. There is room for confusion and meaningless words. 
+
+### ‘Generation Y: unlocking the talent of young managers’ was a valuable report from the Chartered Management Institute and Ordnance Survey. 
+
+But the results of Dr Alison Macleod’s research into managers aged 35 and under challenge many hoary myths: Generation Y is self-indulgent Not so. Young managers are driven by ethics and a sense of purpose. Only 13 per cent ‘would quit their job tomorrow’ if they won the lottery. 90 per cent ‘want to work for an organisation that does something I believe in’ and 56 per cent ‘would only work for organisations with strong values’. Generation Y lacks commitment No more. It is committed to the cause. Sixty-three per cent of respondents had been in their jobs for 3 years or more and only 4 per cent strongly agree that ‘there’s no point being excessively loyal to an organisation’. Almost two-fifths (38 per cent) also work in the evenings and one-fifth (23 per cent) use ‘travel time’ for working. Generation Y is less attached to career planning. Oh no it isn’t! Seventy-five per cent chose their jobs for the long-term opportunities available. Sixty-two per cent claim to have a personal development plan, and 65 per cent ‘know what they need to achieve their ambitions’.
 
 ### Black, white and green boards and flipcharts are visual aids. Slides and overhead and PowerPoint projectors are not.
 

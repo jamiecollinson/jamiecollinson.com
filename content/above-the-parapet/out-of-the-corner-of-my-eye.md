@@ -10,7 +10,9 @@ Do you recall how keen those at the top in Europe and the United States were to 
 
 The goings on are a reminder of a nursery rhyme from childhood: Ring a Ring O’ Roses, A pocketful of posies, Atishoo, Atishoo!, We all fall down! It is said to be about the horrors of the Great Plague.
 
-Makes you think During the times of a humourless Cold War , the inner-councils of Government in America asked the Central Intelligence Agency (CIA) to write a profile of a country that might have a revolution. These professional interventionists decided upon three characteristics. They were: (i) a large gap between rich and poor; (ii) a middle class that is disappearing, or one that never existed in the first place; (iii) a lot of people with a grudge.
+### Makes you think 
+
+During the times of a humourless Cold War , the inner-councils of Government in America asked the Central Intelligence Agency (CIA) to write a profile of a country that might have a revolution. These professional interventionists decided upon three characteristics. They were: (i) a large gap between rich and poor; (ii) a middle class that is disappearing, or one that never existed in the first place; (iii) a lot of people with a grudge.
 
 ### Robert Heller reckons managing is a far more homely business than its would-be scientists suggest
 

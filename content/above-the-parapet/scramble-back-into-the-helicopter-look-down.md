@@ -26,7 +26,9 @@ They are all experts in managing the affairs of other people and have the certai
 
 ### ‘I’m a nice customer – I never complain, no matter what kind of service I get’
 
-I go into a restaurant and sit quietly while the waiter gossips with a friend. It is the same when I enter a shop. I don’t throw my weight around. If a snooty salesperson gets nettled because I want to look at several things before deciding, I am as polite as can be. I neither kick nor criticise and would not dream of making a scene as I’ve seen some people do in public – that’s uncalled for. No, I’m a nice customer. But I’ll tell you what else I am – I’m the customer who never comes back!’ Do unto others . . .
+I go into a restaurant and sit quietly while the waiter gossips with a friend. It is the same when I enter a shop. I don’t throw my weight around. If a snooty salesperson gets nettled because I want to look at several things before deciding, I am as polite as can be. I neither kick nor criticise and would not dream of making a scene as I’ve seen some people do in public – that’s uncalled for. No, I’m a nice customer. But I’ll tell you what else I am – I’m the customer who never comes back!’ 
+
+Do unto others...
 
 ### Times they are a-changin’.
 

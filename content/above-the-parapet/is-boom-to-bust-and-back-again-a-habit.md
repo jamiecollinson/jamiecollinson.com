@@ -8,7 +8,9 @@ hero_image: "img/parapet/is-boom-to-bust-and-back-again-a-habit.png"
 
 Revised figures in August said the UK’s economy grew by 0.7% in the second quarter of 2013. Optimists are suggesting growth could reach 1% in the third period. The rich countries’ think-tank, the Organisation for Economic Co-operation and Development (OECD), has increased its forecast for our economy from 0.8% to 1.5% this year. Retail sales are holding together and prices of houses in some regions are on an upwards trend. Services and manufacturing sectors are doing better than expectations, and jobs are being created in the private sector. No, we are not experiencing a miracle, but there is cautious confidence. There are some arguments about how long it will last and whether it is ‘good’ growth. The doubts rely upon the knowledge of politically preserved low interest rates, excessive debt and house prices shored up by taxpayers.
 
-We are not out of the woods. The UK has had a huge deficit for five years. In 2013, the figure will be 7.1% of Gross Domestic Product (GDP). Even with faster growth, it will be 6.5% in 2014. America is at 5.4%, France is 4%. Germany is close to breaking even. Even Greece and Spain have lower shortfalls than this country – 6.9% and 4% of GDP respectively. And the British government is dangerously in debt. It has hardly started the task of getting finances under control. Here we are in the period of annual conferences for political parties. The promises cover pensions, healthcare and education. There is support for buying a house already. The chances are that politicians will not be able to deliver these goodies. We face an imperative to consume less and produce more. Thanks to Matthew Lynn for the ideas.
+### We are not out of the woods. 
+
+The UK has had a huge deficit for five years. In 2013, the figure will be 7.1% of Gross Domestic Product (GDP). Even with faster growth, it will be 6.5% in 2014. America is at 5.4%, France is 4%. Germany is close to breaking even. Even Greece and Spain have lower shortfalls than this country – 6.9% and 4% of GDP respectively. And the British government is dangerously in debt. It has hardly started the task of getting finances under control. Here we are in the period of annual conferences for political parties. The promises cover pensions, healthcare and education. There is support for buying a house already. The chances are that politicians will not be able to deliver these goodies. We face an imperative to consume less and produce more. Thanks to Matthew Lynn for the ideas.
 
 ### Reinvention.
 
@@ -18,7 +20,9 @@ The earlier and sustained successes of Marks and Spencer were a testimony to the
 
 As Charles Darwin observed, it is not the strongest of the species that survives, nor the most intelligent. The ones most responsive to change retain life and get new vigour. The Times first listed Britain’s top 300 industrial firms in 1965. Few are still there now. 46% (230 companies) disappeared from the United States’ Fortune 500 in the ‘80s.
 
-Never mind the additions, feel the profit. Whatever conclusions or comfort you draw from the various predictions and confusing figures on the UK’s economy, recognise the certainty. It is more appropriate than ever to stress margins rather than higher sales. The main issue facing most managers this year is how to profit from little or no growth in their basic businesses.
+### Never mind the additions, feel the profit. 
+
+Whatever conclusions or comfort you draw from the various predictions and confusing figures on the UK’s economy, recognise the certainty. It is more appropriate than ever to stress margins rather than higher sales. The main issue facing most managers this year is how to profit from little or no growth in their basic businesses.
 
 The problem is that expansion can be, and often is, illusory. It is always patchy and sometimes a result of inflated stock values. At the same time, and more seriously, it all too frequently leads to lax management. So the focus for any business, whatever is happening to growth, must always be productivity – getting more from the same or from less. This is the basic cost of staying in the game.
 

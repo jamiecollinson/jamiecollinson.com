@@ -2,8 +2,8 @@
 date: '2017-02-02T15:51:00Z'
 original_url: http://overtheparapet.blogspot.com/2017/02/and-we-will-still-get-shock-or-two.html
 title: AND WE WILL STILL GET A SHOCK OR TWO
-hero_image: "img/parapet/shock or two.png"
-hero_alt: Satirical editorial-style illustration of three people reviewing finances at a kitchen table, with a distant hospital entrance scene in the background.
+hero_image: "img/parapet/and-we-will-still-get-a-shock-or-two.png"
+hero_alt: Satirical editorial-style cartoon of managers bracing for financial shocks, household debt, and hospital pressures.
 ---
 ### 2017
 

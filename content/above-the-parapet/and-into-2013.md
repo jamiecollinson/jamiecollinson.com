@@ -10,7 +10,13 @@ The Office for Budget Responsibility (OBR) has said it would be an error to put 
 
 ### Data, data, data. And what you do with it.
 
-The Chartered Institute of Marketing has pointed out that the importance of mining data was illustrated by President Obama’s election campaigners. They used rigorous analytical methods to send personalised communications and identify new voters. This type of nano-targeting is becoming quickly an essential part of corporate strategy, as businesses apply digital analytics to huge volumes of data. The shift is turning old models upside down and disruptive operators are emerging to offer proposals which provide unusual (for the time being) insights on existing and potential customers.
+The Chartered Institute of Marketing has pointed out that the importance of mining data was illustrated by President Obama’s election campaigners. They used rigorous analytical methods to send personalised communications and identify new voters. This type of nano-targeting is becoming quickly an essential part of corporate strategy, as businesses apply digital analytics to huge volumes of data. 
+
+The shift is turning old models upside down and disruptive operators are emerging to offer proposals which provide unusual (for the time being) insights on existing and potential customers.
+
+### But get the ‘mix’ right. 
+
+All of one becomes counter-productive.
 
 1. What gets measured gets done - but measure the critical few, avoid the many - when it’s broken, fix it fast.
 2. What gets budgeted gets done.
@@ -18,16 +24,12 @@ The Chartered Institute of Marketing has pointed out that the importance of mini
 4. What gets rewarded gets done - praise pays, but it does not pay the mortgage - watch out for the middle stealing the idea.
 5. What gets reprimanded gets done - keep your cool.
 
-### But get the
-
-‘mix’ right. All of one becomes counter-productive.
-
-Ways to tell your boss some home truths:
+### Ways to tell your boss some home truths:
 
 - Speak to him/her alone, not in front of other people
 - Know what you are talking about and stick to the facts
-- If something is bothering you, don’t rush to criticise. Instead . . .
-- . . . sleep on it, to avoid saying too much in the heat of the moment
+- If something is bothering you, don’t rush to criticise. Instead...
+- ...sleep on it, to avoid saying too much in the heat of the moment
 - Know your boundaries
 - Don’t make it personal
 - Use examples to support your points

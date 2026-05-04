@@ -14,27 +14,27 @@ Richard Jeffrey (Cazenove) and John Stepek (Moneyweek) have noted: ‘The reason
 
 Alan Webber in the Harvard Business Review reckoned there are three drivers for change. They are globalisation, technology and people, which should be seen as a series of crosscuts on a business. He suggests six 'I's for success:
 
-### Inspiration
+##### Inspiration
 
 A company has to stand for something beyond its products and services.
 
-### Innovation
+##### Innovation
 
 A passion for the new is essential. Not one huge thrust but a sustained flow of small, incremental innovations.
 
-### Implementation
+##### Implementation
 
 Front runners excel also at hammering home that last nail which gets the product out of the door.
 
-### Information
+##### Information
 
 The organisation has to be ‘rewired’ so that employees get much of the information previously restricted to managers.
 
-### Incentives
+##### Incentives
 
 Rewards have to match today’s objectives. Most incentives are obsolete and geared to yesterday’s aims.
 
-### Integrity
+##### Integrity
 
 Inside, this helps to weld all activities together. Outside, it brings good people into the business.
 
@@ -44,9 +44,7 @@ This is a story about four people named Everybody, Somebody, Anybody and Nobody.
 
 ### Leading words for scrambled egg-heads.
 
-### Have you noticed the assertion?
-
-‘Leadership’ is the essential ingredient for organisational success. And it is a seductive word, with a multitude of interpretations. Relax and consult Humpty Dumpty, that old-time manager who falls off the walls of jumbled concepts. Every business school should have Alice Through the Looking Glass as a basic text. ‘When I use a word’ , Humpty Dumpty said in a rather scornful tone, ‘it means just what I choose it to mean – neither more nor less’. ‘The question is’, said Alice, ‘whether you can make words mean different things’. ‘The question is’, said Humpty Dumpty, ‘which is to be master – that’s all.’ *Makes you think! Humpty Dumpty has so many worthy successors.*
+Have you noticed the assertion? ‘Leadership’ is the essential ingredient for organisational success. And it is a seductive word, with a multitude of interpretations. Relax and consult Humpty Dumpty, that old-time manager who falls off the walls of jumbled concepts. Every business school should have Alice Through the Looking Glass as a basic text. ‘When I use a word’ , Humpty Dumpty said in a rather scornful tone, ‘it means just what I choose it to mean – neither more nor less’. ‘The question is’, said Alice, ‘whether you can make words mean different things’. ‘The question is’, said Humpty Dumpty, ‘which is to be master – that’s all.’ *Makes you think! Humpty Dumpty has so many worthy successors.*
 
 ### Sounds about right.
 

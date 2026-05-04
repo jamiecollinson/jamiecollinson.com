@@ -18,7 +18,7 @@ S/he might be a creative hot-shot, a star salesperson, a brilliant project manag
 
 ### From Harold Geneen
 
-, born in Bournemouth and retired from the job of chief executive at International Telephone and Telegraph (ITT), a dominant company in America. ‘It is an immutable law in business that words are words, explanations are explanations, promises are promises – but only performance is reality’.
+born in Bournemouth and retired from the job of chief executive at International Telephone and Telegraph (ITT), a dominant company in America. ‘It is an immutable law in business that words are words, explanations are explanations, promises are promises – but only performance is reality’.
 
 ### So it’s obvious. Innit
 
